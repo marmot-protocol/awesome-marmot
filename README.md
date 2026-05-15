@@ -27,6 +27,7 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — Private family video sharing for parents and kids, built on Nostr and Marmot.
 - [Vector](https://github.com/VectorPrivacy/Vector) — Peer-to-peer multiplayer game using Nostr for discovery, Marmot for encryption, and Iroh for QUIC transport.
 - [Scramble](https://github.com/DavidGershony/Scramble) — Nostr-based encrypted messenger with MLS group encryption.
+- [openclaw-marmot](https://github.com/tkhumush/openclaw-marmot) — OpenClaw channel plugin for Marmot Protocol. End-to-end encrypted Nostr messaging via MLS.
 
 ## SDKs & Libraries
 
@@ -40,7 +41,6 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — TypeScript implementation of the Marmot Protocol.
 - [quartz](https://github.com/vitorpamplona/quartz) — Nostr library for Kotlin Multiplatform, used by Amethyst. Includes an embedded MDK implementation aligned with MIP-01 and MIP-05.
 - [marmot-cs](https://github.com/DavidGershony/marmot-cs) — C# MDK implementation. Secure group messaging with MLS (RFC 9420) and Nostr.
-- [marmot-cs](https://github.com/DavidGershony/marmot-cs) — C# MDK implementation. MLS (RFC 9420) group messaging over Nostr.
 
 ## Tools & Infrastructure
 
@@ -48,6 +48,14 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [nostr-doctor](https://github.com/marmot-protocol/nostr-doctor) — Diagnoses issues with Nostr users and pubkeys.
 - [botburrow](https://github.com/marmot-protocol/botburrow) — Bot infrastructure for Marmot.
 - [propose](https://github.com/marmot-protocol/propose) — Test harness for MLS proposal and commit scenarios.
+- [burrow](https://github.com/CentauriAgent/burrow) — Marmot Protocol CLI for encrypted messaging, targeting AI agents and humans.
+- [marmot-cli](https://github.com/kai-familiar/marmot-cli) — Rust CLI for E2E encrypted messaging over Nostr via Marmot. Compatible with White Noise.
+- [marmot-server](https://github.com/nmadd57/marmot-server) — Local Docker server with a REST API for the Marmot protocol.
+- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — Dockerized marmot-cli for on-demand E2E encrypted Nostr DMs.
+- [burrow](https://github.com/CentauriAgent/burrow) — Marmot Protocol CLI for E2E encrypted messaging, built for AI agents and humans.
+- [marmot-cli](https://github.com/kai-familiar/marmot-cli) — Rust CLI for E2E encrypted messaging over Nostr using Marmot. Compatible with White Noise.
+- [marmot-server](https://github.com/nmadd57/marmot-server) — Local Docker server with a REST API for Marmot Protocol group messaging.
+- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — Dockerized marmot-cli for on-demand E2E encrypted Nostr DMs.
 
 ## Storage Adapters
 
