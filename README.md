@@ -28,6 +28,8 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [Vector](https://github.com/VectorPrivacy/Vector) — Peer-to-peer multiplayer game using Nostr for discovery, Marmot for encryption, and Iroh for QUIC transport.
 - [Scramble](https://github.com/DavidGershony/Scramble) — Nostr-based encrypted messenger with MLS group encryption.
 - [openclaw-marmot](https://github.com/tkhumush/openclaw-marmot) — OpenClaw channel plugin for Marmot Protocol. End-to-end encrypted Nostr messaging via MLS.
+- [amethyst](https://github.com/vitorpamplona/amethyst) — Nostr client for Android with embedded MDK, aligned with MIP-01 and MIP-05.
+- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — CLI for Marmot/MLS group operations, driven by the Amethyst implementation.
 
 ## SDKs & Libraries
 
