@@ -26,6 +26,7 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [pika](https://github.com/sledtools/pika) — Marmot-based encrypted messaging app.
 - [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — Private family video sharing for parents and kids, built on Nostr and Marmot.
 - [Vector](https://github.com/VectorPrivacy/Vector) — Peer-to-peer multiplayer game using Nostr for discovery, Marmot for encryption, and Iroh for QUIC transport.
+- [Scramble](https://github.com/DavidGershony/Scramble) — Nostr-based encrypted messenger with MLS group encryption.
 
 ## SDKs & Libraries
 
@@ -38,6 +39,8 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [mdk-web](https://github.com/marmot-protocol/mdk-web) — Web/WASM bindings for the MDK.
 - [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — TypeScript implementation of the Marmot Protocol.
 - [quartz](https://github.com/vitorpamplona/quartz) — Nostr library for Kotlin Multiplatform, used by Amethyst. Includes an embedded MDK implementation aligned with MIP-01 and MIP-05.
+- [marmot-cs](https://github.com/DavidGershony/marmot-cs) — C# MDK implementation. Secure group messaging with MLS (RFC 9420) and Nostr.
+- [marmot-cs](https://github.com/DavidGershony/marmot-cs) — C# MDK implementation. MLS (RFC 9420) group messaging over Nostr.
 
 ## Tools & Infrastructure
 
