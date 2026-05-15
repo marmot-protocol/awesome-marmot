@@ -9,7 +9,7 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [SDKs & Libraries](#sdks--libraries)
 - [Tools & Infrastructure](#tools--infrastructure)
 - [Storage Adapters](#storage-adapters)
-- [Reference Implementations](#reference-implementations)
+- [Demo Apps](#demo-apps)
 
 ---
 
@@ -20,7 +20,7 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 ## Applications
 
 - [whitenoise](https://github.com/marmot-protocol/whitenoise) — White Noise Flutter app. Private, decentralized messenger built on Nostr and MLS. No phone. No email. No compromise.
-- [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) — The Rust core library powering White Noise.
+- [whitenoise-cli](https://github.com/marmot-protocol/whitenoise-rs/tree/main/crates/whitenoise-cli) — Command-line interface for White Noise, part of the whitenoise-rs workspace.
 - [wn-tui](https://github.com/marmot-protocol/wn-tui) — Terminal UI client for White Noise.
 - [agentnoise](https://github.com/nvk/agentnoise) — Native desktop helper for using White Noise as the control surface for local Codex and Claude sessions. Rust-first, no Node/npm/bun in the trusted bridge path.
 - [pika](https://github.com/sledtools/pika) — Marmot-based encrypted messaging app.
@@ -30,6 +30,7 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 ## SDKs & Libraries
 
 - [mdk](https://github.com/marmot-protocol/mdk) — Marmot Development Kit. The core SDK for building Marmot-compatible apps.
+- [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) — The Rust core library powering White Noise.
 - [mdk-kotlin](https://github.com/marmot-protocol/mdk-kotlin) — Kotlin bindings for the MDK.
 - [mdk-python](https://github.com/marmot-protocol/mdk-python) — Python bindings for the MDK.
 - [mdk-ruby](https://github.com/marmot-protocol/mdk-ruby) — Ruby bindings for the MDK.
@@ -51,9 +52,9 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — OpenMLS storage traits implemented with Redb.
 - [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) — OpenMLS storage traits implemented with LMDB.
 
-## Reference Implementations
+## Demo Apps
 
-- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — Reference web chat implementation using marmoTS.
+- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — Web chat demo using marmoTS.
 - [mdk-python-example](https://github.com/marmot-protocol/mdk-python-example) — Example usage of the MDK Python bindings.
 - [mdk-kotlin-example](https://github.com/marmot-protocol/mdk-kotlin-example) — Example usage of the MDK Kotlin bindings.
 - [mdk-ruby-example](https://github.com/marmot-protocol/mdk-ruby-example) — Example usage of the MDK Ruby bindings.
