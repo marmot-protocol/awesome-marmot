@@ -54,10 +54,8 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [marmot-cli](https://github.com/kai-familiar/marmot-cli) — Rust CLI for E2E encrypted messaging over Nostr via Marmot. Compatible with White Noise.
 - [marmot-server](https://github.com/nmadd57/marmot-server) — Local Docker server with a REST API for the Marmot protocol.
 - [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — Dockerized marmot-cli for on-demand E2E encrypted Nostr DMs.
-- [burrow](https://github.com/CentauriAgent/burrow) — Marmot Protocol CLI for E2E encrypted messaging, built for AI agents and humans.
-- [marmot-cli](https://github.com/kai-familiar/marmot-cli) — Rust CLI for E2E encrypted messaging over Nostr using Marmot. Compatible with White Noise.
-- [marmot-server](https://github.com/nmadd57/marmot-server) — Local Docker server with a REST API for Marmot Protocol group messaging.
-- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — Dockerized marmot-cli for on-demand E2E encrypted Nostr DMs.
+- [hermes-marmot](https://github.com/notmandatory/hermes-marmot) — Marmot gateway plugin for Hermes Agent. Uses mdk-python to enable E2E encrypted Nostr messaging via MLS, no daemon required.
+- [NostrBotKit](https://codeberg.org/Tuxor/NostrBotKit) — Self-hosted Nostr bot framework with Marmot support. Bots join MLS groups and respond to commands from any Marmot-compatible client.
 
 ## Storage Adapters
 
