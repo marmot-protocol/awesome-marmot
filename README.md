@@ -28,6 +28,7 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [wn-tui](https://github.com/marmot-protocol/wn-tui) — Terminal UI client for White Noise.
 - [agentnoise](https://github.com/nvk/agentnoise) — Native desktop helper for using White Noise as the control surface for local Codex and Claude sessions. Rust-first, no Node/npm/bun in the trusted bridge path.
 - [Haven](https://github.com/mehmetefeumit/Haven-App) — Private, censorship-resistant location sharing for Android and iOS. End-to-end encrypted via Marmot, no central server, no PII required.
+- [Whistle](https://github.com/sjmcnamara/whistle) — Decentralized group location sharing for iOS and Android. No accounts, no servers; live map and group chat end-to-end encrypted via Marmot over Nostr.
 - [pika](https://github.com/sledtools/pika) — Marmot-based encrypted messaging app.
 - [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — Private family video sharing for parents and kids, built on Nostr and Marmot.
 - [Vector](https://github.com/VectorPrivacy/Vector) — Peer-to-peer multiplayer game using Nostr for discovery, Marmot for encryption, and Iroh for QUIC transport.
