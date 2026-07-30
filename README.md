@@ -30,7 +30,6 @@ A curated list of apps, libraries, and tools built on the [Marmot Protocol](http
 - [Haven](https://github.com/mehmetefeumit/Haven-App) — Private, censorship-resistant location sharing for Android and iOS. End-to-end encrypted via Marmot, no central server, no PII required.
 - [pika](https://github.com/sledtools/pika) — Marmot-based encrypted messaging app.
 - [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — Private family video sharing for parents and kids, built on Nostr and Marmot.
-- [Vector](https://github.com/VectorPrivacy/Vector) — Peer-to-peer multiplayer game using Nostr for discovery, Marmot for encryption, and Iroh for QUIC transport.
 - [Scramble](https://github.com/DavidGershony/Scramble) — Nostr-based encrypted messenger with MLS group encryption.
 - [openclaw-marmot](https://github.com/tkhumush/openclaw-marmot) — OpenClaw channel plugin for Marmot Protocol. End-to-end encrypted Nostr messaging via MLS.
 - [amethyst](https://github.com/vitorpamplona/amethyst) — Nostr client for Android with embedded MDK, aligned with MIP-01 and MIP-05.
