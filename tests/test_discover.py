@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -43,6 +44,14 @@ def build(config, org, nostr, zap):
 
 
 class DiscoveryTests(unittest.TestCase):
+    def setUp(self):
+        self._temporary_directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self._temporary_directory.cleanup)
+        seen = Path(self._temporary_directory.name) / "discovery-seen.json"
+        self._seen_patch = patch.object(discover, "SEEN", seen)
+        self._seen_patch.start()
+        self.addCleanup(self._seen_patch.stop)
+
     def test_normalize_repository_variants(self):
         self.assertEqual(
             discover.normalize_repo("https://github.com/Example/Marmot-App.git"),
@@ -105,9 +114,11 @@ class DiscoveryTests(unittest.TestCase):
 
     @patch.object(discover, "verify_repo")
     @patch.object(discover, "catalog_repos", return_value=set())
-    @patch.object(discover, "SEEN")
-    def test_seen_event_is_not_processed_again(self, seen, _catalog, verify):
-        seen.read_text.return_value = '{"event_ids":["' + "a" * 64 + '"],"repository_urls":[]}'
+    def test_seen_event_is_not_processed_again(self, _catalog, verify):
+        discover.SEEN.write_text(
+            '{"event_ids":["' + "a" * 64 + '"],"repository_urls":[]}',
+            encoding="utf-8",
+        )
 
         retained, rejected, candidates = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
 
