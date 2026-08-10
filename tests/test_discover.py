@@ -49,6 +49,13 @@ class DiscoveryTests(unittest.TestCase):
             "https://github.com/example/marmot-app",
         )
 
+    def test_repo_urls_are_read_from_markdown_destinations(self):
+        text = "[repo](https://github.com/Example/Linked)"
+        self.assertEqual(
+            discover.REPO_URL.findall(text),
+            ["https://github.com/Example/Linked"],
+        )
+
     def test_zapstore_repository_comes_from_tags(self):
         event = make_event(
             "f" * 64,
