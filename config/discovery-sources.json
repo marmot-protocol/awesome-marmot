@@ -1,0 +1,33 @@
+{
+  "github_organization": "marmot-protocol",
+  "activity_days": 365,
+  "excluded_repositories": [
+    "https://github.com/marmot-protocol/awesome-marmot",
+    "https://github.com/marmot-protocol/marmot-web"
+  ],
+  "relays": [
+    "wss://nostr.mom",
+    "wss://relay.damus.io",
+    "wss://nos.lol"
+  ],
+  "nostr_sources": [
+    {
+      "name": "NostrMag weekly issues",
+      "pubkey": "fe5915e97c59b0672a80351bd2e4a89d1414c56a25e74eab9b2ebc9014a8403b",
+      "kinds": [1],
+      "required_tags": ["nostrmag"],
+      "anchor_event": "de399234b408ce0bf401c49004fb57342186c843917f94478dfaf54e7eeee19b",
+      "anchor_url": "https://nostrmag.com/article/w32nostr03"
+    },
+    {
+      "name": "Nostr Recap weekly review",
+      "pubkey": "cae5b7ea348afefc4c102bb7b125c4928f114739a27b877c6bcfbe5a79280384",
+      "kinds": [1, 30023],
+      "required_tags": []
+    }
+  ],
+  "zapstore": {
+    "relay": "wss://relay.zapstore.dev",
+    "app_kind": 32267
+  }
+}

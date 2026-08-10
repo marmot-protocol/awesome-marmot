@@ -1,88 +1,108 @@
 # Awesome Marmot
 
-A curated list of apps, libraries, and tools built on the [Marmot Protocol](https://github.com/marmot-protocol/marmot) — MLS-based end-to-end encrypted group messaging over Nostr.
+A curated catalog of software that implements or directly supports the [Marmot Protocol](https://github.com/marmot-protocol/marmot): MLS-based, end-to-end encrypted group messaging transported over Nostr.
+
+> **Project status:** **active** means its canonical repository has had public activity within the last 12 months. **inactive** means the repository is writable but has not. **beta/experimental** is the maintainer's own maturity signal. **archived** means the canonical repository is read-only or superseded. Activity is not a security endorsement; review each project's threat model and release notes before relying on it.
 
 ## Contents
 
-- [Protocol](#protocol)
-- [Applications](#applications)
-- [SDKs & Libraries](#sdks--libraries)
-- [Tools & Infrastructure](#tools--infrastructure)
-- [Storage Adapters](#storage-adapters)
-- [Demo Apps](#demo-apps)
-
----
+- [Apps](#apps)
+- [Agent and automation integrations](#agent-and-automation-integrations)
+- [SDKs and libraries](#sdks-and-libraries)
+- [Infrastructure and developer tools](#infrastructure-and-developer-tools)
+- [Examples](#examples)
+- [Archived and superseded projects](#archived-and-superseded-projects)
+- [Discovery and verification](#discovery-and-verification)
+- [Contributing](#contributing)
 
 ## Protocol
 
-- [marmot](https://github.com/marmot-protocol/marmot) — The Marmot Protocol specification. MLS + Nostr for efficient, decentralized, end-to-end encrypted group messaging.
+- [marmot](https://github.com/marmot-protocol/marmot) — **active** — Specification, Marmot Improvement Proposals (MIPs), and interoperability material.
 
-## Applications
+## Apps
 
-- [whitenoise](https://github.com/marmot-protocol/whitenoise) — White Noise Flutter app. Private, decentralized messenger built on Nostr and MLS. No phone. No email. No compromise.
-- [whitenoise-android](https://github.com/marmot-protocol/whitenoise-android) — Native Android client for White Noise.
-- [whitenoise-ios](https://github.com/marmot-protocol/whitenoise-ios) — Native iOS client for White Noise.
-- [whitenoise-mac](https://github.com/marmot-protocol/whitenoise-mac) — White Noise macOS app.
-- [whitenoise-linux](https://github.com/marmot-protocol/whitenoise-linux) — White Noise Linux app.
-- [whitenoise-cli](https://github.com/marmot-protocol/whitenoise-rs/tree/main/crates/whitenoise-cli) — Command-line interface for White Noise, part of the whitenoise-rs workspace.
-- [wn-tui](https://github.com/marmot-protocol/wn-tui) — Terminal UI client for White Noise.
-- [agentnoise](https://github.com/nvk/agentnoise) — Native desktop helper for using White Noise as the control surface for local Codex and Claude sessions. Rust-first, no Node/npm/bun in the trusted bridge path.
-- [Haven](https://github.com/mehmetefeumit/Haven-App) — Private, censorship-resistant location sharing for Android and iOS. End-to-end encrypted via Marmot, no central server, no PII required.
-- [Whistle](https://github.com/sjmcnamara/whistle) — Decentralized group location sharing for iOS and Android. No accounts, no servers; live map and group chat end-to-end encrypted via Marmot over Nostr.
-- [pika](https://github.com/sledtools/pika) — Marmot-based encrypted messaging app.
-- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — Private family video sharing for parents and kids, built on Nostr and Marmot.
-- [Scramble](https://github.com/DavidGershony/Scramble) — Nostr-based encrypted messenger with MLS group encryption.
-- [openclaw-marmot](https://github.com/tkhumush/openclaw-marmot) — OpenClaw channel plugin for Marmot Protocol. End-to-end encrypted Nostr messaging via MLS.
-- [amethyst](https://github.com/vitorpamplona/amethyst) — Nostr client for Android with embedded MDK, aligned with MIP-01 and MIP-05.
-- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — CLI for Marmot/MLS group operations, driven by the Amethyst implementation.
+### Messaging clients
 
-## SDKs & Libraries
+- [White Noise for Android](https://github.com/marmot-protocol/whitenoise-android) — **active** — Native Android White Noise client.
+- [White Noise for iOS](https://github.com/marmot-protocol/whitenoise-ios) — **active** — Native iOS White Noise client.
+- [White Noise for macOS](https://github.com/marmot-protocol/whitenoise-mac) — **active** — Native macOS White Noise client.
+- [White Noise for Linux](https://github.com/marmot-protocol/whitenoise-linux) — **active** — Rust/Slint desktop client; its repository points contributors to the canonical NIP-34 repository.
+- [wn-tui](https://github.com/marmot-protocol/wn-tui) — **active** — Terminal White Noise client.
+- [pika](https://github.com/justinmoon/pika) — **active, alpha** — Cross-platform encrypted messenger with a Rust core and MDK.
+- [Scramble](https://github.com/DavidGershony/Scramble) — **active** — Desktop and Android Marmot client implemented with `marmot-cs`.
+- [Marmota](https://github.com/dcadenas/marmota) — **active, experimental** — Browser client built with `marmot-ts` and local IndexedDB storage.
+- [amethyst](https://github.com/vitorpamplona/amethyst) — **active** — Kotlin Multiplatform Nostr client whose Quartz layer includes an embedded MDK implementation.
+- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **active** — Amethyst's CLI for Marmot/MLS group operations.
 
-- [mdk](https://github.com/marmot-protocol/mdk) — Marmot Development Kit. The core SDK for building Marmot-compatible apps.
-- [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) — The Rust core library powering White Noise.
-- [mdk-kotlin](https://github.com/marmot-protocol/mdk-kotlin) — Kotlin bindings for the MDK.
-- [mdk-python](https://github.com/marmot-protocol/mdk-python) — Python bindings for the MDK.
-- [mdk-ruby](https://github.com/marmot-protocol/mdk-ruby) — Ruby bindings for the MDK.
-- [mdk-swift](https://github.com/marmot-protocol/mdk-swift) — Swift bindings for the MDK.
-- [mdk-web](https://github.com/marmot-protocol/mdk-web) — Web/WASM bindings for the MDK.
-- [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — TypeScript implementation of the Marmot Protocol.
-- [quartz](https://github.com/vitorpamplona/quartz) — Nostr library for Kotlin Multiplatform, used by Amethyst. Includes an embedded MDK implementation aligned with MIP-01 and MIP-05.
-- [marmot-cs](https://github.com/DavidGershony/marmot-cs) — C# MDK implementation. Secure group messaging with MLS (RFC 9420) and Nostr.
+### Location, media, and device apps
 
-## Tools & Infrastructure
+- [Haven](https://github.com/mehmetefeumit/Haven-App) — **active** — Private Android/iOS location sharing over Marmot, without a central account service.
+- [Whistle](https://github.com/sjmcnamara/whistle) — **active** — Cross-platform group location sharing and chat over Nostr, MLS, and Marmot.
+- [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) — **active** — Bluetooth/Nostr messenger and wallet with Marmot group DMs interoperable with White Noise.
+- [FMDtr](https://gitlab.com/Kalle/fmdtr-android) — **active** — Android device finder and remote-control app with Marmot, SMS, messenger, and server transports.
+- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — **active** — Private family video sharing built on Nostr and Marmot.
 
-- [transponder](https://github.com/marmot-protocol/transponder) — MIP-05 Marmot notifications server, implemented in Rust.
-- [goggles](https://github.com/marmot-protocol/goggles) — Visualization tooling for Marmot. Audit-log explorer for `marmot-forensics-audit/v1` JSONL traces.
-- [nostr-doctor](https://github.com/marmot-protocol/nostr-doctor) — Diagnoses issues with Nostr users and pubkeys.
-- [botburrow](https://github.com/marmot-protocol/botburrow) — Bot infrastructure for Marmot.
-- [propose](https://github.com/marmot-protocol/propose) — Test harness for MLS proposal and commit scenarios.
-- [burrow](https://github.com/CentauriAgent/burrow) — Marmot Protocol CLI for encrypted messaging, targeting AI agents and humans.
-- [marmot-cli](https://github.com/kai-familiar/marmot-cli) — Rust CLI for E2E encrypted messaging over Nostr via Marmot. Compatible with White Noise.
-- [marmot-server](https://github.com/nmadd57/marmot-server) — Local Docker server with a REST API for the Marmot protocol.
-- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — Dockerized marmot-cli for on-demand E2E encrypted Nostr DMs.
-- [hermes-marmot](https://github.com/notmandatory/hermes-marmot) — Marmot gateway plugin for Hermes Agent. Uses mdk-python to enable E2E encrypted Nostr messaging via MLS, no daemon required.
-- [NostrBotKit](https://codeberg.org/Tuxor/NostrBotKit) — Self-hosted Nostr bot framework with Marmot support. Bots join MLS groups and respond to commands from any Marmot-compatible client.
+## Agent and automation integrations
 
-## Storage Adapters
+- [agentnoise](https://github.com/nvk/agentnoise) — **active** — Desktop bridge that uses White Noise as a control surface for local coding-agent sessions.
+- [openclaw-marmot](https://github.com/tkhumush/openclaw-marmot) — **active** — OpenClaw channel plugin for MLS-encrypted Marmot messaging.
+- [hermes-marmot](https://github.com/notmandatory/hermes-marmot) — **active** — Hermes Agent gateway plugin built with `mdk-python`.
+- [botburrow](https://github.com/marmot-protocol/botburrow) — **active** — Bot infrastructure for Marmot groups.
+- [burrow](https://github.com/CentauriAgent/burrow) — **active** — Marmot CLI for encrypted communication between people and agents.
+- [marmot-cli](https://github.com/kai-familiar/marmot-cli) — **active** — Rust CLI interoperable with White Noise.
+- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — **active** — Containerized packaging for on-demand Marmot CLI use.
+- [NostrBotKit](https://codeberg.org/Tuxor/NostrBotKit) — **active** — Self-hosted bot framework with Marmot group support.
 
-- [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) — OpenMLS storage traits implemented with the Sled embedded database.
-- [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — OpenMLS storage traits implemented with Redb.
-- [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) — OpenMLS storage traits implemented with LMDB.
+## SDKs and libraries
 
-## Demo Apps
+- [mdk](https://github.com/marmot-protocol/mdk) — **active** — Reference Rust Marmot Development Kit and current core stack.
+- [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — **active** — TypeScript implementation of Marmot.
+- [marmot-cs](https://github.com/DavidGershony/marmot-cs) — **active** — C# Marmot/MDK implementation.
+- [mdk-web](https://github.com/marmot-protocol/mdk-web) — **active** — Web/WASM bindings for MDK.
+- [quartz](https://github.com/vitorpamplona/quartz) — **active** — Kotlin Multiplatform Nostr library with an embedded MDK implementation.
+- [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) — **inactive** — OpenMLS storage traits backed by Sled; no public repository activity in the last 12 months.
+- [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — **inactive** — OpenMLS storage traits backed by Redb; no public repository activity in the last 12 months.
+- [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) — **inactive** — OpenMLS storage traits backed by LMDB; no public repository activity in the last 12 months.
 
-- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — Web chat demo using marmoTS.
-- [mdk-python-example](https://github.com/marmot-protocol/mdk-python-example) — Example usage of the MDK Python bindings.
-- [mdk-kotlin-example](https://github.com/marmot-protocol/mdk-kotlin-example) — Example usage of the MDK Kotlin bindings.
-- [mdk-ruby-example](https://github.com/marmot-protocol/mdk-ruby-example) — Example usage of the MDK Ruby bindings.
+## Infrastructure and developer tools
 
----
+- [transponder](https://github.com/marmot-protocol/transponder) — **active** — MIP-05 notification server.
+- [goggles](https://github.com/marmot-protocol/goggles) — **active** — Explorer for `marmot-forensics-audit/v1` JSONL traces.
+- [nostr-doctor](https://github.com/marmot-protocol/nostr-doctor) — **active** — Nostr user and pubkey diagnostics.
+- [propose](https://github.com/marmot-protocol/propose) — **active** — MLS proposal/commit scenario test harness.
+- [marmot-server](https://github.com/nmadd57/marmot-server) — **active** — Local Docker service exposing a REST API for Marmot.
+
+## Examples
+
+- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **active** — Browser chat reference implementation for `marmot-ts`.
+- [mdk-python-example](https://github.com/marmot-protocol/mdk-python-example) — **active** — Python binding example.
+- [mdk-kotlin-example](https://github.com/marmot-protocol/mdk-kotlin-example) — **active** — Kotlin binding example.
+- [mdk-ruby-example](https://github.com/marmot-protocol/mdk-ruby-example) — **active** — Ruby binding example.
+
+## Archived and superseded projects
+
+These remain useful for history and migration research, but should not be presented as current foundations.
+
+- [whitenoise](https://github.com/marmot-protocol/whitenoise) — **archived** — Superseded Flutter White Noise app.
+- [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) — **archived** — Former White Noise Rust core and CLI; current development moved to MDK and native clients.
+- [mdk-kotlin](https://github.com/marmot-protocol/mdk-kotlin), [mdk-python](https://github.com/marmot-protocol/mdk-python), [mdk-ruby](https://github.com/marmot-protocol/mdk-ruby), and [mdk-swift](https://github.com/marmot-protocol/mdk-swift) — **archived** — Historical standalone binding repositories.
+- [nostr-openmls](https://github.com/marmot-protocol/nostr-openmls) — **archived** — Pre-MDK OpenMLS/Nostr library.
+- [mls-ts](https://github.com/marmot-protocol/mls-ts) — **archived** — Historical TypeScript MLS exploration.
+- [dr.marmot](https://github.com/marmot-protocol/dr.marmot) — **archived** — Superseded by `nostr-doctor`.
+
+## Discovery and verification
+
+The [weekly discovery workflow](.github/workflows/discover.yml) scans the Marmot Protocol organization, Zapstore's signed app metadata, Nostr Recap, and NostrMag's signed article-share events. NostrMag intake is anchored to event [`de399234…e19b`](https://njump.me/de399234b408ce0bf401c49004fb57342186c843917f94478dfaf54e7eeee19b), which points to its weekly Nostr roundup.
+
+Roundups, store listings, Compass, and search results are **leads, not proof**. The workflow retains event IDs, authors, relays, and URLs; deduplicates them against this catalog and prior intake; then requires a canonical repository, explicit Marmot evidence, and recent repository activity. It opens a review PR only when a new verified candidate exists and never edits this catalog automatically. See [the discovery runbook](docs/discovery.md) for the audit and failure model.
 
 ## Contributing
 
-Pull requests welcome. Add your Marmot-compatible project by opening a PR — include the repo link and a one-line description.
+Pull requests are welcome. For each entry, include:
 
-Make sure the project:
-- Is publicly accessible
-- Uses the Marmot Protocol (or directly supports it)
-- Is actively maintained or clearly labeled otherwise
+- its canonical public repository (not an app-store mirror);
+- primary-source evidence that it implements or directly supports Marmot, not merely MLS or encrypted Nostr DMs;
+- a one-line, factual description and honest maturity/status label;
+- evidence of maintenance, or an explicit archived/unmaintained label.
+
+Avoid duplicate platform wrappers, renamed repositories, and claims copied only from a roundup. CI checks catalog structure, duplicate canonical URLs, and discovery regression tests; maintainers verify time-sensitive link and status evidence during review.
