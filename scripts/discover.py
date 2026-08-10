@@ -31,9 +31,10 @@ GITHUB_API = "https://api.github.com"
 USER_AGENT = "awesome-marmot-discovery/1.0 (+https://github.com/marmot-protocol/awesome-marmot)"
 
 GITHUB_REPO = re.compile(r"https?://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
-# Match repository URLs but stop at Markdown link destinations: "](" is the
-# link-text boundary, so a following "(https://github.com/a/b)" is skipped.
-REPO_URL = re.compile(r"(?<!\]\()https?://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+[^\s)\]]*")
+REPO_URL = re.compile(
+    r"https?://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:\.git)?",
+    re.I,
+)
 
 
 def load_json(path: Path, default):
@@ -96,7 +97,13 @@ def run_nak(args: list[str]) -> list[dict]:
             continue
         event = json.loads(line)
         # Belt-and-braces: verify each event signature with nak itself.
-        check = subprocess.run(["nak", "verify"], input=line, capture_output=True, text=True, check=False)
+        try:
+            check = subprocess.run(
+                ["nak", "verify"], input=line, capture_output=True, text=True,
+                check=False, timeout=10,
+            )
+        except subprocess.TimeoutExpired:
+            continue
         if check.returncode != 0:
             continue
         events.append(event)
