@@ -1,0 +1,78 @@
+name: Weekly Marmot discovery
+
+on:
+  schedule:
+    - cron: "17 8 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: weekly-marmot-discovery
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24.x"
+      - name: Install pinned Nostr verifier
+        run: go install github.com/fiatjaf/nak@v0.20.2
+      - name: Collect and verify leads
+        id: intake
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          result=$(python scripts/discover.py --days 10 --output /tmp/discovery-report.md --write-seen)
+          count=$(python -c 'import json,sys; print(json.loads(sys.argv[1])["candidates"])' "$result")
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          cat /tmp/discovery-report.md >> "$GITHUB_STEP_SUMMARY"
+          cp data/discovery-seen.json /tmp/discovery-seen.json
+      - name: Upload the auditable intake report
+        uses: actions/upload-artifact@v4
+        with:
+          name: marmot-discovery-report
+          path: /tmp/discovery-report.md
+      - name: Prepare deterministic proposal
+        if: steps.intake.outputs.count != '0'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          # Cross-week dedup: if a prior week's discovery PR is still open, update that
+          # branch instead of creating a new ISO-week branch (avoids duplicate PRs).
+          branch="automation/marmot-discovery-$(date -u +%G-W%V)"
+          prior=$(gh pr list --state open --search "automation/marmot-discovery- in:head" \
+            --json headRefName --jq '.[0].headRefName // empty')
+          if [ -n "$prior" ]; then
+            branch="$prior"
+          fi
+          git fetch origin "refs/heads/$branch:refs/remotes/origin/$branch" || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+            git switch -C "$branch" "origin/$branch"
+          else
+            git switch -c "$branch" origin/master
+          fi
+          cp /tmp/discovery-report.md discovery-report.md
+          cp /tmp/discovery-seen.json data/discovery-seen.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add discovery-report.md data/discovery-seen.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: propose verified Marmot discoveries"
+          git push --force-with-lease -u origin "$branch"
+          existing=$(gh pr list --head "$branch" --state open --json url --jq '.[0].url // empty')
+          if [ -z "$existing" ]; then
+            gh pr create --base master --head "$branch" \
+              --title "chore: review verified weekly Marmot discoveries" \
+              --body "Automated, evidence-gated intake only. Review discovery-report.md, independently confirm each project, and edit README.md manually if accepted."
+          fi
