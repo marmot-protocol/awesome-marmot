@@ -1,0 +1,483 @@
+# Weekly Marmot discovery report
+
+Window: last 10 days. Generated: 2026-08-17 UTC.
+
+## Summary
+
+- Retained source events: 261
+- Rejected leads: 144
+- Verified new candidates: 7
+- Source failures: 0
+
+## Verified candidates
+
+### aljazceru/awesome-nostr
+
+- URL: https://github.com/aljazceru/awesome-nostr
+- Last push: 2026-08-17T08:18:14Z
+- Description: nostr.net - awesome-nostr is a collection of projects and resources built on nostr to help developers and users find new things 
+- Provenance:
+  - Nostr Recap weekly review c84b0bd5c60899379d23455fe4955ee88def5d3cfe7f3393dd399959b1f2b73f wss://nos.lol
+  - Nostr Recap weekly review c84b0bd5c60899379d23455fe4955ee88def5d3cfe7f3393dd399959b1f2b73f wss://nostr.mom
+  - Nostr Recap weekly review c84b0bd5c60899379d23455fe4955ee88def5d3cfe7f3393dd399959b1f2b73f wss://relay.damus.io
+
+### marmot-protocol/agent-p1p
+
+- URL: https://github.com/marmot-protocol/agent-p1p
+- Last push: 2026-08-16T21:07:48Z
+- Description: 
+- Provenance:
+  - GitHub organization inventory marmot-protocol/agent-p1p
+
+### marmot-protocol/awesome-marmot
+
+- URL: https://github.com/marmot-protocol/awesome-marmot
+- Last push: 2026-08-10T08:31:25Z
+- Description: A curated list of apps, libraries, and tools built on the Marmot Protocol
+- Provenance:
+  - GitHub organization inventory marmot-protocol/awesome-marmot
+
+### marmot-protocol/facet
+
+- URL: https://github.com/marmot-protocol/facet
+- Last push: 2026-07-24T13:25:52Z
+- Description: 
+- Provenance:
+  - GitHub organization inventory marmot-protocol/facet
+
+### marmot-protocol/keycast
+
+- URL: https://github.com/marmot-protocol/keycast
+- Last push: 2026-05-18T10:35:07Z
+- Description: 
+- Provenance:
+  - GitHub organization inventory marmot-protocol/keycast
+
+### marmot-protocol/marmot-web
+
+- URL: https://github.com/marmot-protocol/marmot-web
+- Last push: 2025-12-05T18:36:48Z
+- Description: The marmot protocol website
+- Provenance:
+  - GitHub organization inventory marmot-protocol/marmot-web
+
+### marmot-protocol/whitenoise-podcast
+
+- URL: https://github.com/marmot-protocol/whitenoise-podcast
+- Last push: 2026-03-09T21:11:18Z
+- Description: White Noise Podcast
+- Provenance:
+  - GitHub organization inventory marmot-protocol/whitenoise-podcast
+
+## Rejected leads
+
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/nostr-protocol/nostr: no activity in last 365 days (pushed_at=2025-06-27T20:23:51Z) (NostrMag weekly issues)
+- https://github.com/block/buzz: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/block/buzz: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/block/buzz: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/mostrop2p/mostro-core: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/zapstore/zsp: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/77elements/noornote: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/codytseng/jumble: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/divinevideo/divine-mobile: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/greenart7c3/amber: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/nostrord/nostrord: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/nostur-com/nostur-ios-public: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/zeschlauskwab/earthly: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/zeschlauskwab/wavefunc: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/ptrio42/sandstr.app: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/trinidz/rssnotes: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/trinidz/rssnotes: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/mmalmi/nostr-vpn: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/routstr/routstr-core: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/shocknet/lightning.pub: no explicit Marmot reference in description or README (Nostr Recap weekly review)
+- https://github.com/marmot-protocol/.github: README.md not found and description lacks explicit Marmot evidence (GitHub organization inventory)
+- https://github.com/marmot-protocol/agent-config: no explicit Marmot reference in description or README (GitHub organization inventory)
+- https://github.com/marmot-protocol/darkmatter: archived repository (GitHub organization inventory)
+- https://github.com/marmot-protocol/ipf.dev: no explicit Marmot reference in description or README (GitHub organization inventory)
+- https://github.com/marmot-protocol/media-assets: no activity in last 365 days (pushed_at=2025-07-03T16:21:06Z) (GitHub organization inventory)
+- https://github.com/marmot-protocol/parres.org: no activity in last 365 days (pushed_at=2025-03-14T13:12:21Z) (GitHub organization inventory)
+- https://github.com/marmot-protocol/proton-beam: no explicit Marmot reference in description or README (GitHub organization inventory)
+- https://github.com/marmot-protocol/whitenoise-archive: archived repository (GitHub organization inventory)
+- https://github.com/marmot-protocol/whitenoise-desktop: archived repository (GitHub organization inventory)
+- https://github.com/marmot-protocol/whitenoise-ios-old: archived repository (GitHub organization inventory)
+- https://github.com/marmot-protocol/whitenoise-meta: no explicit Marmot reference in description or README (GitHub organization inventory)
+- https://github.com/marmot-protocol/whitenoise-web: no explicit Marmot reference in description or README (GitHub organization inventory)
+
+## Retained source events (audit trail)
+
+- 81ba3f5e7ad3178f4bb88f4177f8873df9a11d8d1eb684ac602c80b2f2696643 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- 81ba3f5e7ad3178f4bb88f4177f8873df9a11d8d1eb684ac602c80b2f2696643 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- 8af8261b5650777f12e91a2624f3101e5045a38bd2abc565157cadfbe9028022 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- 8af8261b5650777f12e91a2624f3101e5045a38bd2abc565157cadfbe9028022 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- 8af8261b5650777f12e91a2624f3101e5045a38bd2abc565157cadfbe9028022 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- fafcb208bd3464bbf97e8c3c19c942e0d3e1994347afe744368bfffc4b81bf29 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- fafcb208bd3464bbf97e8c3c19c942e0d3e1994347afe744368bfffc4b81bf29 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w30bitcoin01
+- 9bbcdbf88458bc127cd6c2da7e4ff848e97ce21bbefda5179c07a951f497ce7c source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w31bitcoin04
+- 9bbcdbf88458bc127cd6c2da7e4ff848e97ce21bbefda5179c07a951f497ce7c source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w31bitcoin04
+- 1a780597d7c9b87278f112dcbc3cf56c7d1cdef7058414843cf7f141a3a74868 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w31bitcoin05
+- 1a780597d7c9b87278f112dcbc3cf56c7d1cdef7058414843cf7f141a3a74868 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w31bitcoin05
+- 356757c46a598848f5ca22acb26388b762404276cb85160b11355536b7a4bc78 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w31bitcoin05
+- 356757c46a598848f5ca22acb26388b762404276cb85160b11355536b7a4bc78 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w31bitcoin05
+- 3455b56b916dbbb694c45b793fde4e707d06d21db1f98fe300139b1ca404e48b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 3455b56b916dbbb694c45b793fde4e707d06d21db1f98fe300139b1ca404e48b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 3963bd9870a616621d14d00961cf121b7daac490ca738ee485222249dd134f4f source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 3963bd9870a616621d14d00961cf121b7daac490ca738ee485222249dd134f4f source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 3963bd9870a616621d14d00961cf121b7daac490ca738ee485222249dd134f4f source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 5b8c401444ef789de03c354aebfea39e06097feae18354a568ca645b9a299f87 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 5b8c401444ef789de03c354aebfea39e06097feae18354a568ca645b9a299f87 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- fd7de073b00cc984af6fe6ffba136d2571cb68b9c0fc9c0d64ff7cbfe635b793 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- fd7de073b00cc984af6fe6ffba136d2571cb68b9c0fc9c0d64ff7cbfe635b793 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin01
+- 1fde77c19cbeab2991c02ad47ffe2626e05f33a4872bfe6fb0ddab1d223abb22 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 1fde77c19cbeab2991c02ad47ffe2626e05f33a4872bfe6fb0ddab1d223abb22 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 1fde77c19cbeab2991c02ad47ffe2626e05f33a4872bfe6fb0ddab1d223abb22 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 74fa56a86e975947261ce6cdb31364b1d00ea5140618f90b4c9d8eacf917e9c9 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 74fa56a86e975947261ce6cdb31364b1d00ea5140618f90b4c9d8eacf917e9c9 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 94561bbc980c5be5906bb37a4b7eb4a4eb26ec575394f1c1d95e10eb207bf74c source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 94561bbc980c5be5906bb37a4b7eb4a4eb26ec575394f1c1d95e10eb207bf74c source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin02
+- 36b76d6c7c1748bbc40022197f08849340ccfc302bb9e5a4a181e02cb97170ce source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- 36b76d6c7c1748bbc40022197f08849340ccfc302bb9e5a4a181e02cb97170ce source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- 36b76d6c7c1748bbc40022197f08849340ccfc302bb9e5a4a181e02cb97170ce source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- 99b87ca3a0423cae93de829bcb33e122096846622aebc87b489d4c2aa48f59b4 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- 99b87ca3a0423cae93de829bcb33e122096846622aebc87b489d4c2aa48f59b4 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- afd96ce38b9a569135de707bfa5ed58eac19120f1189dbb71290c520e1dba213 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- afd96ce38b9a569135de707bfa5ed58eac19120f1189dbb71290c520e1dba213 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- f2e3e7a5cb3cf267ddef701c8949c18b8bfb8b3bf6b1f02ac182255f53f30f15 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- f2e3e7a5cb3cf267ddef701c8949c18b8bfb8b3bf6b1f02ac182255f53f30f15 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32bitcoin03
+- 049fb86bf999ad809f1534ab9891243a7df418aa50f46d641598a887e461c544 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- 049fb86bf999ad809f1534ab9891243a7df418aa50f46d641598a887e461c544 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- 049fb86bf999ad809f1534ab9891243a7df418aa50f46d641598a887e461c544 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- 3e81a551405194dd5536d18bbe6f9062343f15e76eefa3f1df7825c2e04ddf73 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- 3e81a551405194dd5536d18bbe6f9062343f15e76eefa3f1df7825c2e04ddf73 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- d000634a7148894144a2c664af45dfcbb8ea58740398d383fe60a958e20474c6 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- d000634a7148894144a2c664af45dfcbb8ea58740398d383fe60a958e20474c6 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- d000634a7148894144a2c664af45dfcbb8ea58740398d383fe60a958e20474c6 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr01
+- 1fc1bb6642201f3664934c0fcf63f47c1e1b06f9af06e24aff136a6ae8f86abe source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- 1fc1bb6642201f3664934c0fcf63f47c1e1b06f9af06e24aff136a6ae8f86abe source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- 34d72089257b085491077245e9d1551d872a7243ab386efcebdd3e15ec7dfbc4 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- 34d72089257b085491077245e9d1551d872a7243ab386efcebdd3e15ec7dfbc4 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- 34d72089257b085491077245e9d1551d872a7243ab386efcebdd3e15ec7dfbc4 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- a8d240979aa5c236eb88e6d7cfcaf72c611fe1017431c84dff9d6413184a698b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- a8d240979aa5c236eb88e6d7cfcaf72c611fe1017431c84dff9d6413184a698b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr02
+- 33704410d9b0b08024996594cc7b91df776c277c11ce06fad9fe7fd129cfc5a5 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- 33704410d9b0b08024996594cc7b91df776c277c11ce06fad9fe7fd129cfc5a5 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- 43474818dc5c354105f99391cf669785ca031cad4a4193b5d14390e9795a37f9 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- 43474818dc5c354105f99391cf669785ca031cad4a4193b5d14390e9795a37f9 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- 43474818dc5c354105f99391cf669785ca031cad4a4193b5d14390e9795a37f9 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- ab8d1f7ea412b780136d2dc3dfef7dd6d8abbabea091b2afd3b3360657532970 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- ab8d1f7ea412b780136d2dc3dfef7dd6d8abbabea091b2afd3b3360657532970 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- c8fb26bb2cb596c97b2387425b8e820a0ca2e5129b5688d582a2a8aaec96f43a source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- c8fb26bb2cb596c97b2387425b8e820a0ca2e5129b5688d582a2a8aaec96f43a source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32nostr03
+- 31843b9e626314a47353f38771f438d3c5cbbb1641d6f425bcae4c3398b179ae source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 31843b9e626314a47353f38771f438d3c5cbbb1641d6f425bcae4c3398b179ae source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 31843b9e626314a47353f38771f438d3c5cbbb1641d6f425bcae4c3398b179ae source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 3a09e62010f25215efdf537cc1f6c59439de107d01db9e3733f863c160afa23d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 3a09e62010f25215efdf537cc1f6c59439de107d01db9e3733f863c160afa23d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 577dc162cf1e573b1bdd37556d255cf85ce6249ca2ac97965fc5dba3ebdeac70 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 577dc162cf1e573b1bdd37556d255cf85ce6249ca2ac97965fc5dba3ebdeac70 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 654e694b0da618845d7f078ec9a7b35c539971db60f047df7f4aa3b888ed5a13 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 654e694b0da618845d7f078ec9a7b35c539971db60f047df7f4aa3b888ed5a13 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 84e42ea281328f64ed819942ef0199ac0c36323d6b2eab036ddd8da109272993 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 84e42ea281328f64ed819942ef0199ac0c36323d6b2eab036ddd8da109272993 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 84e42ea281328f64ed819942ef0199ac0c36323d6b2eab036ddd8da109272993 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- a30ceedecf7be628c8ab17e10225ff4451182207c93aa30b633f3d55b1b2681d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- a30ceedecf7be628c8ab17e10225ff4451182207c93aa30b633f3d55b1b2681d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- a30ceedecf7be628c8ab17e10225ff4451182207c93aa30b633f3d55b1b2681d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- b9b630e648ad20b779ea3b4e62eaef70139e4dfbcd919e8c6c67ea76f9a25024 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- b9b630e648ad20b779ea3b4e62eaef70139e4dfbcd919e8c6c67ea76f9a25024 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- fc9be67b4a26127e68b5eaaecb56f21e627c8a15e1e25ecdaa5a08793a0d98c2 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- fc9be67b4a26127e68b5eaaecb56f21e627c8a15e1e25ecdaa5a08793a0d98c2 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w32travel02
+- 25c095e8c5e2eab821a1d54ef2413ffb17079ab1edce9f1a0f9d9089f1871e7d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- 25c095e8c5e2eab821a1d54ef2413ffb17079ab1edce9f1a0f9d9089f1871e7d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- 6a732fb3577e60c077937ea93c0eca30f60787d454762768fd16648357bdfb0b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- 6a732fb3577e60c077937ea93c0eca30f60787d454762768fd16648357bdfb0b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- 6a732fb3577e60c077937ea93c0eca30f60787d454762768fd16648357bdfb0b source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- 855ca7e315c313e8406206c3c2b9926b2b07a83fdd557d69395689a13782c398 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- e7eefaf57598063d81d17e921331d2988e8d55e98c27ddd65a7aab0afc7143fd source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- e7eefaf57598063d81d17e921331d2988e8d55e98c27ddd65a7aab0afc7143fd source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- feae33e74775ff5aea0cebad9b1209f0c62ec1eec6be29e1ac23d592d008b576 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bicoin01
+- 048557575a9f50142abf027925dda14a5cd1143f1f00a444ed7150451b31e755 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 048557575a9f50142abf027925dda14a5cd1143f1f00a444ed7150451b31e755 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 048557575a9f50142abf027925dda14a5cd1143f1f00a444ed7150451b31e755 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 0d474f8ef02b525cfbc541b6f02601574997970e6f54fa0ffe0c26d196edc906 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 0d474f8ef02b525cfbc541b6f02601574997970e6f54fa0ffe0c26d196edc906 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 0fa6d90db13b3a04d4a8f66858d3d273132389dcac132375385348fac727c124 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 0fa6d90db13b3a04d4a8f66858d3d273132389dcac132375385348fac727c124 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 846736ff48b776aaec44da2877ee154c0c064be6275d36ed5acc32d52a0a6c93 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- 846736ff48b776aaec44da2877ee154c0c064be6275d36ed5acc32d52a0a6c93 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- b6198136610d2c5d7069ba96411043915c6448dae4b6584bfd5473713f88ebeb source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- b6198136610d2c5d7069ba96411043915c6448dae4b6584bfd5473713f88ebeb source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin02
+- ec7f27de76a4a3e3bb7b7503328075dce28e25ba3f96a59ea0a35f35f7a293c6 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin03
+- ec7f27de76a4a3e3bb7b7503328075dce28e25ba3f96a59ea0a35f35f7a293c6 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33bitcoin03
+- 04536047414c9b9355953ef4fa06c1754687911f7fd85bc13dc11527a19c539d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01
+- 04536047414c9b9355953ef4fa06c1754687911f7fd85bc13dc11527a19c539d source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01
+- 9e512d01a40a89e27e849f3b7d448d1b8dfaf14b4bcc0730e77bd3c8628ce358 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01
+- 9e512d01a40a89e27e849f3b7d448d1b8dfaf14b4bcc0730e77bd3c8628ce358 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01
+- 0fab353d2bead7d92fa3ee9338fbba4ddc4ab8cd1e9cba460978e393d5683bc5 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01-1-2026
+- 0fab353d2bead7d92fa3ee9338fbba4ddc4ab8cd1e9cba460978e393d5683bc5 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01-1-2026
+- 995ce5661f0f8538af31dfd78dbf515dfc99df026bfd975b4fe73a02eb8c574e source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01-1-2026
+- 995ce5661f0f8538af31dfd78dbf515dfc99df026bfd975b4fe73a02eb8c574e source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33nostr01-1-2026
+- 9d647f507e0c6740ee6e1a4d30c9d8b979f1edcada9348261a2a2ca7b81c1bd5 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33travel01
+- 9d647f507e0c6740ee6e1a4d30c9d8b979f1edcada9348261a2a2ca7b81c1bd5 source=NostrMag weekly issues relay=None article=https://nostrmag.com/article/w33travel01
+- 04536047414c9b9355953ef4fa06c1754687911f7fd85bc13dc11527a19c539d source=NostrMag weekly issues relay=wss://nos.lol
+- 04536047414c9b9355953ef4fa06c1754687911f7fd85bc13dc11527a19c539d source=NostrMag weekly issues relay=wss://nostr.mom
+- 048557575a9f50142abf027925dda14a5cd1143f1f00a444ed7150451b31e755 source=NostrMag weekly issues relay=wss://nos.lol
+- 048557575a9f50142abf027925dda14a5cd1143f1f00a444ed7150451b31e755 source=NostrMag weekly issues relay=wss://nostr.mom
+- 048557575a9f50142abf027925dda14a5cd1143f1f00a444ed7150451b31e755 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 049fb86bf999ad809f1534ab9891243a7df418aa50f46d641598a887e461c544 source=NostrMag weekly issues relay=wss://nos.lol
+- 049fb86bf999ad809f1534ab9891243a7df418aa50f46d641598a887e461c544 source=NostrMag weekly issues relay=wss://nostr.mom
+- 049fb86bf999ad809f1534ab9891243a7df418aa50f46d641598a887e461c544 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 088c739ab84087866f7d889fc4a37e4c2b01772d6652afd543343a915fd5cce9 source=Nostr Recap weekly review relay=wss://nos.lol
+- 088c739ab84087866f7d889fc4a37e4c2b01772d6652afd543343a915fd5cce9 source=Nostr Recap weekly review relay=wss://nostr.mom
+- 088c739ab84087866f7d889fc4a37e4c2b01772d6652afd543343a915fd5cce9 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- 0d474f8ef02b525cfbc541b6f02601574997970e6f54fa0ffe0c26d196edc906 source=NostrMag weekly issues relay=wss://nos.lol
+- 0d474f8ef02b525cfbc541b6f02601574997970e6f54fa0ffe0c26d196edc906 source=NostrMag weekly issues relay=wss://nostr.mom
+- 0fa6d90db13b3a04d4a8f66858d3d273132389dcac132375385348fac727c124 source=NostrMag weekly issues relay=wss://nos.lol
+- 0fa6d90db13b3a04d4a8f66858d3d273132389dcac132375385348fac727c124 source=NostrMag weekly issues relay=wss://nostr.mom
+- 0fab353d2bead7d92fa3ee9338fbba4ddc4ab8cd1e9cba460978e393d5683bc5 source=NostrMag weekly issues relay=wss://nos.lol
+- 0fab353d2bead7d92fa3ee9338fbba4ddc4ab8cd1e9cba460978e393d5683bc5 source=NostrMag weekly issues relay=wss://nostr.mom
+- 1a780597d7c9b87278f112dcbc3cf56c7d1cdef7058414843cf7f141a3a74868 source=NostrMag weekly issues relay=wss://nos.lol
+- 1a780597d7c9b87278f112dcbc3cf56c7d1cdef7058414843cf7f141a3a74868 source=NostrMag weekly issues relay=wss://nostr.mom
+- 1fc1bb6642201f3664934c0fcf63f47c1e1b06f9af06e24aff136a6ae8f86abe source=NostrMag weekly issues relay=wss://nos.lol
+- 1fc1bb6642201f3664934c0fcf63f47c1e1b06f9af06e24aff136a6ae8f86abe source=NostrMag weekly issues relay=wss://nostr.mom
+- 1fde77c19cbeab2991c02ad47ffe2626e05f33a4872bfe6fb0ddab1d223abb22 source=NostrMag weekly issues relay=wss://nos.lol
+- 1fde77c19cbeab2991c02ad47ffe2626e05f33a4872bfe6fb0ddab1d223abb22 source=NostrMag weekly issues relay=wss://nostr.mom
+- 1fde77c19cbeab2991c02ad47ffe2626e05f33a4872bfe6fb0ddab1d223abb22 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 25c095e8c5e2eab821a1d54ef2413ffb17079ab1edce9f1a0f9d9089f1871e7d source=NostrMag weekly issues relay=wss://nos.lol
+- 25c095e8c5e2eab821a1d54ef2413ffb17079ab1edce9f1a0f9d9089f1871e7d source=NostrMag weekly issues relay=wss://nostr.mom
+- 31843b9e626314a47353f38771f438d3c5cbbb1641d6f425bcae4c3398b179ae source=NostrMag weekly issues relay=wss://nos.lol
+- 31843b9e626314a47353f38771f438d3c5cbbb1641d6f425bcae4c3398b179ae source=NostrMag weekly issues relay=wss://nostr.mom
+- 31843b9e626314a47353f38771f438d3c5cbbb1641d6f425bcae4c3398b179ae source=NostrMag weekly issues relay=wss://relay.damus.io
+- 31baa409cafe273170eb6eb0aa3b58b871e5bfe9a57448abf44df309c4556876 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- 33704410d9b0b08024996594cc7b91df776c277c11ce06fad9fe7fd129cfc5a5 source=NostrMag weekly issues relay=wss://nos.lol
+- 33704410d9b0b08024996594cc7b91df776c277c11ce06fad9fe7fd129cfc5a5 source=NostrMag weekly issues relay=wss://nostr.mom
+- 3455b56b916dbbb694c45b793fde4e707d06d21db1f98fe300139b1ca404e48b source=NostrMag weekly issues relay=wss://nos.lol
+- 3455b56b916dbbb694c45b793fde4e707d06d21db1f98fe300139b1ca404e48b source=NostrMag weekly issues relay=wss://nostr.mom
+- 34d72089257b085491077245e9d1551d872a7243ab386efcebdd3e15ec7dfbc4 source=NostrMag weekly issues relay=wss://nos.lol
+- 34d72089257b085491077245e9d1551d872a7243ab386efcebdd3e15ec7dfbc4 source=NostrMag weekly issues relay=wss://nostr.mom
+- 34d72089257b085491077245e9d1551d872a7243ab386efcebdd3e15ec7dfbc4 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 356757c46a598848f5ca22acb26388b762404276cb85160b11355536b7a4bc78 source=NostrMag weekly issues relay=wss://nos.lol
+- 356757c46a598848f5ca22acb26388b762404276cb85160b11355536b7a4bc78 source=NostrMag weekly issues relay=wss://nostr.mom
+- 36b76d6c7c1748bbc40022197f08849340ccfc302bb9e5a4a181e02cb97170ce source=NostrMag weekly issues relay=wss://nos.lol
+- 36b76d6c7c1748bbc40022197f08849340ccfc302bb9e5a4a181e02cb97170ce source=NostrMag weekly issues relay=wss://nostr.mom
+- 36b76d6c7c1748bbc40022197f08849340ccfc302bb9e5a4a181e02cb97170ce source=NostrMag weekly issues relay=wss://relay.damus.io
+- 3963bd9870a616621d14d00961cf121b7daac490ca738ee485222249dd134f4f source=NostrMag weekly issues relay=wss://nos.lol
+- 3963bd9870a616621d14d00961cf121b7daac490ca738ee485222249dd134f4f source=NostrMag weekly issues relay=wss://nostr.mom
+- 3963bd9870a616621d14d00961cf121b7daac490ca738ee485222249dd134f4f source=NostrMag weekly issues relay=wss://relay.damus.io
+- 3a09e62010f25215efdf537cc1f6c59439de107d01db9e3733f863c160afa23d source=NostrMag weekly issues relay=wss://nos.lol
+- 3a09e62010f25215efdf537cc1f6c59439de107d01db9e3733f863c160afa23d source=NostrMag weekly issues relay=wss://nostr.mom
+- 3e81a551405194dd5536d18bbe6f9062343f15e76eefa3f1df7825c2e04ddf73 source=NostrMag weekly issues relay=wss://nos.lol
+- 3e81a551405194dd5536d18bbe6f9062343f15e76eefa3f1df7825c2e04ddf73 source=NostrMag weekly issues relay=wss://nostr.mom
+- 42297544adc2b2efb2da93fa46ec95ca2d0bc6ec7442895a4a134fec1cb72a7f source=Nostr Recap weekly review relay=wss://nos.lol
+- 42297544adc2b2efb2da93fa46ec95ca2d0bc6ec7442895a4a134fec1cb72a7f source=Nostr Recap weekly review relay=wss://nostr.mom
+- 43474818dc5c354105f99391cf669785ca031cad4a4193b5d14390e9795a37f9 source=NostrMag weekly issues relay=wss://nos.lol
+- 43474818dc5c354105f99391cf669785ca031cad4a4193b5d14390e9795a37f9 source=NostrMag weekly issues relay=wss://nostr.mom
+- 43474818dc5c354105f99391cf669785ca031cad4a4193b5d14390e9795a37f9 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 436c27623eddc662dbc9e3d4d1a9125ec3cbc5173a41d482a5a013b37f5339c5 source=Nostr Recap weekly review relay=wss://nos.lol
+- 436c27623eddc662dbc9e3d4d1a9125ec3cbc5173a41d482a5a013b37f5339c5 source=Nostr Recap weekly review relay=wss://nostr.mom
+- 436c27623eddc662dbc9e3d4d1a9125ec3cbc5173a41d482a5a013b37f5339c5 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- 4fe00d3d2a0824661cbe8e058fa4c7ecadd6dcd5fc35c7af789c7d006124960c source=Nostr Recap weekly review relay=wss://nos.lol
+- 4fe00d3d2a0824661cbe8e058fa4c7ecadd6dcd5fc35c7af789c7d006124960c source=Nostr Recap weekly review relay=wss://nostr.mom
+- 4fe00d3d2a0824661cbe8e058fa4c7ecadd6dcd5fc35c7af789c7d006124960c source=Nostr Recap weekly review relay=wss://relay.damus.io
+- 577dc162cf1e573b1bdd37556d255cf85ce6249ca2ac97965fc5dba3ebdeac70 source=NostrMag weekly issues relay=wss://nos.lol
+- 577dc162cf1e573b1bdd37556d255cf85ce6249ca2ac97965fc5dba3ebdeac70 source=NostrMag weekly issues relay=wss://nostr.mom
+- 5b8c401444ef789de03c354aebfea39e06097feae18354a568ca645b9a299f87 source=NostrMag weekly issues relay=wss://nos.lol
+- 5b8c401444ef789de03c354aebfea39e06097feae18354a568ca645b9a299f87 source=NostrMag weekly issues relay=wss://nostr.mom
+- 654e694b0da618845d7f078ec9a7b35c539971db60f047df7f4aa3b888ed5a13 source=NostrMag weekly issues relay=wss://nos.lol
+- 654e694b0da618845d7f078ec9a7b35c539971db60f047df7f4aa3b888ed5a13 source=NostrMag weekly issues relay=wss://nostr.mom
+- 6a732fb3577e60c077937ea93c0eca30f60787d454762768fd16648357bdfb0b source=NostrMag weekly issues relay=wss://nos.lol
+- 6a732fb3577e60c077937ea93c0eca30f60787d454762768fd16648357bdfb0b source=NostrMag weekly issues relay=wss://nostr.mom
+- 6a732fb3577e60c077937ea93c0eca30f60787d454762768fd16648357bdfb0b source=NostrMag weekly issues relay=wss://relay.damus.io
+- 74fa56a86e975947261ce6cdb31364b1d00ea5140618f90b4c9d8eacf917e9c9 source=NostrMag weekly issues relay=wss://nos.lol
+- 74fa56a86e975947261ce6cdb31364b1d00ea5140618f90b4c9d8eacf917e9c9 source=NostrMag weekly issues relay=wss://nostr.mom
+- 81ba3f5e7ad3178f4bb88f4177f8873df9a11d8d1eb684ac602c80b2f2696643 source=NostrMag weekly issues relay=wss://nos.lol
+- 81ba3f5e7ad3178f4bb88f4177f8873df9a11d8d1eb684ac602c80b2f2696643 source=NostrMag weekly issues relay=wss://nostr.mom
+- 846736ff48b776aaec44da2877ee154c0c064be6275d36ed5acc32d52a0a6c93 source=NostrMag weekly issues relay=wss://nos.lol
+- 846736ff48b776aaec44da2877ee154c0c064be6275d36ed5acc32d52a0a6c93 source=NostrMag weekly issues relay=wss://nostr.mom
+- 84e42ea281328f64ed819942ef0199ac0c36323d6b2eab036ddd8da109272993 source=NostrMag weekly issues relay=wss://nos.lol
+- 84e42ea281328f64ed819942ef0199ac0c36323d6b2eab036ddd8da109272993 source=NostrMag weekly issues relay=wss://nostr.mom
+- 84e42ea281328f64ed819942ef0199ac0c36323d6b2eab036ddd8da109272993 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 855ca7e315c313e8406206c3c2b9926b2b07a83fdd557d69395689a13782c398 source=NostrMag weekly issues relay=wss://nos.lol
+- 8af8261b5650777f12e91a2624f3101e5045a38bd2abc565157cadfbe9028022 source=NostrMag weekly issues relay=wss://nos.lol
+- 8af8261b5650777f12e91a2624f3101e5045a38bd2abc565157cadfbe9028022 source=NostrMag weekly issues relay=wss://nostr.mom
+- 8af8261b5650777f12e91a2624f3101e5045a38bd2abc565157cadfbe9028022 source=NostrMag weekly issues relay=wss://relay.damus.io
+- 8bc8e4f63ff7987e21fbb5a179091dff4271cb2ce8b430bdf5fb4023a8cfe950 source=Nostr Recap weekly review relay=wss://nos.lol
+- 8bc8e4f63ff7987e21fbb5a179091dff4271cb2ce8b430bdf5fb4023a8cfe950 source=Nostr Recap weekly review relay=wss://nostr.mom
+- 9103aeec2ce10ff6fea282235fbf3a044ed55a0e0a194957a98253b74406fa84 source=Nostr Recap weekly review relay=wss://nos.lol
+- 9103aeec2ce10ff6fea282235fbf3a044ed55a0e0a194957a98253b74406fa84 source=Nostr Recap weekly review relay=wss://nostr.mom
+- 94561bbc980c5be5906bb37a4b7eb4a4eb26ec575394f1c1d95e10eb207bf74c source=NostrMag weekly issues relay=wss://nos.lol
+- 94561bbc980c5be5906bb37a4b7eb4a4eb26ec575394f1c1d95e10eb207bf74c source=NostrMag weekly issues relay=wss://nostr.mom
+- 995ce5661f0f8538af31dfd78dbf515dfc99df026bfd975b4fe73a02eb8c574e source=NostrMag weekly issues relay=wss://nos.lol
+- 995ce5661f0f8538af31dfd78dbf515dfc99df026bfd975b4fe73a02eb8c574e source=NostrMag weekly issues relay=wss://nostr.mom
+- 99b87ca3a0423cae93de829bcb33e122096846622aebc87b489d4c2aa48f59b4 source=NostrMag weekly issues relay=wss://nos.lol
+- 99b87ca3a0423cae93de829bcb33e122096846622aebc87b489d4c2aa48f59b4 source=NostrMag weekly issues relay=wss://nostr.mom
+- 9bbcdbf88458bc127cd6c2da7e4ff848e97ce21bbefda5179c07a951f497ce7c source=NostrMag weekly issues relay=wss://nos.lol
+- 9bbcdbf88458bc127cd6c2da7e4ff848e97ce21bbefda5179c07a951f497ce7c source=NostrMag weekly issues relay=wss://nostr.mom
+- 9bf199a1e4795de2ad6210e57b8b49fbac344614b2047f716122f2887b08d82c source=Nostr Recap weekly review relay=wss://nos.lol
+- 9bf199a1e4795de2ad6210e57b8b49fbac344614b2047f716122f2887b08d82c source=Nostr Recap weekly review relay=wss://nostr.mom
+- 9bf199a1e4795de2ad6210e57b8b49fbac344614b2047f716122f2887b08d82c source=Nostr Recap weekly review relay=wss://relay.damus.io
+- 9d647f507e0c6740ee6e1a4d30c9d8b979f1edcada9348261a2a2ca7b81c1bd5 source=NostrMag weekly issues relay=wss://nos.lol
+- 9d647f507e0c6740ee6e1a4d30c9d8b979f1edcada9348261a2a2ca7b81c1bd5 source=NostrMag weekly issues relay=wss://nostr.mom
+- 9e512d01a40a89e27e849f3b7d448d1b8dfaf14b4bcc0730e77bd3c8628ce358 source=NostrMag weekly issues relay=wss://nos.lol
+- 9e512d01a40a89e27e849f3b7d448d1b8dfaf14b4bcc0730e77bd3c8628ce358 source=NostrMag weekly issues relay=wss://nostr.mom
+- a30ceedecf7be628c8ab17e10225ff4451182207c93aa30b633f3d55b1b2681d source=NostrMag weekly issues relay=wss://nos.lol
+- a30ceedecf7be628c8ab17e10225ff4451182207c93aa30b633f3d55b1b2681d source=NostrMag weekly issues relay=wss://nostr.mom
+- a30ceedecf7be628c8ab17e10225ff4451182207c93aa30b633f3d55b1b2681d source=NostrMag weekly issues relay=wss://relay.damus.io
+- a8d240979aa5c236eb88e6d7cfcaf72c611fe1017431c84dff9d6413184a698b source=NostrMag weekly issues relay=wss://nos.lol
+- a8d240979aa5c236eb88e6d7cfcaf72c611fe1017431c84dff9d6413184a698b source=NostrMag weekly issues relay=wss://nostr.mom
+- aa2dc14e7f8174f68810863b4bb05be063bee3498f21e6b296e112d85281c443 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- aa7664b7c24af2a76b7849d47190424fe3390dacecc12c9938ba9302473a55dd source=Nostr Recap weekly review relay=wss://relay.damus.io
+- ab8d1f7ea412b780136d2dc3dfef7dd6d8abbabea091b2afd3b3360657532970 source=NostrMag weekly issues relay=wss://nos.lol
+- ab8d1f7ea412b780136d2dc3dfef7dd6d8abbabea091b2afd3b3360657532970 source=NostrMag weekly issues relay=wss://nostr.mom
+- afd96ce38b9a569135de707bfa5ed58eac19120f1189dbb71290c520e1dba213 source=NostrMag weekly issues relay=wss://nos.lol
+- afd96ce38b9a569135de707bfa5ed58eac19120f1189dbb71290c520e1dba213 source=NostrMag weekly issues relay=wss://nostr.mom
+- b6198136610d2c5d7069ba96411043915c6448dae4b6584bfd5473713f88ebeb source=NostrMag weekly issues relay=wss://nos.lol
+- b6198136610d2c5d7069ba96411043915c6448dae4b6584bfd5473713f88ebeb source=NostrMag weekly issues relay=wss://nostr.mom
+- b9b630e648ad20b779ea3b4e62eaef70139e4dfbcd919e8c6c67ea76f9a25024 source=NostrMag weekly issues relay=wss://nos.lol
+- b9b630e648ad20b779ea3b4e62eaef70139e4dfbcd919e8c6c67ea76f9a25024 source=NostrMag weekly issues relay=wss://nostr.mom
+- c04cf8365e881fa2abe53b2aab2dddda8e7b8f24910891c75981da42d0910729 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- c8302e547df39ca71d08da7132756d6aac64bd90d6dda88d8669fc0cf581d191 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- c84b0bd5c60899379d23455fe4955ee88def5d3cfe7f3393dd399959b1f2b73f source=Nostr Recap weekly review relay=wss://nos.lol
+- c84b0bd5c60899379d23455fe4955ee88def5d3cfe7f3393dd399959b1f2b73f source=Nostr Recap weekly review relay=wss://nostr.mom
+- c84b0bd5c60899379d23455fe4955ee88def5d3cfe7f3393dd399959b1f2b73f source=Nostr Recap weekly review relay=wss://relay.damus.io
+- c8fb26bb2cb596c97b2387425b8e820a0ca2e5129b5688d582a2a8aaec96f43a source=NostrMag weekly issues relay=wss://nos.lol
+- c8fb26bb2cb596c97b2387425b8e820a0ca2e5129b5688d582a2a8aaec96f43a source=NostrMag weekly issues relay=wss://nostr.mom
+- cbaebb7bb6a8a0f2d18c55c6ae6b7f18ee52ee0606e360eac33e311bd08afcfb source=Nostr Recap weekly review relay=wss://nos.lol
+- cbaebb7bb6a8a0f2d18c55c6ae6b7f18ee52ee0606e360eac33e311bd08afcfb source=Nostr Recap weekly review relay=wss://nostr.mom
+- d000634a7148894144a2c664af45dfcbb8ea58740398d383fe60a958e20474c6 source=NostrMag weekly issues relay=wss://nos.lol
+- d000634a7148894144a2c664af45dfcbb8ea58740398d383fe60a958e20474c6 source=NostrMag weekly issues relay=wss://nostr.mom
+- d000634a7148894144a2c664af45dfcbb8ea58740398d383fe60a958e20474c6 source=NostrMag weekly issues relay=wss://relay.damus.io
+- e1656b05f675b687788adf65e0ed8bec3e182a651c97761c5a210d3dc0ba0935 source=Nostr Recap weekly review relay=wss://nos.lol
+- e1656b05f675b687788adf65e0ed8bec3e182a651c97761c5a210d3dc0ba0935 source=Nostr Recap weekly review relay=wss://nostr.mom
+- e22cc7c9fd11e8a0951d2a997cc1a513d3d42bbf4c0c7b07279b37c76ce16bcf source=Nostr Recap weekly review relay=wss://relay.damus.io
+- e7eefaf57598063d81d17e921331d2988e8d55e98c27ddd65a7aab0afc7143fd source=NostrMag weekly issues relay=wss://nos.lol
+- e7eefaf57598063d81d17e921331d2988e8d55e98c27ddd65a7aab0afc7143fd source=NostrMag weekly issues relay=wss://nostr.mom
+- ec7f27de76a4a3e3bb7b7503328075dce28e25ba3f96a59ea0a35f35f7a293c6 source=NostrMag weekly issues relay=wss://nos.lol
+- ec7f27de76a4a3e3bb7b7503328075dce28e25ba3f96a59ea0a35f35f7a293c6 source=NostrMag weekly issues relay=wss://nostr.mom
+- f2e3e7a5cb3cf267ddef701c8949c18b8bfb8b3bf6b1f02ac182255f53f30f15 source=NostrMag weekly issues relay=wss://nos.lol
+- f2e3e7a5cb3cf267ddef701c8949c18b8bfb8b3bf6b1f02ac182255f53f30f15 source=NostrMag weekly issues relay=wss://nostr.mom
+- f808e8863a78a9ca84bf33db6a4a526e6f5a3643e41fa8c5c3a9e0a57d617fd9 source=Nostr Recap weekly review relay=wss://relay.damus.io
+- fafcb208bd3464bbf97e8c3c19c942e0d3e1994347afe744368bfffc4b81bf29 source=NostrMag weekly issues relay=wss://nos.lol
+- fafcb208bd3464bbf97e8c3c19c942e0d3e1994347afe744368bfffc4b81bf29 source=NostrMag weekly issues relay=wss://nostr.mom
+- fc9be67b4a26127e68b5eaaecb56f21e627c8a15e1e25ecdaa5a08793a0d98c2 source=NostrMag weekly issues relay=wss://nos.lol
+- fc9be67b4a26127e68b5eaaecb56f21e627c8a15e1e25ecdaa5a08793a0d98c2 source=NostrMag weekly issues relay=wss://nostr.mom
+- fd7de073b00cc984af6fe6ffba136d2571cb68b9c0fc9c0d64ff7cbfe635b793 source=NostrMag weekly issues relay=wss://nos.lol
+- fd7de073b00cc984af6fe6ffba136d2571cb68b9c0fc9c0d64ff7cbfe635b793 source=NostrMag weekly issues relay=wss://nostr.mom
+- feae33e74775ff5aea0cebad9b1209f0c62ec1eec6be29e1ac23d592d008b576 source=NostrMag weekly issues relay=wss://nostr.mom
+- feede7fad81445c20a99aacc7a0086d924270b55ff2578875514e28997d9e1bd source=Nostr Recap weekly review relay=wss://nos.lol
+- feede7fad81445c20a99aacc7a0086d924270b55ff2578875514e28997d9e1bd source=Nostr Recap weekly review relay=wss://nostr.mom
+- feede7fad81445c20a99aacc7a0086d924270b55ff2578875514e28997d9e1bd source=Nostr Recap weekly review relay=wss://relay.damus.io
+
+Report digest: 639d5c88edc7433c2fd608cb543f44766a66960aa811f2f8165e2e9c915d61dc
