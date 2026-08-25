@@ -1,19 +1,30 @@
-# Awesome Marmot
+# Awesome Marmot 🦫
 
-A curated catalog of software that implements or directly supports the [Marmot Protocol](https://github.com/marmot-protocol/marmot): MLS-based, end-to-end encrypted group messaging transported over Nostr.
+A curated catalog of apps, libraries, integrations, and developer tools built on the [Marmot Protocol](https://github.com/marmot-protocol/marmot)—MLS-based, end-to-end encrypted group messaging transported over Nostr.
 
-> **Project status:** **active** means its canonical repository has had public activity within the last 12 months. **inactive** means the repository is writable but has not. **beta/experimental** is the maintainer's own maturity signal. **archived** means the canonical repository is read-only or superseded. Activity is not a security endorsement; review each project's threat model and release notes before relying on it.
+![Catalog checks](https://img.shields.io/github/actions/workflow/status/marmot-protocol/awesome-marmot/ci.yml?label=catalog%20checks)
 
-## Contents
+## Explore the ecosystem
 
-- [Apps](#apps)
-- [Agent and automation integrations](#agent-and-automation-integrations)
-- [SDKs and libraries](#sdks-and-libraries)
-- [Infrastructure and developer tools](#infrastructure-and-developer-tools)
-- [Examples](#examples)
-- [Archived and superseded projects](#archived-and-superseded-projects)
-- [Discovery and verification](#discovery-and-verification)
-- [Contributing](#contributing)
+| I want to… | Start here |
+| --- | --- |
+| Use a Marmot client | [Apps](#apps) |
+| Connect an agent or automation | [Agent and automation integrations](#agent-and-automation-integrations) |
+| Build with Marmot | [SDKs and libraries](#sdks-and-libraries) or [Examples](#examples) |
+| Operate or inspect Marmot systems | [Infrastructure and developer tools](#infrastructure-and-developer-tools) |
+| Research older implementations | [Archived and superseded projects](#archived-and-superseded-projects) |
+| Add a project | [Contributing](#contributing) |
+
+### Status labels
+
+| Label | Meaning |
+| --- | --- |
+| **active** | The canonical repository has had public activity within the last 12 months. |
+| **inactive** | The repository remains writable but has not had public activity within the last 12 months. |
+| **alpha**, **beta**, or **experimental** | The project's maintainer uses this maturity label. |
+| **archived** | The canonical repository is read-only or the project has been superseded. |
+
+Activity is not a security endorsement. Review each project's threat model and release notes before relying on it.
 
 ## Protocol
 
@@ -67,11 +78,12 @@ A curated catalog of software that implements or directly supports the [Marmot P
 
 ## Infrastructure and developer tools
 
-- [transponder](https://github.com/marmot-protocol/transponder) — **active** — MIP-05 notification server.
+- [Facet](https://github.com/marmot-protocol/facet) — **active** — Nostr-native comparison and decision tracker whose first board tracks feature parity across White Noise clients.
 - [goggles](https://github.com/marmot-protocol/goggles) — **active** — Explorer for `marmot-forensics-audit/v1` JSONL traces.
+- [marmot-server](https://github.com/nmadd57/marmot-server) — **active** — Local Docker service exposing a REST API for Marmot.
 - [nostr-doctor](https://github.com/marmot-protocol/nostr-doctor) — **active** — Nostr user and pubkey diagnostics.
 - [propose](https://github.com/marmot-protocol/propose) — **active** — MLS proposal/commit scenario test harness.
-- [marmot-server](https://github.com/nmadd57/marmot-server) — **active** — Local Docker service exposing a REST API for Marmot.
+- [transponder](https://github.com/marmot-protocol/transponder) — **active** — MIP-05 notification server.
 
 ## Examples
 
