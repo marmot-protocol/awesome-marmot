@@ -37,6 +37,7 @@ A curated catalog of software that implements or directly supports the [Marmot P
 ### Location, media, and device apps
 
 - [Haven](https://github.com/mehmetefeumit/Haven-App) — **active** — Private Android/iOS location sharing over Marmot, without a central account service.
+- [Mafrend](https://github.com/DestBro/mafrend-zapstore) — **active, alpha, closed-source** — Map-first Nostr social app with Marmot-based private groups, invitations, group maps, and encrypted group media; the linked public repository hosts Zapstore metadata and APK releases rather than the private app source.
 - [Whistle](https://github.com/sjmcnamara/whistle) — **active** — Cross-platform group location sharing and chat over Nostr, MLS, and Marmot.
 - [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) — **active** — Bluetooth/Nostr messenger and wallet with Marmot group DMs interoperable with White Noise.
 - [FMDtr](https://gitlab.com/Kalle/fmdtr-android) — **active** — Android device finder and remote-control app with Marmot, SMS, messenger, and server transports.
@@ -100,7 +101,7 @@ Roundups, store listings, Compass, and search results are **leads, not proof**. 
 
 Pull requests are welcome. For each entry, include:
 
-- its canonical public repository (not an app-store mirror);
+- its canonical public source repository, or for a closed-source app a verified public release/metadata repository that clearly identifies the private source boundary;
 - primary-source evidence that it implements or directly supports Marmot, not merely MLS or encrypted Nostr DMs;
 - a one-line, factual description and honest maturity/status label;
 - evidence of maintenance, or an explicit archived/unmaintained label.
