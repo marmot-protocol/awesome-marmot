@@ -12,6 +12,8 @@ The activity window is **90 days**, measured backwards from the snapshot timesta
 
 No audit logs, credentials, private implementation details, or installation data were used or published. Broad discovery used a local mirror first; final classifications used direct forge reads. The snapshot fixes the evidence in time so CI is repeatable without a network connection.
 
+Archive status uses a forge-neutral field. GitLab did not return an archive flag in the inspected project response, so FMDtr records it as unknown (`null`), not a fabricated false value. Its inactive label reports the verified old commit without claiming the repository is writable. GitLab subgroup paths retain their full project identity during URL normalization.
+
 ## Important corrections and evidence
 
 - **MDK terminal tools:** [CLI README](https://github.com/marmot-protocol/mdk/blob/a21a7b1d27afb863b3fd590058c66e6a22649391/crates/cli/README.md) documents `wn` commands/TUI and `wnd`, the background daemon. [Old terminal client README](https://github.com/marmot-protocol/wn-tui/blob/5191bc92f5da0532ebc469e908f6b33ae760b6c9/README.md) explicitly deprecates that standalone project, even though its GitHub archive flag is false.

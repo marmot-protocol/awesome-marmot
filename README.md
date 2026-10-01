@@ -76,7 +76,7 @@ These support the ecosystem rather than implementing Marmot messaging.
 
 ## No recent public commits
 
-These repositories are not archived, but their default branches had no commits within the 90-day window. This is a lower-confidence starting point for new users—not proof that their maintainers have abandoned them. Dates are the last default-branch commits at the audit.
+These repositories had no default-branch commits within the 90-day window and no verified archive or deprecation marker. This is a lower-confidence starting point for new users—not proof that their maintainers have abandoned them. Dates are the last default-branch commits at the audit.
 
 ### Apps and prototypes
 
@@ -140,7 +140,7 @@ Protocol version and activity are separate facts.
 | Activity label | Meaning at the dated check |
 | --- | --- |
 | **active** | A public default-branch commit within 90 days. |
-| **inactive** | No public default-branch commit within 90 days; repository remains writable. |
+| **inactive** | No public default-branch commit within 90 days; not known to be archived or deprecated. |
 | **archived** | GitHub marks it archived, or its maintainer explicitly deprecates it. |
 | **unverified** | The canonical source could not be checked; do not infer inactivity. |
 

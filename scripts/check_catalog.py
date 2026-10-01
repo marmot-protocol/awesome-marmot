@@ -21,7 +21,12 @@ MONOREPOS = {
 
 def canonical_repository(url: str) -> str:
     parts = urlsplit(url)
-    path = "/".join(parts.path.strip("/").split("/")[:2]).removesuffix(".git")
+    path = parts.path.strip("/")
+    if parts.netloc.lower() == "gitlab.com":
+        path = path.split("/-/")[0]
+    else:
+        path = "/".join(path.split("/")[:2])
+    path = path.removesuffix(".git")
     return f"{parts.scheme.lower()}://{parts.netloc.lower()}/{path.lower()}"
 
 
@@ -66,9 +71,11 @@ def check_catalog(text: str, audit: dict) -> list[str]:
                 raise ValueError("missing immutable commit or default branch")
             if record["commit"] not in record["source"]:
                 raise ValueError("source must be pinned to the checked commit")
-            archived = record["github_archived"]
+            archived = record["archived"]
             deprecated = record.get("deprecation_evidence")
-            if not isinstance(archived, bool):
+            if not isinstance(archived, bool) and not (
+                archived is None and urlsplit(url).netloc.lower() != "github.com"
+            ):
                 raise ValueError("invalid archive flag")
             if deprecated and (record["commit"] not in deprecated or not deprecated.startswith(url + "/")):
                 raise ValueError("deprecation needs pinned maintainer evidence")

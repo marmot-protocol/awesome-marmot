@@ -125,6 +125,16 @@ class CatalogTests(unittest.TestCase):
         record["historical_source"] = record["repository"] + "/tree/flutter-final"
         self.assertTrue(any("historical source" in e for e in self.check()))
 
+    def test_gitlab_subgroups_keep_distinct_repository_identities(self):
+        first = catalog.canonical_repository("https://gitlab.com/team/subgroup/first/-/tree/master")
+        second = catalog.canonical_repository("https://gitlab.com/team/subgroup/second")
+        self.assertEqual(first, "https://gitlab.com/team/subgroup/first")
+        self.assertNotEqual(first, second)
+
+    def test_github_archive_metadata_cannot_be_unknown(self):
+        self.audit["repositories"][0]["archived"] = None
+        self.assertTrue(any("archive flag" in e for e in self.check()))
+
 
 if __name__ == "__main__":
     unittest.main()
