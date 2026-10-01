@@ -59,6 +59,18 @@ def check_catalog(text: str, audit: dict) -> list[str]:
                 raise ValueError("active source implementation needs a verified protocol generation")
             if not record["source"].startswith("https://") or not record["note"]:
                 raise ValueError("missing primary source or note")
+            features = record.get("feature_evidence")
+            if features is not None:
+                if not isinstance(features, list) or not features:
+                    raise ValueError("feature evidence must be a nonempty list")
+                for target in features:
+                    if not isinstance(target, str) or not target.startswith("https://"):
+                        raise ValueError("invalid feature evidence URL")
+                    if urlsplit(target).netloc.lower() in {"github.com", "gitlab.com"}:
+                        if not re.search(r"/blob/[0-9a-f]{40}/", target):
+                            raise ValueError("feature evidence must be immutable")
+                if not any(record.get("commit", "") and record["commit"] in target for target in features):
+                    raise ValueError("feature evidence must include the checked repository commit")
             evidence = record.get("generation_evidence")
             if evidence is not None:
                 if not isinstance(evidence, list) or not evidence:
@@ -110,6 +122,24 @@ def check_catalog(text: str, audit: dict) -> list[str]:
             repositories[key] = record
         except (KeyError, TypeError, ValueError, AttributeError) as error:
             errors.append(f"invalid audit record: {record.get('repository', 'unknown')}: {error}")
+
+    removed = set()
+    removals = audit.get("removed_repositories", [])
+    if not isinstance(removals, list):
+        errors.append("invalid removal inventory")
+        removals = []
+    for record in removals:
+        try:
+            key = canonical_repository(record["repository"])
+            if not record["repository"].startswith("https://") or key in repositories or key in removed:
+                raise ValueError("duplicate or still-listed repository")
+            if dt.date.fromisoformat(record["removed_on"]) > checked.date():
+                raise ValueError("future removal date")
+            if not record["reason"].strip() or not record["source"].startswith("https://"):
+                raise ValueError("missing removal reason or source")
+            removed.add(key)
+        except (KeyError, TypeError, ValueError, AttributeError):
+            errors.append("invalid repository removal record")
 
     seen = set()
     entry_urls = set()

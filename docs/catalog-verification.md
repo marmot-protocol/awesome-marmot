@@ -4,11 +4,11 @@ This is a dated public-source audit, not a live health monitor or an interoperab
 
 ## Scope and method
 
-All previously listed projects remain discoverable. The audit checked **45 distinct GitHub repositories**, the GitLab FMDtr repository, and the Codeberg NostrBotKit endpoint. MDK's CLI and Claude Code integration, and Quartz inside Amethyst, are additional entries in existing repositories.
+The catalog retains **45 distinct GitHub repositories** and the GitLab FMDtr repository. NostrBotKit was removed on the owner's explicit instruction after a second failed source check; the original inventory and a dated removal record preserve that decision. MDK's CLI and Claude Code integration, and Quartz inside Amethyst, are additional entries in existing repositories.
 
-For each available GitHub repository, authenticated primary API reads supplied its canonical URL, archive flag, default branch, exact head commit, and committer timestamp. README files, dependency manifests, migration notes, or implementation files were then inspected at that commit to classify protocol generation. The [snapshot](../data/catalog-audit.json) retains all 47 repository records and pinned public source links. GitLab supplied FMDtr's default branch and latest commit; its bridge manifest was read at that commit. Codeberg's canonical page and repository API both returned 404.
+For each available GitHub repository, authenticated primary API reads supplied its canonical URL, archive flag, default branch, exact head commit, and committer timestamp. README files, dependency manifests, migration notes, or implementation files were then inspected at that commit to classify protocol generation. The [snapshot](../data/catalog-audit.json) retains 46 repository records and pinned public source links. GitLab supplied FMDtr's default branch and latest commit; its bridge manifest was read at that commit. Codeberg's canonical page and repository API both returned 404.
 
-The activity window is **90 days**, measured backwards from the snapshot timestamp. There are **17 recently updated repositories**, **19 without recent public commits**, **10 archived or explicitly deprecated**, and **1 unavailable**. Counts are repositories, not individual catalog entries. MDK and Amethyst contain several entries.
+The activity window is **90 days**, measured backwards from the snapshot timestamp. There are **17 recently updated repositories**, **19 without recent public commits**, and **10 archived or explicitly deprecated**. Counts are repositories, not individual catalog entries. MDK and Amethyst contain several entries.
 
 No audit logs, credentials, private implementation details, or installation data were used or published. Broad discovery used a local mirror first; final classifications used direct forge reads. The snapshot fixes the evidence in time so CI is repeatable without a network connection.
 
@@ -36,13 +36,40 @@ Archive status uses a forge-neutral field. GitLab did not return an archive flag
 - **The old Flutter repository is now a landing page:** its v1 label describes the historical app, not the current landing-page text. The [pinned flutter-final manifest](https://github.com/marmot-protocol/whitenoise/blob/9fca13f0eb19cb1266e86e20a894f0eafbd0f957/rust/Cargo.toml) uses the superseded White Noise Rust core. This explicit historical-source exception is recorded separately from the latest default-branch activity.
 - **Botburrow and AgentNoise are not recently updated:** their [Botburrow](https://github.com/marmot-protocol/botburrow/blob/e608ba5ff7c69e461867acfc08c6ac2ff3f5c926/README.md) and [AgentNoise](https://github.com/nvk/agentnoise/blob/41c9b3372c6fd366216e2894a2427db2190d41ab/README.md) setup instructions still reference the old White Noise Rust daemon. Their last default-branch commits were April 14 and June 27 respectively.
 - **Mafrend requires confirmation:** its [README](https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md) explicitly says implementation source is private and this repository contains store metadata and releases. No source-backed v1/v2 claim can be made. It is separated by source availability, not grouped with verified implementations awaiting a migration.
-- **NostrBotKit is unverified, not abandoned:** the [canonical source](https://codeberg.org/Tuxor/NostrBotKit) and [repository endpoint](https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit) could not be verified. A 404 can reflect several conditions; the historical listing is retained without invented commit dates.
+- **NostrBotKit removed by request:** the [canonical source](https://codeberg.org/Tuxor/NostrBotKit) and [repository endpoint](https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit) returned 404; a follow-up search found only copied listings and no replacement primary source. The owner explicitly requested removal if source could not be found. This does not assert abandonment. The unchanged baseline fixture and `removed_repositories` preserve the reason without inventing a commit.
+
+## App selection details
+
+The descriptions name useful distinctions rather than repeating “messenger.” `feature_evidence` in the [snapshot](../data/catalog-audit.json) records pinned primary sources separately from protocol-generation evidence. These are source/maintainer claims, not new hands-on tests or proof of every released binary.
+
+| App | Verified distinction and boundaries |
+| --- | --- |
+| White Noise Android | Dictation controls, read-aloud controller and Amber integration were inspected in source. No claim that every speech provider works offline. |
+| White Noise iOS | README documents multiple identities, QR profile sharing and generic APNS wakes with notification content rendered locally. |
+| White Noise macOS | README documents early SwiftUI, a single window, Apple Silicon only and macOS 15.6+. Distinct from the cross-platform desktop client. |
+| White Noise Linux | README documents HTML/Markdown chat export, PDF and static 3D previews, and a password-encrypted vault. Platform restrictions remain as noted above. |
+| MDK CLI/TUI | CLI README documents keyboard-driven TUI, JSON commands and the `wnd` daemon. |
+| Scramble | README documents voice messages, encrypted files, Amber and themes. Its legacy MIP/“any client” wording is not used as current generation or compatibility proof. |
+| Amethyst / amy | App README documents Android/desktop, public social feeds and Lightning tips. CLI README documents notes, NIP-17 DMs, Marmot groups and JSON. Generation proof is the implementation above, not the app README's older unchecked NIP-EE row. |
+| Haven | README documents private location circles, relay choice and no phone-number signup; beta without an independent security audit. |
+| marmots-web-chat | README describes a React reference app. Signer code requires a local secret for its proof; browser-extension/remote signers cannot provide that proof yet. |
+| Sonar | README documents phone Bluetooth mesh, online Nostr, Lightning wallet and nearby payments. Its matrix limits desktop BLE to discovery and has no desktop wallet; voice/video calls are still in progress and not advertised here. |
+| Whistle | README documents pausable maps, QR/NFC/AirDrop invites, movement-aware updates and critical-battery alerts. |
+| Mafrend | Publisher metadata describes shared places, rich POI cards and time-bound location messages. The official site lists these as current alpha capabilities and excludes continuous background tracking. Private implementation was not inspected. |
+| Pika | README documents voice calls across platforms and polls on iOS/Android; its sensitive/production-use warning is retained. |
+| Marmota | README documents browser group chat and local IndexedDB storage. Its listed hosted site was not tested. |
+| TubeStr | README documents persisted child profiles and parent zone; encrypted media, relay sharing/sync and recording pipeline remain unfinished. |
+| FMDtr | README documents locate, ring and remote-wipe commands over Marmot/SMS/web; no commands were run in this audit. |
+
+### Mafrend's builder and public contact
+
+Checked 2026-10-01: the [repository owner's public profile](https://github.com/DestBro) identifies **Dumitru** and links to Mafrend. The [official homepage](https://mafrend.com/) lists “Founder Direct”: [Telegram @destme7](https://t.me/destme7), [Nostr @mafrend.com](https://njump.me/_%40mafrend.com), and [dumitru.preguza@mafrend.com](mailto:dumitru.preguza@mafrend.com). These are public contact routes, not verification of a real-world surname or protocol generation. No contact was initiated. Payments and other roadmap items were not promoted as current features.
 
 ## Limits
 
 A recent commit can be a documentation update. An inactive repository may still be supported privately. Archive status overrides the 90-day window; explicit deprecation requires pinned maintainer evidence. Monorepo activity does not prove activity in each subdirectory, and a store metadata repository does not expose private development.
 
-The same-day classification follow-up inspected fresh isolated source clones and authenticated default-branch readbacks for Haven, marmots-web-chat, Whistle, TubeStr, marmot-server, the community OpenClaw plugin, standalone Quartz, and Mafrend; their heads matched this snapshot. Additional pinned engine evidence for Burrow and the Python example was read directly from GitHub. Only Mafrend's private generation and NostrBotKit's missing canonical source remain unresolved. Owner clarification has been requested rather than fabricating verification.
+The same-day classification follow-up inspected fresh isolated source clones and authenticated default-branch readbacks for Haven, marmots-web-chat, Whistle, TubeStr, marmot-server, the community OpenClaw plugin, standalone Quartz, and Mafrend; their heads matched this snapshot. Additional pinned engine evidence for Burrow and the Python example was read directly from GitHub. Mafrend's private implementation prevents a public-source generation check; its founder's public contact is provided above without inventing a v1/v2 claim. NostrBotKit was removed on explicit instruction after the bounded recheck.
 
 Offline CI checks evidence URL and integrity-value formatting, snapshot consistency, and local links; it does not download or certify remote source. The npm package's actual SHA-512 comparison was performed during this audit. GitLab's project metadata was queried again in this follow-up and still supplied no boolean archive flag for FMDtr.
 
@@ -53,11 +80,11 @@ Protocol classifications refer to inspected source—not an APK, a store release
 1. Read canonical metadata and the latest **default-branch commit**, not `pushed_at`.
 2. Inspect primary generation evidence at that same revision, including lockfiles and actual engine code where README wording is ambiguous. Do not use a pending update within v2 as a third protocol generation. If source cannot establish a fact, ask for a source or maintainer confirmation; do not invent a label. Use **unverified** for an unavailable source and retain the explicit limitation until resolved.
 3. Update all affected snapshot records, the README check date, entry labels/dates, and this dated note together. Recompute activity for the entire inventory against the new check timestamp.
-4. Preserve older entries in the appropriate section; do not silently drop them.
+4. Preserve older entries in the appropriate section. An explicitly requested removal needs a dated reason/source in `removed_repositories`; keep the original baseline fixture unchanged. Re-adding a removed project requires fresh primary evidence and reconciliation of that removal record.
 5. Run `python3 scripts/check_catalog.py` and `python3 -m unittest discover -s tests -v`. CI verifies coverage, labels, section placement, the activity window, immutable source references, local README links, and discovery regressions.
 
 The [weekly discovery workflow](discovery.md) creates reviewed leads. It does not continually refresh this snapshot or automatically certify existing entries.
 
 ## Entry requirements
 
-Provide primary evidence of a Marmot implementation or a relevant supporting role; MLS or encrypted Nostr DMs alone do not qualify. State private-source boundaries. Avoid duplicate renames and wrappers, and do not promote an empty scaffold or second-hand claim as a working implementation. Existing historical references remain explicitly marked rather than silently disappearing during a refresh.
+Provide primary evidence of a Marmot implementation or a relevant supporting role; MLS or encrypted Nostr DMs alone do not qualify. State private-source boundaries. Avoid duplicate renames and wrappers, and do not promote an empty scaffold or second-hand claim as a working implementation. Existing historical references remain explicitly marked unless an explicit removal is recorded as described above.

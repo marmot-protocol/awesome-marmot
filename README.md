@@ -18,16 +18,16 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Apps
 
-- [White Noise for Android](https://github.com/marmot-protocol/whitenoise-android) — **v2, active** — Native Android messenger.
-- [White Noise for iOS](https://github.com/marmot-protocol/whitenoise-ios) — **v2, active** — Native iPhone messenger.
-- [White Noise for macOS](https://github.com/marmot-protocol/whitenoise-mac) — **v2, active** — Native Mac messenger.
-- [White Noise for Linux](https://github.com/marmot-protocol/whitenoise-linux) — **v2, active** — Desktop messenger for Linux, Windows, macOS, and OpenBSD.
-- [MDK CLI and TUI](https://github.com/marmot-protocol/mdk/tree/master/crates/cli) — **v2, active** — Terminal chat and automation with `wn` and the `wnd` daemon.
-- [Scramble](https://github.com/DavidGershony/Scramble) — **v2, active** — Desktop and Android messenger with a v2 implementation.
-- [Amethyst](https://github.com/vitorpamplona/amethyst) — **v2, active** — Nostr client with built-in Marmot messaging.
-- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **v2, active** — Amethyst's terminal client.
-- [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active** — Private location sharing for Android and iOS.
-- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active** — Browser chat example using an early v2 profile.
+- [White Noise for Android](https://github.com/marmot-protocol/whitenoise-android) — **v2, active** — Native Android chat with voice dictation, read-aloud playback, and Amber signer support.
+- [White Noise for iOS](https://github.com/marmot-protocol/whitenoise-ios) — **v2, active** — Native iPhone chat with multiple identities, QR profile sharing, and notifications rendered privately on-device.
+- [White Noise for macOS](https://github.com/marmot-protocol/whitenoise-mac) — **v2, active** — Early native SwiftUI client with a single-window workspace; Apple Silicon and macOS 15.6+ only.
+- [White Noise for Linux](https://github.com/marmot-protocol/whitenoise-linux) — **v2, active** — Desktop chat for Linux, Windows, macOS, and OpenBSD, with chat export, PDF/3D attachment previews, and a password-encrypted vault.
+- [MDK CLI and TUI](https://github.com/marmot-protocol/mdk/tree/master/crates/cli) — **v2, active** — Keyboard-driven terminal chat with `wn`; JSON commands and the `wnd` background daemon also suit scripts and agents.
+- [Scramble](https://github.com/DavidGershony/Scramble) — **v2, active** — Desktop and Android chat with voice messages, encrypted file sharing, Amber login, and switchable themes.
+- [Amethyst](https://github.com/vitorpamplona/amethyst) — **v2, active** — Android and desktop Nostr client combining social feeds, Lightning tips, and Marmot groups in one app.
+- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **v2, active** — Amethyst from the terminal: post public notes, send private DMs, and manage Marmot groups with scriptable JSON output.
+- [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active, beta** — Android/iOS location sharing in private circles, with your choice of relays and no phone-number signup.
+- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active** — React browser-chat example for developers; local-key login and an early v2 profile, not a polished consumer app.
 
 ### Agents and automation
 
@@ -51,12 +51,12 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ## Marmot v1 — recently updated
 
-- [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) — **v1, active** — Bluetooth/Nostr messenger and wallet using the older MDK stack.
-- [Whistle](https://github.com/sjmcnamara/whistle) — **v1, active** — Group location sharing and chat for iOS and Android.
+- [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) — **v1, active** — Phone messaging over offline Bluetooth mesh or online Nostr, plus a Lightning wallet and nearby payments; desktop features differ.
+- [Whistle](https://github.com/sjmcnamara/whistle) — **v1, active** — iOS/Android group maps and chat with pausable live location, tap-to-join invites, and low-battery alerts for your circle.
 
 ## Closed-source apps
 
-- [Mafrend](https://github.com/DestBro/mafrend-zapstore) — **unknown, active, alpha, closed-source** — Map-first social app; public store metadata, private source.
+- [Mafrend](https://github.com/DestBro/mafrend-zapstore) — **unknown, active, alpha, closed-source** — Map-first chat with shared places, rich place cards, and time-limited location messages rather than continuous tracking. [Founder contact](https://t.me/destme7).
 
 ## Supporting tools — recently updated
 
@@ -70,10 +70,10 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Apps and prototypes
 
-- [Pika](https://github.com/justinmoon/pika) — **v1, inactive, alpha** — MDK 0.7-era messenger; not ready for secure production use · **2026-04-01**
-- [Marmota](https://github.com/dcadenas/marmota) — **v1, inactive, experimental** — Browser messenger using the older TypeScript stack · **2026-03-09**
-- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — **v1, inactive, scaffold** — Family-video prototype with a v1 MDK bridge; unfinished sharing flow · **2026-05-24**
-- [FMDtr](https://gitlab.com/Kalle/fmdtr-android) — **v1, inactive** — Android device finder with an MDK 0.8 bridge · **2026-06-19**
+- [Pika](https://github.com/justinmoon/pika) — **v1, inactive, alpha** — Cross-platform prototype with voice calls and mobile polls; not for sensitive or production use · **2026-04-01**
+- [Marmota](https://github.com/dcadenas/marmota) — **v1, inactive, experimental** — Browser group chat with locally stored history, using the older TypeScript stack · **2026-03-09**
+- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — **v1, inactive, scaffold** — Family-video prototype with parent-managed child profiles; encrypted sharing and sync are unfinished · **2026-05-24**
+- [FMDtr](https://gitlab.com/Kalle/fmdtr-android) — **v1, inactive** — Find, ring, or remotely wipe an Android device via Marmot, SMS, or a web interface · **2026-06-19**
 
 ### Agents, automation, and services
 
@@ -98,10 +98,6 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 
 </details>
-
-## Source unavailable at the last check
-
-- [NostrBotKit](https://codeberg.org/Tuxor/NostrBotKit) — **unknown, unverified** — Bot toolkit; canonical source returned 404.
 
 ## Archived and superseded
 
@@ -141,7 +137,6 @@ python3 -m unittest discover -s tests -v
 | **active** | Default-branch commit within 90 days |
 | **inactive** | No commit within 90 days; no known archive marker |
 | **archived** | Archived or explicitly deprecated |
-| **unverified** | Canonical source unavailable |
 
 ## Notes
 
@@ -149,7 +144,7 @@ python3 -m unittest discover -s tests -v
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 
-Follow each project's installation instructions. This catalog is not a security endorsement; unavailable sources are not assumed abandoned.
+Follow each project's installation instructions. Features describe checked source or, for closed-source Mafrend, its publisher's description—not new hands-on tests. This catalog is not a security endorsement.
 
 [Verification evidence](docs/catalog-verification.md) · [Audit snapshot](data/catalog-audit.json) · [Weekly discovery](docs/discovery.md)
 
