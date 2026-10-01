@@ -26,6 +26,8 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 - [Scramble](https://github.com/DavidGershony/Scramble) — **v2, active** — Desktop and Android messenger with a v2 implementation.
 - [Amethyst](https://github.com/vitorpamplona/amethyst) — **v2, active** — Nostr client with built-in Marmot messaging.
 - [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **v2, active** — Amethyst's terminal client.
+- [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active, beta** — Private location sharing for Android and iOS.
+- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active, experimental** — Browser chat example using an early v2 profile.
 
 ### Agents and automation
 
@@ -50,12 +52,10 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 ## Marmot v1 — recently updated
 
 - [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) — **v1, active** — Bluetooth/Nostr messenger and wallet using the older MDK stack.
+- [Whistle](https://github.com/sjmcnamara/whistle) — **v1, active** — Group location sharing and chat for iOS and Android.
 
-## Migrating or version not yet verified
+## Closed-source apps
 
-- [Haven](https://github.com/mehmetefeumit/Haven-App) — **transitional, active** — Private location sharing; migrating between v2 profiles.
-- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **transitional, active** — Browser chat example pinned to an early v2 profile.
-- [Whistle](https://github.com/sjmcnamara/whistle) — **unknown, active** — Group location sharing and chat; version unconfirmed.
 - [Mafrend](https://github.com/DestBro/mafrend-zapstore) — **unknown, active, alpha, closed-source** — Map-first social app; public store metadata, private source.
 
 ## Supporting tools — recently updated
@@ -72,24 +72,24 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 - [Pika](https://github.com/justinmoon/pika) — **v1, inactive, alpha** — MDK 0.7-era messenger; not ready for secure production use · **2026-04-01**
 - [Marmota](https://github.com/dcadenas/marmota) — **v1, inactive, experimental** — Browser messenger using the older TypeScript stack · **2026-03-09**
-- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — **unknown, inactive, scaffold** — Family-video prototype with an incomplete Marmot bridge · **2026-05-24**
+- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — **v1, inactive, scaffold** — Family-video prototype with a v1 MDK bridge; unfinished sharing flow · **2026-05-24**
 - [FMDtr](https://gitlab.com/Kalle/fmdtr-android) — **v1, inactive** — Android device finder with an MDK 0.8 bridge · **2026-06-19**
 
 ### Agents, automation, and services
 
 - [AgentNoise](https://github.com/nvk/agentnoise) — **adjacent, inactive** — Agent bridge using the old White Noise Rust daemon · **2026-06-27**
-- [Community OpenClaw plugin](https://github.com/tkhumush/openclaw-marmot) — **unknown, inactive** — Community plugin using an external CLI · **2026-05-16**
+- [Community OpenClaw plugin](https://github.com/tkhumush/openclaw-marmot) — **v1, inactive** — Community plugin for the older Marmot CLI · **2026-05-16**
 - [Community Hermes plugin](https://github.com/notmandatory/hermes-marmot) — **v1, inactive** — Older plugin using standalone Python bindings · **2026-05-27**
 - [Botburrow](https://github.com/marmot-protocol/botburrow) — **v1, inactive** — Bot bridge using the old White Noise Rust daemon · **2026-04-14**
 - [Burrow](https://github.com/CentauriAgent/burrow) — **v1, inactive** — Agent CLI/app with a legacy MDK pin · **2026-03-07**
 - [marmot-cli](https://github.com/kai-familiar/marmot-cli) — **v1, inactive** — Community CLI with an older MDK dependency · **2026-02-16**
 - [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — **v1, inactive** — Container wrapper for the older community CLI · **2026-03-02**
-- [marmot-server](https://github.com/nmadd57/marmot-server) — **unknown, inactive** — TypeScript REST service; version unconfirmed · **2026-04-05**
+- [marmot-server](https://github.com/nmadd57/marmot-server) — **v1, inactive** — REST service using MIP-era marmot-ts 0.4.0 · **2026-04-05**
 
 ### Libraries and old examples
 
 - [marmot-cs](https://github.com/DavidGershony/marmot-cs) — **v1, inactive** — Standalone MIP-era C# library · **2026-06-04**
-- [Standalone Quartz](https://github.com/vitorpamplona/quartz) — **unknown, inactive** — Older repository; current Quartz lives in Amethyst · **2025-09-23**
+- [Standalone Quartz](https://github.com/vitorpamplona/quartz) — **adjacent, inactive** — Empty repository; current Quartz lives in Amethyst · **2025-09-23**
 - [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) — **adjacent, inactive** — Sled storage for OpenMLS · **2025-05-30**
 - [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — **adjacent, inactive** — Redb storage for OpenMLS · **2025-01-21**
 - [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) — **adjacent, inactive** — LMDB storage for OpenMLS · **2025-01-12**
@@ -136,7 +136,6 @@ python3 -m unittest discover -s tests -v
 | --- | --- |
 | **v2** | Adopted post-MIP protocol |
 | **v1** | Older MIP-era protocol |
-| **transitional** | Migrating or using an early v2 profile |
 | **unknown** | Protocol version unconfirmed |
 | **adjacent** | Supporting tool, not a messaging implementation |
 | **active** | Default-branch commit within 90 days |

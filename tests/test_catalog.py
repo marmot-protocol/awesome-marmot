@@ -45,7 +45,47 @@ class CatalogTests(unittest.TestCase):
 
     def test_generation_is_not_inferred_from_name(self):
         record = next(r for r in self.audit["repositories"] if "Tubestr" in r["repository"])
+        self.assertEqual(record["generation"], "v1")
+        self.assertTrue(any("native/mdk_bridge/Cargo.toml" in url for url in record["generation_evidence"]))
+
+    def test_source_verified_generations_replace_catch_all(self):
+        expected = {
+            "Haven-App": "v2", "marmots-web-chat": "v2", "whistle": "v1",
+            "tubestr-v2": "v1", "marmot-server": "v1", "openclaw-marmot": "v1",
+            "quartz": "adjacent",
+        }
+        for name, generation in expected.items():
+            with self.subTest(name=name):
+                record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/" + name))
+                self.assertEqual(record["generation"], generation)
+                self.assertTrue(record["generation_evidence"])
+                self.assertTrue(any(record["commit"] in url for url in record["generation_evidence"]))
+        self.assertNotIn("Migrating or version not yet verified", self.text)
+        self.assertNotIn("transitional", catalog.GENERATIONS)
+
+    def test_unknown_active_implementation_is_rejected(self):
+        record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/whistle"))
+        record["generation"] = "unknown"
+        self.assertTrue(any("verified protocol generation" in e for e in self.check()))
+
+    def test_private_source_is_not_fabricated_as_verified(self):
+        record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/mafrend-zapstore"))
+        self.assertEqual(record["source_kind"], "store-metadata")
         self.assertEqual(record["generation"], "unknown")
+
+    def test_removed_catch_all_cannot_return(self):
+        text = self.text.replace("## Closed-source apps", "## Migrating or version not yet verified")
+        self.assertTrue(any("obsolete catalog" in e for e in self.check(text=text)))
+
+    def test_classification_evidence_requires_immutable_source(self):
+        record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/Haven-App"))
+        record["generation_evidence"][0] = record["repository"] + "/blob/main/haven-core/Cargo.toml"
+        self.assertTrue(any("immutable" in e for e in self.check()))
+
+    def test_registry_classification_requires_integrity(self):
+        record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/marmot-server"))
+        del record["dependency_integrity"]
+        self.assertTrue(any("package integrity" in e for e in self.check()))
 
     def test_deleted_entry_and_missing_audit_record_fail(self):
         lines = self.text.splitlines()

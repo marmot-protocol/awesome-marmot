@@ -11,7 +11,7 @@ import sys
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-GENERATIONS = {"v2", "v1", "transitional", "unknown", "adjacent"}
+GENERATIONS = {"v2", "v1", "unknown", "adjacent"}
 ACTIVITIES = {"active", "inactive", "archived", "unverified"}
 MONOREPOS = {
     "https://github.com/marmot-protocol/mdk",
@@ -55,8 +55,23 @@ def check_catalog(text: str, audit: dict) -> list[str]:
             generation, activity = record["generation"], record["activity"]
             if generation not in GENERATIONS or activity not in ACTIVITIES:
                 raise ValueError("invalid labels")
+            if activity == "active" and generation == "unknown" and record.get("source_kind") != "store-metadata":
+                raise ValueError("active source implementation needs a verified protocol generation")
             if not record["source"].startswith("https://") or not record["note"]:
                 raise ValueError("missing primary source or note")
+            evidence = record.get("generation_evidence")
+            if evidence is not None:
+                if not isinstance(evidence, list) or not evidence:
+                    raise ValueError("generation evidence must be a nonempty list")
+                for target in evidence:
+                    if not isinstance(target, str) or not target.startswith("https://"):
+                        raise ValueError("invalid generation evidence URL")
+                    if urlsplit(target).netloc.lower() == "github.com":
+                        if not re.search(r"/(blob|tree)/[0-9a-f]{40}(/|$)", target):
+                            raise ValueError("generation evidence must be immutable")
+                    elif urlsplit(target).netloc.lower() == "registry.npmjs.org":
+                        if not re.fullmatch(r"sha512-[A-Za-z0-9+/]{86}==", record.get("dependency_integrity", "")):
+                            raise ValueError("registry evidence needs package integrity")
             if activity == "unverified":
                 if generation != "unknown" or any(
                     field in record for field in ("commit", "last_commit_at", "default_branch")
@@ -71,6 +86,8 @@ def check_catalog(text: str, audit: dict) -> list[str]:
                 raise ValueError("missing immutable commit or default branch")
             if record["commit"] not in record["source"]:
                 raise ValueError("source must be pinned to the checked commit")
+            if evidence and not any(record["commit"] in target for target in evidence):
+                raise ValueError("generation evidence must include the checked repository commit")
             archived = record["archived"]
             deprecated = record.get("deprecation_evidence")
             if not isinstance(archived, bool) and not (
@@ -100,8 +117,7 @@ def check_catalog(text: str, audit: dict) -> list[str]:
     section_for = {
         ("active", "v2"): "Marmot v2 — recently updated",
         ("active", "v1"): "Marmot v1 — recently updated",
-        ("active", "transitional"): "Migrating or version not yet verified",
-        ("active", "unknown"): "Migrating or version not yet verified",
+        ("active", "unknown"): "Closed-source apps",
         ("active", "adjacent"): "Supporting tools — recently updated",
     }
     for number, line in enumerate(text.splitlines(), 1):
@@ -157,6 +173,7 @@ def check_catalog(text: str, audit: dict) -> list[str]:
     if f"**Checked {checked.date().isoformat()}.**" not in text:
         errors.append("README audit date must match the snapshot")
     for obsolete in ("current-spec", "legacy-spec", "365-day", "last 12 months",
+                     "Migrating or version not yet verified", "**transitional",
                      "https://github.com/marmot-protocol/mdk-web",
                      "https://github.com/marmot-protocol/mdk-ruby-example"):
         if obsolete in text:

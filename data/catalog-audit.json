@@ -44,7 +44,9 @@
       "generation": "unknown",
       "activity": "active",
       "source": "https://github.com/DestBro/mafrend-zapstore/tree/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef",
-      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only.",
+      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only; no source-backed protocol generation can be assigned.",
+      "source_kind": "store-metadata",
+      "generation_evidence": ["https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md"],
       "archived": false
     },
     {
@@ -52,10 +54,11 @@
       "default_branch": "main",
       "commit": "8d53c162af4fde0c6735581a1e0d137ef003101e",
       "last_commit_at": "2026-05-24T16:13:48Z",
-      "generation": "unknown",
+      "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/Tubestr/tubestr-v2/tree/8d53c162af4fde0c6735581a1e0d137ef003101e",
-      "note": "Family-video prototype; a completed Marmot bridge was not verified. “v2” in the repository name is not protocol evidence. Last commit: 2026-05-24.",
+      "note": "Family-video prototype. Its native bridge manifest and lockfile pin MIP-era MDK 0.7.1 at 8a8d06c19d617394b0e268f5f9adfad34db3cdf6, and bridge source uses NostrGroupConfigData. The README lists sharing/sync as unfinished; the repository name does not establish Marmot v2. Last commit: 2026-05-24.",
+      "generation_evidence": ["https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/Cargo.toml", "https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/Cargo.lock", "https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/src/api/mod.rs"],
       "archived": false
     },
     {
@@ -173,10 +176,11 @@
       "default_branch": "master",
       "commit": "e7974788cda712f16dade84f417933f9db93a894",
       "last_commit_at": "2026-09-11T14:57:44Z",
-      "generation": "transitional",
+      "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/marmots-web-chat/tree/e7974788cda712f16dade84f417933f9db93a894",
       "note": "Browser chat example pinned to an early v2 TypeScript revision; that pin still documents the earlier identity-proof profile.",
+      "generation_evidence": ["https://github.com/marmot-protocol/marmots-web-chat/tree/e7974788cda712f16dade84f417933f9db93a894/marmot-ts", "https://github.com/marmot-protocol/marmot-ts/blob/714fe294504a516def392d10f2e3e18ed41977eb/README.md"],
       "archived": false
     },
     {
@@ -409,10 +413,11 @@
       "default_branch": "main",
       "commit": "a7a8ab2036b39a6dd7d83375e9a80bdad4281823",
       "last_commit_at": "2026-09-28T05:05:06Z",
-      "generation": "transitional",
+      "generation": "v2",
       "activity": "active",
       "source": "https://github.com/mehmetefeumit/Haven-App/tree/a7a8ab2036b39a6dd7d83375e9a80bdad4281823",
-      "note": "Private location sharing. Its source and migration notes show an early v2 MDK dependency with later wire-profile changes still pending.",
+      "note": "Private location sharing. Manifest and lockfile pin adopted v2 MDK 0.9.4 at e391adc133a9b60e420da7a0446f014a180ac8d2; runtime uses AccountDeviceSession and app components. A future v2 identity-proof carrier migration remains separate from this verified generation.",
+      "generation_evidence": ["https://github.com/mehmetefeumit/Haven-App/blob/a7a8ab2036b39a6dd7d83375e9a80bdad4281823/haven-core/Cargo.toml", "https://github.com/mehmetefeumit/Haven-App/blob/a7a8ab2036b39a6dd7d83375e9a80bdad4281823/haven-core/src/nostr/mls/mod.rs", "https://github.com/marmot-protocol/mdk/blob/e391adc133a9b60e420da7a0446f014a180ac8d2/crates/traits/src/app_components/mod.rs"],
       "archived": false
     },
     {
@@ -420,10 +425,12 @@
       "default_branch": "main",
       "commit": "6878d89b564df3511de16650f80bdfc663344a04",
       "last_commit_at": "2026-04-05T00:05:09Z",
-      "generation": "unknown",
+      "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/nmadd57/marmot-server/tree/6878d89b564df3511de16650f80bdfc663344a04",
-      "note": "Dockerized REST service using the TypeScript library; its resolved protocol generation was not verified. Last commit: 2026-04-05.",
+      "note": "Dockerized REST service. Lockfile resolves @internet-privacy/marmot-ts 0.4.0; the registry archive matches the lockfile SHA-512 integrity and contains the MIP-01 MarmotGroupData custom extension (0xf2ee), not v2 app components. Last commit: 2026-04-05.",
+      "generation_evidence": ["https://github.com/nmadd57/marmot-server/blob/6878d89b564df3511de16650f80bdfc663344a04/package-lock.json", "https://registry.npmjs.org/@internet-privacy/marmot-ts/-/marmot-ts-0.4.0.tgz"],
+      "dependency_integrity": "sha512-kMg4kKLGh09PsMFu4LlPTtBUGkxwpFT5J9/a7XHQXiKTHS4aHs1N5lK3AcbljQ4Q1vU1h75UCdbIKID1znilnQ==",
       "archived": false
     },
     {
@@ -464,10 +471,11 @@
       "default_branch": "master",
       "commit": "5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c",
       "last_commit_at": "2026-09-23T09:32:11Z",
-      "generation": "unknown",
+      "generation": "v1",
       "activity": "active",
       "source": "https://github.com/sjmcnamara/whistle/tree/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c",
-      "note": "Group location sharing and chat; Marmot use is documented, but the implemented generation was not conclusively verified.",
+      "note": "Group location sharing and chat. Its protocol documentation specifies MIP-00 through MIP-03 and MDK 0.8.0-era operation; the Swift project pins the old standalone MDK bindings at 8a7a0a59208e28f721a3abd16c9bd2c0d12af0be. This is v1, not an unknown generation.",
+      "generation_evidence": ["https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/website/docs/wiki/PROTOCOL.md", "https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/project.yml", "https://github.com/marmot-protocol/mdk-swift/blob/8a7a0a59208e28f721a3abd16c9bd2c0d12af0be/README.md"],
       "archived": false
     },
     {
@@ -475,10 +483,11 @@
       "default_branch": "main",
       "commit": "a8322b1ecbe2a6eed60b58cf096aba99e22561ea",
       "last_commit_at": "2026-05-16T00:40:31Z",
-      "generation": "unknown",
+      "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/tkhumush/openclaw-marmot/tree/a8322b1ecbe2a6eed60b58cf096aba99e22561ea",
-      "note": "Separate community plugin using an external Marmot CLI; its exact protocol generation was not verified. Last commit: 2026-05-16.",
+      "note": "Separate community plugin whose documented tkhumush/marmot-cli engine uses the old MDK and NostrGroupConfigData API. Its v1 source expectation is verified; an unpinned upstream branch and configurable executable do not prove a particular installed binary or working current build. Last commit: 2026-05-16.",
+      "generation_evidence": ["https://github.com/tkhumush/openclaw-marmot/blob/a8322b1ecbe2a6eed60b58cf096aba99e22561ea/README.md", "https://github.com/tkhumush/marmot-cli/blob/97b3d0202d8a98ea88ab5e00ed4152dbe02c01a6/crates/marmot-agent-core/src/context.rs"],
       "archived": false
     },
     {
@@ -497,10 +506,11 @@
       "default_branch": "main",
       "commit": "41f2476bdf5aa96d1ed7c4bf584f926aabf0034f",
       "last_commit_at": "2025-09-23T23:03:11Z",
-      "generation": "unknown",
+      "generation": "adjacent",
       "activity": "inactive",
       "source": "https://github.com/vitorpamplona/quartz/tree/41f2476bdf5aa96d1ed7c4bf584f926aabf0034f",
-      "note": "Older standalone repository, separate from the active library inside Amethyst. Last commit: 2025-09-23.",
+      "note": "Empty standalone repository containing only .gitignore and LICENSE, not a Marmot implementation. Classified as an adjacent historical reference; the actual library is inside Amethyst. Last commit: 2025-09-23.",
+      "generation_evidence": ["https://github.com/vitorpamplona/quartz/tree/41f2476bdf5aa96d1ed7c4bf584f926aabf0034f"],
       "archived": false
     },
     {
