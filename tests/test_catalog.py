@@ -25,9 +25,11 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(self.check(), [])
 
     def test_all_previous_repositories_are_retained(self):
-        self.assertEqual(len(self.audit["repositories"]), 47)
         urls = [r["repository"] for r in self.audit["repositories"]]
         self.assertEqual(len(set(urls)), len(urls))
+        baseline = json.loads((ROOT / "tests/fixtures/catalog-repositories-20260909.json").read_text())
+        current = {catalog.canonical_repository(url) for url in urls}
+        self.assertTrue(set(baseline).issubset(current))
 
     def test_activity_is_an_exact_label_not_a_substring(self):
         text = self.text.replace("**v1, inactive, alpha**", "**v1, inactiveish, alpha**", 1)
