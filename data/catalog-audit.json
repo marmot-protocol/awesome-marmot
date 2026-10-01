@@ -364,7 +364,10 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/whitenoise-linux/tree/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc",
-      "note": "Desktop app built with Odin and Clay, using MDK through its native interface.",
+      "note": "Odin/Clay desktop client for Linux, Windows, macOS, and OpenBSD; supported targets verified in pinned build documentation and published release assets.",
+      "platforms": ["Linux", "Windows", "macOS", "OpenBSD"],
+      "platform_evidence": "https://github.com/marmot-protocol/whitenoise-linux/blob/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc/README.md",
+      "release_evidence": "https://github.com/marmot-protocol/whitenoise-linux/releases/tag/v2026.9.29-build.1",
       "archived": false
     },
     {

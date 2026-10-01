@@ -38,7 +38,7 @@ class CatalogTests(unittest.TestCase):
     def test_labels_and_last_dates_must_match_snapshot(self):
         for old, new in (
             ("**v1, inactive, alpha**", "**v2, active, alpha**"),
-            ("Last commit: **2026-04-01**", "Last commit: **2026-09-30**"),
+            ("**2026-04-01**", "**2026-09-30**"),
         ):
             with self.subTest(new=new):
                 self.assertTrue(self.check(text=self.text.replace(old, new, 1)))
@@ -134,6 +134,32 @@ class CatalogTests(unittest.TestCase):
     def test_github_archive_metadata_cannot_be_unknown(self):
         self.audit["repositories"][0]["archived"] = None
         self.assertTrue(any("archive flag" in e for e in self.check()))
+
+    def test_caveats_stay_at_bottom(self):
+        notes = self.text.index("## Notes")
+        last_entry = self.text.rindex("\n- [")
+        self.assertGreater(notes, last_entry)
+        for phrase in ("**Checked ", "maintenance guarantee", "not interchangeable", "security endorsement"):
+            with self.subTest(phrase=phrase):
+                self.assertGreater(self.text.index(phrase), notes)
+
+    def test_older_sections_are_collapsible_without_dropping_entries(self):
+        self.assertEqual(self.text.count("<details>"), 2)
+        self.assertEqual(self.text.count("</details>"), 2)
+        inactive = sum(r["activity"] == "inactive" for r in self.audit["repositories"])
+        archived = sum(r["activity"] == "archived" for r in self.audit["repositories"])
+        self.assertIn(f"<summary>{inactive} projects · last commit dates</summary>", self.text)
+        self.assertIn(f"<summary>{archived} historical projects</summary>", self.text)
+        self.assertEqual(self.check(), [])
+
+    def test_linux_client_platforms_match_verified_evidence(self):
+        record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/whitenoise-linux"))
+        self.assertEqual(record["platforms"], ["Linux", "Windows", "macOS", "OpenBSD"])
+        self.assertIn(record["commit"], record["platform_evidence"])
+        entry = next(l for l in self.text.splitlines() if l.startswith("- [White Noise for Linux]"))
+        for platform in record["platforms"]:
+            self.assertIn(platform, entry)
+        self.assertNotIn("FreeBSD", entry)
 
 
 if __name__ == "__main__":
