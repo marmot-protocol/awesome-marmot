@@ -24,12 +24,38 @@ class CatalogTests(unittest.TestCase):
     def test_reviewed_inventory_passes(self):
         self.assertEqual(self.check(), [])
 
-    def test_all_previous_repositories_are_retained(self):
+    def test_previous_repositories_are_retained_or_explicitly_removed(self):
         urls = [r["repository"] for r in self.audit["repositories"]]
         self.assertEqual(len(set(urls)), len(urls))
         baseline = json.loads((ROOT / "tests/fixtures/catalog-repositories-20260909.json").read_text())
         current = {catalog.canonical_repository(url) for url in urls}
-        self.assertTrue(set(baseline).issubset(current))
+        removed = {catalog.canonical_repository(r["repository"]) for r in self.audit["removed_repositories"]}
+        self.assertEqual(removed, {"https://codeberg.org/tuxor/nostrbotkit"})
+        self.assertTrue(set(baseline).issubset(current | removed))
+        self.assertFalse(current & removed)
+
+    def test_nostrbotkit_removed_without_inventing_abandonment(self):
+        self.assertNotIn("NostrBotKit", self.text)
+        self.assertNotIn("## Source unavailable at the last check", self.text)
+        removal = self.audit["removed_repositories"][0]
+        self.assertIn("explicit request", removal["reason"])
+        self.assertIn("HTTP 404", removal["reason"])
+        self.assertNotIn("commit", removal)
+
+    def test_invalid_removal_inventory_fails(self):
+        for value in (None, [None], [{}]):
+            with self.subTest(value=value):
+                audit = copy.deepcopy(self.audit)
+                audit["removed_repositories"] = value
+                self.assertTrue(any("removal" in e for e in self.check(audit=audit)))
+
+    def test_removal_requires_reason_date_and_absence_from_inventory(self):
+        for field, value in (("reason", ""), ("removed_on", "2026-10-02"),
+                             ("repository", self.audit["repositories"][0]["repository"])):
+            with self.subTest(field=field):
+                audit = copy.deepcopy(self.audit)
+                audit["removed_repositories"][0][field] = value
+                self.assertTrue(any("removal" in e for e in self.check(audit=audit)))
 
     def test_activity_is_an_exact_label_not_a_substring(self):
         text = self.text.replace("**v1, inactive, alpha**", "**v1, inactiveish, alpha**", 1)
@@ -117,10 +143,43 @@ class CatalogTests(unittest.TestCase):
                 self.assertTrue(self.check(audit=audit))
 
     def test_unavailable_source_has_no_invented_commit(self):
-        record = next(r for r in self.audit["repositories"] if r["activity"] == "unverified")
-        self.assertEqual(record["generation"], "unknown")
+        record = {
+            "repository": "https://example.org/owner/unavailable",
+            "generation": "unknown", "activity": "unverified",
+            "source": "https://example.org/owner/unavailable", "note": "Synthetic unavailable source.",
+        }
+        self.audit["repositories"].append(record)
+        text = self.text + "\n## Source unavailable at the last check\n\n- [Example](https://example.org/owner/unavailable) — **unknown, unverified** — Synthetic fixture.\n"
+        self.assertEqual(self.check(text=text), [])
         record["commit"] = "a" * 40
-        self.assertTrue(any("unverified source" in e for e in self.check()))
+        self.assertTrue(any("unverified source" in e for e in self.check(text=text)))
+
+    def test_app_feature_claims_have_primary_evidence(self):
+        apps = {"whitenoise-android", "whitenoise-ios", "whitenoise-mac", "whitenoise-linux",
+                "mdk", "Scramble", "amethyst", "Haven-App", "marmots-web-chat",
+                "bitchat-to-sonar", "whistle", "mafrend-zapstore", "pika", "marmota",
+                "tubestr-v2", "fmdtr-android"}
+        for name in apps:
+            with self.subTest(name=name):
+                record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/" + name))
+                self.assertTrue(record["feature_evidence"])
+                self.assertTrue(any(record["commit"] in url for url in record["feature_evidence"]))
+
+    def test_feature_evidence_cannot_be_mutable_or_empty(self):
+        for value in ([], ["https://github.com/DavidGershony/Scramble/blob/master/README.md"], [None]):
+            with self.subTest(value=value):
+                audit = copy.deepcopy(self.audit)
+                audit["repositories"][1]["feature_evidence"] = value
+                self.assertTrue(any("feature evidence" in e for e in self.check(audit=audit)))
+
+    def test_features_and_contact_are_useful_without_promoting_roadmap(self):
+        for phrase in ("voice dictation", "chat export", "scriptable JSON", "offline Bluetooth",
+                       "low-battery alerts", "time-limited location", "parent-managed child profiles",
+                       "https://t.me/destme7"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.text)
+        self.assertNotIn("Voice & video calls", self.text)
+        self.assertIn("encrypted sharing and sync are unfinished", self.text)
 
     def test_active_entry_cannot_be_hidden_in_legacy_section(self):
         text = self.text.replace("## Supporting tools — recently updated", "## No recent public commits")

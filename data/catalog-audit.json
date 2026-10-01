@@ -23,6 +23,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/DavidGershony/Scramble/tree/7f1f4aaf395724f8e310af19e86e8d85ff294ceb",
+      "feature_evidence": ["https://github.com/DavidGershony/Scramble/blob/7f1f4aaf395724f8e310af19e86e8d85ff294ceb/README.md"],
       "note": "Desktop and Android messenger whose current source implements the v2 application-component profile.",
       "archived": false
     },
@@ -45,6 +46,7 @@
       "generation": "unknown",
       "activity": "active",
       "source": "https://github.com/DestBro/mafrend-zapstore/tree/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef",
+      "feature_evidence": ["https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/zapstore.yaml","https://mafrend.com/"],
       "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only; no source-backed protocol generation can be assigned.",
       "source_kind": "store-metadata",
       "generation_evidence": ["https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md"],
@@ -58,6 +60,7 @@
       "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/Tubestr/tubestr-v2/tree/8d53c162af4fde0c6735581a1e0d137ef003101e",
+      "feature_evidence": ["https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/README.md"],
       "note": "Family-video prototype. Its native bridge manifest and lockfile pin MIP-era MDK 0.7.1 at 8a8d06c19d617394b0e268f5f9adfad34db3cdf6, and bridge source uses NostrGroupConfigData. The README lists sharing/sync as unfinished; the repository name does not establish Marmot v2. Last commit: 2026-05-24.",
       "generation_evidence": ["https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/Cargo.toml", "https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/Cargo.lock", "https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/src/api/mod.rs"],
       "archived": false
@@ -70,6 +73,7 @@
       "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/dcadenas/marmota/tree/37906ae7e165debe9fa49ccecfbb0317fa58e0ef",
+      "feature_evidence": ["https://github.com/dcadenas/marmota/blob/37906ae7e165debe9fa49ccecfbb0317fa58e0ef/README.md"],
       "note": "Browser client pinned to a MIP-era TypeScript implementation. Last commit: 2026-03-09.",
       "archived": false
     },
@@ -81,6 +85,7 @@
       "generation": "v1",
       "activity": "active",
       "source": "https://github.com/hedwig-corp/bitchat-to-sonar/tree/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146",
+      "feature_evidence": ["https://github.com/hedwig-corp/bitchat-to-sonar/blob/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146/README.md"],
       "note": "Bluetooth/Nostr messenger and wallet. Its current core still pins MDK 0.8-era code and the old White Noise Rust stack.",
       "generation_evidence": ["https://github.com/hedwig-corp/bitchat-to-sonar/blob/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146/core/Cargo.toml"],
       "archived": false
@@ -93,6 +98,7 @@
       "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/justinmoon/pika/tree/dd226e25633b04501b30652d682a2de49116c592",
+      "feature_evidence": ["https://github.com/justinmoon/pika/blob/dd226e25633b04501b30652d682a2de49116c592/README.md"],
       "note": "Cross-platform messenger pinned to MDK 0.7-era code; the maintainer warns it is not ready for private or secure production use. Last commit: 2026-04-01.",
       "generation_evidence": ["https://github.com/justinmoon/pika/blob/dd226e25633b04501b30652d682a2de49116c592/Cargo.toml"],
       "archived": false
@@ -183,6 +189,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/marmots-web-chat/tree/e7974788cda712f16dade84f417933f9db93a894",
+      "feature_evidence": ["https://github.com/marmot-protocol/marmots-web-chat/blob/e7974788cda712f16dade84f417933f9db93a894/README.md","https://github.com/marmot-protocol/marmots-web-chat/blob/e7974788cda712f16dade84f417933f9db93a894/src/lib/marmot/account-proof.ts"],
       "note": "Browser chat example pinned to an early v2 TypeScript revision; that pin still documents the earlier identity-proof profile.",
       "generation_evidence": ["https://github.com/marmot-protocol/marmots-web-chat/tree/e7974788cda712f16dade84f417933f9db93a894/marmot-ts", "https://github.com/marmot-protocol/marmot-ts/blob/714fe294504a516def392d10f2e3e18ed41977eb/README.md"],
       "archived": false
@@ -195,6 +202,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/mdk/tree/a21a7b1d27afb863b3fd590058c66e6a22649391",
+      "feature_evidence": ["https://github.com/marmot-protocol/mdk/blob/a21a7b1d27afb863b3fd590058c66e6a22649391/crates/cli/README.md"],
       "note": "Rust Marmot Development Kit: messaging runtime, storage, language bindings, and integrations.",
       "archived": false
     },
@@ -351,6 +359,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/whitenoise-android/tree/9397b28188831f8a9f8cd06f3f3921d594a9b31d",
+      "feature_evidence": ["https://github.com/marmot-protocol/whitenoise-android/blob/9397b28188831f8a9f8cd06f3f3921d594a9b31d/app/src/main/java/dev/ipf/whitenoise/android/ui/conversation/composer/ConversationDictationControls.kt","https://github.com/marmot-protocol/whitenoise-android/blob/9397b28188831f8a9f8cd06f3f3921d594a9b31d/app/src/main/java/dev/ipf/whitenoise/android/audio/tts/TtsController.kt","https://github.com/marmot-protocol/whitenoise-android/blob/9397b28188831f8a9f8cd06f3f3921d594a9b31d/app/src/main/java/dev/ipf/whitenoise/android/amber/AmberSignerController.kt"],
       "note": "Native Android messaging app.",
       "archived": false
     },
@@ -362,6 +371,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/whitenoise-ios/tree/65c8d74f0bd55d38733c1afb27e4aa912b4267ac",
+      "feature_evidence": ["https://github.com/marmot-protocol/whitenoise-ios/blob/65c8d74f0bd55d38733c1afb27e4aa912b4267ac/README.md"],
       "note": "Native iPhone messaging app.",
       "archived": false
     },
@@ -373,6 +383,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/whitenoise-linux/tree/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc",
+      "feature_evidence": ["https://github.com/marmot-protocol/whitenoise-linux/blob/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc/README.md"],
       "note": "Odin/Clay desktop client for Linux, Windows, macOS, and OpenBSD; supported targets verified in pinned build documentation and published release assets.",
       "platforms": ["Linux", "Windows", "macOS", "OpenBSD"],
       "platform_evidence": "https://github.com/marmot-protocol/whitenoise-linux/blob/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc/README.md",
@@ -387,6 +398,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/whitenoise-mac/tree/1cbb1d1bc3482ade23cc20e1139ef6e91d02a5d4",
+      "feature_evidence": ["https://github.com/marmot-protocol/whitenoise-mac/blob/1cbb1d1bc3482ade23cc20e1139ef6e91d02a5d4/README.md"],
       "note": "Native Mac messaging app.",
       "archived": false
     },
@@ -421,6 +433,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/mehmetefeumit/Haven-App/tree/a7a8ab2036b39a6dd7d83375e9a80bdad4281823",
+      "feature_evidence": ["https://github.com/mehmetefeumit/Haven-App/blob/a7a8ab2036b39a6dd7d83375e9a80bdad4281823/README.md"],
       "note": "Private location sharing. Manifest and lockfile pin adopted v2 MDK 0.9.4 at e391adc133a9b60e420da7a0446f014a180ac8d2; runtime uses AccountDeviceSession and app components. A future v2 identity-proof carrier migration remains separate from this verified generation.",
       "generation_evidence": ["https://github.com/mehmetefeumit/Haven-App/blob/a7a8ab2036b39a6dd7d83375e9a80bdad4281823/haven-core/Cargo.toml", "https://github.com/mehmetefeumit/Haven-App/blob/a7a8ab2036b39a6dd7d83375e9a80bdad4281823/haven-core/src/nostr/mls/mod.rs", "https://github.com/marmot-protocol/mdk/blob/e391adc133a9b60e420da7a0446f014a180ac8d2/crates/traits/src/app_components/mod.rs"],
       "archived": false
@@ -479,6 +492,7 @@
       "generation": "v1",
       "activity": "active",
       "source": "https://github.com/sjmcnamara/whistle/tree/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c",
+      "feature_evidence": ["https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/README.md"],
       "note": "Group location sharing and chat. Its protocol documentation specifies MIP-00 through MIP-03 and MDK 0.8.0-era operation; the Swift project pins the old standalone MDK bindings at 8a7a0a59208e28f721a3abd16c9bd2c0d12af0be. This is v1, not an unknown generation.",
       "generation_evidence": ["https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/website/docs/wiki/PROTOCOL.md", "https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/project.yml", "https://github.com/marmot-protocol/mdk-swift/blob/8a7a0a59208e28f721a3abd16c9bd2c0d12af0be/README.md"],
       "archived": false
@@ -503,6 +517,7 @@
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/vitorpamplona/amethyst/tree/3613bf05927c3523d9d0cee77cd71d2aa835dca4",
+      "feature_evidence": ["https://github.com/vitorpamplona/amethyst/blob/3613bf05927c3523d9d0cee77cd71d2aa835dca4/README.md","https://github.com/vitorpamplona/amethyst/blob/3613bf05927c3523d9d0cee77cd71d2aa835dca4/cli/README.md"],
       "note": "Nostr client with a Marmot implementation in its bundled Quartz library; source now includes v2 identity-proof and media components.",
       "archived": false
     },
@@ -526,15 +541,17 @@
       "generation": "v1",
       "activity": "inactive",
       "source": "https://gitlab.com/Kalle/fmdtr-android/-/blob/4ac62356c4237a6beb77f41a9997d9686003c3e0/rust/fmd-marmot-bridge/Cargo.toml",
+      "feature_evidence": ["https://gitlab.com/Kalle/fmdtr-android/-/blob/4ac62356c4237a6beb77f41a9997d9686003c3e0/README.md"],
       "note": "Bridge pins mdk-core and mdk-sqlite-storage 0.8.0. Archive status was not returned by the inspected project API.",
       "archived": null
-    },
+    }
+  ],
+  "removed_repositories": [
     {
       "repository": "https://codeberg.org/Tuxor/NostrBotKit",
-      "generation": "unknown",
-      "activity": "unverified",
-      "source": "https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit",
-      "note": "Canonical page and API returned HTTP 404; no abandonment or generation inference."
+      "removed_on": "2026-10-01",
+      "reason": "Removed at the owner's explicit request after canonical page and API returned HTTP 404 and no replacement primary source was found.",
+      "source": "https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit"
     }
   ]
 }
