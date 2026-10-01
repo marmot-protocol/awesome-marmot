@@ -26,8 +26,8 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 - [Scramble](https://github.com/DavidGershony/Scramble) — **v2, active** — Desktop and Android messenger with a v2 implementation.
 - [Amethyst](https://github.com/vitorpamplona/amethyst) — **v2, active** — Nostr client with built-in Marmot messaging.
 - [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **v2, active** — Amethyst's terminal client.
-- [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active, beta** — Private location sharing for Android and iOS.
-- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active, experimental** — Browser chat example using an early v2 profile.
+- [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active** — Private location sharing for Android and iOS.
+- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active** — Browser chat example using an early v2 profile.
 
 ### Agents and automation
 

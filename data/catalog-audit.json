@@ -11,7 +11,8 @@
       "generation": "v1",
       "activity": "inactive",
       "source": "https://github.com/CentauriAgent/burrow/tree/ac883fa62106b61ed7731b0b4fb8c0cbf5589e52",
-      "note": "Agent-oriented CLI/app with a legacy MDK pin. Last commit: 2026-03-07.",
+      "note": "Agent-oriented CLI/app whose MLS engine pins MIP-era MDK at 136a9ee929580206ea0357d48d9766427918186d with the mip04 feature. Last commit: 2026-03-07.",
+      "generation_evidence": ["https://github.com/CentauriAgent/burrow/blob/ac883fa62106b61ed7731b0b4fb8c0cbf5589e52/mls-engine/Cargo.toml"],
       "archived": false
     },
     {
@@ -81,6 +82,7 @@
       "activity": "active",
       "source": "https://github.com/hedwig-corp/bitchat-to-sonar/tree/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146",
       "note": "Bluetooth/Nostr messenger and wallet. Its current core still pins MDK 0.8-era code and the old White Noise Rust stack.",
+      "generation_evidence": ["https://github.com/hedwig-corp/bitchat-to-sonar/blob/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146/core/Cargo.toml"],
       "archived": false
     },
     {
@@ -92,6 +94,7 @@
       "activity": "inactive",
       "source": "https://github.com/justinmoon/pika/tree/dd226e25633b04501b30652d682a2de49116c592",
       "note": "Cross-platform messenger pinned to MDK 0.7-era code; the maintainer warns it is not ready for private or secure production use. Last commit: 2026-04-01.",
+      "generation_evidence": ["https://github.com/justinmoon/pika/blob/dd226e25633b04501b30652d682a2de49116c592/Cargo.toml"],
       "archived": false
     },
     {
@@ -114,6 +117,7 @@
       "activity": "inactive",
       "source": "https://github.com/marmot-protocol/botburrow/tree/e608ba5ff7c69e461867acfc08c6ac2ff3f5c926",
       "note": "Bot bridge built around the superseded White Noise Rust daemon. Last commit: 2026-04-14.",
+      "generation_evidence": ["https://github.com/marmot-protocol/botburrow/blob/e608ba5ff7c69e461867acfc08c6ac2ff3f5c926/README.md"],
       "archived": false
     },
     {
@@ -236,6 +240,7 @@
       "activity": "inactive",
       "source": "https://github.com/marmot-protocol/mdk-python-example/tree/80e86ae89171995fb98b0f0d905074b8b4180bc4",
       "note": "Example for the obsolete standalone Python binding API, not a current MDK quick start. Last commit: 2025-12-01.",
+      "generation_evidence": ["https://github.com/marmot-protocol/mdk-python-example/blob/80e86ae89171995fb98b0f0d905074b8b4180bc4/main.py"],
       "archived": false
     },
     {
