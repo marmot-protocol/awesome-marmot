@@ -26,7 +26,7 @@ No audit logs, credentials, private implementation details, or installation data
 - **FMDtr remains on an older bridge:** its [pinned manifest](https://gitlab.com/Kalle/fmdtr-android/-/blob/4ac62356c4237a6beb77f41a9997d9686003c3e0/rust/fmd-marmot-bridge/Cargo.toml) uses MDK 0.8.0. Last default-branch commit: June 19.
 - **Botburrow and AgentNoise are not recently updated:** their [Botburrow](https://github.com/marmot-protocol/botburrow/blob/e608ba5ff7c69e461867acfc08c6ac2ff3f5c926/README.md) and [AgentNoise](https://github.com/nvk/agentnoise/blob/41c9b3372c6fd366216e2894a2427db2190d41ab/README.md) setup instructions still reference the old White Noise Rust daemon. Their last default-branch commits were April 14 and June 27 respectively.
 - **Unknown is intentional:** the incomplete Tubestr scaffold, Whistle's unresolved generation, the public-only Mafrend store metadata, the standalone Quartz repository, and unverified dependency resolution in community wrappers are not assigned a protocol generation from names or marketing claims. Supporting tools and audit-format versions are not wire-protocol generations.
-- **NostrBotKit is unverified, not abandoned:** the [canonical source](https://codeberg.org/mateos/NostrBotKit) and [repository endpoint](https://codeberg.org/api/v1/repos/mateos/NostrBotKit) could not be verified. A 404 can reflect several conditions; the historical listing is retained without invented commit dates.
+- **NostrBotKit is unverified, not abandoned:** the [canonical source](https://codeberg.org/Tuxor/NostrBotKit) and [repository endpoint](https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit) could not be verified. A 404 can reflect several conditions; the historical listing is retained without invented commit dates.
 
 ## Limits
 

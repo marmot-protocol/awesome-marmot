@@ -108,7 +108,7 @@ These repositories are not archived, but their default branches had no commits w
 
 ## Source unavailable at the last check
 
-- [NostrBotKit](https://codeberg.org/mateos/NostrBotKit) — **unknown, unverified** — Previously listed bot toolkit. Its canonical page and API returned 404 during this audit; that alone does not prove abandonment or a protocol version.
+- [NostrBotKit](https://codeberg.org/Tuxor/NostrBotKit) — **unknown, unverified** — Previously listed bot toolkit. Its canonical page and API returned 404 during this audit; that alone does not prove abandonment or a protocol version.
 
 ## Archived and superseded
 

@@ -511,10 +511,10 @@
       "note": "Bridge pins mdk-core and mdk-sqlite-storage 0.8.0."
     },
     {
-      "repository": "https://codeberg.org/mateos/NostrBotKit",
+      "repository": "https://codeberg.org/Tuxor/NostrBotKit",
       "generation": "unknown",
       "activity": "unverified",
-      "source": "https://codeberg.org/api/v1/repos/mateos/NostrBotKit",
+      "source": "https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit",
       "note": "Canonical page and API returned HTTP 404; no abandonment or generation inference."
     }
   ]
