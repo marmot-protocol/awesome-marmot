@@ -18,7 +18,9 @@ A repository is proposed only when all of these hold:
 - its normalized canonical URL is absent from `README.md` and `data/discovery-seen.json`;
 - GitHub says it is public and not archived;
 - its description or README explicitly mentions Marmot (generic MLS/Nostr support is insufficient);
-- its default branch has activity within the configured 365-day window.
+- its latest default-branch commit is within the 90-day activity window, with a valid, timezone-aware committer timestamp that is not in the future.
+
+Verification reads the commit for the API-reported default branch, not repository `pushed_at`. A push to an unrelated branch, tag, or release does not establish recent default-branch work. Reports retain the immutable commit link, and README evidence is fetched at that same commit. Unavailable or malformed commit metadata is a rejected, unverified lead—not proof of abandonment.
 
 Redirects and renamed repositories are normalized through GitHub's API before deduplication. A roundup mention without a repository URL stays in the audit report but cannot become a candidate.
 
@@ -36,4 +38,4 @@ Requirements: Python 3.11+, `nak` 0.20.2, and a GitHub token for higher API limi
 python3 scripts/discover.py --days 10 --output discovery-report.md
 ```
 
-Set `DISCOVERY_FIXTURE_DIR` to a directory containing `github-org.json`, `nostr-events.jsonl`, and `zapstore-events.jsonl` to run without the network.
+Set `DISCOVERY_FIXTURE_DIR` to a directory containing `github-org.json`, `nostr-events.jsonl`, and `zapstore-events.jsonl` to fixture the source inventory. Candidate metadata and commit verification still use GitHub unless mocked in the tests; this is not a fully offline end-to-end mode.

@@ -34,7 +34,8 @@ VERIFIED = {
     "url": "https://github.com/example/marmot-app",
     "name": "example/marmot-app",
     "description": "Marmot client",
-    "pushed_at": "2026-08-01T00:00:00Z",
+    "last_commit_at": "2026-08-01T00:00:00Z",
+    "commit_url": "https://github.com/example/marmot-app/commit/" + "a" * 40,
     "evidence": "Marmot",
 }
 

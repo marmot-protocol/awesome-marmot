@@ -19,14 +19,14 @@ import subprocess
 import sys
 import urllib.error
 import urllib.request
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config/discovery-sources.json"
 SEEN = ROOT / "data/discovery-seen.json"
 CATALOG = ROOT / "README.md"
 NOW = dt.datetime.now(dt.UTC)
-CUTOFF = NOW - dt.timedelta(days=365)
+ACTIVITY_WINDOW_DAYS = 90
 GITHUB_API = "https://api.github.com"
 USER_AGENT = "awesome-marmot-discovery/1.0 (+https://github.com/marmot-protocol/awesome-marmot)"
 
@@ -328,23 +328,39 @@ def verify_repo(url: str) -> dict | str:
         return "archived repository"
     if repo.get("private"):
         return "private repository"
-    pushed_at = repo.get("pushed_at", "")
+    branch = repo.get("default_branch")
+    if not branch:
+        return "default branch unavailable"
     try:
-        pushed = dt.datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
-    except ValueError:
-        pushed = None
-    if pushed is None or pushed < CUTOFF:
-        return f"no activity in last 365 days (pushed_at={pushed_at or 'unknown'})"
+        commits = api_json(
+            f"{GITHUB_API}/repos/{repo['full_name']}/commits?sha={quote(branch, safe='')}&per_page=1"
+        )
+        latest = commits[0]
+        committed_at = latest["commit"]["committer"]["date"]
+        committed = dt.datetime.fromisoformat(committed_at.replace("Z", "+00:00"))
+        if committed.tzinfo is None or not re.fullmatch(r"[0-9a-f]{40}", latest["sha"]):
+            return "invalid default-branch commit metadata"
+    except RuntimeError as error:
+        return f"default-branch commit lookup failed: {error}"
+    except (KeyError, IndexError, TypeError, ValueError, AttributeError):
+        return "default-branch commit unavailable or invalid"
+    if committed > NOW:
+        return "default-branch commit date is in the future"
+    if committed < NOW - dt.timedelta(days=ACTIVITY_WINDOW_DAYS):
+        return f"no default-branch commit in last {ACTIVITY_WINDOW_DAYS} days (committed_at={committed_at})"
 
     # Require an explicit Marmot mention in description or README.
     evidence = repo.get("description") or ""
     readme_status = http_head_status(
-        f"https://raw.githubusercontent.com/{repo['full_name']}/{repo['default_branch']}/README.md"
+        f"https://raw.githubusercontent.com/{repo['full_name']}/{latest['sha']}/README.md"
     )
     if readme_status == 200:
-        readme = fetch_url(
-            f"https://raw.githubusercontent.com/{repo['full_name']}/{repo['default_branch']}/README.md"
-        )[:200_000]
+        try:
+            readme = fetch_url(
+                f"https://raw.githubusercontent.com/{repo['full_name']}/{latest['sha']}/README.md"
+            )[:200_000]
+        except RuntimeError as error:
+            return f"README lookup failed: {error}"
         evidence += "\n" + readme
     elif readme_status == 404:
         if "marmot" not in evidence.lower():
@@ -357,7 +373,8 @@ def verify_repo(url: str) -> dict | str:
         "url": normalize_repo(repo["html_url"]),
         "name": repo["full_name"],
         "description": repo.get("description") or "",
-        "pushed_at": pushed_at,
+        "last_commit_at": committed_at,
+        "commit_url": f"{repo['html_url']}/commit/{latest['sha']}",
         "evidence": evidence[:4000],
     }
 
@@ -481,7 +498,7 @@ def render_report(retained, rejected, candidates, failures, days):
             lines.append(f"### {candidate['name']}")
             lines.append("")
             lines.append(f"- URL: {url}")
-            lines.append(f"- Last push: {candidate['pushed_at']}")
+            lines.append(f"- Last default-branch commit: [{candidate['last_commit_at']}]({candidate['commit_url']})")
             lines.append(f"- Description: {candidate['description']}")
             lines.append("- Provenance:")
             for origin in sorted(candidate["provenance"], key=lambda o: json.dumps(o, sort_keys=True)):
