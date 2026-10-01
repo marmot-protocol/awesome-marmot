@@ -13,6 +13,10 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 GENERATIONS = {"v2", "v1", "transitional", "unknown", "adjacent"}
 ACTIVITIES = {"active", "inactive", "archived", "unverified"}
+MONOREPOS = {
+    "https://github.com/marmot-protocol/mdk",
+    "https://github.com/vitorpamplona/amethyst",
+}
 
 
 def canonical_repository(url: str) -> str:
@@ -35,12 +39,14 @@ def check_catalog(text: str, audit: dict) -> list[str]:
 
     repositories = {}
     for record in records:
+        if not isinstance(record, dict):
+            errors.append("invalid audit record: expected an object")
+            continue
         try:
             url = record["repository"]
             key = canonical_repository(url)
             if not url.startswith("https://") or key in repositories:
                 raise ValueError("invalid or duplicate repository URL")
-            repositories[key] = record
             generation, activity = record["generation"], record["activity"]
             if generation not in GENERATIONS or activity not in ACTIVITIES:
                 raise ValueError("invalid labels")
@@ -51,6 +57,7 @@ def check_catalog(text: str, audit: dict) -> list[str]:
                     field in record for field in ("commit", "last_commit_at", "default_branch")
                 ):
                     raise ValueError("unverified source must not claim commit or generation")
+                repositories[key] = record
                 continue
             committed = dt.datetime.fromisoformat(record["last_commit_at"].replace("Z", "+00:00"))
             if committed.tzinfo is None or committed > checked:
@@ -71,6 +78,12 @@ def check_catalog(text: str, audit: dict) -> list[str]:
             )
             if activity != expected:
                 raise ValueError(f"activity should be {expected}, not {activity}")
+            historical = record.get("historical_source")
+            if historical and not re.fullmatch(
+                re.escape(url) + r"/blob/[0-9a-f]{40}/.+", historical
+            ):
+                raise ValueError("historical source must be immutable and in the same repository")
+            repositories[key] = record
         except (KeyError, TypeError, ValueError, AttributeError) as error:
             errors.append(f"invalid audit record: {record.get('repository', 'unknown')}: {error}")
 
@@ -94,20 +107,23 @@ def check_catalog(text: str, audit: dict) -> list[str]:
             errors.append(f"entry needs a link, explicit labels and description at line {number}")
             continue
         url, label_text = match.groups()
-        if url.lower() in entry_urls:
+        normalized_entry = url.lower().rstrip("/")
+        if normalized_entry in entry_urls:
             errors.append(f"duplicate entry: {url}")
-        entry_urls.add(url.lower())
+        entry_urls.add(normalized_entry)
         labels = [label.strip() for label in label_text.split(",")]
         if len(labels) < 2 or labels[0] not in GENERATIONS or labels[1] not in ACTIVITIES:
             errors.append(f"invalid exact generation/activity labels at line {number}")
             continue
         key = canonical_repository(url)
+        if key in seen and key not in MONOREPOS:
+            errors.append(f"duplicate canonical repository entry: {url}")
         seen.add(key)
         record = repositories.get(key)
         if not record:
             errors.append(f"entry missing from audit: {url}")
             continue
-        if labels[:2] != [record["generation"], record["activity"]]:
+        if labels[:2] != [record.get("generation"), record.get("activity")]:
             errors.append(f"entry labels disagree with evidence: {url}")
         if labels[1] == "inactive" and record.get("last_commit_at", "")[:10] not in line:
             errors.append(f"inactive entry must show last commit date: {url}")
@@ -141,11 +157,9 @@ def check_catalog(text: str, audit: dict) -> list[str]:
     return errors
 
 
-def main() -> int:
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
-    audit = json.loads((ROOT / "data/catalog-audit.json").read_text(encoding="utf-8"))
-    errors = check_catalog(text, audit)
-    # Check relative README links and fragment targets without network access.
+def check_local_links(text: str, root: Path) -> list[str]:
+    """Check README relative destinations and fragment targets offline."""
+    errors = []
     anchors = {
         re.sub(r"[^\w -]", "", line.lstrip("# ").lower()).replace(" ", "-")
         for line in text.splitlines() if line.startswith("#")
@@ -153,8 +167,15 @@ def main() -> int:
     for target in re.findall(r"\]\(([^)]+)\)", text):
         if target.startswith("#") and target[1:] not in anchors:
             errors.append(f"broken README anchor: {target}")
-        elif not target.startswith(("https://", "#")) and not (ROOT / target).is_file():
+        elif not target.startswith(("https://", "#")) and not (root / target).is_file():
             errors.append(f"missing local README destination: {target}")
+    return errors
+
+
+def main() -> int:
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    audit = json.loads((ROOT / "data/catalog-audit.json").read_text(encoding="utf-8"))
+    errors = check_catalog(text, audit) + check_local_links(text, ROOT)
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1

@@ -94,6 +94,37 @@ class CatalogTests(unittest.TestCase):
         self.audit["activity_window_days"] = 365
         self.assertTrue(self.check())
 
+    def test_canonical_duplicate_with_trailing_slash_is_rejected(self):
+        line = next(l for l in self.text.splitlines() if l.startswith("- [Pika]"))
+        alias = line.replace("/justinmoon/pika)", "/justinmoon/pika/)")
+        self.assertTrue(any("duplicate canonical" in e for e in self.check(text=self.text + "\n" + alias)))
+
+    def test_missing_generation_and_non_object_records_report_errors(self):
+        for change in ("missing_generation", "not_an_object"):
+            with self.subTest(change=change):
+                audit = copy.deepcopy(self.audit)
+                if change == "missing_generation":
+                    del audit["repositories"][0]["generation"]
+                else:
+                    audit["repositories"][0] = None
+                self.assertTrue(self.check(audit=audit))
+
+    def test_current_readme_links_pass(self):
+        self.assertEqual(catalog.check_local_links(self.text, ROOT), [])
+
+    def test_broken_anchor_is_rejected(self):
+        errors = catalog.check_local_links("[missing](#does-not-exist)", ROOT)
+        self.assertTrue(any("broken README anchor" in e for e in errors))
+
+    def test_missing_local_file_is_rejected(self):
+        errors = catalog.check_local_links("[missing](docs/not-a-real-file.md)", ROOT)
+        self.assertTrue(any("missing local" in e for e in errors))
+
+    def test_historical_source_must_be_immutable_and_same_repo(self):
+        record = next(r for r in self.audit["repositories"] if "historical_source" in r)
+        record["historical_source"] = record["repository"] + "/tree/flutter-final"
+        self.assertTrue(any("historical source" in e for e in self.check()))
+
 
 if __name__ == "__main__":
     unittest.main()
