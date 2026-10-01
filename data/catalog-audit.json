@@ -331,7 +331,8 @@
       "generation": "v1",
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/whitenoise/tree/07aa5a0a7d28dd0185c6e72e56834520ef27b66c",
-      "note": "Superseded Flutter app."
+      "historical_source": "https://github.com/marmot-protocol/whitenoise/blob/9fca13f0eb19cb1266e86e20a894f0eafbd0f957/rust/Cargo.toml",
+      "note": "Default branch is now a landing page; v1 describes the archived Flutter app at flutter-final, whose manifest pins the old whitenoise-rs core."
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise-android",

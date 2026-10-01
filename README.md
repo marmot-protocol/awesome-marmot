@@ -115,7 +115,7 @@ These repositories are not archived, but their default branches had no commits w
 Kept for historical research, not recommended as foundations for new work. Archived repositories remain here even if they received a recent final commit.
 
 - [wn-tui](https://github.com/marmot-protocol/wn-tui) — **v1, archived** — Explicitly deprecated by its maintainer and replaced by the TUI in MDK, although GitHub does not mark the repository read-only.
-- [Flutter White Noise](https://github.com/marmot-protocol/whitenoise) — **v1, archived** — Superseded Flutter app.
+- [Flutter White Noise](https://github.com/marmot-protocol/whitenoise) — **v1, archived** — Superseded Flutter app, preserved at [flutter-final](https://github.com/marmot-protocol/whitenoise/tree/flutter-final). The default branch is now a landing page for the native clients.
 - [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) — **v1, archived** — Former Rust core and CLI; replaced by MDK and native clients.
 - [mdk-kotlin](https://github.com/marmot-protocol/mdk-kotlin) — **v1, archived** — Obsolete standalone Kotlin binding.
 - [mdk-python](https://github.com/marmot-protocol/mdk-python) — **v1, archived** — Obsolete standalone Python binding.
