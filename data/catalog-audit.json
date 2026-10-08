@@ -544,6 +544,26 @@
       "feature_evidence": ["https://gitlab.com/Kalle/fmdtr-android/-/blob/4ac62356c4237a6beb77f41a9997d9686003c3e0/README.md"],
       "note": "Bridge pins mdk-core and mdk-sqlite-storage 0.8.0. Archive status was not returned by the inspected project API.",
       "archived": null
+    },
+    {
+      "repository": "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin",
+      "default_branch": "master",
+      "commit": "42d93e288f17a870bb3e973ad18f0c2f0edd1085",
+      "last_commit_at": "2026-10-07T09:44:30Z",
+      "checked_at": "2026-10-08T13:34:58Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085",
+      "generation_evidence": [
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/mdk/account_proof.odin",
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/mdk/app_profile.odin",
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/PLAN.md"
+      ],
+      "feature_evidence": [
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/README.md"
+      ],
+      "note": "Native Odin MLS and Marmot engine with v2 account identity proofs and application-component profiles. The migration plan targets MDK 0.12.0; full engine compatibility and production readiness are not claimed. The NIP-34 repository announcement describes it as a little experiment.",
+      "archived": null
     }
   ],
   "removed_repositories": [

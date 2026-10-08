@@ -88,3 +88,9 @@ The [weekly discovery workflow](discovery.md) creates reviewed leads. It does no
 ## Entry requirements
 
 Provide primary evidence of a Marmot implementation or a relevant supporting role; MLS or encrypted Nostr DMs alone do not qualify. State private-source boundaries. Avoid duplicate renames and wrappers, and do not promote an empty scaffold or second-hand claim as a working implementation. Existing historical references remain explicitly marked unless an explicit removal is recorded as described above.
+
+## mdk-odin addition — 2026-10-08
+
+The NIP-34 announcement on `wss://relay.ngit.dev` identifies clone endpoints for [mdk-odin](https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin). The Git endpoint advertises `master` as its default branch. Default-branch commit `42d93e288f17a870bb3e973ad18f0c2f0edd1085` is dated 2026-10-07. Its pinned source implements v2 account identity proofs and application-component profiles; PLAN.md targets MDK 0.12.0. README.md describes a native Odin MLS/Marmot engine and explicitly declines complete compatibility or production-readiness claims. The announcement calls it a “little experiment”; the entry preserves that maturity boundary. No library build or interoperability test was run.
+
+This addition carries its own `checked_at` in the audit snapshot. Existing records retain the aggregate October 1 check date; they were not re-audited here. CI evaluates each activity window and commit timestamp against the entry's check date, falling back to the aggregate date. GitWorkshop repository identity includes publisher, relay, and repository name, so two libraries on one publisher's relay remain distinct.

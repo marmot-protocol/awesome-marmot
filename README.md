@@ -41,6 +41,7 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 ### SDKs and libraries
 
 - [MDK](https://github.com/marmot-protocol/mdk) — **v2, active** — Rust runtime, storage, language bindings, and integrations.
+- [mdk-odin](https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin) — **v2, active, experimental** — Native Odin implementation of MDK's MLS and Marmot engine, migrating to MDK 0.12; full compatibility and production readiness are not yet claimed.
 - [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — **v2, active, alpha** — TypeScript SDK; not recommended for production.
 - [Quartz in Amethyst](https://github.com/vitorpamplona/amethyst/tree/main/quartz) — **v2, active** — Kotlin Multiplatform library inside Amethyst.
 
@@ -140,7 +141,7 @@ python3 -m unittest discover -s tests -v
 
 ## Notes
 
-**Checked 2026-10-01.** Activity is measured at that date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
+**Checked 2026-10-01.** mdk-odin was added and checked on 2026-10-08; its audit record uses that date. Activity is measured at each record's check date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 

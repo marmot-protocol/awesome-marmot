@@ -24,6 +24,8 @@ def canonical_repository(url: str) -> str:
     path = parts.path.strip("/")
     if parts.netloc.lower() == "gitlab.com":
         path = path.split("/-/")[0]
+    elif parts.netloc.lower() == "gitworkshop.dev":
+        path = "/".join(path.split("/")[:3])
     else:
         path = "/".join(path.split("/")[:2])
     path = path.removesuffix(".git")
@@ -91,8 +93,14 @@ def check_catalog(text: str, audit: dict) -> list[str]:
                     raise ValueError("unverified source must not claim commit or generation")
                 repositories[key] = record
                 continue
+            record_checked = dt.datetime.fromisoformat(
+                record.get("checked_at", audit["checked_at"]).replace("Z", "+00:00")
+            )
+            if (record_checked.tzinfo is None or record_checked < checked
+                    or record_checked > dt.datetime.now(dt.timezone.utc)):
+                raise ValueError("invalid or future entry check timestamp")
             committed = dt.datetime.fromisoformat(record["last_commit_at"].replace("Z", "+00:00"))
-            if committed.tzinfo is None or committed > checked:
+            if committed.tzinfo is None or committed > record_checked:
                 raise ValueError("invalid or future commit timestamp")
             if not re.fullmatch(r"[0-9a-f]{40}", record["commit"]) or not record["default_branch"]:
                 raise ValueError("missing immutable commit or default branch")
@@ -110,7 +118,7 @@ def check_catalog(text: str, audit: dict) -> list[str]:
                 raise ValueError("deprecation needs pinned maintainer evidence")
             expected = (
                 "archived" if archived or deprecated else
-                "active" if committed >= checked - dt.timedelta(days=90) else "inactive"
+                "active" if committed >= record_checked - dt.timedelta(days=90) else "inactive"
             )
             if activity != expected:
                 raise ValueError(f"activity should be {expected}, not {activity}")

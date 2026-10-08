@@ -261,5 +261,27 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn("FreeBSD", entry)
 
 
+class IncrementalAuditTests(unittest.TestCase):
+    def test_gitworkshop_repositories_remain_distinct(self):
+        first = catalog.canonical_repository("https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/master")
+        second = catalog.canonical_repository("https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/another-library")
+        self.assertEqual(first, "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin")
+        self.assertNotEqual(first, second)
+
+    def test_incremental_entry_requires_its_own_valid_check_date(self):
+        text = (ROOT / "README.md").read_text()
+        audit = json.loads((ROOT / "data/catalog-audit.json").read_text())
+        self.assertEqual(catalog.check_catalog(text, audit), [])
+        for value in (None, "2026-10-01T06:46:00Z", "2100-01-01T00:00:00Z", "2026-10-08T00:00:00"):
+            with self.subTest(value=value):
+                changed = copy.deepcopy(audit)
+                entry = next(r for r in changed["repositories"] if r["repository"].endswith("/mdk-odin"))
+                if value is None:
+                    del entry["checked_at"]
+                else:
+                    entry["checked_at"] = value
+                self.assertTrue(catalog.check_catalog(text, changed))
+
+
 if __name__ == "__main__":
     unittest.main()
