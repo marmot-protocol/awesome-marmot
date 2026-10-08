@@ -18,14 +18,23 @@
     {
       "repository": "https://github.com/DavidGershony/Scramble",
       "default_branch": "master",
-      "commit": "7f1f4aaf395724f8e310af19e86e8d85ff294ceb",
-      "last_commit_at": "2026-09-30T17:37:17Z",
+      "commit": "25473e7396e25e1bda83a7824c785c9a660f03de",
+      "last_commit_at": "2026-10-01T17:53:40Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/DavidGershony/Scramble/tree/7f1f4aaf395724f8e310af19e86e8d85ff294ceb",
-      "feature_evidence": ["https://github.com/DavidGershony/Scramble/blob/7f1f4aaf395724f8e310af19e86e8d85ff294ceb/README.md"],
-      "note": "Desktop and Android messenger whose current source implements the v2 application-component profile.",
-      "archived": false
+      "source": "https://github.com/DavidGershony/Scramble/tree/25473e7396e25e1bda83a7824c785c9a660f03de",
+      "feature_evidence": [
+        "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/README.md",
+        "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/src/Scramble.Core/Scramble.Core.csproj",
+        "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/src/Scramble.Marmot.Engine/Scramble.Marmot.Engine.csproj"
+      ],
+      "note": "Desktop and Android messenger whose current source implements the v2 application-component profile. The current reusable C# engine and companion libraries live under src/Scramble.Marmot.*. Scramble.Core references this engine and SQLite storage instead of the old standalone marmot-cs backend.",
+      "archived": false,
+      "checked_at": "2026-10-08T13:41:05Z",
+      "generation_evidence": [
+        "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/src/Scramble.Marmot.Engine/KeyPackages/MarmotKeyPackageBuilder.cs",
+        "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/src/Scramble.Marmot.AppComponents/ComponentCodec.cs"
+      ]
     },
     {
       "repository": "https://github.com/DavidGershony/marmot-cs",
@@ -197,14 +206,19 @@
     {
       "repository": "https://github.com/marmot-protocol/mdk",
       "default_branch": "master",
-      "commit": "a21a7b1d27afb863b3fd590058c66e6a22649391",
-      "last_commit_at": "2026-10-01T00:30:36Z",
+      "commit": "7692e26649193bd0bfba5f6a425a80b7c2e8f502",
+      "last_commit_at": "2026-10-08T13:04:22Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/mdk/tree/a21a7b1d27afb863b3fd590058c66e6a22649391",
-      "feature_evidence": ["https://github.com/marmot-protocol/mdk/blob/a21a7b1d27afb863b3fd590058c66e6a22649391/crates/cli/README.md"],
-      "note": "Rust Marmot Development Kit: messaging runtime, storage, language bindings, and integrations.",
-      "archived": false
+      "source": "https://github.com/marmot-protocol/mdk/tree/7692e26649193bd0bfba5f6a425a80b7c2e8f502",
+      "feature_evidence": [
+        "https://github.com/marmot-protocol/mdk/blob/7692e26649193bd0bfba5f6a425a80b7c2e8f502/crates/cli/README.md",
+        "https://github.com/marmot-protocol/mdk/blob/7692e26649193bd0bfba5f6a425a80b7c2e8f502/integrations/goose/marmot/README.md",
+        "https://github.com/marmot-protocol/mdk/blob/7692e26649193bd0bfba5f6a425a80b7c2e8f502/integrations/goose/marmot/src/main.rs"
+      ],
+      "note": "Rust Marmot Development Kit: messaging runtime, storage, language bindings, and integrations. wn-goose routes authorized group messages to the Goose headless CLI via the shared terminal harness and wn-agent control socket.",
+      "archived": false,
+      "checked_at": "2026-10-08T13:41:05Z"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-kotlin",

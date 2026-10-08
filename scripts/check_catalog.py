@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 GENERATIONS = {"v2", "v1", "unknown", "adjacent"}
 ACTIVITIES = {"active", "inactive", "archived", "unverified"}
 MONOREPOS = {
+    "https://github.com/davidgershony/scramble",
     "https://github.com/marmot-protocol/mdk",
     "https://github.com/vitorpamplona/amethyst",
 }
@@ -200,7 +201,7 @@ def check_catalog(text: str, audit: dict) -> list[str]:
 
     required = (
         "Marmot for Hermes", "Marmot for OpenClaw", "wn-codex", "wn-claude",
-        "wn-opencode", "wn-pi", "https://github.com/marmot-protocol/mdk/tree/master/crates/cli",
+        "wn-opencode", "wn-pi", "wn-goose", "https://github.com/marmot-protocol/mdk/tree/master/crates/cli",
     )
     for fragment in required:
         if fragment not in text:

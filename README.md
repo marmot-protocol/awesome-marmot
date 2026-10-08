@@ -9,7 +9,7 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 | Chat on my phone | White Noise for [Android](https://github.com/marmot-protocol/whitenoise-android) or [iOS](https://github.com/marmot-protocol/whitenoise-ios) |
 | Chat on my computer | [Cross-platform desktop](https://github.com/marmot-protocol/whitenoise-linux) — Linux, Windows, macOS, OpenBSD — or [native macOS](https://github.com/marmot-protocol/whitenoise-mac) |
 | Use a terminal | [MDK CLI/TUI](https://github.com/marmot-protocol/mdk/tree/master/crates/cli) |
-| Connect an agent | [Hermes, OpenClaw, Codex, Claude Code, OpenCode, Pi](#agents-and-automation) |
+| Connect an agent | [Hermes, OpenClaw, Codex, Claude Code, OpenCode, Pi, Goose](#agents-and-automation) |
 | Build an app | [SDKs and libraries](#sdks-and-libraries) |
 
 [Older projects](#no-recent-public-commits) · [Archived projects](#archived-and-superseded)
@@ -37,12 +37,14 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 - [wn-claude](https://github.com/marmot-protocol/mdk/tree/master/integrations/claude/marmot) — **v2, active** — Claude Code terminal connector.
 - [wn-opencode](https://github.com/marmot-protocol/mdk/tree/master/integrations/opencode/marmot) — **v2, active** — OpenCode terminal connector.
 - [wn-pi](https://github.com/marmot-protocol/mdk/tree/master/integrations/pi/marmot) — **v2, active** — Pi terminal connector.
+- [wn-goose](https://github.com/marmot-protocol/mdk/tree/master/integrations/goose/marmot) — **v2, active** — Goose terminal connector using its headless CLI through `wn-agent`.
 
 ### SDKs and libraries
 
 - [MDK](https://github.com/marmot-protocol/mdk) — **v2, active** — Rust runtime, storage, language bindings, and integrations.
 - [mdk-odin](https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin) — **v2, active, experimental** — Native Odin implementation of MDK's MLS and Marmot engine, migrating to MDK 0.12; full compatibility and production readiness are not yet claimed.
 - [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — **v2, active, alpha** — TypeScript SDK; not recommended for production.
+- [Scramble.Marmot (C#)](https://github.com/DavidGershony/Scramble/tree/master/src/Scramble.Marmot.Engine) — **v2, active** — C# Marmot engine used by Scramble, with companion Nostr codecs, identity proofs, application components, and SQLite storage; built on DotnetMls.
 - [Quartz in Amethyst](https://github.com/vitorpamplona/amethyst/tree/main/quartz) — **v2, active** — Kotlin Multiplatform library inside Amethyst.
 
 ### Specification and services
@@ -89,7 +91,7 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Libraries and old examples
 
-- [marmot-cs](https://github.com/DavidGershony/marmot-cs) — **v1, inactive** — Standalone MIP-era C# library · **2026-06-04**
+- [marmot-cs (legacy)](https://github.com/DavidGershony/marmot-cs) — **v1, inactive** — Former standalone MIP-era C# backend; Scramble now uses its in-repository `Scramble.Marmot` engine · **2026-06-04**
 - [Standalone Quartz](https://github.com/vitorpamplona/quartz) — **adjacent, inactive** — Empty repository; current Quartz lives in Amethyst · **2025-09-23**
 - [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) — **adjacent, inactive** — Sled storage for OpenMLS · **2025-05-30**
 - [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — **adjacent, inactive** — Redb storage for OpenMLS · **2025-01-21**
@@ -141,7 +143,7 @@ python3 -m unittest discover -s tests -v
 
 ## Notes
 
-**Checked 2026-10-01.** mdk-odin was added and checked on 2026-10-08; its audit record uses that date. Activity is measured at each record's check date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
+**Checked 2026-10-01.** mdk-odin, MDK's Goose connector, and Scramble's C# library were checked on 2026-10-08; their audit records use that date. Activity is measured at each record's check date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 
