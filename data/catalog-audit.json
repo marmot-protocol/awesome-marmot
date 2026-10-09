@@ -1,7 +1,7 @@
 {
   "checked_at": "2026-10-01T06:46:00Z",
   "activity_window_days": 90,
-  "scope": "Public default-branch source and repository metadata; not installed releases or runtime interoperability.",
+  "scope": "Public default-branch source and repository metadata, plus explicitly identified unmerged integration and tagged release source; not installed releases or runtime interoperability.",
   "repositories": [
     {
       "repository": "https://github.com/CentauriAgent/burrow",
@@ -578,6 +578,65 @@
       ],
       "note": "Native Odin MLS and Marmot engine with v2 account identity proofs and application-component profiles. The migration plan targets MDK 0.12.0; full engine compatibility and production readiness are not claimed. The NIP-34 repository announcement describes it as a little experiment.",
       "archived": null
+    },
+    {
+      "repository": "https://github.com/BenGWeeks/lightning-piggy-mobile",
+      "default_branch": "main",
+      "commit": "5685c009ec6e63e751308d2ebe293173db616552",
+      "last_commit_at": "2026-10-08T19:15:54Z",
+      "checked_at": "2026-10-09T17:37:51Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/BenGWeeks/lightning-piggy-mobile/tree/5685c009ec6e63e751308d2ebe293173db616552",
+      "archived": false,
+      "generation_evidence": [
+        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/5685c009ec6e63e751308d2ebe293173db616552/README.md",
+        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/6a2b65f0d156a93b831dfc9843ac17d820c5212d/package-lock.json",
+        "https://registry.npmjs.org/@internet-privacy/marmot-ts/-/marmot-ts-0.6.1-next.20261007214300.tgz"
+      ],
+      "dependency_integrity": "sha512-A47ANplwf0C2a9QDau5kV/uYch5ojmRmAA55eIM/+OGXBzKedpP59f0sM/e/b79mLvkQzQczybaxc6RVGcFZQg==",
+      "feature_evidence": [
+        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/5685c009ec6e63e751308d2ebe293173db616552/README.md",
+        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/6a2b65f0d156a93b831dfc9843ac17d820c5212d/src/services/marmotSession.ts"
+      ],
+      "marmot_integration": {
+        "status": "unmerged-alpha",
+        "pull_request": "https://github.com/BenGWeeks/lightning-piggy-mobile/pull/1163",
+        "head": "6a2b65f0d156a93b831dfc9843ac17d820c5212d",
+        "head_committed_at": "2026-10-09T17:14:47Z",
+        "dependency": "@internet-privacy/marmot-ts",
+        "dependency_version": "0.6.1-next.20261007214300"
+      },
+      "note": "Activity is measured from the default branch, whose current messaging is NIP-17. The v2 classification applies only to the unmerged alpha integration in PR 1163, not released builds. Its pinned marmot-ts archive matches the lockfile SHA-512 and implements v2 application components and account identity proofs. The session source creates a MarmotClient for one-to-one and group chat. Media uses its existing NIP-17 encryption rather than Marmot media; full White Noise interoperability is not claimed. The LightningPiggy organization copy is an older fork; the upstream README directs contributors to BenGWeeks/lightning-piggy-mobile."
+    },
+    {
+      "repository": "https://github.com/chebizarro/nostrc",
+      "default_branch": "master",
+      "commit": "3e647abfabc266ad8b3f7443a46a26851f01e5c4",
+      "last_commit_at": "2026-10-09T08:19:49Z",
+      "checked_at": "2026-10-09T18:27:08Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/chebizarro/nostrc/tree/3e647abfabc266ad8b3f7443a46a26851f01e5c4",
+      "archived": false,
+      "generation_evidence": [
+        "https://github.com/chebizarro/nostrc/blob/3e647abfabc266ad8b3f7443a46a26851f01e5c4/libmarmot/include/marmot/marmot-group-profile.h",
+        "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/libmarmot/README.md",
+        "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/src/mls/gh-mls-service.c"
+      ],
+      "feature_evidence": [
+        "https://github.com/chebizarro/nostrc/blob/3e647abfabc266ad8b3f7443a46a26851f01e5c4/gnome/groundhog/README.md",
+        "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/README.md",
+        "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/src/mls/gh-mls-service.c"
+      ],
+      "release": {
+        "tag": "groundhog-v0.12.0-alpha5",
+        "commit": "6d779cc7bd64b9b8dffc69aded8b0617a9268e04",
+        "url": "https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.0-alpha5",
+        "published_at": "2026-10-09T00:19:40Z",
+        "prerelease": true
+      },
+      "note": "Groundhog is the GNOME GTK4/libadwaita messenger in the nostrc monorepo, using its C libmarmot implementation. The tagged alpha5 source supports the adopted Marmot v2 profile with app components and account identity proof 0x8009, alongside legacy-profile groups. Its MLS service creates adopted groups when that KeyPackage format is selected. The default-branch profile header matches the inspected release blob. The README documents NIP-17 private messages and local Grotto/NIP-55L or remote NIP-46 signers. Activity is repository-level. Alpha maturity and documented unsupported protocol operations remain; no hands-on test or blanket interoperability claim is made."
     }
   ],
   "removed_repositories": [
