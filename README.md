@@ -28,6 +28,8 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 - [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **v2, active** — Amethyst from the terminal: post public notes, send private DMs, and manage Marmot groups with scriptable JSON output.
 - [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active, beta** — Android/iOS location sharing in private circles, with your choice of relays and no phone-number signup.
 - [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active** — React browser-chat example for developers; local-key login and an early v2 profile, not a polished consumer app.
+- [Lightning Piggy Mobile](https://github.com/BenGWeeks/lightning-piggy-mobile) — **v2, active, alpha, unmerged** — Family Bitcoin wallet with Marmot one-to-one and group chat using `marmot-ts` in [the alpha integration PR](https://github.com/BenGWeeks/lightning-piggy-mobile/pull/1163); released builds do not yet include it.
+- [Groundhog](https://github.com/chebizarro/nostrc/tree/master/gnome/groundhog) — **v2, active, alpha** — GNOME messenger with Marmot encrypted groups, NIP-17 private messages, and local Grotto or remote NIP-46 signing. [Download alpha5](https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.0-alpha5).
 
 ### Agents and automation
 
@@ -143,7 +145,7 @@ python3 -m unittest discover -s tests -v
 
 ## Notes
 
-**Checked 2026-10-01.** mdk-odin, MDK's Goose connector, and Scramble's C# library were checked on 2026-10-08; their audit records use that date. Activity is measured at each record's check date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
+**Checked 2026-10-01.** mdk-odin, MDK's Goose connector, and Scramble's C# library were checked on 2026-10-08; their audit records use that date. Lightning Piggy Mobile and Groundhog were checked on 2026-10-09; the Piggy entry describes an unmerged alpha integration, while Groundhog links its published alpha5 release. Activity is measured at each record's check date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 
