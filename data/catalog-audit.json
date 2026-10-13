@@ -637,6 +637,28 @@
         "prerelease": true
       },
       "note": "Groundhog is the GNOME GTK4/libadwaita messenger in the nostrc monorepo, using its C libmarmot implementation. The tagged alpha5 source supports the adopted Marmot v2 profile with app components and account identity proof 0x8009, alongside legacy-profile groups. Its MLS service creates adopted groups when that KeyPackage format is selected. The default-branch profile header matches the inspected release blob. The README documents NIP-17 private messages and local Grotto/NIP-55L or remote NIP-46 signers. Activity is repository-level. Alpha maturity and documented unsupported protocol operations remain; no hands-on test or blanket interoperability claim is made."
+    },
+    {
+      "repository": "https://github.com/marmot-protocol/frigate-marmot",
+      "default_branch": "main",
+      "commit": "67ff0d58994e8859debb7493454b883ff1b0775a",
+      "last_commit_at": "2026-10-13T19:20:43Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/frigate_marmot/marmot.py",
+      "feature_evidence": [
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/frigate_marmot/worker.py",
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/frigate_marmot/configure.py",
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/README.md"
+      ],
+      "generation_evidence": [
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/frigate_marmot/__init__.py",
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/frigate_marmot/marmot.py",
+        "https://github.com/marmot-protocol/mdk/blob/1016a7626341729d2c47188e63b81fa14a3d48af/crates/traits/src/app_components/mod.rs"
+      ],
+      "note": "Frigate person-alert connector using official wn/wnd commands with a dedicated bot, encrypted Marmot messages and attachments, snapshot/video workers and persistent SQLite recovery. Protocol generation follows the pinned MDK implementation with MLS app components and account identity proof0x8009, rather than the Python package version.",
+      "archived": false,
+      "checked_at": "2026-10-13T19:56:20Z"
     }
   ],
   "removed_repositories": [

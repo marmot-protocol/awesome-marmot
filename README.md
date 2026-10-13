@@ -33,6 +33,7 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Agents and automation
 
+- [Frigate Marmot](https://github.com/marmot-protocol/frigate-marmot) — **v2, active** — Sends encrypted person-alert snapshots and buffered video from a local [Frigate](https://frigate.video/) recorder to White Noise through a dedicated MDK bot.
 - [Marmot for Hermes](https://github.com/marmot-protocol/mdk/tree/master/integrations/hermes/marmot) — **v2, active** — Hermes messaging gateway.
 - [Marmot for OpenClaw](https://github.com/marmot-protocol/mdk/tree/master/integrations/openclaw/marmot) — **v2, active** — OpenClaw channel integration.
 - [wn-codex](https://github.com/marmot-protocol/mdk/tree/master/integrations/codex/marmot) — **v2, active** — Codex terminal connector.
