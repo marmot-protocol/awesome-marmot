@@ -844,6 +844,24 @@
       "feature_evidence": [
         "https://github.com/shroominic/nostrbase/blob/c3cd7609edc455d293f877c581041b0a20edef4f/README.md"
       ]
+    },
+    {
+      "repository": "https://github.com/cameri/nostream",
+      "default_branch": "main",
+      "commit": "8a5600b99a2595b6114816f94c8b80ef9ff49c06",
+      "last_commit_at": "2026-10-10T13:55:02Z",
+      "generation": "adjacent",
+      "activity": "active",
+      "checked_at": "2026-10-10T21:22:00Z",
+      "source": "https://github.com/cameri/nostream/tree/8a5600b99a2595b6114816f94c8b80ef9ff49c06",
+      "feature_evidence": [
+        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/constants/base.ts",
+        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/handlers/event-strategies/group-event-strategy.ts",
+        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/handlers/request-handlers/root-request-handler.ts",
+        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/handlers/event-message-handler.ts"
+      ],
+      "note": "TypeScript Nostr relay whose default branch implements Marmot event handling rather than only generic storage. Kinds: 443 (MIP-00 legacy KeyPackage), 10051 (MIP-00 relay list, replaceable), 30443 (MIP-00 addressable KeyPackage with d-tag deduplication), 444 (MIP-02 Welcome rumor, blocked from direct publishing and required to arrive inside a kind 1059 gift wrap), and 445 (MIP-03 Group Event, validated to carry exactly one 64-character lowercase hex h tag so #h subscriptions resolve). package.json declares supportedMips [0, 1, 2, 3], emitted as supported_mips in the NIP-11 relay information document. It is a relay, not a messaging implementation: it performs no MLS, which is why it is labelled adjacent rather than v1 or v2. No hands-on relay test or group interoperability claim is made.",
+      "archived": false
     }
   ],
   "removed_repositories": [
