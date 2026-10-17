@@ -712,16 +712,24 @@
       "note": "Groundhog is the GNOME GTK4/libadwaita messenger in the nostrc monorepo, using its C libmarmot implementation. The tagged alpha5 source supports the adopted Marmot v2 profile with app components and account identity proof 0x8009, alongside legacy-profile groups. Its MLS service creates adopted groups when that KeyPackage format is selected. The default-branch profile header matches the inspected release blob. The README documents NIP-17 private messages and local Grotto/NIP-55L or remote NIP-46 signers. Activity is repository-level. Alpha maturity and documented unsupported protocol operations remain; no hands-on test or blanket interoperability claim is made."
     },
     {
-      "repository": "https://shychat.lol/",
-      "generation": "unknown",
-      "activity": "unverified",
-      "source": "https://shychat.lol/",
-      "checked_at": "2026-10-17T00:00:00Z",
-      "note": "Browser/PWA chat and calls over Nostr; deployed code includes Marmot. Public source and interoperability are unverified. No source commit or activity date is inferred.",
+      "repository": "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0",
+      "checked_at": "2026-10-17T14:17:41.978971+00:00",
+      "note": "Browser/PWA messenger with encrypted group chat, media and one-to-one calls; White Noise interoperability remains untested. Source README labels the app alpha and documents unencrypted localStorage keys and asymmetric Web Push interoperability.",
       "generation_evidence": [
-        "https://shychat.lol/assets/index-RhXTPi_f.js"
+        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/package.json",
+        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/src/lib/chat.ts"
       ],
-      "deployed_bundle_sha256": "b802699e504a9e96d488dd4490afbc28ec5992a62bd4f50cfae237eb749b3fbf"
+      "deployed_bundle_sha256": "b802699e504a9e96d488dd4490afbc28ec5992a62bd4f50cfae237eb749b3fbf",
+      "default_branch": "main",
+      "commit": "34a3418978fd2dc563be9beb72bbf38ef6ed3cb0",
+      "last_commit_at": "2026-10-14T18:03:17-05:00",
+      "archived": null,
+      "feature_evidence": [
+        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/README.md"
+      ]
     }
   ],
   "removed_repositories": [

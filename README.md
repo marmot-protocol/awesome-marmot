@@ -18,6 +18,8 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Apps
 
+- [ShyChat](https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat) — **v2, active, alpha** — Browser/PWA messenger with encrypted group chat, media and one-to-one calls; White Noise interoperability remains untested. [Web app](https://shychat.lol/).
+
 - [White Noise for Android](https://github.com/marmot-protocol/whitenoise-android) — **v2, active** — Native Android chat with voice dictation, read-aloud playback, and Amber signer support.
 - [White Noise for iOS](https://github.com/marmot-protocol/whitenoise-ios) — **v2, active** — Native iPhone chat with multiple identities, QR profile sharing, and notifications rendered privately on-device.
 - [White Noise for macOS](https://github.com/marmot-protocol/whitenoise-mac) — **v2, active** — Early native SwiftUI client with a single-window workspace; Apple Silicon and macOS 15.6+ only.
@@ -103,10 +105,6 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 
 </details>
-
-## Source unavailable at the last check
-
-- [ShyChat](https://shychat.lol/) — **unknown, unverified** — Browser/PWA chat and calls over Nostr; deployed code includes Marmot. Public source and interoperability are unverified.
 
 ## Archived and superseded
 
