@@ -2,6 +2,16 @@
 
 Apps, agents, and tools for private group messaging with [Marmot](https://github.com/marmot-protocol/marmot).
 
+## Marmot v2 at a glance
+
+| 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
+| :---: | :---: | :---: |
+| **14** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **8** [integrations](#agents-and-automation) |
+
+Mobile, desktop, web and terminal clients, backed by implementations across Rust, TypeScript, Kotlin, C#, Common Lisp and Odin.
+
+Counts reflect the recently updated v2 listings as of **2026-10-17**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
+
 ## Start here
 
 | I want to… | Start with |
