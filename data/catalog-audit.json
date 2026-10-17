@@ -722,7 +722,6 @@
         "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/package.json",
         "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/src/lib/chat.ts"
       ],
-      "deployed_bundle_sha256": "b802699e504a9e96d488dd4490afbc28ec5992a62bd4f50cfae237eb749b3fbf",
       "default_branch": "main",
       "commit": "34a3418978fd2dc563be9beb72bbf38ef6ed3cb0",
       "last_commit_at": "2026-10-14T18:03:17-05:00",
