@@ -104,6 +104,10 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 </details>
 
+## Source unavailable at the last check
+
+- [ShyChat](https://shychat.lol/) — **unknown, unverified** — Browser/PWA chat and calls over Nostr; deployed code includes Marmot. Public source and interoperability are unverified.
+
 ## Archived and superseded
 
 <details>

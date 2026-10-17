@@ -36,7 +36,6 @@ class CatalogTests(unittest.TestCase):
 
     def test_nostrbotkit_removed_without_inventing_abandonment(self):
         self.assertNotIn("NostrBotKit", self.text)
-        self.assertNotIn("## Source unavailable at the last check", self.text)
         removal = self.audit["removed_repositories"][0]
         self.assertIn("explicit request", removal["reason"])
         self.assertIn("HTTP 404", removal["reason"])

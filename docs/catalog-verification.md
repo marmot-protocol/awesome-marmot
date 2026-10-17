@@ -117,3 +117,10 @@ The catalog labels this source **v2, active, alpha, unmerged** and links the int
 The v2 label is grounded in the [wire-profile header](https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/libmarmot/include/marmot/marmot-group-profile.h) and [MLS service](https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/src/mls/gh-mls-service.c): the adopted profile requires app components and account identity proof `0x8009`, and the service calls `marmot_create_group_for_profile()` with that profile for adopted-format groups. Legacy groups are also supported. The [library documentation](https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/libmarmot/README.md) describes supported adopted operations and unsupported proposals; this alpha entry makes no blanket interoperability claim.
 
 Activity uses the default-branch commit `3e647abfabc266ad8b3f7443a46a26851f01e5c4` from 2026-10-09, rather than the release date. Its profile-header Git blob matches the inspected release source. Features and generation describe inspected source, with no installation or new runtime test claimed. The snapshot now contains 49 repository records, including Lightning Piggy Mobile and Groundhog.
+
+
+## ShyChat verification (2026-10-17)
+
+[ShyChat](https://shychat.lol/) serves a standalone PWA. Its [manifest](https://shychat.lol/manifest.json) describes encrypted chat and calls over Nostr. The [deployed JavaScript](https://shychat.lol/assets/index-RhXTPi_f.js) contains `marmot-ts`, `marmot.group.profile.v1` and `marmot.account-identity-proof.v2`. Application code invokes group loading and key-package publication. It also includes WebRTC call flows and push support.
+
+Public source and licensing remain unverified. Unrelated GitHub projects named ShyChat were excluded. The catalog uses **unknown, unverified** because source history and interoperability remain unverified. ShyChat is accessible. The audit records the inspected bundle digest. Runtime features and White Noise compatibility require testing. Other entries retain their original check dates.
