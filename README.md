@@ -43,6 +43,8 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Agents and automation
 
+- [codr](https://github.com/tidley/codr) — **v2, active** — Connects existing HERDR sessions for OpenCode, Codex and Claude Code to White Noise through MDK, with image input and local voice transcription.
+
 - [Emissary](https://github.com/modus-lisp/emissary) — **v2, active, experimental** — Research execution agent with optional cl-marmot transport; unpinned dependency and shell-equivalent authority.
 
 - [Marmot for Hermes](https://github.com/marmot-protocol/mdk/tree/master/integrations/hermes/marmot) — **v2, active** — Hermes messaging gateway.

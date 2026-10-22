@@ -862,6 +862,29 @@
       ],
       "note": "TypeScript Nostr relay whose default branch implements Marmot event handling rather than only generic storage. Kinds: 443 (MIP-00 legacy KeyPackage), 10051 (MIP-00 relay list, replaceable), 30443 (MIP-00 addressable KeyPackage with d-tag deduplication), 444 (MIP-02 Welcome rumor, blocked from direct publishing and required to arrive inside a kind 1059 gift wrap), and 445 (MIP-03 Group Event, validated to carry exactly one 64-character lowercase hex h tag so #h subscriptions resolve). package.json declares supportedMips [0, 1, 2, 3], emitted as supported_mips in the NIP-11 relay information document. It is a relay, not a messaging implementation: it performs no MLS, which is why it is labelled adjacent rather than v1 or v2. No hands-on relay test or group interoperability claim is made.",
       "archived": false
+    },
+    {
+      "repository": "https://github.com/tidley/codr",
+      "default_branch": "master",
+      "commit": "44def456e9540fdc9dbabda3ef2f45f65fb32f7b",
+      "last_commit_at": "2026-10-22T01:11:28Z",
+      "checked_at": "2026-10-22T05:55:07.593707Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/tidley/codr/tree/44def456e9540fdc9dbabda3ef2f45f65fb32f7b",
+      "note": "Linux HERDR bridge using the upstream MDK wn-agent 0.13.0 transport. Routes existing OpenCode, Codex and Claude Code sessions to encrypted White Noise groups; includes inbound images and local audio transcription. Editable progress and offline media recovery require additional MDK APIs beyond the pinned release. Source inspected; no installation or interoperability test performed.",
+      "generation_evidence": [
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/scripts/setup.py",
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/wire.rs",
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/docs/REFERENCE.md"
+      ],
+      "feature_evidence": [
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/bridge.rs",
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/media.rs",
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/output/codex.rs",
+        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/output/claude.rs"
+      ],
+      "archived": false
     }
   ],
   "removed_repositories": [
