@@ -885,6 +885,45 @@
         "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/output/claude.rs"
       ],
       "archived": false
+    },
+    {
+      "repository": "https://github.com/tsgx1990/moyu",
+      "default_branch": "main",
+      "commit": "88a20d247510d1cc46ca955564aa395d26ae8e89",
+      "last_commit_at": "2026-09-30T11:48:29Z",
+      "checked_at": "2026-10-22T06:03:05.740198Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/tsgx1990/moyu/tree/88a20d247510d1cc46ca955564aa395d26ae8e89",
+      "note": "CLI/TUI and Tauri desktop messenger. Pins a post-MIP MDK v0.9.20 fork with SOCKS5 support for relays and media. Maintainer declares maintenance mode. Desktop packages unsigned; runtime interoperability not tested in this audit.",
+      "generation_evidence": [
+        "https://github.com/tsgx1990/moyu/blob/88a20d247510d1cc46ca955564aa395d26ae8e89/Cargo.toml"
+      ],
+      "feature_evidence": [
+        "https://github.com/tsgx1990/moyu/blob/88a20d247510d1cc46ca955564aa395d26ae8e89/Cargo.toml",
+        "https://github.com/tsgx1990/moyu/blob/88a20d247510d1cc46ca955564aa395d26ae8e89/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/januszgrze/chascuro",
+      "default_branch": "main",
+      "commit": "e892802d7dc9ad40a588288ef1161426c5bb6bc6",
+      "last_commit_at": "2026-08-31T20:56:42Z",
+      "checked_at": "2026-10-22T06:03:05.740198Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/januszgrze/chascuro/tree/e892802d7dc9ad40a588288ef1161426c5bb6bc6",
+      "note": "Experimental Fedimint wallet PWA with actual MDK-backed Marmot chat via a browser Worker/WASI runtime. Pins post-MIP cgka-engine and transport-nostr-peeler. Maintainer warns against production use or real funds; wallet recovery remains unproven. No runtime interoperability test performed in this audit.",
+      "generation_evidence": [
+        "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/runtime/marmot-web/Cargo.toml"
+      ],
+      "feature_evidence": [
+        "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/runtime/marmot-web/Cargo.toml",
+        "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/runtime/marmot-web/README.md",
+        "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/README.md"
+      ],
+      "archived": false
     }
   ],
   "removed_repositories": [

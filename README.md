@@ -24,6 +24,9 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 
 ### Apps
 
+- [moyu](https://github.com/tsgx1990/moyu) — **v2, active** — CLI/TUI and desktop messenger using an MDK fork with SOCKS5 support; in maintenance mode.
+- [Chascuro](https://github.com/januszgrze/chascuro) — **v2, active, experimental** — Fedimint wallet PWA with Marmot chat; unsuitable for production or real funds.
+
 - [Nostrautica](https://github.com/jooray/nostrautica) — **v2, active, alpha** — Event-coordination PWA and Android app with Marmot event chats and a coordinator service.
 
 - [ShyChat](https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat) — **v2, active, alpha** — Browser/PWA messenger with encrypted group chat, media and one-to-one calls; White Noise interoperability remains untested. [Web app](https://shychat.lol/).
