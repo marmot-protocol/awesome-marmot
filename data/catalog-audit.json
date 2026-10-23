@@ -1132,7 +1132,7 @@
       "generation": "adjacent",
       "activity": "active",
       "source": "https://github.com/FelineStateMachine/bindws/tree/5d3126716ae5b6bf01d46cdf14fceb05244445e0",
-      "note": "Relay-on-demand service where each name under bind.ws is a claimable Nostr relay. An opt-in Marmot transport accepts kind-30443 KeyPackages and opaque kind-445 group messages, with account admission, identity-proof checks and storage caps for ephemeral authors; clients manage encryption and membership. Relay support only, not a messaging implementation; runtime behaviour untested.",
+      "note": "Relay-on-demand service where each name under bind.ws is a claimable Nostr relay. An opt-in Marmot transport accepts kind-30443 KeyPackages and opaque kind-445 group messages after checking only their tags and encoding. A KeyPackage must advertise the 0x8009 identity-proof component, but the proof inside the opaque MLS content is not verified by the relay. Account admission and storage caps apply to ephemeral authors; clients manage encryption, proof verification and membership. Relay support only, not a messaging implementation; runtime behaviour untested.",
       "feature_evidence": [
         "https://github.com/FelineStateMachine/bindws/blob/5d3126716ae5b6bf01d46cdf14fceb05244445e0/README.md",
         "https://github.com/FelineStateMachine/bindws/blob/5d3126716ae5b6bf01d46cdf14fceb05244445e0/docs/21-marmot-transport.md",
