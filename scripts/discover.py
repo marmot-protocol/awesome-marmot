@@ -77,6 +77,9 @@ def api_json(url: str, fixture_name: str | None = None):
         raise RuntimeError(f"GitHub API {url} -> HTTP {error.code}") from error
     except urllib.error.URLError as error:
         raise RuntimeError(f"GitHub API {url} -> {error.reason}") from error
+    except (OSError, ValueError) as error:
+        # Read timeouts and non-JSON bodies are outages too, not crashes.
+        raise RuntimeError(f"GitHub API {url} -> {error!r}") from error
 
 
 def github_org_repositories(organization: str) -> list[dict]:
@@ -251,6 +254,12 @@ def keyword_pattern(terms: list[str]) -> re.Pattern:
     """Case-insensitive whole-word match; a space in a term also matches '-', '_' or nothing."""
     parts = [r"[\s_-]?".join(re.escape(word) for word in term.split()) for term in terms if term.strip()]
     return re.compile(r"\b(?:" + "|".join(parts) + r")\b", re.I) if parts else re.compile(r"(?!)")
+
+
+def clean_text(value: str, limit: int) -> str:
+    """Collapse whitespace and cap length, so third-party text cannot add report lines."""
+    text = " ".join(str(value).split())
+    return text if len(text) <= limit else text[: limit - 1] + "…"
 
 
 def tag_values(event: dict, name: str) -> list[str]:
@@ -447,6 +456,8 @@ def gitlab_json(url: str, token: str):
         raise RuntimeError(f"GitLab API {url} -> HTTP {error.code}") from error
     except urllib.error.URLError as error:
         raise RuntimeError(f"GitLab API {url} -> {error.reason}") from error
+    except (OSError, ValueError) as error:
+        raise RuntimeError(f"GitLab API {url} -> {error!r}") from error
 
 
 def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str]) -> list[dict]:
@@ -834,8 +845,8 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
         web = sorted({url for value in tag_values(event, "web") if (url := normalize_forge_url(value))})
         if known_nostr.intersection((pubkey, identifier) for pubkey in pubkeys) or known_links.intersection([*clones, *web]):
             continue
-        name = next(iter(tag_values(event, "name")), "") or identifier
-        description = next(iter(tag_values(event, "description")), "")
+        name = clean_text(next(iter(tag_values(event, "name")), "") or identifier, 120)
+        description = clean_text(next(iter(tag_values(event, "description")), ""), 500)
         add_lead(clones, name, description, web, origin)
 
     window_start = NOW - dt.timedelta(days=ACTIVITY_WINDOW_DAYS)
@@ -867,7 +878,13 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
                 "origin": origin,
             })
             continue
-        add_lead([url], project.get("path_with_namespace") or url, project.get("description") or "", [], origin)
+        add_lead(
+            [url],
+            clean_text(project.get("path_with_namespace") or url, 120),
+            clean_text(project.get("description") or "", 500),
+            [],
+            origin,
+        )
 
     return retained, rejected, candidates, leads
 

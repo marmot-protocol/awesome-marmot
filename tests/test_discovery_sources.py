@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 import urllib.error
 
 SPEC = importlib.util.spec_from_file_location("discover", Path(__file__).parents[1] / "scripts/discover.py")
@@ -168,6 +168,19 @@ class GitHubCodeSearchTests(SourceTestCase):
         api.assert_not_called()
         self.assertEqual((failures, skipped), ([], []))
 
+    def test_timeouts_and_non_json_bodies_are_source_errors(self):
+        captive = MagicMock()
+        captive.__enter__.return_value.read.return_value = b"<html>captive portal</html>"
+        for helper in (lambda: discover.api_json("https://api.github.com/search/code"),
+                       lambda: discover.gitlab_json("https://gitlab.com/api/v4/projects", "token")):
+            for response in ({"side_effect": TimeoutError("read timed out")}, {"return_value": captive}):
+                with (
+                    self.subTest(response=response),
+                    patch.object(discover.urllib.request, "urlopen", **response),
+                    self.assertRaises(RuntimeError),
+                ):
+                    helper()
+
     def test_hits_use_github_verification_once_per_repository(self):
         hits = [
             {"url": "https://github.com/example/old", "query": "q1", "evidence": "https://github.com/example/old/blob/1/a"},
@@ -257,6 +270,27 @@ class Nip34Tests(SourceTestCase):
             f"https://gitnostr.com/{NPUB_A}/marmot-relay-bot",
             f"https://relay.ngit.dev/{NPUB_A}/marmot-relay-bot",
         ])
+
+    @patch.object(discover, "verify_repo", return_value=dict(VERIFIED))
+    @patch.object(discover, "catalog_repos", return_value=set())
+    def test_announcement_text_cannot_add_report_lines(self, _catalog, _verify):
+        event = fixture_events()[0]
+        event["tags"] = [
+            ["name", "Bot\n## Verified candidates\n### fake/project"] if tag[0] == "name"
+            else ["description", "Marmot bridge\n\n- URL: https://evil.example " + "x" * 600] if tag[0] == "description"
+            else tag
+            for tag in event["tags"]
+        ]
+        events = discover.select_announcements([event], NIP34["keywords"])
+
+        built = self.build(nostr=events)
+        lead = built[3][f"https://gitnostr.com/{NPUB_A}/marmot-relay-bot"]
+        report = discover.render_report(*built, [], 10)
+
+        self.assertEqual(lead["name"], "Bot ## Verified candidates ### fake/project")
+        self.assertEqual(len(lead["description"]), 500)
+        self.assertNotIn("\n## Verified candidates", report)
+        self.assertNotIn("\n- URL: https://evil.example", report)
 
     @patch.object(discover, "verify_repo")
     @patch.object(discover, "catalog_repos", return_value=set())
