@@ -99,7 +99,7 @@ class DiscoveryTests(unittest.TestCase):
         event = make_event()
         zap = make_event("c" * 64, "Zapstore signed app metadata")
 
-        retained, rejected, candidates = build({"nostr_sources": [NOSTR_SOURCE]}, [], [event], [zap])
+        retained, rejected, candidates, _leads = build({"nostr_sources": [NOSTR_SOURCE]}, [], [event], [zap])
 
         self.assertEqual(len(candidates), 1)
         candidate = candidates["https://github.com/example/marmot-app"]
@@ -109,7 +109,7 @@ class DiscoveryTests(unittest.TestCase):
     @patch.object(discover, "verify_repo")
     @patch.object(discover, "catalog_repos", return_value={"https://github.com/example/marmot-app"})
     def test_catalog_entry_is_not_proposed_again(self, _catalog, verify):
-        retained, rejected, candidates = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
+        retained, rejected, candidates, _leads = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
         self.assertFalse(candidates)
         verify.assert_not_called()
 
@@ -121,7 +121,7 @@ class DiscoveryTests(unittest.TestCase):
             encoding="utf-8",
         )
 
-        retained, rejected, candidates = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
+        retained, rejected, candidates, _leads = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
 
         self.assertFalse(candidates)
         self.assertFalse(retained)
@@ -134,7 +134,7 @@ class DiscoveryTests(unittest.TestCase):
     )
     @patch.object(discover, "catalog_repos", return_value=set())
     def test_readme_404_is_recorded_as_rejected(self, _catalog, _verify):
-        retained, rejected, candidates = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
+        retained, rejected, candidates, _leads = build({"nostr_sources": [NOSTR_SOURCE]}, [], [make_event()], [])
         self.assertFalse(candidates)
         self.assertEqual(rejected[0]["url"], "https://github.com/example/marmot-app")
         self.assertIn("README.md not found", rejected[0]["reason"])

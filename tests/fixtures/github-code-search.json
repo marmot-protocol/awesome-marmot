@@ -1,0 +1,69 @@
+{
+  "\"marmot-protocol/mdk\" cgka-engine filename:Cargo.toml -org:marmot-protocol": {
+    "total_count": 3,
+    "incomplete_results": false,
+    "items": [
+      {
+        "name": "Cargo.toml",
+        "path": "tooling/soak/Cargo.toml",
+        "sha": "1111111111111111111111111111111111111111",
+        "html_url": "https://github.com/Example-Dev/Group-Chat/blob/1111111111111111111111111111111111111111/tooling/soak/Cargo.toml",
+        "repository": {
+          "full_name": "Example-Dev/Group-Chat",
+          "html_url": "https://github.com/Example-Dev/Group-Chat",
+          "fork": false
+        }
+      },
+      {
+        "name": "Cargo.toml",
+        "path": "core/Cargo.toml",
+        "sha": "1111111111111111111111111111111111111111",
+        "html_url": "https://github.com/Example-Dev/Group-Chat/blob/1111111111111111111111111111111111111111/core/Cargo.toml",
+        "repository": {
+          "full_name": "Example-Dev/Group-Chat",
+          "html_url": "https://github.com/Example-Dev/Group-Chat",
+          "fork": false
+        }
+      },
+      {
+        "name": "Cargo.toml",
+        "path": "runtime/Cargo.toml",
+        "sha": "2222222222222222222222222222222222222222",
+        "html_url": "https://github.com/example-labs/marmot-web-runtime/blob/2222222222222222222222222222222222222222/runtime/Cargo.toml",
+        "repository": {
+          "full_name": "example-labs/marmot-web-runtime",
+          "html_url": "https://github.com/example-labs/marmot-web-runtime",
+          "fork": false
+        }
+      }
+    ]
+  },
+  "\"marmot.agent-control.v2\" -org:marmot-protocol": {
+    "total_count": 2,
+    "incomplete_results": false,
+    "items": [
+      {
+        "name": "control.py",
+        "path": "src/control.py",
+        "sha": "3333333333333333333333333333333333333333",
+        "html_url": "https://github.com/example-labs/agent-harness/blob/3333333333333333333333333333333333333333/src/control.py",
+        "repository": {
+          "full_name": "example-labs/agent-harness",
+          "html_url": "https://github.com/example-labs/agent-harness",
+          "fork": false
+        }
+      },
+      {
+        "name": "agents.md",
+        "path": "docs/agents.md",
+        "sha": "1111111111111111111111111111111111111111",
+        "html_url": "https://github.com/Example-Dev/Group-Chat/blob/1111111111111111111111111111111111111111/docs/agents.md",
+        "repository": {
+          "full_name": "Example-Dev/Group-Chat",
+          "html_url": "https://github.com/Example-Dev/Group-Chat",
+          "fork": false
+        }
+      }
+    ]
+  }
+}
