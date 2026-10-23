@@ -9,7 +9,7 @@ The weekly job is a conservative intake queue, not an auto-publisher.
 3. Nostr Recap and NostrMag are secondary discovery sources. Every retained item includes its event ID, author, relay, and outbound URLs. NostrMag's canonical seed is event `de399234b408ce0bf401c49004fb57342186c843917f94478dfaf54e7eeee19b`, authored by `fe5915…403b`; it is fetched from `wss://nostr.mom`, its linked article body is fetched from the `r` tag URL, and repository leads are extracted from that body.
 4. The Compass project registry and archives are useful cross-checks during human review. They are not available inside public CI and never replace a project's own repository evidence.
 
-Automated repository verification currently supports GitHub only. GitLab, Codeberg, NIP-34, and other forges remain eligible for the catalog, but require manual discovery and verification in review.
+Automated repository verification currently supports GitHub only. GitLab, Codeberg, NIP-34, and other forges remain eligible for the catalog, but require manual discovery and verification in review. [Manual cross-forge sweeps](#manual-cross-forge-sweeps) describes how to run one.
 
 ## Candidate gate
 
@@ -39,3 +39,19 @@ python3 scripts/discover.py --days 10 --output discovery-report.md
 ```
 
 Set `DISCOVERY_FIXTURE_DIR` to a directory containing `github-org.json`, `nostr-events.jsonl`, and `zapstore-events.jsonl` to fixture the source inventory. Candidate metadata and commit verification still use GitHub unless mocked in the tests; this is not a fully offline end-to-end mode.
+
+## Manual cross-forge sweeps
+
+The weekly job only sees the GitHub organization, a few Nostr roundups and Zapstore. Most community projects reach the catalog through occasional manual sweeps. The [2026-10-23 sweep](catalog-verification.md#discovery-sweep-additions-and-corrections-2026-10-23) added 11 projects and corrected 2 entries. These sources found them:
+
+| Source | What worked | Limits |
+| --- | --- | --- |
+| GitHub | Repository search (best match and recently updated) for Marmot, White Noise, MDK and NIP-EE terms. Code search for manifests naming `marmot-protocol/mdk`, `cgka-engine`, `marmot-app`, `@internet-privacy/marmot-ts`, `wn-agent` or `marmot.agent-control.v2`. The "Used by" dependency graph of marmot-ts, mdk-core and ts-mls. | Code search indexes default branches only and is visibly incomplete: several v2 projects missed every manifest query. Broad queries cap at about 300 results. Some dependents are private. |
+| GitLab.com | Unauthenticated project search by name and description. Topic search. Listing the projects of known Nostr developers' namespaces; one find surfaced only this way. | Code (`blobs`) search, global project search and web search need a token. Unauthenticated responses omit `archived`. |
+| Codeberg | Forgejo repository search with `includeDesc=true`; without it, only names match. | No code search. |
+| NIP-34 | Kind 30617 repository announcements paged from git relays (relay.ngit.dev, index.ngit.dev, git.shakespeare.diy, gitnostr.com, relay.gittr.space) and general relays, filtered by name, description and tags. Then shallow clones of announced repositories to read manifests. Check each announcement with `nak verify`, and compare kind 30618 state with `git ls-remote`. | Many announcements have no HTTPS clone URL (htree://, ssh). relay.damus.io and relay.nostr.band did not page reliably. |
+| Registries | Reverse dependencies on crates.io; npm, pub.dev, NuGet, Hex and pkg.go.dev search. | crates.io stops at mdk-core 0.8.0, because MDK 0.9+ is published only through Git. Registry dependents are therefore all v1, and v2 users are invisible there. npm misses aliased installs. |
+
+Treat a lead as a candidate only after reading its default-branch head. Check that the code really uses Marmot: README mentions and kind-number labels alone do not qualify. Two projects found in the 2026-10-23 sweep had already dropped Marmot. Classify the generation from pinned engine or component evidence, as described in the [refresh procedure](catalog-verification.md#refresh-procedure).
+
+Record reviewed GitHub leads that are not added in `data/discovery-seen.json`, so the weekly job does not re-propose them. The ledger suppresses proposals, so a recorded v1 project that later upgrades needs a manual recheck. Leads on other forges cannot be recorded there; list them in the dated verification note instead.
