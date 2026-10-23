@@ -11,7 +11,8 @@
       ],
       "archived": false,
       "default_branch": "main",
-      "last_activity_at": "2026-10-20T09:00:00.000Z"
+      "last_activity_at": "2026-10-20T09:00:00.000Z",
+      "visibility": "public"
     },
     {
       "id": 102,
@@ -22,7 +23,8 @@
       "topics": [],
       "archived": false,
       "default_branch": "main",
-      "last_activity_at": "2024-05-12T16:20:14.489Z"
+      "last_activity_at": "2024-05-12T16:20:14.489Z",
+      "visibility": "public"
     },
     {
       "id": 103,
@@ -33,7 +35,8 @@
       "topics": [],
       "archived": false,
       "default_branch": "main",
-      "last_activity_at": "2026-10-01T00:00:00.000Z"
+      "last_activity_at": "2026-10-01T00:00:00.000Z",
+      "visibility": "public"
     },
     {
       "id": 104,
@@ -44,7 +47,20 @@
       "topics": [],
       "archived": true,
       "default_branch": "main",
-      "last_activity_at": "2026-10-02T00:00:00.000Z"
+      "last_activity_at": "2026-10-02T00:00:00.000Z",
+      "visibility": "public"
+    },
+    {
+      "id": 106,
+      "name": "marmot-internal-notes",
+      "path_with_namespace": "private-group/marmot-internal-notes",
+      "web_url": "https://gitlab.com/private-group/marmot-internal-notes",
+      "description": "Private Marmot deployment notes",
+      "topics": [],
+      "archived": false,
+      "default_branch": "main",
+      "last_activity_at": "2026-10-22T08:00:00.000Z",
+      "visibility": "private"
     }
   ],
   "topic=marmot": [
@@ -59,7 +75,8 @@
       ],
       "archived": false,
       "default_branch": "main",
-      "last_activity_at": "2026-10-20T09:00:00.000Z"
+      "last_activity_at": "2026-10-20T09:00:00.000Z",
+      "visibility": "public"
     },
     {
       "id": 105,
@@ -74,7 +91,8 @@
       ],
       "archived": false,
       "default_branch": "main",
-      "last_activity_at": "2026-10-12T13:53:33.539Z"
+      "last_activity_at": "2026-10-12T13:53:33.539Z",
+      "visibility": "public"
     }
   ]
 }

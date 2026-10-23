@@ -203,9 +203,13 @@ def normalize_forge_url(url: str) -> str | None:
     """Normalize a non-GitHub repository URL for deduplication and the seen ledger.
 
     Any scheme with a host is kept: many NIP-34 repositories announce only
-    ``htree://`` or ``ssh://`` clone URLs.
+    ``htree://`` or ``ssh://`` clone URLs. Malformed URLs (signed events do
+    not validate them) return None rather than aborting the run.
     """
-    parsed = urlparse(url.strip())
+    try:
+        parsed = urlparse(url.strip())
+    except ValueError:
+        return None
     if not parsed.scheme or not parsed.netloc:
         return None
     path = parsed.path.split("/-/", 1)[0].rstrip("/").removesuffix(".git").rstrip("/")
@@ -279,17 +283,18 @@ def announcement_urls(event: dict) -> tuple[list[str], list[str]]:
 
 
 def select_announcements(events: list[dict], keywords: list[str]) -> list[dict]:
-    """Keep the newest keyword-matching version of each announced repository.
+    """Keep the newest version of each announced repository if it mentions a keyword.
 
     Kind 30617 is addressable, so relays can hold different versions of one
     (author, ``d``) address. The newest wins (ties: lowest id, per NIP-01) and
-    records every relay that served it.
+    records every relay that served it. Keywords are checked on the winner
+    only, so a newer version that dropped Marmot hides older ones.
     """
     pattern = keyword_pattern(keywords)
     newest: dict[tuple[str, str], dict] = {}
     relays: dict[str, set[str]] = {}
     for event in events:
-        if event.get("kind") != 30617 or not announcement_mentions(event, pattern):
+        if event.get("kind") != 30617:
             continue
         relays.setdefault(event.get("id", ""), set()).add(event.get("_relay") or "")
         address = (event.get("pubkey", ""), next(iter(tag_values(event, "d")), ""))
@@ -301,6 +306,7 @@ def select_announcements(events: list[dict], keywords: list[str]) -> list[dict]:
     selected = [
         {**event, "_source": NIP34_SOURCE, "_relay": ",".join(sorted(filter(None, relays[event.get("id", "")])))}
         for event in newest.values()
+        if announcement_mentions(event, pattern)
     ]
     return sorted(selected, key=lambda event: event.get("id", ""))
 
@@ -412,22 +418,24 @@ def fetch_anchor_articles(events: list[dict], failures: list[str]) -> list[dict]
 
 
 def fetch_repository_announcements(settings: dict, since: int, failures: list[str]) -> list[dict]:
-    """Fetch NIP-34 kind-30617 announcements that mention a configured keyword."""
-    keywords = settings.get("keywords", ["marmot"])
-    pattern = keyword_pattern(keywords)
+    """Fetch NIP-34 kind-30617 announcements that mention a configured keyword.
+
+    Every announcement is kept until version selection, so a newer version
+    without the keywords still supersedes an older one that had them.
+    """
     events: list[dict] = []
     for relay in settings.get("relays", []):
         try:
             batch = run_nak(
                 ["req", "-k", "30617", "--since", str(since), "--paginate", relay],
                 timeout=settings.get("timeout_seconds", 45),
-                keep=lambda event: event.get("kind") == 30617 and announcement_mentions(event, pattern),
+                keep=lambda event: event.get("kind") == 30617,
             )
         except RuntimeError as error:
             failures.append(f"NIP-34 fetch failed via {relay}: {error}")
             continue
         events.extend({**event, "_relay": relay} for event in batch)
-    return select_announcements(events, keywords)
+    return select_announcements(events, settings.get("keywords", ["marmot"]))
 
 
 def gitlab_json(url: str, token: str):
@@ -442,11 +450,13 @@ def gitlab_json(url: str, token: str):
 
 
 def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str]) -> list[dict]:
-    """Search GitLab projects by name, path, description and topic.
+    """Search public GitLab projects by name, path, description and topic.
 
-    Runs only with ``GITLAB_TOKEN``. Projects must mention a configured keyword
-    as a whole word; they are reported as unverified leads, because only
-    GitHub repositories are verified automatically.
+    Runs only with ``GITLAB_TOKEN``. A token also sees private and internal
+    projects, and this report is published on a public PR, so only public
+    projects are requested or kept. Projects must mention a configured
+    keyword as a whole word; they are reported as unverified leads, because
+    only GitHub repositories are verified automatically.
     """
     if not settings.get("enabled"):
         return []
@@ -460,6 +470,9 @@ def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str
     pattern = keyword_pattern(settings.get("keywords", ["marmot"]))
     queries = [*(f"search={term}" for term in settings.get("searches", [])),
                *(f"topic={topic}" for topic in settings.get("topics", []))]
+    # Archived and inactive projects cannot become leads, so they do not use
+    # up the page cap.
+    active_after = (NOW - dt.timedelta(days=ACTIVITY_WINDOW_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
     projects: dict[str, dict] = {}
     for query in queries:
         field, _, value = query.partition("=")
@@ -469,7 +482,8 @@ def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str
             else:
                 try:
                     batch = gitlab_json(
-                        f"{api}/projects?{field}={quote(value, safe='')}"
+                        f"{api}/projects?{field}={quote(value, safe='')}&visibility=public"
+                        f"&archived=false&last_activity_after={active_after}"
                         f"&order_by=id&sort=asc&per_page=100&page={page}",
                         token,
                     )
@@ -477,6 +491,8 @@ def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str
                     failures.append(f"{GITLAB_SOURCE} failed for {query}: {error}")
                     break
             for project in batch:
+                if project.get("visibility") != "public":
+                    continue
                 text = " ".join(str(part) for part in (
                     project.get("name"), project.get("path_with_namespace"),
                     project.get("description"), *(project.get("topics") or []),
@@ -487,6 +503,8 @@ def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str
                 entry["_queries"] = sorted({*entry["_queries"], query})
             if len(batch) < 100:
                 break
+        else:
+            failures.append(f"{GITLAB_SOURCE} reached max_pages for {query}; later results were not read")
     return [projects[url] for url in sorted(projects)]
 
 
@@ -602,8 +620,9 @@ def catalog_forge_entries() -> tuple[set[str], set[tuple[str, str]]]:
     nostr_repos: set[tuple[str, str]] = set()
     for link in LINK.findall(CATALOG.read_text(encoding="utf-8")):
         link = link.rstrip(".,;:")
-        if normalized := normalize_forge_url(link):
-            links.add(normalized)
+        if not (normalized := normalize_forge_url(link)):
+            continue
+        links.add(normalized)
         parsed = urlparse(link)
         segments = [segment for segment in parsed.path.split("/") if segment]
         if parsed.netloc.lower() == "gitworkshop.dev" and len(segments) >= 2:
@@ -804,10 +823,11 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
 
     # Non-GitHub clone URLs cannot be verified automatically. They become
     # leads unless the same announcement's GitHub URL already covers the
-    # project, or the catalog links the repository or its gitworkshop.dev page.
+    # project (cataloged, proposed now, or proposed in an earlier week), or
+    # the catalog links the repository or its gitworkshop.dev page.
     for event, origin in announcements:
         github, clones = announcement_urls(event)
-        if not clones or any(url in known or url in candidates for url in github):
+        if not clones or any(url in known or url in candidates or url in seen_repos for url in github):
             continue
         identifier = next(iter(tag_values(event, "d")), "")
         pubkeys = {event.get("pubkey", ""), *tag_values(event, "maintainers")}

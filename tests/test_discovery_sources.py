@@ -223,9 +223,56 @@ class Nip34Tests(SourceTestCase):
         )
         self.assertEqual(failures, ["NIP-34 fetch failed via wss://relay.ngit.dev: timed out"])
         self.assertEqual([event["_relay"] for event in selected], ["wss://gitnostr.com"] * 2)
+        # Non-matching announcements survive the fetch so they can still
+        # supersede older versions; only other kinds are dropped.
         keep = run_nak.call_args.kwargs["keep"]
-        self.assertTrue(keep(events[0]))
-        self.assertFalse(keep(events[4]))
+        self.assertTrue(keep(events[4]))
+        self.assertFalse(keep({**events[4], "kind": 1}))
+
+    def test_newer_version_without_keywords_supersedes_older_match(self):
+        older = {**fixture_events()[0], "tags": [["d", "relay-bot"], ["description", "Bridge for Marmot groups"]]}
+        newer = {**older, "id": "f6" * 32, "created_at": older["created_at"] + 1,
+                 "tags": [["d", "relay-bot"], ["description", "A plain relay bot"]]}
+
+        self.assertEqual(discover.select_announcements([older, newer], NIP34["keywords"]), [])
+        self.assertEqual(
+            [event["id"] for event in discover.select_announcements([older], NIP34["keywords"])],
+            [older["id"]],
+        )
+
+    @patch.object(discover, "verify_repo", return_value=dict(VERIFIED))
+    @patch.object(discover, "catalog_repos", return_value=set())
+    def test_malformed_clone_url_is_skipped_without_aborting(self, _catalog, _verify):
+        event = fixture_events()[0]
+        event["tags"] = [
+            ["clone", "https://[broken/repo.git", *tag[1:]] if tag[0] == "clone" else tag
+            for tag in event["tags"]
+        ]
+        self.assertIsNone(discover.normalize_forge_url("https://[broken/repo.git"))
+
+        events = discover.select_announcements([event], NIP34["keywords"])
+        _retained, _rejected, _candidates, leads = self.build(nostr=events)
+
+        self.assertEqual(leads[f"https://gitnostr.com/{NPUB_A}/marmot-relay-bot"]["urls"], [
+            f"https://gitnostr.com/{NPUB_A}/marmot-relay-bot",
+            f"https://relay.ngit.dev/{NPUB_A}/marmot-relay-bot",
+        ])
+
+    @patch.object(discover, "verify_repo")
+    @patch.object(discover, "catalog_repos", return_value=set())
+    def test_seen_github_url_suppresses_republished_clone(self, _catalog, verify):
+        discover.SEEN.write_text(json.dumps({
+            "event_ids": [],
+            "repository_urls": ["https://github.com/example/mls-chat"],
+        }), encoding="utf-8")
+        events = [event for event in discover.select_announcements(fixture_events(), NIP34["keywords"])
+                  if event["id"] == "b2" * 32]
+
+        _retained, rejected, _candidates, leads = self.build(nostr=events)
+
+        verify.assert_not_called()
+        self.assertEqual(leads, {})
+        self.assertEqual(rejected[0]["reason"], "previously recorded in seen ledger")
 
     def test_run_nak_filters_before_signature_checks(self):
         events = fixture_events()
@@ -361,10 +408,28 @@ class GitLabTests(SourceTestCase):
             "someone/marmot",
         ])
         self.assertEqual(projects[2]["_queries"], ["search=marmot", "topic=marmot"])
+        # The private project in the fixture never comes back.
         urls = [call.args[0] for call in gitlab_json.call_args_list]
-        self.assertTrue(urls[0].startswith("https://gitlab.com/api/v4/projects?search=marmot&order_by=id&sort=asc"))
-        self.assertTrue(urls[1].startswith("https://gitlab.com/api/v4/projects?topic=marmot&"))
+        self.assertTrue(urls[0].startswith(
+            "https://gitlab.com/api/v4/projects?search=marmot&visibility=public&archived=false"
+            "&last_activity_after=2026-07-25T12:00:00Z&order_by=id&sort=asc"
+        ))
+        self.assertTrue(urls[1].startswith("https://gitlab.com/api/v4/projects?topic=marmot&visibility=public&"))
         self.assertEqual(gitlab_json.call_args.args[1], "test-token")
+
+    def test_full_last_page_is_recorded(self):
+        page = [{
+            "web_url": f"https://gitlab.com/example/marmot-{index}", "name": f"marmot-{index}",
+            "visibility": "public",
+        } for index in range(100)]
+        failures, skipped = [], []
+        with (
+            patch.dict(discover.os.environ, {"GITLAB_TOKEN": "test-token"}, clear=True),
+            patch.object(discover, "gitlab_json", return_value=page),
+        ):
+            projects = discover.gitlab_project_search({**GITLAB, "topics": [], "max_pages": 1}, failures, skipped)
+        self.assertEqual(len(projects), 100)
+        self.assertEqual(failures, ["GitLab project search reached max_pages for search=marmot; later results were not read"])
 
     def test_outage_is_recorded_and_other_queries_continue(self):
         fixture = fixture_json("gitlab-projects.json")
@@ -418,6 +483,7 @@ class FixtureRunTests(SourceTestCase):
         self.assertIn("- Unverified non-GitHub leads: 5", first)
         self.assertIn("## Unverified non-GitHub leads", first)
         self.assertIn(f"author={A}", first)
+        self.assertNotIn("private-group", first)
         self.assertNotIn("No catalog or branch change is required.", first)
         self.assertNotIn("Source failures\n\n-", first)
 
