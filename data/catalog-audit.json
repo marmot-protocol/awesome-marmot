@@ -1,7 +1,7 @@
 {
   "checked_at": "2026-10-01T06:46:00Z",
   "activity_window_days": 90,
-  "scope": "Public default-branch source and repository metadata, plus explicitly identified unmerged integration and tagged release source; not installed releases or runtime interoperability.",
+  "scope": "Public default-branch source and repository metadata, plus explicitly identified tagged release source; not installed releases or runtime interoperability.",
   "repositories": [
     {
       "repository": "https://github.com/CentauriAgent/burrow",
@@ -621,15 +621,20 @@
     {
       "repository": "https://gitlab.com/Kalle/fmdtr-android",
       "default_branch": "master",
-      "commit": "4ac62356c4237a6beb77f41a9997d9686003c3e0",
-      "last_commit_at": "2026-06-19T14:13:15Z",
-      "generation": "v1",
-      "activity": "inactive",
-      "source": "https://gitlab.com/Kalle/fmdtr-android/-/blob/4ac62356c4237a6beb77f41a9997d9686003c3e0/rust/fmd-marmot-bridge/Cargo.toml",
-      "feature_evidence": [
-        "https://gitlab.com/Kalle/fmdtr-android/-/blob/4ac62356c4237a6beb77f41a9997d9686003c3e0/README.md"
+      "commit": "c177a13eaa6f5ac2e753be210bc5fe86c3293498",
+      "last_commit_at": "2026-09-25T07:39:52+02:00",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://gitlab.com/Kalle/fmdtr-android/-/blob/c177a13eaa6f5ac2e753be210bc5fe86c3293498/rust/fmd-marmot-bridge/Cargo.toml",
+      "generation_evidence": [
+        "https://gitlab.com/Kalle/fmdtr-android/-/blob/c177a13eaa6f5ac2e753be210bc5fe86c3293498/rust/fmd-marmot-bridge/Cargo.toml",
+        "https://gitlab.com/Kalle/fmdtr-android/-/blob/c177a13eaa6f5ac2e753be210bc5fe86c3293498/rust/fmd-marmot-bridge/Cargo.lock"
       ],
-      "note": "Bridge pins mdk-core and mdk-sqlite-storage 0.8.0. Archive status was not returned by the inspected project API.",
+      "feature_evidence": [
+        "https://gitlab.com/Kalle/fmdtr-android/-/blob/c177a13eaa6f5ac2e753be210bc5fe86c3293498/README.md"
+      ],
+      "note": "Android find-my-device fork of FMD with a Marmot command channel. The bridge now pins marmot-app, marmot-account, cgka-engine, cgka-session and storage-sqlite at MDK fcc85ed (Release MDK 0.10.4); the lock resolves 0.10.4. This supersedes the 2026-10-01 record (registry mdk-core 0.8.0 at 4ac6235). Archive status was not returned by the inspected project API. No installation or interoperability test performed.",
       "archived": null
     },
     {
@@ -653,34 +658,33 @@
       "archived": null
     },
     {
-      "repository": "https://github.com/BenGWeeks/lightning-piggy-mobile",
+      "repository": "https://github.com/LightningPiggy/lightning-piggy-mobile",
       "default_branch": "main",
-      "commit": "5685c009ec6e63e751308d2ebe293173db616552",
-      "last_commit_at": "2026-10-08T19:15:54Z",
-      "checked_at": "2026-10-09T17:37:51Z",
+      "commit": "3f020caea15ad4322da57bbbe43148c9239ae8aa",
+      "last_commit_at": "2026-10-22T18:55:11Z",
+      "checked_at": "2026-10-23T08:27:13Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/BenGWeeks/lightning-piggy-mobile/tree/5685c009ec6e63e751308d2ebe293173db616552",
+      "source": "https://github.com/LightningPiggy/lightning-piggy-mobile/tree/3f020caea15ad4322da57bbbe43148c9239ae8aa",
       "archived": false,
       "generation_evidence": [
-        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/5685c009ec6e63e751308d2ebe293173db616552/README.md",
-        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/6a2b65f0d156a93b831dfc9843ac17d820c5212d/package-lock.json",
-        "https://registry.npmjs.org/@internet-privacy/marmot-ts/-/marmot-ts-0.6.1-next.20261007214300.tgz"
+        "https://github.com/LightningPiggy/lightning-piggy-mobile/blob/3f020caea15ad4322da57bbbe43148c9239ae8aa/package.json",
+        "https://github.com/LightningPiggy/lightning-piggy-mobile/blob/3f020caea15ad4322da57bbbe43148c9239ae8aa/package-lock.json",
+        "https://github.com/LightningPiggy/lightning-piggy-mobile/blob/3f020caea15ad4322da57bbbe43148c9239ae8aa/vendor/internet-privacy-marmot-ts-0.6.1-pr83.624102f-sigkey.tgz"
       ],
-      "dependency_integrity": "sha512-A47ANplwf0C2a9QDau5kV/uYch5ojmRmAA55eIM/+OGXBzKedpP59f0sM/e/b79mLvkQzQczybaxc6RVGcFZQg==",
+      "dependency_integrity": "sha512-H+G9CWyMLq5uQZAf0bkTn9INxQa+ESSVkEuWuoRTX3N+/lU7ApZTfOaLpiV66A4KbqQjMvQG07pTC32LHWUeqA==",
       "feature_evidence": [
-        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/5685c009ec6e63e751308d2ebe293173db616552/README.md",
-        "https://github.com/BenGWeeks/lightning-piggy-mobile/blob/6a2b65f0d156a93b831dfc9843ac17d820c5212d/src/services/marmotSession.ts"
+        "https://github.com/LightningPiggy/lightning-piggy-mobile/blob/3f020caea15ad4322da57bbbe43148c9239ae8aa/README.md",
+        "https://github.com/LightningPiggy/lightning-piggy-mobile/blob/3f020caea15ad4322da57bbbe43148c9239ae8aa/src/services/marmotSession.ts"
       ],
       "marmot_integration": {
-        "status": "unmerged-alpha",
-        "pull_request": "https://github.com/BenGWeeks/lightning-piggy-mobile/pull/1163",
-        "head": "6a2b65f0d156a93b831dfc9843ac17d820c5212d",
-        "head_committed_at": "2026-10-09T17:14:47Z",
+        "status": "merged",
+        "pull_request": "https://github.com/LightningPiggy/lightning-piggy-mobile/pull/1163",
+        "merged_at": "2026-10-09T23:07:45Z",
         "dependency": "@internet-privacy/marmot-ts",
-        "dependency_version": "0.6.1-next.20261007214300"
+        "dependency_version": "0.6.1-pr83.624102f-sigkey"
       },
-      "note": "Activity is measured from the default branch, whose current messaging is NIP-17. The v2 classification applies only to the unmerged alpha integration in PR 1163, not released builds. Its pinned marmot-ts archive matches the lockfile SHA-512 and implements v2 application components and account identity proofs. The session source creates a MarmotClient for one-to-one and group chat. Media uses its existing NIP-17 encryption rather than Marmot media; full White Noise interoperability is not claimed. The LightningPiggy organization copy is an older fork; the upstream README directs contributors to BenGWeeks/lightning-piggy-mobile."
+      "note": "Family Bitcoin wallet. The Marmot integration from PR 1163 was merged into the default branch on 2026-10-09; the README lists Marmot (MLS over Nostr, Alpha) one-to-one and group chats beside NIP-17. package.json vendors a marmot-ts 0.6.1 pre-release tarball whose SHA-512 matches the lockfile; it was read without executing and implements v2 application components and the 0x8009 account identity proof. The session service constructs a MarmotClient. The repository moved from BenGWeeks to the LightningPiggy organization with the same GitHub repository id. Released builds were not inspected; no installation or interoperability test performed."
     },
     {
       "repository": "https://github.com/chebizarro/nostrc",
@@ -922,6 +926,217 @@
         "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/runtime/marmot-web/Cargo.toml",
         "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/runtime/marmot-web/README.md",
         "https://github.com/januszgrze/chascuro/blob/e892802d7dc9ad40a588288ef1161426c5bb6bc6/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://git.coinos.io/coinosv3.git",
+      "default_branch": "master",
+      "commit": "c143b7dbe900df9a644bb67b87a92fd208e1ee74",
+      "last_commit_at": "2026-10-22T23:55:09-07:00",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://git.coinos.io/coinosv3.git/tree/?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74",
+      "generation_evidence": [
+        "https://git.coinos.io/coinosv3.git/tree/src/marmot.js?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74",
+        "https://git.coinos.io/coinosv3.git/tree/src/mls.js?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74"
+      ],
+      "feature_evidence": [
+        "https://git.coinos.io/coinosv3.git/tree/README.md?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74"
+      ],
+      "nip34_announcement": {
+        "event": "f7422e49b67792c17bd6e101b9c66b50c87700918f3755851c07ac3f1a15944a",
+        "pubkey": "72bdbc57bdd6dfc4e62685051de8041d148c3c68fe42bf301f71aa6cf53e52fb"
+      },
+      "note": "Self-custodial Bitcoin wallet (Ark, Lightning, on-chain) with a built-in Nostr client. White Noise group chats use its own Marmot layer over a native-JS RFC 9420 implementation, not MDK or marmot-ts: v2 application components, the 0x8009 account identity proof (marmot.account-identity-proof.v2) and kind-30443 KeyPackages. The canonical cgit source and its gittr mirror are named in the publisher's signed NIP-34 announcement, which verified with nak. No installation or interoperability test performed.",
+      "archived": null
+    },
+    {
+      "repository": "https://github.com/Noormohammadiazad/Textor",
+      "default_branch": "main",
+      "commit": "329287e1a389f3712daeda983818a92ea8cc78d3",
+      "last_commit_at": "2026-09-28T23:13:19Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/Noormohammadiazad/Textor/tree/329287e1a389f3712daeda983818a92ea8cc78d3",
+      "note": "Static-site Nostr messenger with no backend. Forward-secret groups of up to 100 use its own Marmot-format layer on ts-mls 1.6.4: kinds 30443/444/445, the 0x0006 application-data dictionary and profile/admin components, citing the specification's foundation and app-components documents. DMs and small groups use NIP-17. The README states the code is not independently audited. No interoperability test performed.",
+      "generation_evidence": [
+        "https://github.com/Noormohammadiazad/Textor/blob/329287e1a389f3712daeda983818a92ea8cc78d3/src/core/mls/marmot.ts",
+        "https://github.com/Noormohammadiazad/Textor/blob/329287e1a389f3712daeda983818a92ea8cc78d3/package.json"
+      ],
+      "feature_evidence": [
+        "https://github.com/Noormohammadiazad/Textor/blob/329287e1a389f3712daeda983818a92ea8cc78d3/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/humanitylabs-org/wizard-messenger",
+      "default_branch": "feature/private-beta-20261015",
+      "commit": "16e245ef4dd30464b6ed4d40dd9d1c704eed9126",
+      "last_commit_at": "2026-10-15T11:22:09Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/humanitylabs-org/wizard-messenger/tree/16e245ef4dd30464b6ed4d40dd9d1c704eed9126",
+      "note": "Wizard OS peer messenger: an isolated container with an HTTP API, minimal MCP and editable web view, with MDK as the messaging engine. Engine provenance pins the MDK 0.12.0 release commit 122bd90 and its lock. A two-person encrypted-text MVP in private beta; install images are private prerelease archives, while the source is public. The default branch is feature/private-beta-20261015. No installation or interoperability test performed.",
+      "generation_evidence": [
+        "https://github.com/humanitylabs-org/wizard-messenger/blob/16e245ef4dd30464b6ed4d40dd9d1c704eed9126/engine/provenance.json",
+        "https://github.com/humanitylabs-org/wizard-messenger/blob/16e245ef4dd30464b6ed4d40dd9d1c704eed9126/engine/Cargo.lock"
+      ],
+      "feature_evidence": [
+        "https://github.com/humanitylabs-org/wizard-messenger/blob/16e245ef4dd30464b6ed4d40dd9d1c704eed9126/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/3DAGI/freedom-app",
+      "default_branch": "main",
+      "commit": "5215738c2dcc99766352e4ba9e6c0a8560b6400b",
+      "last_commit_at": "2026-10-23T07:25:53Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/3DAGI/freedom-app/tree/5215738c2dcc99766352e4ba9e6c0a8560b6400b",
+      "note": "Operator-free messaging, Lightning/Solana payments and NIP-90 AI jobs in a single-file web app with Tauri launchers (German README). Its packages/mls module compiles MDK to WebAssembly from upstream revision a19feca with a local patch; the lock resolves cgka-engine and marmot-app 0.10.4. The app's MLS engine loads that module for group and one-to-one forward-secret encryption. How much of the app's chat uses it was not traced; no runtime test performed.",
+      "generation_evidence": [
+        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/mls/bauen.sh",
+        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/mls/Cargo.lock",
+        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/mls/crate/Cargo.toml"
+      ],
+      "feature_evidence": [
+        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/README.md",
+        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/app/src/mls-engine.ts"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/Epiphytic/deaddrop",
+      "default_branch": "main",
+      "commit": "b38b2841b081952dc7728da391fe0e26fc7c6181",
+      "last_commit_at": "2026-09-03T03:12:13Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/Epiphytic/deaddrop/tree/b38b2841b081952dc7728da391fe0e26fc7c6181",
+      "note": "Tor-only Marmot client and authenticated Nostr relay for anonymous one-to-one dead drops, served as one v3 onion service. Engine crates (cgka-engine, cgka-traits, transport-nostr-peeler) come from the Epiphytic/mdk fork at 4981e59, an upstream MDK commit with workspace version 0.9.15. The repository is organised around feasibility gates with dated results; maturity is prototype. No Tor or interoperability test performed.",
+      "generation_evidence": [
+        "https://github.com/Epiphytic/deaddrop/blob/b38b2841b081952dc7728da391fe0e26fc7c6181/crates/protocol-core/Cargo.toml",
+        "https://github.com/Epiphytic/deaddrop/blob/b38b2841b081952dc7728da391fe0e26fc7c6181/crates/marmot-wasm-probe/Cargo.toml"
+      ],
+      "feature_evidence": [
+        "https://github.com/Epiphytic/deaddrop/blob/b38b2841b081952dc7728da391fe0e26fc7c6181/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/marmot-protocol/frigate-marmot",
+      "default_branch": "main",
+      "commit": "67ff0d58994e8859debb7493454b883ff1b0775a",
+      "last_commit_at": "2026-10-13T19:20:43Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/marmot-protocol/frigate-marmot/tree/67ff0d58994e8859debb7493454b883ff1b0775a",
+      "note": "Sends private Frigate person alerts (a snapshot, then buffered video) to a White Noise group through a dedicated bot using MDK's wn/wnd CLI; build-mdk.sh pins MDK 1016a76 from 2026-10-13. README status: initial implementation validated with synthetic events and media; a real Frigate installation, relay publication and phone delivery await the owner's verification. A community integration in the Marmot organization, not an official Frigate or MDK component.",
+      "generation_evidence": [
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/tools/build-mdk.sh",
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/frigate_marmot/marmot.py"
+      ],
+      "feature_evidence": [
+        "https://github.com/marmot-protocol/frigate-marmot/blob/67ff0d58994e8859debb7493454b883ff1b0775a/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/Epiphytic/marmish",
+      "default_branch": "master",
+      "commit": "5d53267960ddea1c5fa8807ff211236865df817b",
+      "last_commit_at": "2026-10-23T06:48:38Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/Epiphytic/marmish/tree/5d53267960ddea1c5fa8807ff211236865df817b",
+      "note": "Linux prototype for asynchronous remote commands and resumable shells over Marmot, through an adapter to a hash-pinned wnd daemon. The build tool pins MDK revision 37c248a (2026-09-24) via the liamhelmer-bel/mdk fork. Its compatibility notes say the production live adapter remains disabled pending review; only a bounded live exchange has run. Interactive PTY sessions are planned. No license file. No installation test performed.",
+      "generation_evidence": [
+        "https://github.com/Epiphytic/marmish/blob/5d53267960ddea1c5fa8807ff211236865df817b/tools/marmish_mdk_build.py",
+        "https://github.com/Epiphytic/marmish/blob/5d53267960ddea1c5fa8807ff211236865df817b/docs/mdk-compatibility.md"
+      ],
+      "feature_evidence": [
+        "https://github.com/Epiphytic/marmish/blob/5d53267960ddea1c5fa8807ff211236865df817b/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/Epiphytic/heterodyne-metaharness",
+      "default_branch": "main",
+      "commit": "afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b",
+      "last_commit_at": "2026-10-20T12:36:14Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/Epiphytic/heterodyne-metaharness/tree/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b",
+      "note": "Coding-agent control plane in early development. Only admind exists so far: an operator recovery channel to a privileged admin agent over Marmot, through a client for MDK's wn-agent socket speaking marmot.agent-control.v2. The planned wsd daemon routes workstream groups over Marmot. MDK owns encryption and transport. No installation test performed.",
+      "generation_evidence": [
+        "https://github.com/Epiphytic/heterodyne-metaharness/blob/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b/src/heterodyne/marmot/control.py"
+      ],
+      "feature_evidence": [
+        "https://github.com/Epiphytic/heterodyne-metaharness/blob/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b/README.md",
+        "https://github.com/Epiphytic/heterodyne-metaharness/blob/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b/docs/admind.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/hzrd149/marmots-tunnels",
+      "default_branch": "master",
+      "commit": "5a77ad022505a262ed8265f60e60d86278319693",
+      "last_commit_at": "2026-09-12T18:43:33Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "adjacent",
+      "activity": "active",
+      "source": "https://github.com/hzrd149/marmots-tunnels/tree/5a77ad022505a262ed8265f60e60d86278319693",
+      "note": "Marmot group-history debugger from the marmot-ts maintainer: a headless member that, once invited, sets retention and fork horizons to infinity, keeps every fork of a group and renders its history as a branching timeline in a small web UI. Built on the marmot-ts submodule at a48a0ef (package 0.6.0, v2 components and identity proof). The author's signed NIP-34 announcement lists this GitHub repository as a clone URL. Adjacent because it is diagnostic tooling, not a messenger.",
+      "generation_evidence": [
+        "https://github.com/hzrd149/marmots-tunnels/blob/5a77ad022505a262ed8265f60e60d86278319693/.gitmodules",
+        "https://github.com/hzrd149/marmots-tunnels/tree/5a77ad022505a262ed8265f60e60d86278319693/marmot-ts",
+        "https://github.com/marmot-protocol/marmot-ts/blob/a48a0efc5b7b5ad9253568377fd69023ff20154a/package.json"
+      ],
+      "feature_evidence": [
+        "https://github.com/hzrd149/marmots-tunnels/blob/5a77ad022505a262ed8265f60e60d86278319693/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/marmot-protocol/nostr-doctor",
+      "default_branch": "master",
+      "commit": "b43fd966ef256fd277118a59dfc064be468677a8",
+      "last_commit_at": "2026-09-06T11:43:07Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "adjacent",
+      "activity": "active",
+      "source": "https://github.com/marmot-protocol/nostr-doctor/tree/b43fd966ef256fd277118a59dfc064be468677a8",
+      "note": "Guided Nostr diagnostic and repair tool. Its Marmot coverage, reviewed against specification commit 4a2bc65 on 2026-09-06, validates public kind-30443 KeyPackages, including MLS capabilities, the 0x0006 dictionary and component 0x8009 identity proofs. A separate Legacy Marmot Cleanup section handles kind 443 and 10051 events. Diagnostics only; it does not implement messaging.",
+      "feature_evidence": [
+        "https://github.com/marmot-protocol/nostr-doctor/blob/b43fd966ef256fd277118a59dfc064be468677a8/docs/marmot-diagnostics.md",
+        "https://github.com/marmot-protocol/nostr-doctor/blob/b43fd966ef256fd277118a59dfc064be468677a8/README.md"
+      ],
+      "archived": false
+    },
+    {
+      "repository": "https://github.com/FelineStateMachine/bindws",
+      "default_branch": "main",
+      "commit": "5d3126716ae5b6bf01d46cdf14fceb05244445e0",
+      "last_commit_at": "2026-09-05T18:30:16Z",
+      "checked_at": "2026-10-23T08:27:13Z",
+      "generation": "adjacent",
+      "activity": "active",
+      "source": "https://github.com/FelineStateMachine/bindws/tree/5d3126716ae5b6bf01d46cdf14fceb05244445e0",
+      "note": "Relay-on-demand service where each name under bind.ws is a claimable Nostr relay. An opt-in Marmot transport accepts kind-30443 KeyPackages and opaque kind-445 group messages, with account admission, identity-proof checks and storage caps for ephemeral authors; clients manage encryption and membership. Relay support only, not a messaging implementation; runtime behaviour untested.",
+      "feature_evidence": [
+        "https://github.com/FelineStateMachine/bindws/blob/5d3126716ae5b6bf01d46cdf14fceb05244445e0/README.md",
+        "https://github.com/FelineStateMachine/bindws/blob/5d3126716ae5b6bf01d46cdf14fceb05244445e0/docs/21-marmot-transport.md",
+        "https://github.com/FelineStateMachine/bindws/blob/5d3126716ae5b6bf01d46cdf14fceb05244445e0/src/marmot.ts"
       ],
       "archived": false
     }

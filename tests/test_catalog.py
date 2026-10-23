@@ -250,6 +250,20 @@ class CatalogTests(unittest.TestCase):
         self.assertIn(f"<summary>{archived} historical projects</summary>", self.text)
         self.assertEqual(self.check(), [])
 
+    def test_overview_counts_match_v2_listings(self):
+        v2 = self.text[self.text.index("## Marmot v2 — recently updated"):self.text.index("## Marmot v1")]
+        sections = {
+            heading.strip(): sum(line.startswith("- [") for line in body.splitlines())
+            for heading, body in (part.split("\n", 1) for part in v2.split("\n### ")[1:])
+        }
+        for count, label, section in (
+            (sections["Apps"], "clients", "apps"),
+            (sections["SDKs and libraries"], "library entries", "sdks-and-libraries"),
+            (sections["Agents and automation"], "integrations", "agents-and-automation"),
+        ):
+            with self.subTest(section=section):
+                self.assertIn(f"**{count}** [{label}](#{section})", self.text)
+
     def test_linux_client_platforms_match_verified_evidence(self):
         record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/whitenoise-linux"))
         self.assertEqual(record["platforms"], ["Linux", "Windows", "macOS", "OpenBSD"])
