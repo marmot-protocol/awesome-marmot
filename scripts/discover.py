@@ -17,6 +17,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 from urllib.parse import quote, urlparse
@@ -29,12 +30,17 @@ NOW = dt.datetime.now(dt.UTC)
 ACTIVITY_WINDOW_DAYS = 90
 GITHUB_API = "https://api.github.com"
 USER_AGENT = "awesome-marmot-discovery/1.0 (+https://github.com/marmot-protocol/awesome-marmot)"
+CODE_SEARCH_SOURCE = "GitHub code search"
+NIP34_SOURCE = "NIP-34 repository announcements"
+GITLAB_SOURCE = "GitLab project search"
 
 GITHUB_REPO = re.compile(r"https?://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 REPO_URL = re.compile(
     r"https?://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:\.git)?",
     re.I,
 )
+LINK = re.compile(r"https?://[^\s<>()\[\]\"'`]+")
+BECH32 = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
 
 
 def load_json(path: Path, default):
@@ -42,6 +48,13 @@ def load_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError:
         return default
+
+
+def fixture_file(name: str) -> Path | None:
+    fixture_dir = os.environ.get("DISCOVERY_FIXTURE_DIR")
+    if fixture_dir and (Path(fixture_dir) / name).exists():
+        return Path(fixture_dir) / name
+    return None
 
 
 def api_json(url: str, fixture_name: str | None = None):
@@ -80,14 +93,78 @@ def github_org_repositories(organization: str) -> list[dict]:
         page += 1
 
 
-def run_nak(args: list[str]) -> list[dict]:
-    """Run pinned nak and return verified Nostr events."""
+def github_code_search(settings: dict, failures: list[str], skipped: list[str],
+                       sleep=time.sleep, clock=time.monotonic) -> list[dict]:
+    """Find GitHub repositories whose manifests or code reference Marmot directly.
+
+    Registries miss projects that pin MDK or marmot-ts through Git, so each
+    configured query yields repository leads for the normal verification gate.
+    Requests are spaced to stay under GitHub's code-search limit (about 10 per
+    minute); a 403 or 429 stops the source for this run.
+    """
+    if not settings.get("enabled"):
+        return []
+    fixture = fixture_file("github-code-search.json")
+    responses = json.loads(fixture.read_text(encoding="utf-8")) if fixture else None
+    if responses is None and not os.environ.get("GITHUB_TOKEN"):
+        skipped.append(f"{CODE_SEARCH_SOURCE}: GITHUB_TOKEN not set (code search requires authentication)")
+        return []
+    interval = 60 / settings.get("requests_per_minute", 9)
+    per_page = 100
+    last_request = None
+    hits: dict[tuple[str, str], dict] = {}
+    for query in settings.get("queries", []):
+        for page in range(1, settings.get("max_pages", 1) + 1):
+            if responses is not None:
+                result = responses.get(query["query"], {}) if page == 1 else {}
+            else:
+                if last_request is not None:
+                    wait = interval - (clock() - last_request)
+                    if wait > 0:
+                        sleep(wait)
+                last_request = clock()
+                try:
+                    result = api_json(
+                        f"{GITHUB_API}/search/code?q={quote(query['query'], safe='')}"
+                        f"&per_page={per_page}&page={page}"
+                    )
+                except RuntimeError as error:
+                    if getattr(error.__cause__, "code", None) in {403, 429}:
+                        failures.append(
+                            f"{CODE_SEARCH_SOURCE} rate limited at {query['name']}: {error}; remaining queries skipped"
+                        )
+                        return sorted(hits.values(), key=lambda hit: (hit["url"], hit["query"]))
+                    failures.append(f"{CODE_SEARCH_SOURCE} failed for {query['name']}: {error}")
+                    break
+            if result.get("incomplete_results"):
+                failures.append(f"{CODE_SEARCH_SOURCE} returned incomplete results for {query['name']}")
+            items = result.get("items") or []
+            for item in items:
+                url = normalize_repo((item.get("repository") or {}).get("html_url", ""))
+                if not url:
+                    continue
+                # One lead per repository and query; the smallest blob URL is a
+                # stable evidence pointer whatever order GitHub returns.
+                evidence = item.get("html_url", "")
+                key = (url, query["name"])
+                if key not in hits or evidence < hits[key]["evidence"]:
+                    hits[key] = {"url": url, "query": query["name"], "evidence": evidence}
+            if len(items) < per_page:
+                break
+    return sorted(hits.values(), key=lambda hit: (hit["url"], hit["query"]))
+
+
+def run_nak(args: list[str], timeout: int = 45, keep=None) -> list[dict]:
+    """Run pinned nak and return verified Nostr events.
+
+    ``keep`` drops unwanted events before the per-event signature check.
+    """
     try:
         proc = subprocess.run(
-            ["nak", *args], capture_output=True, text=True, check=False, timeout=45
+            ["nak", *args], capture_output=True, text=True, check=False, timeout=timeout
         )
     except subprocess.TimeoutExpired as error:
-        raise RuntimeError(f"nak {' '.join(args)} timed out after 45 seconds") from error
+        raise RuntimeError(f"nak {' '.join(args)} timed out after {timeout} seconds") from error
     if proc.returncode != 0:
         raise RuntimeError(f"nak {' '.join(args)} failed: {proc.stderr.strip()}")
     events = []
@@ -96,6 +173,8 @@ def run_nak(args: list[str]) -> list[dict]:
         if not line:
             continue
         event = json.loads(line)
+        if keep is not None and not keep(event):
+            continue
         # Belt-and-braces: verify each event signature with nak itself.
         try:
             check = subprocess.run(
@@ -118,6 +197,112 @@ def normalize_repo(url: str) -> str | None:
     owner, name = match.groups()
     name = name.removesuffix(".git")
     return f"https://github.com/{owner.lower()}/{name.lower()}"
+
+
+def normalize_forge_url(url: str) -> str | None:
+    """Normalize a non-GitHub repository URL for deduplication and the seen ledger.
+
+    Any scheme with a host is kept: many NIP-34 repositories announce only
+    ``htree://`` or ``ssh://`` clone URLs.
+    """
+    parsed = urlparse(url.strip())
+    if not parsed.scheme or not parsed.netloc:
+        return None
+    path = parsed.path.split("/-/", 1)[0].rstrip("/").removesuffix(".git").rstrip("/")
+    return f"{parsed.scheme.lower()}://{parsed.netloc.lower()}{path}"
+
+
+def bech32_polymod(values: list[int]) -> int:
+    generator = [0x3B6A57B2, 0x26508E6D, 0x1EA119FA, 0x3D4233DD, 0x2A1462B3]
+    checksum = 1
+    for value in values:
+        top = checksum >> 25
+        checksum = (checksum & 0x1FFFFFF) << 5 ^ value
+        for bit in range(5):
+            if (top >> bit) & 1:
+                checksum ^= generator[bit]
+    return checksum
+
+
+def npub_to_hex(value: str) -> str | None:
+    """Decode a NIP-19 ``npub`` to a hex public key, or None if malformed."""
+    hrp, _, data = value.lower().rpartition("1")
+    if hrp != "npub" or len(data) < 7 or any(char not in BECH32 for char in data):
+        return None
+    words = [BECH32.index(char) for char in data]
+    expanded = [ord(char) >> 5 for char in hrp] + [0] + [ord(char) & 31 for char in hrp]
+    if bech32_polymod(expanded + words) != 1:
+        return None
+    accumulator, bits, key = 0, 0, bytearray()
+    for word in words[:-6]:
+        accumulator = ((accumulator << 5) | word) & 0x1FFF
+        bits += 5
+        if bits >= 8:
+            bits -= 8
+            key.append((accumulator >> bits) & 0xFF)
+    return key.hex() if len(key) == 32 else None
+
+
+def keyword_pattern(terms: list[str]) -> re.Pattern:
+    """Case-insensitive whole-word match; a space in a term also matches '-', '_' or nothing."""
+    parts = [r"[\s_-]?".join(re.escape(word) for word in term.split()) for term in terms if term.strip()]
+    return re.compile(r"\b(?:" + "|".join(parts) + r")\b", re.I) if parts else re.compile(r"(?!)")
+
+
+def tag_values(event: dict, name: str) -> list[str]:
+    return [str(value) for tag in event.get("tags", []) if tag and tag[0] == name for value in tag[1:]]
+
+
+def announcement_mentions(event: dict, pattern: re.Pattern) -> bool:
+    fields = [*tag_values(event, "d"), *tag_values(event, "name"),
+              *tag_values(event, "description"), *tag_values(event, "t")]
+    return any(pattern.search(value) for value in fields)
+
+
+def announcement_urls(event: dict) -> tuple[list[str], list[str]]:
+    """Split a kind-30617 announcement into GitHub repositories and other clone URLs.
+
+    GitHub URLs may appear in ``clone``, ``web`` or a mirror's ``source`` tag
+    and go through normal verification. Other forges are reported from
+    ``clone`` only, since ``web`` points at a browsing UI.
+    """
+    github: set[str] = set()
+    others: set[str] = set()
+    for name in ("clone", "web", "source"):
+        for value in tag_values(event, name):
+            repo = normalize_repo(value)
+            if repo:
+                github.add(repo)
+            elif name == "clone" and (url := normalize_forge_url(value)):
+                others.add(url)
+    return sorted(github), sorted(others)
+
+
+def select_announcements(events: list[dict], keywords: list[str]) -> list[dict]:
+    """Keep the newest keyword-matching version of each announced repository.
+
+    Kind 30617 is addressable, so relays can hold different versions of one
+    (author, ``d``) address. The newest wins (ties: lowest id, per NIP-01) and
+    records every relay that served it.
+    """
+    pattern = keyword_pattern(keywords)
+    newest: dict[tuple[str, str], dict] = {}
+    relays: dict[str, set[str]] = {}
+    for event in events:
+        if event.get("kind") != 30617 or not announcement_mentions(event, pattern):
+            continue
+        relays.setdefault(event.get("id", ""), set()).add(event.get("_relay") or "")
+        address = (event.get("pubkey", ""), next(iter(tag_values(event, "d")), ""))
+        current = newest.get(address)
+        if current is None or (-event.get("created_at", 0), event.get("id", "")) < (
+            -current.get("created_at", 0), current.get("id", "")
+        ):
+            newest[address] = event
+    selected = [
+        {**event, "_source": NIP34_SOURCE, "_relay": ",".join(sorted(filter(None, relays[event.get("id", "")])))}
+        for event in newest.values()
+    ]
+    return sorted(selected, key=lambda event: event.get("id", ""))
 
 
 def extract_repo_urls(event: dict) -> list[str]:
@@ -226,6 +411,85 @@ def fetch_anchor_articles(events: list[dict], failures: list[str]) -> list[dict]
     return articles
 
 
+def fetch_repository_announcements(settings: dict, since: int, failures: list[str]) -> list[dict]:
+    """Fetch NIP-34 kind-30617 announcements that mention a configured keyword."""
+    keywords = settings.get("keywords", ["marmot"])
+    pattern = keyword_pattern(keywords)
+    events: list[dict] = []
+    for relay in settings.get("relays", []):
+        try:
+            batch = run_nak(
+                ["req", "-k", "30617", "--since", str(since), "--paginate", relay],
+                timeout=settings.get("timeout_seconds", 45),
+                keep=lambda event: event.get("kind") == 30617 and announcement_mentions(event, pattern),
+            )
+        except RuntimeError as error:
+            failures.append(f"NIP-34 fetch failed via {relay}: {error}")
+            continue
+        events.extend({**event, "_relay": relay} for event in batch)
+    return select_announcements(events, keywords)
+
+
+def gitlab_json(url: str, token: str):
+    request = urllib.request.Request(url, headers={"PRIVATE-TOKEN": token, "User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        raise RuntimeError(f"GitLab API {url} -> HTTP {error.code}") from error
+    except urllib.error.URLError as error:
+        raise RuntimeError(f"GitLab API {url} -> {error.reason}") from error
+
+
+def gitlab_project_search(settings: dict, failures: list[str], skipped: list[str]) -> list[dict]:
+    """Search GitLab projects by name, path, description and topic.
+
+    Runs only with ``GITLAB_TOKEN``. Projects must mention a configured keyword
+    as a whole word; they are reported as unverified leads, because only
+    GitHub repositories are verified automatically.
+    """
+    if not settings.get("enabled"):
+        return []
+    fixture = fixture_file("gitlab-projects.json")
+    responses = json.loads(fixture.read_text(encoding="utf-8")) if fixture else None
+    token = os.environ.get("GITLAB_TOKEN", "").strip()
+    if responses is None and not token:
+        skipped.append(f"{GITLAB_SOURCE}: GITLAB_TOKEN not set")
+        return []
+    api = settings.get("api_url", "https://gitlab.com/api/v4").rstrip("/")
+    pattern = keyword_pattern(settings.get("keywords", ["marmot"]))
+    queries = [*(f"search={term}" for term in settings.get("searches", [])),
+               *(f"topic={topic}" for topic in settings.get("topics", []))]
+    projects: dict[str, dict] = {}
+    for query in queries:
+        field, _, value = query.partition("=")
+        for page in range(1, settings.get("max_pages", 1) + 1):
+            if responses is not None:
+                batch = responses.get(query, []) if page == 1 else []
+            else:
+                try:
+                    batch = gitlab_json(
+                        f"{api}/projects?{field}={quote(value, safe='')}"
+                        f"&order_by=id&sort=asc&per_page=100&page={page}",
+                        token,
+                    )
+                except RuntimeError as error:
+                    failures.append(f"{GITLAB_SOURCE} failed for {query}: {error}")
+                    break
+            for project in batch:
+                text = " ".join(str(part) for part in (
+                    project.get("name"), project.get("path_with_namespace"),
+                    project.get("description"), *(project.get("topics") or []),
+                ) if part)
+                if not project.get("web_url") or not pattern.search(text):
+                    continue
+                entry = projects.setdefault(project["web_url"], {**project, "_queries": []})
+                entry["_queries"] = sorted({*entry["_queries"], query})
+            if len(batch) < 100:
+                break
+    return [projects[url] for url in sorted(projects)]
+
+
 def fetch_inputs(config: dict, days: int):
     failures: list[str] = []
     fixture_dir = os.environ.get("DISCOVERY_FIXTURE_DIR")
@@ -306,12 +570,48 @@ def fetch_inputs(config: dict, days: int):
             except RuntimeError as error:
                 failures.append(f"Zapstore fetch failed: {error}")
 
+    # NIP-34 repository announcements from git relays.
+    nip34 = config.get("nip34", {})
+    if nip34.get("enabled"):
+        nip34_fixture = fixture_file("nip34-events.jsonl")
+        if nip34_fixture:
+            announcements = [
+                json.loads(line)
+                for line in nip34_fixture.read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+            nostr_events.extend(select_announcements(announcements, nip34.get("keywords", ["marmot"])))
+        else:
+            nostr_events.extend(fetch_repository_announcements(nip34, since, failures))
+
     return org_repos, nostr_events, zapstore_events, failures
 
 
 def catalog_repos() -> set[str]:
     text = CATALOG.read_text(encoding="utf-8")
     return {normalized for url in REPO_URL.findall(text) if (normalized := normalize_repo(url))}
+
+
+def catalog_forge_entries() -> tuple[set[str], set[tuple[str, str]]]:
+    """Return the catalog's non-GitHub links and its gitworkshop.dev repositories.
+
+    gitworkshop.dev links name an ``npub`` and a repository identifier, which
+    match a NIP-34 announcement's author (or maintainer) and ``d`` tag.
+    """
+    links: set[str] = set()
+    nostr_repos: set[tuple[str, str]] = set()
+    for link in LINK.findall(CATALOG.read_text(encoding="utf-8")):
+        link = link.rstrip(".,;:")
+        if normalized := normalize_forge_url(link):
+            links.add(normalized)
+        parsed = urlparse(link)
+        segments = [segment for segment in parsed.path.split("/") if segment]
+        if parsed.netloc.lower() == "gitworkshop.dev" and len(segments) >= 2:
+            pubkey = npub_to_hex(segments[0])
+            identifier = segments[2] if len(segments) >= 3 and "." in segments[1] else segments[1]
+            if pubkey:
+                nostr_repos.add((pubkey, identifier))
+    return links, nostr_repos
 
 
 def verify_repo(url: str) -> dict | str:
@@ -379,9 +679,11 @@ def verify_repo(url: str) -> dict | str:
     }
 
 
-def build_report(config, org_repos, nostr_events, zapstore_events, failures=None):
+def build_report(config, org_repos, nostr_events, zapstore_events, failures=None,
+                 code_search_hits=(), gitlab_projects=()):
     failures = failures if failures is not None else []
     known = catalog_repos()
+    known_links, known_nostr = catalog_forge_entries()
     seen = load_json(SEEN, {"event_ids": [], "repository_urls": []})
     seen_events = set(seen.get("event_ids", []))
     seen_repos = set(seen.get("repository_urls", []))
@@ -389,6 +691,10 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
     retained: list[dict] = []
     rejected: list[dict] = []
     candidates: dict[str, dict] = {}
+    leads: dict[str, dict] = {}
+    # Rejection reasons by URL, so a repository named by several sources is
+    # verified once.
+    verdicts: dict[str, str] = {}
 
     def consider(url: str, origin: dict):
         normalized = normalize_repo(url)
@@ -402,11 +708,24 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
         if normalized in candidates:
             candidates[normalized]["provenance"].append(origin)
             return
-        verdict = verify_repo(normalized)
+        verdict = verdicts.get(normalized) or verify_repo(normalized)
         if isinstance(verdict, str):
+            verdicts[normalized] = verdict
             rejected.append({"url": normalized, "reason": verdict, "origin": origin})
             return
         candidates[normalized] = {**verdict, "provenance": [origin]}
+
+    def add_lead(urls: list[str], name: str, description: str, web: list[str], origin: dict):
+        """Record an unverified non-GitHub lead, or reject it if already seen."""
+        if seen_repos.intersection(urls):
+            rejected.append({"url": urls[0], "reason": "previously recorded in seen ledger", "origin": origin})
+            return
+        lead = leads.setdefault(urls[0], {
+            "name": name, "description": description, "urls": [], "web": [], "provenance": [],
+        })
+        lead["urls"] = sorted({*lead["urls"], *urls})
+        lead["web"] = sorted({*lead["web"], *web})
+        lead["provenance"].append(origin)
 
     for repo in org_repos:
         url = repo.get("html_url", "")
@@ -421,6 +740,7 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
             continue
         verdict = verify_repo(normalized)
         if isinstance(verdict, str):
+            verdicts[normalized] = verdict
             rejected.append({"url": normalized, "reason": verdict,
                              "origin": {"source": "GitHub organization inventory", "detail": repo.get("full_name")}})
             continue
@@ -429,6 +749,10 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
             "detail": repo.get("full_name"),
         }]}
 
+    for hit in sorted(code_search_hits, key=lambda hit: (hit["url"], hit["query"], hit["evidence"])):
+        consider(hit["url"], {"source": CODE_SEARCH_SOURCE, "detail": f"{hit['query']}: {hit['evidence']}"})
+
+    announcements: list[tuple[dict, dict]] = []
     events = sorted(
         [*nostr_events, *zapstore_events],
         key=lambda event: (
@@ -452,7 +776,12 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
             if any(req.lower() not in tags and req.lower() not in values for req in required):
                 rejected.append({"event": event_id, "reason": "missing required tag", "source": event.get("_source")})
                 continue
-        repos = extract_zapstore_repos(event) if event.get("_source") == "Zapstore signed app metadata" else extract_repo_urls(event)
+        if event.get("_source") == "Zapstore signed app metadata":
+            repos = extract_zapstore_repos(event)
+        elif event.get("_source") == NIP34_SOURCE:
+            repos, _clones = announcement_urls(event)
+        else:
+            repos = extract_repo_urls(event)
         retained.append({
             "id": event_id,
             "pubkey": event.get("pubkey"),
@@ -461,18 +790,77 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
             "article_url": event.get("_article_url"),
             "repos": repos,
         })
+        origin = {
+            "source": event.get("_source"),
+            "event": event_id,
+            "relay": event.get("_relay"),
+            "article_url": event.get("_article_url"),
+        }
+        if event.get("_source") == NIP34_SOURCE:
+            origin["author"] = event.get("pubkey")
+            announcements.append((event, origin))
         for repo_url in repos:
-            consider(repo_url, {
-                "source": event.get("_source"),
-                "event": event_id,
-                "relay": event.get("_relay"),
-                "article_url": event.get("_article_url"),
+            consider(repo_url, dict(origin))
+
+    # Non-GitHub clone URLs cannot be verified automatically. They become
+    # leads unless the same announcement's GitHub URL already covers the
+    # project, or the catalog links the repository or its gitworkshop.dev page.
+    for event, origin in announcements:
+        github, clones = announcement_urls(event)
+        if not clones or any(url in known or url in candidates for url in github):
+            continue
+        identifier = next(iter(tag_values(event, "d")), "")
+        pubkeys = {event.get("pubkey", ""), *tag_values(event, "maintainers")}
+        web = sorted({url for value in tag_values(event, "web") if (url := normalize_forge_url(value))})
+        if known_nostr.intersection((pubkey, identifier) for pubkey in pubkeys) or known_links.intersection([*clones, *web]):
+            continue
+        name = next(iter(tag_values(event, "name")), "") or identifier
+        description = next(iter(tag_values(event, "description")), "")
+        add_lead(clones, name, description, web, origin)
+
+    window_start = NOW - dt.timedelta(days=ACTIVITY_WINDOW_DAYS)
+    for project in sorted(gitlab_projects, key=lambda project: project.get("web_url", "")):
+        url = normalize_forge_url(project.get("web_url", ""))
+        if not url or url in known_links:
+            continue
+        origin = {"source": GITLAB_SOURCE, "detail": ", ".join(project.get("_queries", []))}
+        if url in seen_repos:
+            rejected.append({"url": url, "reason": "previously recorded in seen ledger", "origin": origin})
+            continue
+        if project.get("archived"):
+            rejected.append({"url": url, "reason": "archived project", "origin": origin})
+            continue
+        # Any push updates last_activity_at, so an old value rules out recent
+        # default-branch work. A recent value does not prove it.
+        last_activity = project.get("last_activity_at")
+        try:
+            active = dt.datetime.fromisoformat(str(last_activity).replace("Z", "+00:00"))
+        except ValueError:
+            active = None
+        if active is None or active.tzinfo is None:
+            rejected.append({"url": url, "reason": "GitLab activity timestamp unavailable or invalid", "origin": origin})
+            continue
+        if active < window_start:
+            rejected.append({
+                "url": url,
+                "reason": f"no GitLab project activity in last {ACTIVITY_WINDOW_DAYS} days (last_activity_at={last_activity})",
+                "origin": origin,
             })
+            continue
+        add_lead([url], project.get("path_with_namespace") or url, project.get("description") or "", [], origin)
 
-    return retained, rejected, candidates
+    return retained, rejected, candidates, leads
 
 
-def render_report(retained, rejected, candidates, failures, days):
+def render_origin(origin: dict) -> str:
+    detail = origin.get("event") or origin.get("detail") or ""
+    author = f" author={origin['author']}" if origin.get("author") else ""
+    relay = origin.get("relay") or ""
+    article = f" article={origin['article_url']}" if origin.get("article_url") else ""
+    return f"  - {origin['source']} {detail}{author} {relay}{article}".rstrip()
+
+
+def render_report(retained, rejected, candidates, leads, failures, days, skipped=()):
     lines = [
         "# Weekly Marmot discovery report",
         "",
@@ -483,6 +871,7 @@ def render_report(retained, rejected, candidates, failures, days):
         f"- Retained source events: {len(retained)}",
         f"- Rejected leads: {len(rejected)}",
         f"- Verified new candidates: {len(candidates)}",
+        f"- Unverified non-GitHub leads: {len(leads)}",
         f"- Source failures: {len(failures)}",
         "",
     ]
@@ -490,6 +879,11 @@ def render_report(retained, rejected, candidates, failures, days):
         lines += ["## Source failures", ""]
         for failure in sorted(failures):
             lines.append(f"- {failure}")
+        lines.append("")
+    if skipped:
+        lines += ["## Skipped sources", ""]
+        for item in sorted(skipped):
+            lines.append(f"- {item}")
         lines.append("")
     if candidates:
         lines += ["## Verified candidates", ""]
@@ -502,12 +896,29 @@ def render_report(retained, rejected, candidates, failures, days):
             lines.append(f"- Description: {candidate['description']}")
             lines.append("- Provenance:")
             for origin in sorted(candidate["provenance"], key=lambda o: json.dumps(o, sort_keys=True)):
-                detail = origin.get("event") or origin.get("detail") or ""
-                relay = origin.get("relay") or ""
-                article = f" article={origin['article_url']}" if origin.get("article_url") else ""
-                lines.append(f"  - {origin['source']} {detail} {relay}{article}".rstrip())
+                lines.append(render_origin(origin))
             lines.append("")
-    else:
+    if leads:
+        lines += [
+            "## Unverified non-GitHub leads",
+            "",
+            "Automated verification covers GitHub only. These leads passed a keyword filter, "
+            "not the candidate gate: confirm source, default-branch activity and Marmot use by hand.",
+            "",
+        ]
+        for key in sorted(leads):
+            lead = leads[key]
+            lines.append(f"### {lead['name']}")
+            lines.append("")
+            lines.append(f"- URLs: {', '.join(lead['urls'])}")
+            if lead["web"]:
+                lines.append(f"- Web: {', '.join(lead['web'])}")
+            lines.append(f"- Description: {lead['description']}")
+            lines.append("- Provenance:")
+            for origin in sorted(lead["provenance"], key=lambda o: json.dumps(o, sort_keys=True)):
+                lines.append(render_origin(origin))
+            lines.append("")
+    if not candidates and not leads:
         lines += ["No catalog or branch change is required.", ""]
     if rejected:
         lines += ["## Rejected leads", ""]
@@ -541,19 +952,30 @@ def main() -> int:
         print(json.dumps({"error": "primary GitHub source failed", "failures": failures}))
         return 2
 
-    retained, rejected, candidates = build_report(
-        config, org_repos, nostr_events, zapstore_events, failures
+    # Secondary search sources run only once the primary inventory succeeded.
+    skipped: list[str] = []
+    code_search_hits = github_code_search(config.get("github_code_search", {}), failures, skipped)
+    gitlab_projects = gitlab_project_search(config.get("gitlab", {}), failures, skipped)
+
+    retained, rejected, candidates, leads = build_report(
+        config, org_repos, nostr_events, zapstore_events, failures, code_search_hits, gitlab_projects
     )
-    report = render_report(retained, rejected, candidates, failures, args.days)
+    report = render_report(retained, rejected, candidates, leads, failures, args.days, skipped)
     Path(args.output).write_text(report, encoding="utf-8")
 
     if args.write_seen:
         seen = load_json(SEEN, {"event_ids": [], "repository_urls": []})
         seen["event_ids"] = sorted({*seen.get("event_ids", []), *[event["id"] for event in retained]})
-        seen["repository_urls"] = sorted({*seen.get("repository_urls", []), *candidates.keys()})
+        seen["repository_urls"] = sorted({
+            *seen.get("repository_urls", []), *candidates.keys(),
+            *(url for lead in leads.values() for url in lead["urls"]),
+        })
         SEEN.write_text(json.dumps(seen, indent=2) + "\n", encoding="utf-8")
 
-    print(json.dumps({"candidates": len(candidates), "retained": len(retained), "rejected": len(rejected)}))
+    print(json.dumps({
+        "candidates": len(candidates), "leads": len(leads),
+        "retained": len(retained), "rejected": len(rejected),
+    }))
     return 0
 
 

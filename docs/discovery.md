@@ -8,6 +8,11 @@ The weekly job is a conservative intake queue, not an auto-publisher.
 2. Zapstore kind `32267` events are signed app metadata. They can establish who published a listing, but not that its claims are correct.
 3. Nostr Recap and NostrMag are secondary discovery sources. Every retained item includes its event ID, author, relay, and outbound URLs. NostrMag's canonical seed is event `de399234b408ce0bf401c49004fb57342186c843917f94478dfaf54e7eeee19b`, authored by `fe5915…403b`; it is fetched from `wss://nostr.mom`, its linked article body is fetched from the `r` tag URL, and repository leads are extracted from that body.
 4. The Compass project registry and archives are useful cross-checks during human review. They are not available inside public CI and never replace a project's own repository evidence.
+5. GitHub code search is a secondary source for projects that depend on Marmot through Git rather than a registry (crates.io stops at mdk-core 0.8.0). Configured queries look outside the marmot-protocol organization for `marmot-protocol/mdk` manifests naming `cgka-engine`, `marmot-app` or `transport-nostr-peeler`, and for `@internet-privacy/marmot-ts`, `wn-agent` and `marmot.agent-control.v2`. Requests are spaced under the 10-per-minute code-search limit; a 403 or 429 stops the source for that run. Hits pass the candidate gate below, and provenance cites the matching file at its commit. Code search needs `GITHUB_TOKEN` and covers default branches only.
+6. NIP-34 kind `30617` repository announcements are read from the git relays in `config/discovery-sources.json` over the rolling window. Each signature is checked with `nak verify`, and only the newest version of each author and `d` address is kept. An announcement is retained when its `d`, name, description or `t` tags mention Marmot, White Noise, MDK or MLS as a whole word. GitHub URLs in its `clone`, `web` or `source` tags pass the candidate gate. Other clone URLs become unverified leads with the signed event ID and author, unless the GitHub URL produced a candidate or the catalog already links the repository (directly, or through a gitworkshop.dev page naming the author or a maintainer). Run once with a longer `--days` window to backfill.
+7. GitLab.com project search by name, path, description and topic runs only when `GITLAB_TOKEN` is set; without it, the report lists the source as skipped. Projects must mention Marmot as a whole word. Archived projects, and projects with no GitLab activity at all in the 90-day window, are rejected. The rest are unverified leads: `last_activity_at` cannot show default-branch work.
+
+Each of sources 5–7 has an `enabled` switch in `config/discovery-sources.json`. Unverified leads appear in their own report section and never pass as verified candidates.
 
 Automated repository verification currently supports GitHub only. GitLab, Codeberg, NIP-34, and other forges remain eligible for the catalog, but require manual discovery and verification in review. [Manual cross-forge sweeps](#manual-cross-forge-sweeps) describes how to run one.
 
@@ -26,13 +31,13 @@ Redirects and renamed repositories are normalized through GitHub's API before de
 
 ## Idempotence and failures
 
-`scripts/discover.py` sorts and normalizes all inputs. Re-running it with the same source events produces byte-identical output. The workflow exits without a branch, commit, or PR when the verified candidate list is empty. A source outage is recorded; loss of every primary source is a hard failure. Invalid Nostr signatures are rejected by `nak verify`.
+`scripts/discover.py` sorts and normalizes all inputs. Re-running it with the same source events produces byte-identical output. The workflow exits without a branch, commit, or PR when there are no verified candidates and no unverified leads. A source outage is recorded; loss of every primary source is a hard failure. Invalid Nostr signatures are rejected by `nak verify`.
 
-When candidates exist, the action updates the seen ledger and writes `discovery-report.md` on a deterministic weekly branch, then opens (or updates) one PR for human review. It never changes `README.md`. A maintainer verifies the evidence, edits the catalog, and merges through normal branch protection.
+When candidates or leads exist, the action records their URLs in the seen ledger and writes `discovery-report.md` on a deterministic weekly branch, then opens (or updates) one PR for human review. It never changes `README.md`. A maintainer verifies the evidence, edits the catalog, and merges through normal branch protection.
 
 ## Local run
 
-Requirements: Python 3.11+, `nak` 0.20.2, and a GitHub token for higher API limits.
+Requirements: Python 3.11+, `nak` 0.20.2, and a GitHub token for higher API limits and code search. Set `GITLAB_TOKEN` to include GitLab project search. The `DISCOVERY_FIXTURE_DIR` described below may also hold `nip34-events.jsonl`, `github-code-search.json` (responses keyed by query) and `gitlab-projects.json` (keyed by `search=` or `topic=` term); see `tests/fixtures`.
 
 ```sh
 python3 scripts/discover.py --days 10 --output discovery-report.md

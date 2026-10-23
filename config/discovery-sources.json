@@ -29,5 +29,38 @@
   "zapstore": {
     "relay": "wss://relay.zapstore.dev",
     "app_kind": 32267
+  },
+  "github_code_search": {
+    "enabled": true,
+    "requests_per_minute": 9,
+    "max_pages": 2,
+    "queries": [
+      {"name": "MDK cgka-engine via Git", "query": "\"marmot-protocol/mdk\" cgka-engine filename:Cargo.toml -org:marmot-protocol"},
+      {"name": "MDK marmot-app via Git", "query": "\"marmot-protocol/mdk\" marmot-app filename:Cargo.toml -org:marmot-protocol"},
+      {"name": "MDK transport-nostr-peeler via Git", "query": "\"marmot-protocol/mdk\" transport-nostr-peeler filename:Cargo.toml -org:marmot-protocol"},
+      {"name": "marmot-ts dependency", "query": "\"@internet-privacy/marmot-ts\" filename:package.json -org:marmot-protocol"},
+      {"name": "wn-agent integration", "query": "\"wn-agent\" marmot -org:marmot-protocol"},
+      {"name": "agent-control v2 protocol", "query": "\"marmot.agent-control.v2\" -org:marmot-protocol"}
+    ]
+  },
+  "nip34": {
+    "enabled": true,
+    "relays": [
+      "wss://relay.ngit.dev",
+      "wss://index.ngit.dev",
+      "wss://git.shakespeare.diy",
+      "wss://gitnostr.com",
+      "wss://relay.gittr.space"
+    ],
+    "keywords": ["marmot", "white noise", "mdk", "mls"],
+    "timeout_seconds": 120
+  },
+  "gitlab": {
+    "enabled": true,
+    "api_url": "https://gitlab.com/api/v4",
+    "searches": ["marmot"],
+    "topics": ["marmot"],
+    "keywords": ["marmot"],
+    "max_pages": 3
   }
 }

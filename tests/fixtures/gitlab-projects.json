@@ -1,0 +1,80 @@
+{
+  "search=marmot": [
+    {
+      "id": 101,
+      "name": "marmot-pager",
+      "path_with_namespace": "example-group/marmot-pager",
+      "web_url": "https://gitlab.com/example-group/marmot-pager",
+      "description": "Pager alerts delivered to Marmot groups",
+      "topics": [
+        "nostr"
+      ],
+      "archived": false,
+      "default_branch": "main",
+      "last_activity_at": "2026-10-20T09:00:00.000Z"
+    },
+    {
+      "id": 102,
+      "name": "marmot",
+      "path_with_namespace": "someone/marmot",
+      "web_url": "https://gitlab.com/someone/marmot",
+      "description": "",
+      "topics": [],
+      "archived": false,
+      "default_branch": "main",
+      "last_activity_at": "2024-05-12T16:20:14.489Z"
+    },
+    {
+      "id": 103,
+      "name": "marmota",
+      "path_with_namespace": "someone/marmota",
+      "web_url": "https://gitlab.com/someone/marmota",
+      "description": "Distributed music streaming",
+      "topics": [],
+      "archived": false,
+      "default_branch": "main",
+      "last_activity_at": "2026-10-01T00:00:00.000Z"
+    },
+    {
+      "id": 104,
+      "name": "marmot-legacy-bridge",
+      "path_with_namespace": "example-group/marmot-legacy-bridge",
+      "web_url": "https://gitlab.com/example-group/marmot-legacy-bridge",
+      "description": "Old Marmot bridge",
+      "topics": [],
+      "archived": true,
+      "default_branch": "main",
+      "last_activity_at": "2026-10-02T00:00:00.000Z"
+    }
+  ],
+  "topic=marmot": [
+    {
+      "id": 101,
+      "name": "marmot-pager",
+      "path_with_namespace": "example-group/marmot-pager",
+      "web_url": "https://gitlab.com/example-group/marmot-pager",
+      "description": "Pager alerts delivered to Marmot groups",
+      "topics": [
+        "nostr"
+      ],
+      "archived": false,
+      "default_branch": "main",
+      "last_activity_at": "2026-10-20T09:00:00.000Z"
+    },
+    {
+      "id": 105,
+      "name": "locator",
+      "path_with_namespace": "example-group/locator",
+      "web_url": "https://gitlab.com/example-group/locator",
+      "description": "Find your device over Nostr",
+      "topics": [
+        "android",
+        "marmot",
+        "nostr"
+      ],
+      "archived": false,
+      "default_branch": "main",
+      "last_activity_at": "2026-10-12T13:53:33.539Z"
+    }
+  ]
+}

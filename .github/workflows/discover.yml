@@ -32,9 +32,11 @@ jobs:
         id: intake
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          # Optional: GitLab project search is skipped when this secret is unset.
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
           result=$(python scripts/discover.py --days 10 --output /tmp/discovery-report.md --write-seen)
-          count=$(python -c 'import json,sys; print(json.loads(sys.argv[1])["candidates"])' "$result")
+          count=$(python -c 'import json,sys; r=json.loads(sys.argv[1]); print(r["candidates"] + r["leads"])' "$result")
           echo "count=$count" >> "$GITHUB_OUTPUT"
           cat /tmp/discovery-report.md >> "$GITHUB_STEP_SUMMARY"
           cp data/discovery-seen.json /tmp/discovery-seen.json
@@ -74,5 +76,5 @@ jobs:
           if [ -z "$existing" ]; then
             gh pr create --base master --head "$branch" \
               --title "chore: review verified weekly Marmot discoveries" \
-              --body "Automated, evidence-gated intake only. Review discovery-report.md, independently confirm each project, and edit README.md manually if accepted."
+              --body "Automated, evidence-gated intake only. Review discovery-report.md, independently confirm each project (unverified non-GitHub leads have passed a keyword filter only), and edit README.md manually if accepted."
           fi
