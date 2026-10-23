@@ -14,7 +14,7 @@ The weekly job is a conservative intake queue, not an auto-publisher.
 
 Each of sources 5–7 has an `enabled` switch in `config/discovery-sources.json`. Unverified leads appear in their own report section and never pass as verified candidates.
 
-Automated repository verification currently supports GitHub only. GitLab, Codeberg, NIP-34, and other forges remain eligible for the catalog, but require manual discovery and verification in review. [Manual cross-forge sweeps](#manual-cross-forge-sweeps) describes how to run one.
+Automated repository verification currently supports GitHub only. GitLab, Codeberg, NIP-34, and other forges remain eligible for the catalog, but their leads are unverified and need manual verification in review. [Manual cross-forge sweeps](#manual-cross-forge-sweeps) describes how to run one.
 
 ## Candidate gate
 
@@ -47,7 +47,7 @@ Set `DISCOVERY_FIXTURE_DIR` to a directory containing `github-org.json`, `nostr-
 
 ## Manual cross-forge sweeps
 
-The weekly job only sees the GitHub organization, a few Nostr roundups and Zapstore. Most community projects reach the catalog through occasional manual sweeps. The [2026-10-23 sweep](catalog-verification.md#discovery-sweep-additions-and-corrections-2026-10-23) added 11 projects and corrected 2 entries. These sources found them:
+The weekly job automates this sweep's manifest code search, NIP-34 announcements and GitLab project search (sources 5–7 above). Repository search, dependency graphs, Codeberg and registries stay manual, and code search is incomplete. Most community projects reach the catalog through occasional manual sweeps. The [2026-10-23 sweep](catalog-verification.md#discovery-sweep-additions-and-corrections-2026-10-23) added 11 projects and corrected 2 entries. These sources found them:
 
 | Source | What worked | Limits |
 | --- | --- | --- |
@@ -59,4 +59,4 @@ The weekly job only sees the GitHub organization, a few Nostr roundups and Zapst
 
 Treat a lead as a candidate only after reading its default-branch head. Check that the code really uses Marmot: README mentions and kind-number labels alone do not qualify. Two projects found in the 2026-10-23 sweep had already dropped Marmot. Classify the generation from pinned engine or component evidence, as described in the [refresh procedure](catalog-verification.md#refresh-procedure).
 
-Record reviewed GitHub leads that are not added in `data/discovery-seen.json`, so the weekly job does not re-propose them. The ledger suppresses proposals, so a recorded v1 project that later upgrades needs a manual recheck. Leads on other forges cannot be recorded there; list them in the dated verification note instead.
+Record reviewed GitHub leads that are not added in `data/discovery-seen.json`, so the weekly job does not re-propose them. The ledger suppresses proposals, so a recorded v1 project that later upgrades needs a manual recheck. Record GitLab project URLs and NIP-34 clone URLs there too, without a trailing `.git`; the weekly job checks its unverified leads against them. List them in the dated verification note as well.
