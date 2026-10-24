@@ -79,7 +79,7 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 - [mdk-odin](https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin) — **v2, active, experimental** — Native Odin implementation of MDK's MLS and Marmot engine, migrating to MDK 0.12; full compatibility and production readiness are not yet claimed.
 - [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — **v2, active, alpha** — TypeScript SDK; not recommended for production.
 - [Scramble.Marmot (C#)](https://github.com/DavidGershony/Scramble/tree/master/src/Scramble.Marmot.Engine) — **v2, active** — C# Marmot engine used by Scramble, with companion Nostr codecs, identity proofs, application components, and SQLite storage; built on DotnetMls.
-- [Quartz in Amethyst](https://github.com/vitorpamplona/amethyst/tree/main/quartz) — **v2, active** — Kotlin Multiplatform library inside Amethyst.
+- [marmot-kmp](https://github.com/vitorpamplona/marmot-kmp) — **v2, active** — Standalone Kotlin Multiplatform Marmot library, extracted from Amethyst, using Quartz and mls-kmp.
 
 ### Specification and services
 
@@ -96,6 +96,8 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 - [Mafrend](https://github.com/DestBro/mafrend-zapstore) — **unknown, active, alpha, closed-source** — Map-first chat with shared places, rich place cards, and time-limited location messages rather than continuous tracking. [Founder contact](https://t.me/destme7).
 
 ## Supporting tools — recently updated
+
+- [mls-kmp](https://github.com/vitorpamplona/mls-kmp) — **adjacent, active** — Standalone Kotlin Multiplatform MLS engine used by marmot-kmp; independent of Nostr.
 
 - [Facet](https://github.com/marmot-protocol/facet) — **adjacent, active** — Nostr-native feature comparison boards.
 - [Goggles](https://github.com/marmot-protocol/goggles) — **adjacent, active** — Forensic audit trace explorer.
@@ -129,7 +131,7 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 ### Libraries and old examples
 
 - [marmot-cs (legacy)](https://github.com/DavidGershony/marmot-cs) — **v1, inactive** — Former standalone MIP-era C# backend; Scramble now uses its in-repository `Scramble.Marmot` engine · **2026-06-04**
-- [Standalone Quartz](https://github.com/vitorpamplona/quartz) — **adjacent, inactive** — Empty repository; current Quartz lives in Amethyst · **2025-09-23**
+- [Standalone Quartz](https://github.com/vitorpamplona/quartz) — **adjacent, inactive** — Historical empty repository snapshot; see marmot-kmp above for the extracted Marmot library · **2025-09-23**
 - [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) — **adjacent, inactive** — Sled storage for OpenMLS · **2025-05-30**
 - [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — **adjacent, inactive** — Redb storage for OpenMLS · **2025-01-21**
 - [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) — **adjacent, inactive** — LMDB storage for OpenMLS · **2025-01-12**
@@ -182,7 +184,7 @@ python3 -m unittest discover -s tests -v
 
 Counts reflect the recently updated v2 listings as of **2026-10-23**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
 
-**Checked 2026-10-01.** mdk-odin, MDK's Goose connector, and Scramble's C# library were checked on 2026-10-08; their audit records use that date. Groundhog was checked on 2026-10-09 and links its published alpha5 release. Nostream was checked on 2026-10-10 and its record uses that date. FMDtr, Lightning Piggy Mobile and the projects added from the [2026-10-23 discovery sweep](docs/catalog-verification.md) were checked on 2026-10-23; their audit records use that date. Activity is measured at each record's check date, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
+**Checked 2026-10-01.** mdk-odin, MDK's Goose connector, and Scramble's C# library were checked on 2026-10-08; their audit records use that date. Groundhog was checked on 2026-10-09 and links its published alpha5 release. Nostream was checked on 2026-10-10 and its record uses that date. FMDtr, Lightning Piggy Mobile and the projects added from the [2026-10-23 discovery sweep](docs/catalog-verification.md) were checked on 2026-10-23; their audit records use that date. Activity is measured at each record's check date, not a maintenance guarantee. The marmot-kmp and mls-kmp entries were checked separately on 2026-10-24 and have independent repositories and release lifecycles. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 

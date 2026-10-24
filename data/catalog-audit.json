@@ -61,7 +61,7 @@
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/zapstore.yaml",
         "https://mafrend.com/"
       ],
-      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only; no source-backed protocol generation can be assigned.",
+      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. \u201cActive\u201d describes that public metadata only; no source-backed protocol generation can be assigned.",
       "source_kind": "store-metadata",
       "generation_evidence": [
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md"
@@ -601,7 +601,7 @@
         "https://github.com/vitorpamplona/amethyst/blob/3613bf05927c3523d9d0cee77cd71d2aa835dca4/README.md",
         "https://github.com/vitorpamplona/amethyst/blob/3613bf05927c3523d9d0cee77cd71d2aa835dca4/cli/README.md"
       ],
-      "note": "Nostr client with a Marmot implementation in its bundled Quartz library; source now includes v2 identity-proof and media components.",
+      "note": "At the October 1 snapshot, the Nostr client bundled its Marmot implementation in Quartz, including v2 identity-proof and media components. Marmot and MLS are now listed separately as marmot-kmp and mls-kmp.",
       "archived": false
     },
     {
@@ -612,7 +612,7 @@
       "generation": "adjacent",
       "activity": "inactive",
       "source": "https://github.com/vitorpamplona/quartz/tree/41f2476bdf5aa96d1ed7c4bf584f926aabf0034f",
-      "note": "Empty standalone repository containing only .gitignore and LICENSE, not a Marmot implementation. Classified as an adjacent historical reference; the actual library is inside Amethyst. Last commit: 2025-09-23.",
+      "note": "Historical October 1 snapshot: empty standalone repository containing only .gitignore and LICENSE. This record does not describe its current contents. See the separately checked marmot-kmp and mls-kmp entries for the extracted implementations. Last commit at that snapshot: 2025-09-23.",
       "generation_evidence": [
         "https://github.com/vitorpamplona/quartz/tree/41f2476bdf5aa96d1ed7c4bf584f926aabf0034f"
       ],
@@ -1139,6 +1139,36 @@
         "https://github.com/FelineStateMachine/bindws/blob/5d3126716ae5b6bf01d46cdf14fceb05244445e0/src/marmot.ts"
       ],
       "archived": false
+    },
+    {
+      "repository": "https://github.com/vitorpamplona/marmot-kmp",
+      "default_branch": "main",
+      "commit": "68310ad688f44bfd4c161fa6418b61406953da33",
+      "last_commit_at": "2026-10-23T19:48:16Z",
+      "archived": false,
+      "checked_at": "2026-10-24T06:03:12.491749+00:00",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/vitorpamplona/marmot-kmp/tree/68310ad688f44bfd4c161fa6418b61406953da33",
+      "feature_evidence": [
+        "https://github.com/vitorpamplona/marmot-kmp/blob/68310ad688f44bfd4c161fa6418b61406953da33/README.md"
+      ],
+      "note": "Standalone Kotlin Multiplatform Marmot library extracted from Amethyst; its README documents the current Marmot profile and the independent mls-kmp engine."
+    },
+    {
+      "repository": "https://github.com/vitorpamplona/mls-kmp",
+      "default_branch": "main",
+      "commit": "3bd45d9bbe694573476a5c9ceb3ef4d6ac03b3f1",
+      "last_commit_at": "2026-10-23T14:52:50Z",
+      "archived": false,
+      "checked_at": "2026-10-24T06:03:13.580758+00:00",
+      "generation": "adjacent",
+      "activity": "active",
+      "source": "https://github.com/vitorpamplona/mls-kmp/tree/3bd45d9bbe694573476a5c9ceb3ef4d6ac03b3f1",
+      "feature_evidence": [
+        "https://github.com/vitorpamplona/mls-kmp/blob/3bd45d9bbe694573476a5c9ceb3ef4d6ac03b3f1/README.md"
+      ],
+      "note": "Standalone Kotlin Multiplatform RFC 9420 engine used by marmot-kmp. Nostr-independent MLS dependency, not a Marmot implementation."
     }
   ],
   "removed_repositories": [
