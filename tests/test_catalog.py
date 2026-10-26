@@ -1,4 +1,5 @@
 import copy
+import datetime as dt
 import importlib.util
 import json
 from pathlib import Path
@@ -49,7 +50,7 @@ class CatalogTests(unittest.TestCase):
                 self.assertTrue(any("removal" in e for e in self.check(audit=audit)))
 
     def test_removal_requires_reason_date_and_absence_from_inventory(self):
-        for field, value in (("reason", ""), ("removed_on", "2026-10-02"),
+        for field, value in (("reason", ""), ("removed_on", (dt.datetime.fromisoformat(self.audit["checked_at"].replace("Z", "+00:00")) + dt.timedelta(days=1)).date().isoformat()),
                              ("repository", self.audit["repositories"][0]["repository"])):
             with self.subTest(field=field):
                 audit = copy.deepcopy(self.audit)
@@ -75,7 +76,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_source_verified_generations_replace_catch_all(self):
         expected = {
-            "Haven-App": "v2", "marmots-web-chat": "v2", "whistle": "v1",
+            "Haven-App": "v2", "marmots-web-chat": "v2", "whistle": "v2",
             "tubestr-v2": "v1", "marmot-server": "v1", "openclaw-marmot": "v1",
             "quartz": "adjacent",
         }
@@ -148,7 +149,7 @@ class CatalogTests(unittest.TestCase):
             "source": "https://example.org/owner/unavailable", "note": "Synthetic unavailable source.",
         }
         self.audit["repositories"].append(record)
-        text = self.text + "\n## Source unavailable at the last check\n\n- [Example](https://example.org/owner/unavailable) — **unknown, unverified** — Synthetic fixture.\n"
+        text = self.text + "\n## Source unavailable at the last check\n\n- [Example](https://example.org/owner/unavailable) · **unknown, unverified** · Synthetic fixture.\n"
         self.assertEqual(self.check(text=text), [])
         record["commit"] = "a" * 40
         self.assertTrue(any("unverified source" in e for e in self.check(text=text)))
@@ -181,7 +182,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn("encrypted sharing and sync are unfinished", self.text)
 
     def test_active_entry_cannot_be_hidden_in_legacy_section(self):
-        text = self.text.replace("## Supporting tools — recently updated", "## No recent public commits")
+        text = self.text.replace("## Supporting tools · recently updated", "## No recent public commits")
         self.assertTrue(any("wrong section" in e for e in self.check(text=text)))
 
     def test_duplicate_entry_is_rejected(self):
@@ -251,7 +252,7 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(self.check(), [])
 
     def test_overview_counts_match_v2_listings(self):
-        v2 = self.text[self.text.index("## Marmot v2 — recently updated"):self.text.index("## Marmot v1")]
+        v2 = self.text[self.text.index("## Marmot v2 · recently updated"):self.text.index("## Marmot v1")]
         sections = {
             heading.strip(): sum(line.startswith("- [") for line in body.splitlines())
             for heading, body in (part.split("\n", 1) for part in v2.split("\n### ")[1:])
@@ -284,8 +285,14 @@ class IncrementalAuditTests(unittest.TestCase):
     def test_incremental_entry_requires_its_own_valid_check_date(self):
         text = (ROOT / "README.md").read_text()
         audit = json.loads((ROOT / "data/catalog-audit.json").read_text())
+        # Model an entry checked after the base snapshot, independently of
+        # the date of the live catalog fixture.
+        entry = next(r for r in audit["repositories"] if r["repository"].endswith("/mdk-odin"))
+        base = dt.datetime.fromisoformat(entry["last_commit_at"].replace("Z", "+00:00")) - dt.timedelta(days=1)
+        text = text.replace("**Checked " + audit["checked_at"][:10], "**Checked " + base.date().isoformat())
+        audit["checked_at"] = base.isoformat()
         self.assertEqual(catalog.check_catalog(text, audit), [])
-        for value in (None, "2026-10-01T06:46:00Z", "2100-01-01T00:00:00Z", "2026-10-08T00:00:00"):
+        for value in (None, (base - dt.timedelta(days=1)).isoformat(), "2100-01-01T00:00:00Z", "2026-10-08T00:00:00"):
             with self.subTest(value=value):
                 changed = copy.deepcopy(audit)
                 entry = next(r for r in changed["repositories"] if r["repository"].endswith("/mdk-odin"))

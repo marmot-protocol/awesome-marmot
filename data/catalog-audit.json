@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-01T06:46:00Z",
+  "checked_at": "2026-10-26T06:40:38.494979+00:00",
   "activity_window_days": 90,
   "scope": "Public default-branch source and repository metadata, plus explicitly identified tagged release source; not installed releases or runtime interoperability.",
   "repositories": [
@@ -15,7 +15,8 @@
       "generation_evidence": [
         "https://github.com/CentauriAgent/burrow/blob/ac883fa62106b61ed7731b0b4fb8c0cbf5589e52/mls-engine/Cargo.toml"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/DavidGershony/Scramble",
@@ -32,7 +33,7 @@
       ],
       "note": "Desktop and Android messenger whose current source implements the v2 application-component profile. The current reusable C# engine and companion libraries live under src/Scramble.Marmot.*. Scramble.Core references this engine and SQLite storage instead of the old standalone marmot-cs backend.",
       "archived": false,
-      "checked_at": "2026-10-08T13:41:05Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation_evidence": [
         "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/src/Scramble.Marmot.Engine/KeyPackages/MarmotKeyPackageBuilder.cs",
         "https://github.com/DavidGershony/Scramble/blob/25473e7396e25e1bda83a7824c785c9a660f03de/src/Scramble.Marmot.AppComponents/ComponentCodec.cs"
@@ -47,7 +48,8 @@
       "activity": "inactive",
       "source": "https://github.com/DavidGershony/marmot-cs/tree/84b106feb239acfe2fdc811ef2f5ec8bce715e0d",
       "note": "Standalone C# library with MIP-era documentation; do not confuse it with Scramble's newer in-repository implementation. Last commit: 2026-06-04.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/DestBro/mafrend-zapstore",
@@ -61,12 +63,13 @@
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/zapstore.yaml",
         "https://mafrend.com/"
       ],
-      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. \u201cActive\u201d describes that public metadata only; no source-backed protocol generation can be assigned.",
+      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only; no source-backed protocol generation can be assigned.",
       "source_kind": "store-metadata",
       "generation_evidence": [
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/Tubestr/tubestr-v2",
@@ -85,7 +88,8 @@
         "https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/Cargo.lock",
         "https://github.com/Tubestr/tubestr-v2/blob/8d53c162af4fde0c6735581a1e0d137ef003101e/native/mdk_bridge/src/api/mod.rs"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/dcadenas/marmota",
@@ -99,24 +103,26 @@
         "https://github.com/dcadenas/marmota/blob/37906ae7e165debe9fa49ccecfbb0317fa58e0ef/README.md"
       ],
       "note": "Browser client pinned to a MIP-era TypeScript implementation. Last commit: 2026-03-09.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/hedwig-corp/bitchat-to-sonar",
       "default_branch": "main",
-      "commit": "7bcc1b48e50e94283d0d380fc0e69b1dbb2be146",
-      "last_commit_at": "2026-09-29T06:37:39Z",
+      "commit": "f0a87aa966f42b154e9b27e8ff93fc0b3d0ca7d8",
+      "last_commit_at": "2026-10-25T06:26:32Z",
       "generation": "v1",
       "activity": "active",
-      "source": "https://github.com/hedwig-corp/bitchat-to-sonar/tree/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146",
+      "source": "https://github.com/hedwig-corp/bitchat-to-sonar/tree/f0a87aa966f42b154e9b27e8ff93fc0b3d0ca7d8",
       "feature_evidence": [
-        "https://github.com/hedwig-corp/bitchat-to-sonar/blob/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146/README.md"
+        "https://github.com/hedwig-corp/bitchat-to-sonar/blob/f0a87aa966f42b154e9b27e8ff93fc0b3d0ca7d8/README.md"
       ],
       "note": "Bluetooth/Nostr messenger and wallet. Its current core still pins MDK 0.8-era code and the old White Noise Rust stack.",
       "generation_evidence": [
-        "https://github.com/hedwig-corp/bitchat-to-sonar/blob/7bcc1b48e50e94283d0d380fc0e69b1dbb2be146/core/Cargo.toml"
+        "https://github.com/hedwig-corp/bitchat-to-sonar/blob/f0a87aa966f42b154e9b27e8ff93fc0b3d0ca7d8/core/Cargo.toml"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/justinmoon/pika",
@@ -133,7 +139,8 @@
       "generation_evidence": [
         "https://github.com/justinmoon/pika/blob/dd226e25633b04501b30652d682a2de49116c592/Cargo.toml"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/kai-familiar/marmot-cli",
@@ -144,7 +151,8 @@
       "activity": "inactive",
       "source": "https://github.com/kai-familiar/marmot-cli/tree/111e0705158eb583b904c676572d20bb4c473f64",
       "note": "Separate community CLI with an old MDK dependency. Prefer MDK's current CLI for new v2 work. Last commit: 2026-02-16.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/botburrow",
@@ -158,7 +166,8 @@
       "generation_evidence": [
         "https://github.com/marmot-protocol/botburrow/blob/e608ba5ff7c69e461867acfc08c6ac2ff3f5c926/README.md"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/dr.marmot",
@@ -169,7 +178,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/dr.marmot/tree/4cb7ac2f05a0f9348fe20319f73e836ef5e25b1d",
       "note": "Superseded diagnostics tool.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/facet",
@@ -177,10 +187,11 @@
       "commit": "dbe992a01564cacb9686c306559d95e9cf402049",
       "last_commit_at": "2026-07-24T13:25:49Z",
       "generation": "adjacent",
-      "activity": "active",
+      "activity": "inactive",
       "source": "https://github.com/marmot-protocol/facet/tree/dbe992a01564cacb9686c306559d95e9cf402049",
       "note": "Nostr-native comparison boards, including White Noise feature parity.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/goggles",
@@ -191,65 +202,69 @@
       "activity": "active",
       "source": "https://github.com/marmot-protocol/goggles/tree/767a98ffd64549800ae6b1ced361624f721f8992",
       "note": "Explorer for forensic audit traces. Its documented v4 audit format is not a Marmot protocol version.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/marmot",
       "default_branch": "master",
-      "commit": "07da8ffbfa7aa6c1e73e8e326085d0c47dc298e7",
-      "last_commit_at": "2026-09-30T10:32:50Z",
+      "commit": "d181ce1c4661ca985e8fb12a48a962dbe76fec6c",
+      "last_commit_at": "2026-10-17T08:15:00Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/marmot/tree/07da8ffbfa7aa6c1e73e8e326085d0c47dc298e7",
+      "source": "https://github.com/marmot-protocol/marmot/tree/d181ce1c4661ca985e8fb12a48a962dbe76fec6c",
       "note": "Adopted protocol specification and migration guidance.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/marmot-ts",
       "default_branch": "master",
-      "commit": "591eb25f6ba0b69cb6dc7b711fb75836da7ddbaa",
-      "last_commit_at": "2026-09-30T19:20:29Z",
+      "commit": "b5ef53052dfc8f272ff702fb85a52da3cfbdc4d0",
+      "last_commit_at": "2026-10-23T17:26:40Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/marmot-ts/tree/591eb25f6ba0b69cb6dc7b711fb75836da7ddbaa",
+      "source": "https://github.com/marmot-protocol/marmot-ts/tree/b5ef53052dfc8f272ff702fb85a52da3cfbdc4d0",
       "note": "TypeScript implementation. Its maintainer warns against production use.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/marmots-web-chat",
       "default_branch": "master",
-      "commit": "e7974788cda712f16dade84f417933f9db93a894",
-      "last_commit_at": "2026-09-11T14:57:44Z",
+      "commit": "390e7355776a02fabc40ae1c0fb192e7abaf35c2",
+      "last_commit_at": "2026-10-19T15:34:18Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/marmots-web-chat/tree/e7974788cda712f16dade84f417933f9db93a894",
+      "source": "https://github.com/marmot-protocol/marmots-web-chat/tree/390e7355776a02fabc40ae1c0fb192e7abaf35c2",
       "feature_evidence": [
-        "https://github.com/marmot-protocol/marmots-web-chat/blob/e7974788cda712f16dade84f417933f9db93a894/README.md",
-        "https://github.com/marmot-protocol/marmots-web-chat/blob/e7974788cda712f16dade84f417933f9db93a894/src/lib/marmot/account-proof.ts"
+        "https://github.com/marmot-protocol/marmots-web-chat/blob/390e7355776a02fabc40ae1c0fb192e7abaf35c2/README.md"
       ],
-      "note": "Browser chat example pinned to an early v2 TypeScript revision; that pin still documents the earlier identity-proof profile.",
+      "note": "Browser React chat example using marmot-ts 0.7.0 with current account-signer identity proofs and per-browser device slots. Legacy-profile groups are retained read-only for migration. Runtime interoperability was not tested.",
       "generation_evidence": [
-        "https://github.com/marmot-protocol/marmots-web-chat/tree/e7974788cda712f16dade84f417933f9db93a894/marmot-ts",
-        "https://github.com/marmot-protocol/marmot-ts/blob/714fe294504a516def392d10f2e3e18ed41977eb/README.md"
+        "https://github.com/marmot-protocol/marmots-web-chat/blob/390e7355776a02fabc40ae1c0fb192e7abaf35c2/README.md",
+        "https://github.com/marmot-protocol/marmots-web-chat/blob/390e7355776a02fabc40ae1c0fb192e7abaf35c2/package.json",
+        "https://github.com/marmot-protocol/marmots-web-chat/blob/390e7355776a02fabc40ae1c0fb192e7abaf35c2/pnpm-lock.yaml"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk",
       "default_branch": "master",
-      "commit": "7692e26649193bd0bfba5f6a425a80b7c2e8f502",
-      "last_commit_at": "2026-10-08T13:04:22Z",
+      "commit": "5d1c897749282943f03ddbc8c2a2e50e209ecca4",
+      "last_commit_at": "2026-10-25T20:07:45Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/mdk/tree/7692e26649193bd0bfba5f6a425a80b7c2e8f502",
+      "source": "https://github.com/marmot-protocol/mdk/tree/5d1c897749282943f03ddbc8c2a2e50e209ecca4",
       "feature_evidence": [
-        "https://github.com/marmot-protocol/mdk/blob/7692e26649193bd0bfba5f6a425a80b7c2e8f502/crates/cli/README.md",
-        "https://github.com/marmot-protocol/mdk/blob/7692e26649193bd0bfba5f6a425a80b7c2e8f502/integrations/goose/marmot/README.md",
-        "https://github.com/marmot-protocol/mdk/blob/7692e26649193bd0bfba5f6a425a80b7c2e8f502/integrations/goose/marmot/src/main.rs"
+        "https://github.com/marmot-protocol/mdk/blob/5d1c897749282943f03ddbc8c2a2e50e209ecca4/crates/cli/README.md",
+        "https://github.com/marmot-protocol/mdk/blob/5d1c897749282943f03ddbc8c2a2e50e209ecca4/integrations/goose/marmot/README.md",
+        "https://github.com/marmot-protocol/mdk/blob/5d1c897749282943f03ddbc8c2a2e50e209ecca4/integrations/goose/marmot/src/main.rs"
       ],
       "note": "Rust Marmot Development Kit: messaging runtime, storage, language bindings, and integrations. wn-goose routes authorized group messages to the Goose headless CLI via the shared terminal harness and wn-agent control socket.",
       "archived": false,
-      "checked_at": "2026-10-08T13:41:05Z"
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-kotlin",
@@ -260,7 +275,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/mdk-kotlin/tree/5dd757dc83f2c68c37b99963a1347610cd3fada5",
       "note": "Obsolete standalone Kotlin binding.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-kotlin-example",
@@ -268,10 +284,11 @@
       "commit": "94f432ef2b0d3319fd431477d56b7ecea40ef01e",
       "last_commit_at": "2025-12-01T22:00:40Z",
       "generation": "v1",
-      "activity": "inactive",
+      "activity": "archived",
       "source": "https://github.com/marmot-protocol/mdk-kotlin-example/tree/94f432ef2b0d3319fd431477d56b7ecea40ef01e",
       "note": "Example for the obsolete standalone Kotlin binding. Last commit: 2025-12-01.",
-      "archived": false
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-python",
@@ -282,7 +299,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/mdk-python/tree/98f51545257979590d52cdfa2a6deb7916b8f54f",
       "note": "Obsolete standalone Python binding.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-python-example",
@@ -290,13 +308,14 @@
       "commit": "80e86ae89171995fb98b0f0d905074b8b4180bc4",
       "last_commit_at": "2025-12-01T22:01:55Z",
       "generation": "v1",
-      "activity": "inactive",
+      "activity": "archived",
       "source": "https://github.com/marmot-protocol/mdk-python-example/tree/80e86ae89171995fb98b0f0d905074b8b4180bc4",
       "note": "Example for the obsolete standalone Python binding API, not a current MDK quick start. Last commit: 2025-12-01.",
       "generation_evidence": [
         "https://github.com/marmot-protocol/mdk-python-example/blob/80e86ae89171995fb98b0f0d905074b8b4180bc4/main.py"
       ],
-      "archived": false
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-ruby",
@@ -307,7 +326,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/mdk-ruby/tree/96c5cf866019fa9efde2932e8554497492f01893",
       "note": "Obsolete standalone Ruby binding.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mdk-swift",
@@ -318,7 +338,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/mdk-swift/tree/d552830c55c5037f57db9759b47d73db0e152cdc",
       "note": "Obsolete standalone Swift binding.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/mls-ts",
@@ -329,7 +350,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/mls-ts/tree/294655433a17cfab9ea087967aa9f30378859c1d",
       "note": "Historical TypeScript MLS exploration.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/nostr-openmls",
@@ -340,7 +362,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/nostr-openmls/tree/b5c2c004c1bb8d13a5352c4d62f458e8c1a0946b",
       "note": "Pre-MDK OpenMLS/Nostr implementation.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/openmls-lmdb-storage",
@@ -351,7 +374,8 @@
       "activity": "inactive",
       "source": "https://github.com/marmot-protocol/openmls-lmdb-storage/tree/b8070259705cdc48413a7ac6a24a3f8b316b82d8",
       "note": "LMDB storage backend for OpenMLS. Last commit: 2025-01-12.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/openmls-redb-storage",
@@ -362,7 +386,8 @@
       "activity": "inactive",
       "source": "https://github.com/marmot-protocol/openmls-redb-storage/tree/cd9b271be354c3020895a1d121e1946275830abe",
       "note": "Redb storage backend for OpenMLS. Last commit: 2025-01-21.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/openmls-sled-storage",
@@ -373,18 +398,20 @@
       "activity": "inactive",
       "source": "https://github.com/marmot-protocol/openmls-sled-storage/tree/2228025fea9310dea99e3a9d8beeb479eb23399d",
       "note": "Sled storage backend for OpenMLS. Last commit: 2025-05-30.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/transponder",
       "default_branch": "master",
-      "commit": "d5d9d50bf6354d8c8cb7da979cc9534839ef60c8",
-      "last_commit_at": "2026-07-26T13:07:25Z",
+      "commit": "7be9649a9913c8f554ac52f9e6a3dc73ba5b643c",
+      "last_commit_at": "2026-10-13T11:33:51Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/transponder/tree/d5d9d50bf6354d8c8cb7da979cc9534839ef60c8",
+      "source": "https://github.com/marmot-protocol/transponder/tree/7be9649a9913c8f554ac52f9e6a3dc73ba5b643c",
       "note": "Notification service targeting the adopted Marmot push protocol.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise",
@@ -396,48 +423,51 @@
       "source": "https://github.com/marmot-protocol/whitenoise/tree/07aa5a0a7d28dd0185c6e72e56834520ef27b66c",
       "historical_source": "https://github.com/marmot-protocol/whitenoise/blob/9fca13f0eb19cb1266e86e20a894f0eafbd0f957/rust/Cargo.toml",
       "note": "Default branch is now a landing page; v1 describes the archived Flutter app at flutter-final, whose manifest pins the old whitenoise-rs core.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise-android",
       "default_branch": "master",
-      "commit": "9397b28188831f8a9f8cd06f3f3921d594a9b31d",
-      "last_commit_at": "2026-10-01T05:49:42Z",
+      "commit": "bbd5a65ccb4d2550c0435bbeb747521142f27429",
+      "last_commit_at": "2026-10-25T12:14:54Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/whitenoise-android/tree/9397b28188831f8a9f8cd06f3f3921d594a9b31d",
+      "source": "https://github.com/marmot-protocol/whitenoise-android/tree/bbd5a65ccb4d2550c0435bbeb747521142f27429",
       "feature_evidence": [
-        "https://github.com/marmot-protocol/whitenoise-android/blob/9397b28188831f8a9f8cd06f3f3921d594a9b31d/app/src/main/java/dev/ipf/whitenoise/android/ui/conversation/composer/ConversationDictationControls.kt",
-        "https://github.com/marmot-protocol/whitenoise-android/blob/9397b28188831f8a9f8cd06f3f3921d594a9b31d/app/src/main/java/dev/ipf/whitenoise/android/audio/tts/TtsController.kt",
-        "https://github.com/marmot-protocol/whitenoise-android/blob/9397b28188831f8a9f8cd06f3f3921d594a9b31d/app/src/main/java/dev/ipf/whitenoise/android/amber/AmberSignerController.kt"
+        "https://github.com/marmot-protocol/whitenoise-android/blob/bbd5a65ccb4d2550c0435bbeb747521142f27429/app/src/main/java/dev/ipf/whitenoise/android/ui/conversation/composer/ConversationDictationControls.kt",
+        "https://github.com/marmot-protocol/whitenoise-android/blob/bbd5a65ccb4d2550c0435bbeb747521142f27429/app/src/main/java/dev/ipf/whitenoise/android/audio/tts/TtsController.kt",
+        "https://github.com/marmot-protocol/whitenoise-android/blob/bbd5a65ccb4d2550c0435bbeb747521142f27429/app/src/main/java/dev/ipf/whitenoise/android/amber/AmberSignerController.kt"
       ],
       "note": "Native Android messaging app.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise-ios",
       "default_branch": "master",
-      "commit": "65c8d74f0bd55d38733c1afb27e4aa912b4267ac",
-      "last_commit_at": "2026-09-30T22:43:48Z",
+      "commit": "481736fa1db5eb320c7d44a80ebe2354bca97027",
+      "last_commit_at": "2026-10-25T17:58:00Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/whitenoise-ios/tree/65c8d74f0bd55d38733c1afb27e4aa912b4267ac",
+      "source": "https://github.com/marmot-protocol/whitenoise-ios/tree/481736fa1db5eb320c7d44a80ebe2354bca97027",
       "feature_evidence": [
-        "https://github.com/marmot-protocol/whitenoise-ios/blob/65c8d74f0bd55d38733c1afb27e4aa912b4267ac/README.md"
+        "https://github.com/marmot-protocol/whitenoise-ios/blob/481736fa1db5eb320c7d44a80ebe2354bca97027/README.md"
       ],
       "note": "Native iPhone messaging app.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise-linux",
       "default_branch": "master",
-      "commit": "7fc366b8708bcf2193dcb786b03bf1d206cdc2bc",
-      "last_commit_at": "2026-09-30T16:33:46Z",
+      "commit": "835e6b5eb8dca819cb07b3b8a5feb6f3c60ea22d",
+      "last_commit_at": "2026-10-23T15:42:24Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/whitenoise-linux/tree/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc",
+      "source": "https://github.com/marmot-protocol/whitenoise-linux/tree/835e6b5eb8dca819cb07b3b8a5feb6f3c60ea22d",
       "feature_evidence": [
-        "https://github.com/marmot-protocol/whitenoise-linux/blob/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc/README.md"
+        "https://github.com/marmot-protocol/whitenoise-linux/blob/835e6b5eb8dca819cb07b3b8a5feb6f3c60ea22d/README.md"
       ],
       "note": "Odin/Clay desktop client for Linux, Windows, macOS, and OpenBSD; supported targets verified in pinned build documentation and published release assets.",
       "platforms": [
@@ -446,23 +476,25 @@
         "macOS",
         "OpenBSD"
       ],
-      "platform_evidence": "https://github.com/marmot-protocol/whitenoise-linux/blob/7fc366b8708bcf2193dcb786b03bf1d206cdc2bc/README.md",
+      "platform_evidence": "https://github.com/marmot-protocol/whitenoise-linux/blob/835e6b5eb8dca819cb07b3b8a5feb6f3c60ea22d/README.md",
       "release_evidence": "https://github.com/marmot-protocol/whitenoise-linux/releases/tag/v2026.9.29-build.1",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise-mac",
       "default_branch": "master",
-      "commit": "1cbb1d1bc3482ade23cc20e1139ef6e91d02a5d4",
-      "last_commit_at": "2026-09-30T18:35:37Z",
+      "commit": "1316c54e3c1258aa5b556b9d962eab8e313b5590",
+      "last_commit_at": "2026-10-23T12:21:19Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/marmot-protocol/whitenoise-mac/tree/1cbb1d1bc3482ade23cc20e1139ef6e91d02a5d4",
+      "source": "https://github.com/marmot-protocol/whitenoise-mac/tree/1316c54e3c1258aa5b556b9d962eab8e313b5590",
       "feature_evidence": [
-        "https://github.com/marmot-protocol/whitenoise-mac/blob/1cbb1d1bc3482ade23cc20e1139ef6e91d02a5d4/README.md"
+        "https://github.com/marmot-protocol/whitenoise-mac/blob/1316c54e3c1258aa5b556b9d962eab8e313b5590/README.md"
       ],
       "note": "Native Mac messaging app.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/whitenoise-rs",
@@ -473,7 +505,8 @@
       "activity": "archived",
       "source": "https://github.com/marmot-protocol/whitenoise-rs/tree/95fa0b85c4b3bbee1a6fad3971849da1925df0d4",
       "note": "Former Rust core and CLI; replaced by MDK and native clients.",
-      "archived": true
+      "archived": true,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/marmot-protocol/wn-tui",
@@ -485,7 +518,8 @@
       "source": "https://github.com/marmot-protocol/wn-tui/tree/5191bc92f5da0532ebc469e908f6b33ae760b6c9",
       "note": "Explicitly deprecated by its maintainer and replaced by the TUI in MDK, although GitHub does not mark the repository read-only.",
       "deprecation_evidence": "https://github.com/marmot-protocol/wn-tui/blob/5191bc92f5da0532ebc469e908f6b33ae760b6c9/README.md",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/mehmetefeumit/Haven-App",
@@ -504,7 +538,8 @@
         "https://github.com/mehmetefeumit/Haven-App/blob/a7a8ab2036b39a6dd7d83375e9a80bdad4281823/haven-core/src/nostr/mls/mod.rs",
         "https://github.com/marmot-protocol/mdk/blob/e391adc133a9b60e420da7a0446f014a180ac8d2/crates/traits/src/app_components/mod.rs"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/nmadd57/marmot-server",
@@ -520,7 +555,8 @@
         "https://registry.npmjs.org/@internet-privacy/marmot-ts/-/marmot-ts-0.4.0.tgz"
       ],
       "dependency_integrity": "sha512-kMg4kKLGh09PsMFu4LlPTtBUGkxwpFT5J9/a7XHQXiKTHS4aHs1N5lK3AcbljQ4Q1vU1h75UCdbIKID1znilnQ==",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/notmandatory/hermes-marmot",
@@ -531,7 +567,8 @@
       "activity": "inactive",
       "source": "https://github.com/notmandatory/hermes-marmot/tree/c993e4732b600a0361624e9790a81c7e582f365b",
       "note": "Older integration using the standalone Python MDK binding API; distinct from MDK's current first-party connector. Last commit: 2026-05-27.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/nvk/agentnoise",
@@ -542,7 +579,8 @@
       "activity": "inactive",
       "source": "https://github.com/nvk/agentnoise/tree/41c9b3372c6fd366216e2894a2427db2190d41ab",
       "note": "Agent bridge whose documented setup still uses the superseded White Noise Rust daemon. Last commit: 2026-06-27.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/rphilbrdigits/dockerized-marmot-cli",
@@ -553,26 +591,29 @@
       "activity": "inactive",
       "source": "https://github.com/rphilbrdigits/dockerized-marmot-cli/tree/266d37013c40e66d0e90f6edd288a58e75b402f6",
       "note": "Container wrapper around the older community CLI. Last commit: 2026-03-02.",
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/sjmcnamara/whistle",
       "default_branch": "master",
-      "commit": "5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c",
-      "last_commit_at": "2026-09-23T09:32:11Z",
-      "generation": "v1",
+      "commit": "5c389f1591b12ad6d357c185c0d8420e5fde9306",
+      "last_commit_at": "2026-10-04T11:20:37Z",
+      "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/sjmcnamara/whistle/tree/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c",
+      "source": "https://github.com/sjmcnamara/whistle/tree/5c389f1591b12ad6d357c185c0d8420e5fde9306",
       "feature_evidence": [
-        "https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/README.md"
+        "https://github.com/sjmcnamara/whistle/blob/5c389f1591b12ad6d357c185c0d8420e5fde9306/README.md"
       ],
-      "note": "Group location sharing and chat. Its protocol documentation specifies MIP-00 through MIP-03 and MDK 0.8.0-era operation; the Swift project pins the old standalone MDK bindings at 8a7a0a59208e28f721a3abd16c9bd2c0d12af0be. This is v1, not an unknown generation.",
+      "note": "Mixed-generation location-sharing app: the iOS v2.0.0 pre-release uses post-MIP Marmot through MarmotKit 0.10.4; Android production v1.11.2 remains on Marmot v1 pending its port. The v2 label describes the current iOS source, not all shipped platforms. Runtime interoperability was not tested.",
       "generation_evidence": [
-        "https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/website/docs/wiki/PROTOCOL.md",
-        "https://github.com/sjmcnamara/whistle/blob/5eeaf0575ae4e6c1397ab6a7971ada49e3733d8c/project.yml",
-        "https://github.com/marmot-protocol/mdk-swift/blob/8a7a0a59208e28f721a3abd16c9bd2c0d12af0be/README.md"
+        "https://github.com/sjmcnamara/whistle/blob/5c389f1591b12ad6d357c185c0d8420e5fde9306/README.md",
+        "https://github.com/sjmcnamara/whistle/blob/5c389f1591b12ad6d357c185c0d8420e5fde9306/project.yml",
+        "https://github.com/sjmcnamara/whistle/blob/5c389f1591b12ad6d357c185c0d8420e5fde9306/MarmotKitBindings/Package.swift",
+        "https://github.com/sjmcnamara/whistle/blob/5c389f1591b12ad6d357c185c0d8420e5fde9306/scripts/vendor_marmotkit.py"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/tkhumush/openclaw-marmot",
@@ -587,43 +628,53 @@
         "https://github.com/tkhumush/openclaw-marmot/blob/a8322b1ecbe2a6eed60b58cf096aba99e22561ea/README.md",
         "https://github.com/tkhumush/marmot-cli/blob/97b3d0202d8a98ea88ab5e00ed4152dbe02c01a6/crates/marmot-agent-core/src/context.rs"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00"
     },
     {
       "repository": "https://github.com/vitorpamplona/amethyst",
       "default_branch": "main",
-      "commit": "3613bf05927c3523d9d0cee77cd71d2aa835dca4",
-      "last_commit_at": "2026-10-01T02:23:27Z",
+      "commit": "b7848db26fc3b8d76d16ec87839c1b8218c4a46d",
+      "last_commit_at": "2026-10-25T02:17:37Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/vitorpamplona/amethyst/tree/3613bf05927c3523d9d0cee77cd71d2aa835dca4",
+      "source": "https://github.com/vitorpamplona/amethyst/tree/b7848db26fc3b8d76d16ec87839c1b8218c4a46d",
       "feature_evidence": [
-        "https://github.com/vitorpamplona/amethyst/blob/3613bf05927c3523d9d0cee77cd71d2aa835dca4/README.md",
-        "https://github.com/vitorpamplona/amethyst/blob/3613bf05927c3523d9d0cee77cd71d2aa835dca4/cli/README.md"
+        "https://github.com/vitorpamplona/amethyst/blob/b7848db26fc3b8d76d16ec87839c1b8218c4a46d/README.md",
+        "https://github.com/vitorpamplona/amethyst/blob/b7848db26fc3b8d76d16ec87839c1b8218c4a46d/cli/README.md"
       ],
-      "note": "At the October 1 snapshot, the Nostr client bundled its Marmot implementation in Quartz, including v2 identity-proof and media components. Marmot and MLS are now listed separately as marmot-kmp and mls-kmp.",
-      "archived": false
+      "note": "Nostr Android/desktop client and amy terminal client. Current source pins the separately published Quartz 2.3.0 and marmot-kmp 2.0.0 libraries; Marmot and MLS now have independent repositories and release lifecycles.",
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "generation_evidence": [
+        "https://github.com/vitorpamplona/amethyst/blob/b7848db26fc3b8d76d16ec87839c1b8218c4a46d/gradle/libs.versions.toml",
+        "https://github.com/vitorpamplona/amethyst/blob/b7848db26fc3b8d76d16ec87839c1b8218c4a46d/amethyst/build.gradle.kts"
+      ]
     },
     {
       "repository": "https://github.com/vitorpamplona/quartz",
       "default_branch": "main",
-      "commit": "41f2476bdf5aa96d1ed7c4bf584f926aabf0034f",
-      "last_commit_at": "2025-09-23T23:03:11Z",
+      "commit": "16bed9063f62f78aeba179b4dea08f391560bfa9",
+      "last_commit_at": "2026-10-24T13:53:44Z",
       "generation": "adjacent",
-      "activity": "inactive",
-      "source": "https://github.com/vitorpamplona/quartz/tree/41f2476bdf5aa96d1ed7c4bf584f926aabf0034f",
-      "note": "Historical October 1 snapshot: empty standalone repository containing only .gitignore and LICENSE. This record does not describe its current contents. See the separately checked marmot-kmp and mls-kmp entries for the extracted implementations. Last commit at that snapshot: 2025-09-23.",
+      "activity": "active",
+      "source": "https://github.com/vitorpamplona/quartz/tree/16bed9063f62f78aeba179b4dea08f391560bfa9",
+      "note": "Active standalone Kotlin Multiplatform Nostr library, including Marmot event types. MLS and Marmot engine behavior lives in separate mls-kmp and marmot-kmp libraries, so this repository is adjacent supporting infrastructure. This replaces the historical empty-repository snapshot.",
       "generation_evidence": [
-        "https://github.com/vitorpamplona/quartz/tree/41f2476bdf5aa96d1ed7c4bf584f926aabf0034f"
+        "https://github.com/vitorpamplona/quartz/blob/16bed9063f62f78aeba179b4dea08f391560bfa9/README.md"
       ],
-      "archived": false
+      "archived": false,
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "feature_evidence": [
+        "https://github.com/vitorpamplona/quartz/blob/16bed9063f62f78aeba179b4dea08f391560bfa9/README.md"
+      ]
     },
     {
       "repository": "https://gitlab.com/Kalle/fmdtr-android",
       "default_branch": "master",
       "commit": "c177a13eaa6f5ac2e753be210bc5fe86c3293498",
-      "last_commit_at": "2026-09-25T07:39:52+02:00",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "last_commit_at": "2026-09-25T07:39:52.000+02:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://gitlab.com/Kalle/fmdtr-android/-/blob/c177a13eaa6f5ac2e753be210bc5fe86c3293498/rust/fmd-marmot-bridge/Cargo.toml",
@@ -640,21 +691,21 @@
     {
       "repository": "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin",
       "default_branch": "master",
-      "commit": "42d93e288f17a870bb3e973ad18f0c2f0edd1085",
-      "last_commit_at": "2026-10-07T09:44:30Z",
-      "checked_at": "2026-10-08T13:34:58Z",
+      "commit": "f7ce90b98c81fa54f7398dd0f2fc9c267da36cd9",
+      "last_commit_at": "2026-10-21T11:19:09+02:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085",
+      "source": "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/f7ce90b98c81fa54f7398dd0f2fc9c267da36cd9",
       "generation_evidence": [
-        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/mdk/account_proof.odin",
-        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/mdk/app_profile.odin",
-        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/PLAN.md"
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/f7ce90b98c81fa54f7398dd0f2fc9c267da36cd9/mdk/account_proof.odin",
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/f7ce90b98c81fa54f7398dd0f2fc9c267da36cd9/mdk/app_profile.odin",
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/f7ce90b98c81fa54f7398dd0f2fc9c267da36cd9/README.md"
       ],
       "feature_evidence": [
-        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/42d93e288f17a870bb3e973ad18f0c2f0edd1085/README.md"
+        "https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin/tree/f7ce90b98c81fa54f7398dd0f2fc9c267da36cd9/README.md"
       ],
-      "note": "Native Odin MLS and Marmot engine with v2 account identity proofs and application-component profiles. The migration plan targets MDK 0.12.0; full engine compatibility and production readiness are not claimed. The NIP-34 repository announcement describes it as a little experiment.",
+      "note": "Native Odin MLS and Marmot engine implementing v2 account identity proofs and application-component profiles. Current README targets byte compatibility with MDK 0.12.0; full mixed-engine interoperability and independent security review remain open release gates. Production readiness is not claimed.",
       "archived": null
     },
     {
@@ -662,7 +713,7 @@
       "default_branch": "main",
       "commit": "3f020caea15ad4322da57bbbe43148c9239ae8aa",
       "last_commit_at": "2026-10-22T18:55:11Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/LightningPiggy/lightning-piggy-mobile/tree/3f020caea15ad4322da57bbbe43148c9239ae8aa",
@@ -689,20 +740,20 @@
     {
       "repository": "https://github.com/chebizarro/nostrc",
       "default_branch": "master",
-      "commit": "3e647abfabc266ad8b3f7443a46a26851f01e5c4",
-      "last_commit_at": "2026-10-09T08:19:49Z",
-      "checked_at": "2026-10-09T18:27:08Z",
+      "commit": "f0dfd375e84e749af55f7149c843e2184efb0540",
+      "last_commit_at": "2026-10-26T04:41:26Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/chebizarro/nostrc/tree/3e647abfabc266ad8b3f7443a46a26851f01e5c4",
+      "source": "https://github.com/chebizarro/nostrc/tree/f0dfd375e84e749af55f7149c843e2184efb0540",
       "archived": false,
       "generation_evidence": [
-        "https://github.com/chebizarro/nostrc/blob/3e647abfabc266ad8b3f7443a46a26851f01e5c4/libmarmot/include/marmot/marmot-group-profile.h",
+        "https://github.com/chebizarro/nostrc/blob/f0dfd375e84e749af55f7149c843e2184efb0540/libmarmot/include/marmot/marmot-group-profile.h",
         "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/libmarmot/README.md",
         "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/src/mls/gh-mls-service.c"
       ],
       "feature_evidence": [
-        "https://github.com/chebizarro/nostrc/blob/3e647abfabc266ad8b3f7443a46a26851f01e5c4/gnome/groundhog/README.md",
+        "https://github.com/chebizarro/nostrc/blob/f0dfd375e84e749af55f7149c843e2184efb0540/gnome/groundhog/README.md",
         "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/README.md",
         "https://github.com/chebizarro/nostrc/blob/6d779cc7bd64b9b8dffc69aded8b0617a9268e04/gnome/groundhog/src/mls/gh-mls-service.c"
       ],
@@ -719,60 +770,60 @@
       "repository": "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat",
       "generation": "v2",
       "activity": "active",
-      "source": "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0",
-      "checked_at": "2026-10-17T14:17:41.978971+00:00",
+      "source": "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/dcc9f63dd0ccd602fe321f5eccdc5c9a2505491b",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "note": "Browser/PWA messenger with encrypted group chat, media and one-to-one calls; White Noise interoperability remains untested. Source README labels the app alpha and documents unencrypted localStorage keys and asymmetric Web Push interoperability.",
       "generation_evidence": [
-        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/package.json",
-        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/src/lib/chat.ts"
+        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/dcc9f63dd0ccd602fe321f5eccdc5c9a2505491b/package.json",
+        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/dcc9f63dd0ccd602fe321f5eccdc5c9a2505491b/src/lib/chat.ts"
       ],
       "default_branch": "main",
-      "commit": "34a3418978fd2dc563be9beb72bbf38ef6ed3cb0",
-      "last_commit_at": "2026-10-14T18:03:17-05:00",
+      "commit": "dcc9f63dd0ccd602fe321f5eccdc5c9a2505491b",
+      "last_commit_at": "2026-10-25T22:24:14-05:00",
       "archived": null,
       "feature_evidence": [
-        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/34a3418978fd2dc563be9beb72bbf38ef6ed3cb0/README.md"
+        "https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat/tree/dcc9f63dd0ccd602fe321f5eccdc5c9a2505491b/README.md"
       ]
     },
     {
       "repository": "https://github.com/modus-lisp/cl-marmot",
       "default_branch": "master",
-      "commit": "4976cca038fe4ad495f165aaf790e8d7c450ac05",
-      "last_commit_at": "2026-10-14T21:56:24Z",
+      "commit": "be2152dc935a0350e271a340531810ca40b39dd1",
+      "last_commit_at": "2026-10-23T18:42:51Z",
       "archived": false,
-      "source": "https://github.com/modus-lisp/cl-marmot/tree/4976cca038fe4ad495f165aaf790e8d7c450ac05",
+      "source": "https://github.com/modus-lisp/cl-marmot/tree/be2152dc935a0350e271a340531810ca40b39dd1",
       "note": "Independent Common Lisp MLS/Marmot library and CLI; components include account identity proof 0x8009 and encrypted-media-v2. README reports wn interop, not independently run. Dependencies natrium, secp256k1-fast, seal, cl-nostr and bordeaux-threads are ASDF/local siblings, not locked; README mentions cl-nostr marmot-rumors branch. No immutable dependency binding.",
       "generation": "v2",
       "activity": "active",
-      "checked_at": "2026-10-17T14:21:18.003145+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation_evidence": [
-        "https://github.com/modus-lisp/cl-marmot/blob/4976cca038fe4ad495f165aaf790e8d7c450ac05/cl-marmot.asd",
-        "https://github.com/modus-lisp/cl-marmot/blob/4976cca038fe4ad495f165aaf790e8d7c450ac05/src/marmot/components.lisp",
-        "https://github.com/modus-lisp/cl-marmot/blob/4976cca038fe4ad495f165aaf790e8d7c450ac05/src/marmot/key-packages.lisp",
-        "https://github.com/modus-lisp/cl-marmot/blob/4976cca038fe4ad495f165aaf790e8d7c450ac05/README.md"
+        "https://github.com/modus-lisp/cl-marmot/blob/be2152dc935a0350e271a340531810ca40b39dd1/cl-marmot.asd",
+        "https://github.com/modus-lisp/cl-marmot/blob/be2152dc935a0350e271a340531810ca40b39dd1/src/marmot/components.lisp",
+        "https://github.com/modus-lisp/cl-marmot/blob/be2152dc935a0350e271a340531810ca40b39dd1/src/marmot/key-packages.lisp",
+        "https://github.com/modus-lisp/cl-marmot/blob/be2152dc935a0350e271a340531810ca40b39dd1/README.md"
       ],
       "feature_evidence": [
-        "https://github.com/modus-lisp/cl-marmot/blob/4976cca038fe4ad495f165aaf790e8d7c450ac05/README.md"
+        "https://github.com/modus-lisp/cl-marmot/blob/be2152dc935a0350e271a340531810ca40b39dd1/README.md"
       ]
     },
     {
       "repository": "https://github.com/modus-lisp/emissary",
       "default_branch": "master",
-      "commit": "a77eb86bda280712f43c1c56f42e3bff23d5e3b4",
-      "last_commit_at": "2026-10-15T00:24:10Z",
+      "commit": "2a1be7555b07a168836e3979a68a16251717aa9c",
+      "last_commit_at": "2026-10-23T18:42:51Z",
       "archived": false,
-      "source": "https://github.com/modus-lisp/emissary/tree/a77eb86bda280712f43c1c56f42e3bff23d5e3b4",
+      "source": "https://github.com/modus-lisp/emissary/tree/2a1be7555b07a168836e3979a68a16251717aa9c",
       "note": "Authenticated execution agent with optional cl-marmot transport. Concrete attach-marmot invokes CREATE/OPEN-ACCOUNT, PUBLISH-KEY-PACKAGE, ADD-HANDLER, MESSAGE-SENDER, SEND. No version lock for optional cl-marmot: v2 classification is current compatible dependency path, not frozen reproducible installed release. README explicitly new unaudited research software, sandbox is state isolation not capability isolation; principals have shell-equivalent power.",
       "generation": "v2",
       "activity": "active",
-      "checked_at": "2026-10-17T14:21:18.003145+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation_evidence": [
-        "https://github.com/modus-lisp/emissary/blob/a77eb86bda280712f43c1c56f42e3bff23d5e3b4/src/marmot.lisp",
-        "https://github.com/modus-lisp/emissary/blob/a77eb86bda280712f43c1c56f42e3bff23d5e3b4/emissary.asd",
-        "https://github.com/modus-lisp/emissary/blob/a77eb86bda280712f43c1c56f42e3bff23d5e3b4/README.md"
+        "https://github.com/modus-lisp/emissary/blob/2a1be7555b07a168836e3979a68a16251717aa9c/src/marmot.lisp",
+        "https://github.com/modus-lisp/emissary/blob/2a1be7555b07a168836e3979a68a16251717aa9c/emissary.asd",
+        "https://github.com/modus-lisp/emissary/blob/2a1be7555b07a168836e3979a68a16251717aa9c/README.md"
       ],
       "feature_evidence": [
-        "https://github.com/modus-lisp/emissary/blob/a77eb86bda280712f43c1c56f42e3bff23d5e3b4/README.md"
+        "https://github.com/modus-lisp/emissary/blob/2a1be7555b07a168836e3979a68a16251717aa9c/README.md"
       ]
     },
     {
@@ -785,7 +836,7 @@
       "note": "Independent adopted component-based protocol; directory v2 alone is NOT evidence (README says fork marker). Actual 0x8009 proof, app_data_dictionary/app_components and component IDs support v2. Quartz event dependency com.vitorpamplona.quartz:quartz:1.14.0; own MLS stack not inherited Quartz MLS. README says only JVM builds; Android/native targets broken, not Maven published, known convergence/restart/persistence gaps. Reported398 tests not independently executed.",
       "generation": "v2",
       "activity": "active",
-      "checked_at": "2026-10-17T14:21:18.003145+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation_evidence": [
         "https://github.com/kngako/quartz-marmot-kmp/blob/c3783a26b96c7fedbf47a504a8ecf817ffd0d6b9/README.md",
         "https://github.com/kngako/quartz-marmot-kmp/blob/c3783a26b96c7fedbf47a504a8ecf817ffd0d6b9/library/build.gradle.kts",
@@ -799,29 +850,29 @@
     {
       "repository": "https://github.com/jooray/nostrautica",
       "default_branch": "main",
-      "commit": "b2205c348e5368c308b2ff2064361f104cd1053d",
-      "last_commit_at": "2026-10-11T21:45:47Z",
+      "commit": "410a2721698f3035ea2ed199d05ae344b25767cb",
+      "last_commit_at": "2026-10-24T20:43:16Z",
       "archived": false,
-      "source": "https://github.com/jooray/nostrautica/tree/b2205c348e5368c308b2ff2064361f104cd1053d",
-      "note": "Nostr event-coordination PWA and native Android app with coordinator-managed Marmot event chat. Experimental; interoperability claims in its docs were not independently exercised.",
+      "source": "https://github.com/jooray/nostrautica/tree/410a2721698f3035ea2ed199d05ae344b25767cb",
+      "note": "Nostr event-coordination PWA and native Android app with coordinator-managed Marmot event chat. Experimental; interoperability claims in its docs were not independently exercised. Android fetch tooling now pins MarmotKit 0.14.0; the vendored TypeScript engine retains the post-MIP identity-proof component.",
       "generation": "v2",
       "activity": "active",
-      "checked_at": "2026-10-17T14:21:53.139404+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation_evidence": [
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/README.md",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/packages/app/package.json",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/packages/coordinator/package.json",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/pnpm-lock.yaml",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/packages/vendor/marmot-ts/package.json",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/packages/vendor/marmot-ts/lib/core/key-package.js",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/packages/coordinator/src/chat/mls.ts",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/android/tools/marmotkit/fetch.sh",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/android/tools/marmotkit/marmotkit-0.12.0.sha256",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/android/app/src/main/java/today/cypherpunk/nostrautica/domain/chat/MarmotEngine.kt",
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/docs/MARMOT-GROUP-CHAT.md"
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/README.md",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/packages/app/package.json",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/packages/coordinator/package.json",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/pnpm-lock.yaml",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/packages/vendor/marmot-ts/package.json",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/packages/vendor/marmot-ts/lib/core/key-package.js",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/packages/coordinator/src/chat/mls.ts",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/android/tools/marmotkit/fetch.sh",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/android/tools/marmotkit/marmotkit-0.14.0.sha256",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/android/app/src/main/java/today/cypherpunk/nostrautica/domain/chat/MarmotEngine.kt",
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/docs/MARMOT-GROUP-CHAT.md"
       ],
       "feature_evidence": [
-        "https://github.com/jooray/nostrautica/blob/b2205c348e5368c308b2ff2064361f104cd1053d/README.md"
+        "https://github.com/jooray/nostrautica/blob/410a2721698f3035ea2ed199d05ae344b25767cb/README.md"
       ]
     },
     {
@@ -834,7 +885,7 @@
       "note": "Supabase-style Nostr record SDK; experimental encrypted shared collections via Marmot, with Fieldwork demo. No independent audit or released White Noise interoperability established.",
       "generation": "v2",
       "activity": "active",
-      "checked_at": "2026-10-17T14:21:53.139445+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation_evidence": [
         "https://github.com/shroominic/nostrbase/blob/c3cd7609edc455d293f877c581041b0a20edef4f/README.md",
         "https://github.com/shroominic/nostrbase/blob/c3cd7609edc455d293f877c581041b0a20edef4f/package.json",
@@ -852,17 +903,17 @@
     {
       "repository": "https://github.com/cameri/nostream",
       "default_branch": "main",
-      "commit": "8a5600b99a2595b6114816f94c8b80ef9ff49c06",
-      "last_commit_at": "2026-10-10T13:55:02Z",
+      "commit": "3b35377368c0432d2c32126846391734851baeab",
+      "last_commit_at": "2026-10-25T01:18:32Z",
       "generation": "adjacent",
       "activity": "active",
-      "checked_at": "2026-10-10T21:22:00Z",
-      "source": "https://github.com/cameri/nostream/tree/8a5600b99a2595b6114816f94c8b80ef9ff49c06",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "source": "https://github.com/cameri/nostream/tree/3b35377368c0432d2c32126846391734851baeab",
       "feature_evidence": [
-        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/constants/base.ts",
-        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/handlers/event-strategies/group-event-strategy.ts",
-        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/handlers/request-handlers/root-request-handler.ts",
-        "https://github.com/cameri/nostream/blob/8a5600b99a2595b6114816f94c8b80ef9ff49c06/src/handlers/event-message-handler.ts"
+        "https://github.com/cameri/nostream/blob/3b35377368c0432d2c32126846391734851baeab/src/constants/base.ts",
+        "https://github.com/cameri/nostream/blob/3b35377368c0432d2c32126846391734851baeab/src/handlers/event-strategies/group-event-strategy.ts",
+        "https://github.com/cameri/nostream/blob/3b35377368c0432d2c32126846391734851baeab/src/handlers/request-handlers/root-request-handler.ts",
+        "https://github.com/cameri/nostream/blob/3b35377368c0432d2c32126846391734851baeab/src/handlers/event-message-handler.ts"
       ],
       "note": "TypeScript Nostr relay whose default branch implements Marmot event handling rather than only generic storage. Kinds: 443 (MIP-00 legacy KeyPackage), 10051 (MIP-00 relay list, replaceable), 30443 (MIP-00 addressable KeyPackage with d-tag deduplication), 444 (MIP-02 Welcome rumor, blocked from direct publishing and required to arrive inside a kind 1059 gift wrap), and 445 (MIP-03 Group Event, validated to carry exactly one 64-character lowercase hex h tag so #h subscriptions resolve). package.json declares supportedMips [0, 1, 2, 3], emitted as supported_mips in the NIP-11 relay information document. It is a relay, not a messaging implementation: it performs no MLS, which is why it is labelled adjacent rather than v1 or v2. No hands-on relay test or group interoperability claim is made.",
       "archived": false
@@ -870,23 +921,23 @@
     {
       "repository": "https://github.com/tidley/codr",
       "default_branch": "master",
-      "commit": "44def456e9540fdc9dbabda3ef2f45f65fb32f7b",
-      "last_commit_at": "2026-10-22T01:11:28Z",
-      "checked_at": "2026-10-22T05:55:07.593707Z",
+      "commit": "aebb35032b807c641cc8a9cc989073e47b118fe4",
+      "last_commit_at": "2026-10-25T14:31:21Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/tidley/codr/tree/44def456e9540fdc9dbabda3ef2f45f65fb32f7b",
-      "note": "Linux HERDR bridge using the upstream MDK wn-agent 0.13.0 transport. Routes existing OpenCode, Codex and Claude Code sessions to encrypted White Noise groups; includes inbound images and local audio transcription. Editable progress and offline media recovery require additional MDK APIs beyond the pinned release. Source inspected; no installation or interoperability test performed.",
+      "source": "https://github.com/tidley/codr/tree/aebb35032b807c641cc8a9cc989073e47b118fe4",
+      "note": "Linux/macOS HERDR bridge for existing OpenCode, Codex and Claude Code sessions. connector.toml pins MDK 0.14.0 revision 3fb4b4759ac676b0c21c4c3527074866c9fa4c89 with a local patch. Supports images, local voice transcription, direct mid-turn text delivery and editable progress through wn-agent. Source inspected; runtime interoperability was not tested.",
       "generation_evidence": [
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/scripts/setup.py",
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/wire.rs",
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/docs/REFERENCE.md"
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/connector.toml",
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/src/wire.rs",
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/docs/REFERENCE.md"
       ],
       "feature_evidence": [
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/bridge.rs",
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/media.rs",
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/output/codex.rs",
-        "https://github.com/tidley/codr/blob/44def456e9540fdc9dbabda3ef2f45f65fb32f7b/src/output/claude.rs"
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/src/bridge.rs",
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/src/media.rs",
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/src/output/codex.rs",
+        "https://github.com/tidley/codr/blob/aebb35032b807c641cc8a9cc989073e47b118fe4/src/output/claude.rs"
       ],
       "archived": false
     },
@@ -895,7 +946,7 @@
       "default_branch": "main",
       "commit": "88a20d247510d1cc46ca955564aa395d26ae8e89",
       "last_commit_at": "2026-09-30T11:48:29Z",
-      "checked_at": "2026-10-22T06:03:05.740198Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/tsgx1990/moyu/tree/88a20d247510d1cc46ca955564aa395d26ae8e89",
@@ -914,7 +965,7 @@
       "default_branch": "main",
       "commit": "e892802d7dc9ad40a588288ef1161426c5bb6bc6",
       "last_commit_at": "2026-08-31T20:56:42Z",
-      "checked_at": "2026-10-22T06:03:05.740198Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/januszgrze/chascuro/tree/e892802d7dc9ad40a588288ef1161426c5bb6bc6",
@@ -932,18 +983,18 @@
     {
       "repository": "https://git.coinos.io/coinosv3.git",
       "default_branch": "master",
-      "commit": "c143b7dbe900df9a644bb67b87a92fd208e1ee74",
-      "last_commit_at": "2026-10-22T23:55:09-07:00",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "commit": "85399e5f2a303155a9b437712aed08d62fbc8776",
+      "last_commit_at": "2026-10-25T16:11:11-07:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://git.coinos.io/coinosv3.git/tree/?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74",
+      "source": "https://git.coinos.io/coinosv3.git/tree/?id=85399e5f2a303155a9b437712aed08d62fbc8776",
       "generation_evidence": [
-        "https://git.coinos.io/coinosv3.git/tree/src/marmot.js?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74",
-        "https://git.coinos.io/coinosv3.git/tree/src/mls.js?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74"
+        "https://git.coinos.io/coinosv3.git/tree/src/marmot.js?id=85399e5f2a303155a9b437712aed08d62fbc8776",
+        "https://git.coinos.io/coinosv3.git/tree/src/mls.js?id=85399e5f2a303155a9b437712aed08d62fbc8776"
       ],
       "feature_evidence": [
-        "https://git.coinos.io/coinosv3.git/tree/README.md?id=c143b7dbe900df9a644bb67b87a92fd208e1ee74"
+        "https://git.coinos.io/coinosv3.git/tree/README.md?id=85399e5f2a303155a9b437712aed08d62fbc8776"
       ],
       "nip34_announcement": {
         "event": "f7422e49b67792c17bd6e101b9c66b50c87700918f3755851c07ac3f1a15944a",
@@ -957,7 +1008,7 @@
       "default_branch": "main",
       "commit": "329287e1a389f3712daeda983818a92ea8cc78d3",
       "last_commit_at": "2026-09-28T23:13:19Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/Noormohammadiazad/Textor/tree/329287e1a389f3712daeda983818a92ea8cc78d3",
@@ -973,41 +1024,41 @@
     },
     {
       "repository": "https://github.com/humanitylabs-org/wizard-messenger",
-      "default_branch": "feature/private-beta-20261015",
-      "commit": "16e245ef4dd30464b6ed4d40dd9d1c704eed9126",
-      "last_commit_at": "2026-10-15T11:22:09Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "default_branch": "feature/unified-inbox",
+      "commit": "273c747dff2cab7230080e76c5f618e60a18ffea",
+      "last_commit_at": "2026-10-25T17:44:04Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/humanitylabs-org/wizard-messenger/tree/16e245ef4dd30464b6ed4d40dd9d1c704eed9126",
-      "note": "Wizard OS peer messenger: an isolated container with an HTTP API, minimal MCP and editable web view, with MDK as the messaging engine. Engine provenance pins the MDK 0.12.0 release commit 122bd90 and its lock. A two-person encrypted-text MVP in private beta; install images are private prerelease archives, while the source is public. The default branch is feature/private-beta-20261015. No installation or interoperability test performed.",
+      "source": "https://github.com/humanitylabs-org/wizard-messenger/tree/273c747dff2cab7230080e76c5f618e60a18ffea",
+      "note": "Wizard OS alpha app with a Marmot text-chat engine on MDK 0.12 and a unified Matrix/Telegram inbox, HTTP API, MCP and editable web view. The unified history is stored in plaintext on the local machine; Telegram cloud chats do not inherit Marmot end-to-end encryption. Current README documents Wizard AppStore alpha installation. Runtime behavior was not tested.",
       "generation_evidence": [
-        "https://github.com/humanitylabs-org/wizard-messenger/blob/16e245ef4dd30464b6ed4d40dd9d1c704eed9126/engine/provenance.json",
-        "https://github.com/humanitylabs-org/wizard-messenger/blob/16e245ef4dd30464b6ed4d40dd9d1c704eed9126/engine/Cargo.lock"
+        "https://github.com/humanitylabs-org/wizard-messenger/blob/273c747dff2cab7230080e76c5f618e60a18ffea/engine/provenance.json",
+        "https://github.com/humanitylabs-org/wizard-messenger/blob/273c747dff2cab7230080e76c5f618e60a18ffea/engine/Cargo.lock"
       ],
       "feature_evidence": [
-        "https://github.com/humanitylabs-org/wizard-messenger/blob/16e245ef4dd30464b6ed4d40dd9d1c704eed9126/README.md"
+        "https://github.com/humanitylabs-org/wizard-messenger/blob/273c747dff2cab7230080e76c5f618e60a18ffea/README.md"
       ],
       "archived": false
     },
     {
       "repository": "https://github.com/3DAGI/freedom-app",
       "default_branch": "main",
-      "commit": "5215738c2dcc99766352e4ba9e6c0a8560b6400b",
-      "last_commit_at": "2026-10-23T07:25:53Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "commit": "cffae79fcbdacc385a90d0d8fd4605d8cc35049a",
+      "last_commit_at": "2026-10-25T01:01:18Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/3DAGI/freedom-app/tree/5215738c2dcc99766352e4ba9e6c0a8560b6400b",
+      "source": "https://github.com/3DAGI/freedom-app/tree/cffae79fcbdacc385a90d0d8fd4605d8cc35049a",
       "note": "Operator-free messaging, Lightning/Solana payments and NIP-90 AI jobs in a single-file web app with Tauri launchers (German README). Its packages/mls module compiles MDK to WebAssembly from upstream revision a19feca with a local patch; the lock resolves cgka-engine and marmot-app 0.10.4. The app's MLS engine loads that module for group and one-to-one forward-secret encryption. How much of the app's chat uses it was not traced; no runtime test performed.",
       "generation_evidence": [
-        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/mls/bauen.sh",
-        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/mls/Cargo.lock",
-        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/mls/crate/Cargo.toml"
+        "https://github.com/3DAGI/freedom-app/blob/cffae79fcbdacc385a90d0d8fd4605d8cc35049a/packages/mls/bauen.sh",
+        "https://github.com/3DAGI/freedom-app/blob/cffae79fcbdacc385a90d0d8fd4605d8cc35049a/packages/mls/Cargo.lock",
+        "https://github.com/3DAGI/freedom-app/blob/cffae79fcbdacc385a90d0d8fd4605d8cc35049a/packages/mls/crate/Cargo.toml"
       ],
       "feature_evidence": [
-        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/README.md",
-        "https://github.com/3DAGI/freedom-app/blob/5215738c2dcc99766352e4ba9e6c0a8560b6400b/packages/app/src/mls-engine.ts"
+        "https://github.com/3DAGI/freedom-app/blob/cffae79fcbdacc385a90d0d8fd4605d8cc35049a/README.md",
+        "https://github.com/3DAGI/freedom-app/blob/cffae79fcbdacc385a90d0d8fd4605d8cc35049a/packages/app/src/mls-engine.ts"
       ],
       "archived": false
     },
@@ -1016,7 +1067,7 @@
       "default_branch": "main",
       "commit": "b38b2841b081952dc7728da391fe0e26fc7c6181",
       "last_commit_at": "2026-09-03T03:12:13Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/Epiphytic/deaddrop/tree/b38b2841b081952dc7728da391fe0e26fc7c6181",
@@ -1035,7 +1086,7 @@
       "default_branch": "main",
       "commit": "67ff0d58994e8859debb7493454b883ff1b0775a",
       "last_commit_at": "2026-10-13T19:20:43Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/frigate-marmot/tree/67ff0d58994e8859debb7493454b883ff1b0775a",
@@ -1052,38 +1103,38 @@
     {
       "repository": "https://github.com/Epiphytic/marmish",
       "default_branch": "master",
-      "commit": "5d53267960ddea1c5fa8807ff211236865df817b",
-      "last_commit_at": "2026-10-23T06:48:38Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "commit": "487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0",
+      "last_commit_at": "2026-10-23T16:05:43Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/Epiphytic/marmish/tree/5d53267960ddea1c5fa8807ff211236865df817b",
+      "source": "https://github.com/Epiphytic/marmish/tree/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0",
       "note": "Linux prototype for asynchronous remote commands and resumable shells over Marmot, through an adapter to a hash-pinned wnd daemon. The build tool pins MDK revision 37c248a (2026-09-24) via the liamhelmer-bel/mdk fork. Its compatibility notes say the production live adapter remains disabled pending review; only a bounded live exchange has run. Interactive PTY sessions are planned. No license file. No installation test performed.",
       "generation_evidence": [
-        "https://github.com/Epiphytic/marmish/blob/5d53267960ddea1c5fa8807ff211236865df817b/tools/marmish_mdk_build.py",
-        "https://github.com/Epiphytic/marmish/blob/5d53267960ddea1c5fa8807ff211236865df817b/docs/mdk-compatibility.md"
+        "https://github.com/Epiphytic/marmish/blob/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0/tools/marmish_mdk_build.py",
+        "https://github.com/Epiphytic/marmish/blob/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0/docs/mdk-compatibility.md"
       ],
       "feature_evidence": [
-        "https://github.com/Epiphytic/marmish/blob/5d53267960ddea1c5fa8807ff211236865df817b/README.md"
+        "https://github.com/Epiphytic/marmish/blob/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0/README.md"
       ],
       "archived": false
     },
     {
       "repository": "https://github.com/Epiphytic/heterodyne-metaharness",
       "default_branch": "main",
-      "commit": "afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b",
-      "last_commit_at": "2026-10-20T12:36:14Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "commit": "a0d3a29617594f96a77ff03757132c22fc2f83d3",
+      "last_commit_at": "2026-10-24T22:36:01Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/Epiphytic/heterodyne-metaharness/tree/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b",
+      "source": "https://github.com/Epiphytic/heterodyne-metaharness/tree/a0d3a29617594f96a77ff03757132c22fc2f83d3",
       "note": "Coding-agent control plane in early development. Only admind exists so far: an operator recovery channel to a privileged admin agent over Marmot, through a client for MDK's wn-agent socket speaking marmot.agent-control.v2. The planned wsd daemon routes workstream groups over Marmot. MDK owns encryption and transport. No installation test performed.",
       "generation_evidence": [
-        "https://github.com/Epiphytic/heterodyne-metaharness/blob/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b/src/heterodyne/marmot/control.py"
+        "https://github.com/Epiphytic/heterodyne-metaharness/blob/a0d3a29617594f96a77ff03757132c22fc2f83d3/src/heterodyne/marmot/control.py"
       ],
       "feature_evidence": [
-        "https://github.com/Epiphytic/heterodyne-metaharness/blob/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b/README.md",
-        "https://github.com/Epiphytic/heterodyne-metaharness/blob/afb09cb3fa957256f10aaac2a6f4d6e8ab5d254b/docs/admind.md"
+        "https://github.com/Epiphytic/heterodyne-metaharness/blob/a0d3a29617594f96a77ff03757132c22fc2f83d3/README.md",
+        "https://github.com/Epiphytic/heterodyne-metaharness/blob/a0d3a29617594f96a77ff03757132c22fc2f83d3/docs/admind.md"
       ],
       "archived": false
     },
@@ -1092,7 +1143,7 @@
       "default_branch": "master",
       "commit": "5a77ad022505a262ed8265f60e60d86278319693",
       "last_commit_at": "2026-09-12T18:43:33Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "adjacent",
       "activity": "active",
       "source": "https://github.com/hzrd149/marmots-tunnels/tree/5a77ad022505a262ed8265f60e60d86278319693",
@@ -1112,7 +1163,7 @@
       "default_branch": "master",
       "commit": "b43fd966ef256fd277118a59dfc064be468677a8",
       "last_commit_at": "2026-09-06T11:43:07Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "adjacent",
       "activity": "active",
       "source": "https://github.com/marmot-protocol/nostr-doctor/tree/b43fd966ef256fd277118a59dfc064be468677a8",
@@ -1128,7 +1179,7 @@
       "default_branch": "main",
       "commit": "5d3126716ae5b6bf01d46cdf14fceb05244445e0",
       "last_commit_at": "2026-09-05T18:30:16Z",
-      "checked_at": "2026-10-23T08:27:13Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "adjacent",
       "activity": "active",
       "source": "https://github.com/FelineStateMachine/bindws/tree/5d3126716ae5b6bf01d46cdf14fceb05244445e0",
@@ -1143,32 +1194,92 @@
     {
       "repository": "https://github.com/vitorpamplona/marmot-kmp",
       "default_branch": "main",
-      "commit": "68310ad688f44bfd4c161fa6418b61406953da33",
-      "last_commit_at": "2026-10-23T19:48:16Z",
+      "commit": "11ef50a91cad43e6829bf0a3be2b467dfc132f9f",
+      "last_commit_at": "2026-10-24T19:19:25Z",
       "archived": false,
-      "checked_at": "2026-10-24T06:03:12.491749+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/vitorpamplona/marmot-kmp/tree/68310ad688f44bfd4c161fa6418b61406953da33",
+      "source": "https://github.com/vitorpamplona/marmot-kmp/tree/11ef50a91cad43e6829bf0a3be2b467dfc132f9f",
       "feature_evidence": [
-        "https://github.com/vitorpamplona/marmot-kmp/blob/68310ad688f44bfd4c161fa6418b61406953da33/README.md"
+        "https://github.com/vitorpamplona/marmot-kmp/blob/11ef50a91cad43e6829bf0a3be2b467dfc132f9f/README.md"
       ],
       "note": "Standalone Kotlin Multiplatform Marmot library extracted from Amethyst; its README documents the current Marmot profile and the independent mls-kmp engine."
     },
     {
       "repository": "https://github.com/vitorpamplona/mls-kmp",
       "default_branch": "main",
-      "commit": "3bd45d9bbe694573476a5c9ceb3ef4d6ac03b3f1",
-      "last_commit_at": "2026-10-23T14:52:50Z",
+      "commit": "efd13639f374f300272cd4dede614d779ca06778",
+      "last_commit_at": "2026-10-25T22:17:41Z",
       "archived": false,
-      "checked_at": "2026-10-24T06:03:13.580758+00:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
       "generation": "adjacent",
       "activity": "active",
-      "source": "https://github.com/vitorpamplona/mls-kmp/tree/3bd45d9bbe694573476a5c9ceb3ef4d6ac03b3f1",
+      "source": "https://github.com/vitorpamplona/mls-kmp/tree/efd13639f374f300272cd4dede614d779ca06778",
       "feature_evidence": [
-        "https://github.com/vitorpamplona/mls-kmp/blob/3bd45d9bbe694573476a5c9ceb3ef4d6ac03b3f1/README.md"
+        "https://github.com/vitorpamplona/mls-kmp/blob/efd13639f374f300272cd4dede614d779ca06778/README.md"
       ],
       "note": "Standalone Kotlin Multiplatform RFC 9420 engine used by marmot-kmp. Nostr-independent MLS dependency, not a Marmot implementation."
+    },
+    {
+      "repository": "https://code.sigidli.com/mantra/mantra-kmp",
+      "default_branch": "mantra",
+      "commit": "99f48d176974cf064a292fa6dae7ae18712dda4c",
+      "last_commit_at": "2026-10-03T08:24:11+02:00",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "generation": "v1",
+      "activity": "active",
+      "source": "https://code.sigidli.com/mantra/mantra-kmp/src/commit/99f48d176974cf064a292fa6dae7ae18712dda4c",
+      "archived": false,
+      "generation_evidence": [
+        "https://code.sigidli.com/mantra/mantra-kmp/src/commit/99f48d176974cf064a292fa6dae7ae18712dda4c/gradle/libs.versions.toml",
+        "https://code.sigidli.com/mantra/mantra-kmp/src/commit/99f48d176974cf064a292fa6dae7ae18712dda4c/composeApp/src/commonMain/kotlin/press/mantra/compose/managers/MarmotGroupCreation.kt",
+        "https://repo.maven.apache.org/maven2/com/vitorpamplona/quartz/quartz/1.14.0/quartz-1.14.0-sources.jar"
+      ],
+      "dependency_sha256": "e57b0aeb8b4c4c35117e02de57c40a0a9073fc059bd6d284e8e3c8d3780cd839",
+      "feature_evidence": [
+        "https://code.sigidli.com/mantra/mantra-kmp/src/commit/99f48d176974cf064a292fa6dae7ae18712dda4c/README.md",
+        "https://code.sigidli.com/mantra/mantra-kmp/src/commit/99f48d176974cf064a292fa6dae7ae18712dda4c/docs/marmot-direct-messages.md"
+      ],
+      "note": "Kotlin Multiplatform collaboration app for translation workgroups and threshold-signing approvals. The app imports MIP-01 MarmotGroupData and pins Quartz 1.14.0. Its Maven Central source archive implements the 0xf2ee NostrGroupData extension and BasicCredential identity matching, establishing the older MIP profile rather than post-MIP application components. Its in-group private messages require a documented MIP-03 author-check carve-out in other clients; stock clients may reject them. Runtime interoperability and released builds were not tested."
+    },
+    {
+      "repository": "https://github.com/jooray/wn-notify",
+      "default_branch": "main",
+      "commit": "ba21270edace90c0d6dde7fde7c3b1e3fb5c6201",
+      "last_commit_at": "2026-10-25T17:40:17Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/jooray/wn-notify/tree/ba21270edace90c0d6dde7fde7c3b1e3fb5c6201",
+      "archived": false,
+      "generation_evidence": [
+        "https://github.com/jooray/wn-notify/blob/ba21270edace90c0d6dde7fde7c3b1e3fb5c6201/wn-notify"
+      ],
+      "feature_evidence": [
+        "https://github.com/jooray/wn-notify/blob/ba21270edace90c0d6dde7fde7c3b1e3fb5c6201/README.md",
+        "https://github.com/jooray/wn-notify/blob/ba21270edace90c0d6dde7fde7c3b1e3fb5c6201/wn-notify"
+      ],
+      "note": "Unofficial Python standard-library CLI for sending notifications and files through an existing local wn-agent. Its Unix-socket requests and responses use marmot.agent-control.v2. The v2 label follows this current MDK transport boundary; it is not an independent MLS implementation. Runtime delivery was not tested."
+    },
+    {
+      "repository": "https://github.com/davidjj999/relayrider",
+      "default_branch": "master",
+      "commit": "5651cf0a76b3e15dc3cdba9bbb3f84aa05f833af",
+      "last_commit_at": "2026-07-11T02:43:06Z",
+      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "generation": "adjacent",
+      "activity": "inactive",
+      "source": "https://github.com/davidjj999/relayrider/tree/5651cf0a76b3e15dc3cdba9bbb3f84aa05f833af",
+      "archived": false,
+      "generation_evidence": [
+        "https://github.com/davidjj999/relayrider/blob/5651cf0a76b3e15dc3cdba9bbb3f84aa05f833af/app.js"
+      ],
+      "feature_evidence": [
+        "https://github.com/davidjj999/relayrider/blob/5651cf0a76b3e15dc3cdba9bbb3f84aa05f833af/README.md",
+        "https://github.com/davidjj999/relayrider/blob/5651cf0a76b3e15dc3cdba9bbb3f84aa05f833af/app.js"
+      ],
+      "note": "Browser relay evaluator with NIP-11 checks and kind-30443 publication/query probes. The probe creates an empty synthetic KeyPackage-shaped event: relay acceptance does not establish cryptographically valid MLS KeyPackage support. No relay mutation or interoperability test performed. Last commit: 2026-07-11."
     }
   ],
   "removed_repositories": [

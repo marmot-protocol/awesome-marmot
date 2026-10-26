@@ -1,142 +1,149 @@
 # Awesome Marmot 🦫
 
-Apps, agents, and tools for private group messaging with [Marmot](https://github.com/marmot-protocol/marmot).
+Projects for private group messaging with [Marmot](https://github.com/marmot-protocol/marmot).
 
 ## Marmot v2 at a glance
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **22** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **12** [integrations](#agents-and-automation) |
+| **23** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **13** [integrations](#agents-and-automation) |
 
 ## Start here
 
 | I want to… | Start with |
 | --- | --- |
 | Chat on my phone | White Noise for [Android](https://github.com/marmot-protocol/whitenoise-android) or [iOS](https://github.com/marmot-protocol/whitenoise-ios) |
-| Chat on my computer | [Cross-platform desktop](https://github.com/marmot-protocol/whitenoise-linux) — Linux, Windows, macOS, OpenBSD — or [native macOS](https://github.com/marmot-protocol/whitenoise-mac) |
+| Chat on my computer | [Cross-platform desktop](https://github.com/marmot-protocol/whitenoise-linux) · Linux, Windows, macOS, OpenBSD · or [native macOS](https://github.com/marmot-protocol/whitenoise-mac) |
 | Use a terminal | [MDK CLI/TUI](https://github.com/marmot-protocol/mdk/tree/master/crates/cli) |
 | Connect an agent | [Hermes, OpenClaw, Codex, Claude Code, OpenCode, Pi, Goose](#agents-and-automation) |
 | Build an app | [SDKs and libraries](#sdks-and-libraries) |
 
 [Older projects](#no-recent-public-commits) · [Archived projects](#archived-and-superseded)
 
-## Marmot v2 — recently updated
+## Marmot v2 · recently updated
 
 ### Apps
 
-- [coinos v3](https://git.coinos.io/coinosv3.git/) — **v2, active** — Self-custodial Bitcoin wallet (Ark, Lightning, on-chain) with a built-in Nostr client; White Noise group chats run on its own JavaScript MLS and Marmot implementation. [Web app](https://v3.coinos.io/).
-- [Textor](https://github.com/Noormohammadiazad/Textor) — **v2, active** — Messenger that is only a static web page; forward-secret groups of up to 100 use its own Marmot implementation on ts-mls, with NIP-17 for direct messages. [Web app](https://noormohammadiazad.github.io/Textor/).
-- [Wizard Messenger](https://github.com/humanitylabs-org/wizard-messenger) — **v2, active, beta** — Wizard OS app for two-person encrypted text on MDK 0.12, with an HTTP API, MCP and an editable web view; install images are private-beta only.
-- [FreedomStack](https://github.com/3DAGI/freedom-app) — **v2, active** — German-language web app for operator-free messaging, Lightning and Solana payments and paid AI jobs, with MDK compiled to WebAssembly for forward-secret encryption.
-- [Deaddrop](https://github.com/Epiphytic/deaddrop) — **v2, active, prototype** — Tor-only Marmot client and authenticated onion relay for anonymous one-to-one dead drops.
-- [moyu](https://github.com/tsgx1990/moyu) — **v2, active** — CLI/TUI and desktop messenger using an MDK fork with SOCKS5 support; in maintenance mode.
-- [Chascuro](https://github.com/januszgrze/chascuro) — **v2, active, experimental** — Fedimint wallet PWA with Marmot chat; unsuitable for production or real funds.
+- [coinos v3](https://git.coinos.io/coinosv3.git/) · **v2, active** · Self-custodial Bitcoin wallet (Ark, Lightning, on-chain) with a built-in Nostr client; White Noise group chats run on its own JavaScript MLS and Marmot implementation. [Web app](https://v3.coinos.io/).
+- [Textor](https://github.com/Noormohammadiazad/Textor) · **v2, active** · Messenger that is only a static web page; forward-secret groups of up to 100 use its own Marmot implementation on ts-mls, with NIP-17 for direct messages. [Web app](https://noormohammadiazad.github.io/Textor/).
+- [Wizard Messenger](https://github.com/humanitylabs-org/wizard-messenger) · **v2, active, alpha** · Wizard OS app with Marmot text chat and a Matrix/Telegram inbox; unified history is plaintext on the machine and Telegram cloud chats are outside Marmot encryption.
+- [FreedomStack](https://github.com/3DAGI/freedom-app) · **v2, active** · German-language web app for operator-free messaging, Lightning and Solana payments and paid AI jobs, with MDK compiled to WebAssembly for forward-secret encryption.
+- [Deaddrop](https://github.com/Epiphytic/deaddrop) · **v2, active, prototype** · Tor-only Marmot client and authenticated onion relay for anonymous one-to-one dead drops.
+- [moyu](https://github.com/tsgx1990/moyu) · **v2, active** · CLI/TUI and desktop messenger using an MDK fork with SOCKS5 support; in maintenance mode.
+- [Chascuro](https://github.com/januszgrze/chascuro) · **v2, active, experimental** · Fedimint wallet PWA with Marmot chat; unsuitable for production or real funds.
 
-- [Nostrautica](https://github.com/jooray/nostrautica) — **v2, active, alpha** — Event-coordination PWA and Android app with Marmot event chats and a coordinator service.
+- [Nostrautica](https://github.com/jooray/nostrautica) · **v2, active, alpha** · Event-coordination PWA and Android app with Marmot event chats and a coordinator service.
 
-- [ShyChat](https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat) — **v2, active, alpha** — Browser/PWA messenger with encrypted group chat, media and one-to-one calls; White Noise interoperability remains untested. [Web app](https://shychat.lol/).
+- [ShyChat](https://gitworkshop.dev/npub1mm5l2mfxvg2y7fl7sulfrznhxjqdqxkq72njafp567j6gej8elcsg6qlen/git.shychat.lol/shychat) · **v2, active, alpha** · Browser/PWA messenger with encrypted group chat, media and one-to-one calls; White Noise interoperability remains untested. [Web app](https://shychat.lol/).
 
-- [White Noise for Android](https://github.com/marmot-protocol/whitenoise-android) — **v2, active** — Native Android chat with voice dictation, read-aloud playback, and Amber signer support.
-- [White Noise for iOS](https://github.com/marmot-protocol/whitenoise-ios) — **v2, active** — Native iPhone chat with multiple identities, QR profile sharing, and notifications rendered privately on-device.
-- [White Noise for macOS](https://github.com/marmot-protocol/whitenoise-mac) — **v2, active** — Early native SwiftUI client with a single-window workspace; Apple Silicon and macOS 15.6+ only.
-- [White Noise for Linux](https://github.com/marmot-protocol/whitenoise-linux) — **v2, active** — Desktop chat for Linux, Windows, macOS, and OpenBSD, with chat export, PDF/3D attachment previews, and a password-encrypted vault.
-- [MDK CLI and TUI](https://github.com/marmot-protocol/mdk/tree/master/crates/cli) — **v2, active** — Keyboard-driven terminal chat with `wn`; JSON commands and the `wnd` background daemon also suit scripts and agents.
-- [Scramble](https://github.com/DavidGershony/Scramble) — **v2, active** — Desktop and Android chat with voice messages, encrypted file sharing, Amber login, and switchable themes.
-- [Amethyst](https://github.com/vitorpamplona/amethyst) — **v2, active** — Android and desktop Nostr client combining social feeds, Lightning tips, and Marmot groups in one app.
-- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) — **v2, active** — Amethyst from the terminal: post public notes, send private DMs, and manage Marmot groups with scriptable JSON output.
-- [Haven](https://github.com/mehmetefeumit/Haven-App) — **v2, active, beta** — Android/iOS location sharing in private circles, with your choice of relays and no phone-number signup.
-- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) — **v2, active** — React browser-chat example for developers; local-key login and an early v2 profile, not a polished consumer app.
-- [Lightning Piggy Mobile](https://github.com/LightningPiggy/lightning-piggy-mobile) — **v2, active, alpha** — Family Bitcoin wallet with Marmot one-to-one and group chat beside NIP-17, using `marmot-ts`; [the alpha integration](https://github.com/LightningPiggy/lightning-piggy-mobile/pull/1163) was merged on 2026-10-09.
-- [Groundhog](https://github.com/chebizarro/nostrc/tree/master/gnome/groundhog) — **v2, active, alpha** — GNOME messenger with Marmot encrypted groups, NIP-17 private messages, and local Grotto or remote NIP-46 signing. [Download alpha5](https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.0-alpha5).
-- [FMDtr](https://gitlab.com/Kalle/fmdtr-android) — **v2, active** — Find, ring, or remotely wipe an Android device via Marmot, SMS, or a web interface; its Marmot bridge now runs on MDK 0.10.4.
+- [White Noise for Android](https://github.com/marmot-protocol/whitenoise-android) · **v2, active** · Native Android chat with voice dictation, read-aloud playback, and Amber signer support.
+- [White Noise for iOS](https://github.com/marmot-protocol/whitenoise-ios) · **v2, active** · Native iPhone chat with multiple identities, QR profile sharing, and notifications rendered privately on-device.
+- [White Noise for macOS](https://github.com/marmot-protocol/whitenoise-mac) · **v2, active** · Early native SwiftUI client with a single-window workspace; Apple Silicon and macOS 15.6+ only.
+- [White Noise for Linux](https://github.com/marmot-protocol/whitenoise-linux) · **v2, active** · Desktop chat for Linux, Windows, macOS, and OpenBSD, with chat export, PDF/3D attachment previews, and a password-encrypted vault.
+- [MDK CLI and TUI](https://github.com/marmot-protocol/mdk/tree/master/crates/cli) · **v2, active** · Keyboard-driven terminal chat with `wn`; JSON commands and the `wnd` background daemon also suit scripts and agents.
+- [Scramble](https://github.com/DavidGershony/Scramble) · **v2, active** · Desktop and Android chat with voice messages, encrypted file sharing, Amber login, and switchable themes.
+- [Amethyst](https://github.com/vitorpamplona/amethyst) · **v2, active** · Android and desktop Nostr client combining social feeds, Lightning tips, and Marmot groups in one app.
+- [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) · **v2, active** · Amethyst from the terminal: post public notes, send private DMs, and manage Marmot groups with scriptable JSON output.
+- [Haven](https://github.com/mehmetefeumit/Haven-App) · **v2, active, beta** · Android/iOS location sharing in private circles, with your choice of relays and no phone-number signup.
+- [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) · **v2, active** · React browser-chat example using current marmot-ts identity proofs and browser device slots; older groups have a read-only migration path.
+- [Lightning Piggy Mobile](https://github.com/LightningPiggy/lightning-piggy-mobile) · **v2, active, alpha** · Family Bitcoin wallet with Marmot one-to-one and group chat beside NIP-17, using `marmot-ts`; [the alpha integration](https://github.com/LightningPiggy/lightning-piggy-mobile/pull/1163) was merged on 2026-10-09.
+- [Groundhog](https://github.com/chebizarro/nostrc/tree/master/gnome/groundhog) · **v2, active, alpha** · GNOME messenger with Marmot encrypted groups, NIP-17 private messages, and local Grotto or remote NIP-46 signing. [Download alpha5](https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.0-alpha5).
+- [FMDtr](https://gitlab.com/Kalle/fmdtr-android) · **v2, active** · Find, ring, or remotely wipe an Android device via Marmot, SMS, or a web interface; its Marmot bridge now runs on MDK 0.10.4.
+
+- [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group maps and chat with low-battery alerts; iOS pre-release uses Marmot v2, while Android production remains on v1.
 
 ### Agents and automation
 
-- [frigate-marmot](https://github.com/marmot-protocol/frigate-marmot) — **v2, active** — Sends private Frigate camera person alerts, a snapshot followed by buffered video, to a White Noise group through MDK's `wn`/`wnd`; so far tested with synthetic events only.
-- [marmish](https://github.com/Epiphytic/marmish) — **v2, active, prototype** — Remote commands over Marmot that keep running after you disconnect, through a hash-pinned `wnd`; its production live adapter is still disabled pending review.
-- [heterodyne-metaharness](https://github.com/Epiphytic/heterodyne-metaharness) — **v2, active, experimental** — Coding-agent control plane in early development; its `admind` service gives operators a Marmot recovery channel to a privileged admin agent through `wn-agent`.
-- [codr](https://github.com/tidley/codr) — **v2, active** — Connects existing HERDR sessions for OpenCode, Codex and Claude Code to White Noise through MDK, with image input and local voice transcription.
+- [wn-notify](https://github.com/jooray/wn-notify) · **v2, active** · Unofficial CLI for notifications and file delivery through a local `wn-agent`; one Python file using standard-library dependencies.
 
-- [Emissary](https://github.com/modus-lisp/emissary) — **v2, active, experimental** — Research execution agent with optional cl-marmot transport; unpinned dependency and shell-equivalent authority.
+- [frigate-marmot](https://github.com/marmot-protocol/frigate-marmot) · **v2, active** · Sends private Frigate camera person alerts, a snapshot followed by buffered video, to a White Noise group through MDK's `wn`/`wnd`; so far tested with synthetic events only.
+- [marmish](https://github.com/Epiphytic/marmish) · **v2, active, prototype** · Remote commands over Marmot that keep running after you disconnect, through a hash-pinned `wnd`; its production live adapter is still disabled pending review.
+- [heterodyne-metaharness](https://github.com/Epiphytic/heterodyne-metaharness) · **v2, active, experimental** · Coding-agent control plane in early development; its `admind` service gives operators a Marmot recovery channel to a privileged admin agent through `wn-agent`.
+- [codr](https://github.com/tidley/codr) · **v2, active** · Connects existing HERDR sessions for OpenCode, Codex and Claude Code to White Noise on Linux/macOS, with images, local voice transcription and editable progress.
 
-- [Marmot for Hermes](https://github.com/marmot-protocol/mdk/tree/master/integrations/hermes/marmot) — **v2, active** — Hermes messaging gateway.
-- [Marmot for OpenClaw](https://github.com/marmot-protocol/mdk/tree/master/integrations/openclaw/marmot) — **v2, active** — OpenClaw channel integration.
-- [wn-codex](https://github.com/marmot-protocol/mdk/tree/master/integrations/codex/marmot) — **v2, active** — Codex terminal connector.
-- [wn-claude](https://github.com/marmot-protocol/mdk/tree/master/integrations/claude/marmot) — **v2, active** — Claude Code terminal connector.
-- [wn-opencode](https://github.com/marmot-protocol/mdk/tree/master/integrations/opencode/marmot) — **v2, active** — OpenCode terminal connector.
-- [wn-pi](https://github.com/marmot-protocol/mdk/tree/master/integrations/pi/marmot) — **v2, active** — Pi terminal connector.
-- [wn-goose](https://github.com/marmot-protocol/mdk/tree/master/integrations/goose/marmot) — **v2, active** — Goose terminal connector using its headless CLI through `wn-agent`.
+- [Emissary](https://github.com/modus-lisp/emissary) · **v2, active, experimental** · Research execution agent with optional cl-marmot transport; unpinned dependency and shell-equivalent authority.
+
+- [Marmot for Hermes](https://github.com/marmot-protocol/mdk/tree/master/integrations/hermes/marmot) · **v2, active** · Hermes messaging gateway.
+- [Marmot for OpenClaw](https://github.com/marmot-protocol/mdk/tree/master/integrations/openclaw/marmot) · **v2, active** · OpenClaw channel integration.
+- [wn-codex](https://github.com/marmot-protocol/mdk/tree/master/integrations/codex/marmot) · **v2, active** · Codex terminal connector.
+- [wn-claude](https://github.com/marmot-protocol/mdk/tree/master/integrations/claude/marmot) · **v2, active** · Claude Code terminal connector.
+- [wn-opencode](https://github.com/marmot-protocol/mdk/tree/master/integrations/opencode/marmot) · **v2, active** · OpenCode terminal connector.
+- [wn-pi](https://github.com/marmot-protocol/mdk/tree/master/integrations/pi/marmot) · **v2, active** · Pi terminal connector.
+- [wn-goose](https://github.com/marmot-protocol/mdk/tree/master/integrations/goose/marmot) · **v2, active** · Goose terminal connector using its headless CLI through `wn-agent`.
 
 ### SDKs and libraries
 
-- [Nostrbase](https://github.com/shroominic/nostrbase) — **v2, active, experimental** — Experimental Nostr record SDK with encrypted shared collections and a Fieldwork example app.
+- [Nostrbase](https://github.com/shroominic/nostrbase) · **v2, active, experimental** · Experimental Nostr record SDK with encrypted shared collections and a Fieldwork example app.
 
-- [quartz-marmot-kmp](https://github.com/kngako/quartz-marmot-kmp) — **v2, active, experimental** — Experimental independent Kotlin MLS/Marmot library; JVM builds, with Android/native and persistence gaps.
+- [quartz-marmot-kmp](https://github.com/kngako/quartz-marmot-kmp) · **v2, active, experimental** · Experimental independent Kotlin MLS/Marmot library; JVM builds, with Android/native and persistence gaps.
 
-- [cl-marmot](https://github.com/modus-lisp/cl-marmot) — **v2, active, experimental** — Common Lisp MLS/Marmot library and CLI; unaudited, with unpinned dependencies.
+- [cl-marmot](https://github.com/modus-lisp/cl-marmot) · **v2, active, experimental** · Common Lisp MLS/Marmot library and CLI; unaudited, with unpinned dependencies.
 
-- [MDK](https://github.com/marmot-protocol/mdk) — **v2, active** — Rust runtime, storage, language bindings, and integrations.
-- [mdk-odin](https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin) — **v2, active, experimental** — Native Odin implementation of MDK's MLS and Marmot engine, migrating to MDK 0.12; full compatibility and production readiness are not yet claimed.
-- [marmot-ts](https://github.com/marmot-protocol/marmot-ts) — **v2, active, alpha** — TypeScript SDK; not recommended for production.
-- [Scramble.Marmot (C#)](https://github.com/DavidGershony/Scramble/tree/master/src/Scramble.Marmot.Engine) — **v2, active** — C# Marmot engine used by Scramble, with companion Nostr codecs, identity proofs, application components, and SQLite storage; built on DotnetMls.
-- [marmot-kmp](https://github.com/vitorpamplona/marmot-kmp) — **v2, active** — Standalone Kotlin Multiplatform Marmot library, extracted from Amethyst, using Quartz and mls-kmp.
+- [MDK](https://github.com/marmot-protocol/mdk) · **v2, active** · Rust runtime, storage, language bindings, and integrations.
+- [mdk-odin](https://gitworkshop.dev/cyberguy.fyi/relay.ngit.dev/mdk-odin) · **v2, active, experimental** · Native Odin implementation of MDK's MLS and Marmot engine, migrating to MDK 0.12; full compatibility and production readiness are not yet claimed.
+- [marmot-ts](https://github.com/marmot-protocol/marmot-ts) · **v2, active, alpha** · TypeScript SDK with account identity proofs and application components.
+- [Scramble.Marmot (C#)](https://github.com/DavidGershony/Scramble/tree/master/src/Scramble.Marmot.Engine) · **v2, active** · C# Marmot engine used by Scramble, with companion Nostr codecs, identity proofs, application components, and SQLite storage; built on DotnetMls.
+- [marmot-kmp](https://github.com/vitorpamplona/marmot-kmp) · **v2, active** · Standalone Kotlin Multiplatform Marmot library, extracted from Amethyst, using Quartz and mls-kmp.
 
 ### Specification and services
 
-- [Marmot specification](https://github.com/marmot-protocol/marmot) — **v2, active** — Protocol specification and migration guide.
-- [Transponder](https://github.com/marmot-protocol/transponder) — **v2, active** — Push notification service.
+- [Marmot specification](https://github.com/marmot-protocol/marmot) · **v2, active** · Protocol specification and migration guide.
+- [Transponder](https://github.com/marmot-protocol/transponder) · **v2, active** · Push notification service.
 
-## Marmot v1 — recently updated
+## Marmot v1 · recently updated
 
-- [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) — **v1, active** — Phone messaging over offline Bluetooth mesh or online Nostr, plus a Lightning wallet and nearby payments; desktop features differ.
-- [Whistle](https://github.com/sjmcnamara/whistle) — **v1, active** — iOS/Android group maps and chat with pausable live location, tap-to-join invites, and low-battery alerts for your circle.
+- [Mantra](https://code.sigidli.com/mantra/mantra-kmp) · **v1, active, alpha** · Kotlin Multiplatform collaboration app for translation workgroups and threshold-signing approvals; its custom in-group private messages require changes in other clients. [Website](https://mantra.press/).
+
+- [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) · **v1, active** · Phone messaging over offline Bluetooth mesh or online Nostr, plus a Lightning wallet and nearby payments; desktop features differ.
 
 ## Closed-source apps
 
-- [Mafrend](https://github.com/DestBro/mafrend-zapstore) — **unknown, active, alpha, closed-source** — Map-first chat with shared places, rich place cards, and time-limited location messages rather than continuous tracking. [Founder contact](https://t.me/destme7).
+- [Mafrend](https://github.com/DestBro/mafrend-zapstore) · **unknown, active, alpha, closed-source** · Map-first chat with shared places, rich place cards, and time-limited location messages. [Founder contact](https://t.me/destme7).
 
-## Supporting tools — recently updated
+## Supporting tools · recently updated
 
-- [mls-kmp](https://github.com/vitorpamplona/mls-kmp) — **adjacent, active** — Standalone Kotlin Multiplatform MLS engine used by marmot-kmp; independent of Nostr.
+- [Quartz](https://github.com/vitorpamplona/quartz) · **adjacent, active** · Kotlin Multiplatform Nostr library with Marmot event types; its MLS and Marmot engines are separate libraries.
 
-- [Facet](https://github.com/marmot-protocol/facet) — **adjacent, active** — Nostr-native feature comparison boards.
-- [Goggles](https://github.com/marmot-protocol/goggles) — **adjacent, active** — Forensic audit trace explorer.
-- [Nostream](https://github.com/cameri/nostream) — **adjacent, active** — Nostr relay with Marmot event handling, group routing-tag validation and relay capability metadata.
-- [marmot-tunnels](https://github.com/hzrd149/marmots-tunnels) — **adjacent, active** — Group-history debugger: a passive member keeps every fork of the groups it joins and shows each group's history as a branching timeline.
-- [Nostr Doctor](https://github.com/marmot-protocol/nostr-doctor) — **adjacent, active** — Guided Nostr diagnostics and repairs, including checks of public Marmot KeyPackages and cleanup of legacy Marmot events.
-- [bind.ws](https://github.com/FelineStateMachine/bindws) — **adjacent, active** — On-demand Nostr relays with an opt-in Marmot transport for KeyPackages and group messages, plus admission and storage limits.
+- [mls-kmp](https://github.com/vitorpamplona/mls-kmp) · **adjacent, active** · Standalone Kotlin Multiplatform MLS engine used by marmot-kmp; independent of Nostr.
+
+- [Goggles](https://github.com/marmot-protocol/goggles) · **adjacent, active** · Forensic audit trace explorer.
+- [Nostream](https://github.com/cameri/nostream) · **adjacent, active** · Nostr relay with Marmot event handling, group routing-tag validation and relay capability metadata.
+- [marmot-tunnels](https://github.com/hzrd149/marmots-tunnels) · **adjacent, active** · Group-history debugger: a passive member keeps every fork of the groups it joins and shows each group's history as a branching timeline.
+- [Nostr Doctor](https://github.com/marmot-protocol/nostr-doctor) · **adjacent, active** · Guided Nostr diagnostics and repairs, including checks of public Marmot KeyPackages and cleanup of legacy Marmot events.
+- [bind.ws](https://github.com/FelineStateMachine/bindws) · **adjacent, active** · On-demand Nostr relays with an opt-in Marmot transport for KeyPackages and group messages, plus admission and storage limits.
 
 ## No recent public commits
 
 <details>
-<summary>18 projects · last commit dates</summary>
+<summary>17 projects · last commit dates</summary>
 
 ### Apps and prototypes
 
-- [Pika](https://github.com/justinmoon/pika) — **v1, inactive, alpha** — Cross-platform prototype with voice calls and mobile polls; not for sensitive or production use · **2026-04-01**
-- [Marmota](https://github.com/dcadenas/marmota) — **v1, inactive, experimental** — Browser group chat with locally stored history, using the older TypeScript stack · **2026-03-09**
-- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) — **v1, inactive, scaffold** — Family-video prototype with parent-managed child profiles; encrypted sharing and sync are unfinished · **2026-05-24**
+- [Pika](https://github.com/justinmoon/pika) · **v1, inactive, alpha** · Cross-platform prototype with voice calls and mobile polls; not for sensitive or production use · **2026-04-01**
+- [Marmota](https://github.com/dcadenas/marmota) · **v1, inactive, experimental** · Browser group chat with locally stored history, using the older TypeScript stack · **2026-03-09**
+- [tubestr-v2](https://github.com/Tubestr/tubestr-v2) · **v1, inactive, scaffold** · Family-video prototype with parent-managed child profiles; encrypted sharing and sync are unfinished · **2026-05-24**
 
 ### Agents, automation, and services
 
-- [AgentNoise](https://github.com/nvk/agentnoise) — **adjacent, inactive** — Agent bridge using the old White Noise Rust daemon · **2026-06-27**
-- [Community OpenClaw plugin](https://github.com/tkhumush/openclaw-marmot) — **v1, inactive** — Community plugin for the older Marmot CLI · **2026-05-16**
-- [Community Hermes plugin](https://github.com/notmandatory/hermes-marmot) — **v1, inactive** — Older plugin using standalone Python bindings · **2026-05-27**
-- [Botburrow](https://github.com/marmot-protocol/botburrow) — **v1, inactive** — Bot bridge using the old White Noise Rust daemon · **2026-04-14**
-- [Burrow](https://github.com/CentauriAgent/burrow) — **v1, inactive** — Agent CLI/app with a legacy MDK pin · **2026-03-07**
-- [marmot-cli](https://github.com/kai-familiar/marmot-cli) — **v1, inactive** — Community CLI with an older MDK dependency · **2026-02-16**
-- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) — **v1, inactive** — Container wrapper for the older community CLI · **2026-03-02**
-- [marmot-server](https://github.com/nmadd57/marmot-server) — **v1, inactive** — REST service using MIP-era marmot-ts 0.4.0 · **2026-04-05**
+- [AgentNoise](https://github.com/nvk/agentnoise) · **adjacent, inactive** · Agent bridge using the old White Noise Rust daemon · **2026-06-27**
+- [Community OpenClaw plugin](https://github.com/tkhumush/openclaw-marmot) · **v1, inactive** · Community plugin for the older Marmot CLI · **2026-05-16**
+- [Community Hermes plugin](https://github.com/notmandatory/hermes-marmot) · **v1, inactive** · Older plugin using standalone Python bindings · **2026-05-27**
+- [Botburrow](https://github.com/marmot-protocol/botburrow) · **v1, inactive** · Bot bridge using the old White Noise Rust daemon · **2026-04-14**
+- [Burrow](https://github.com/CentauriAgent/burrow) · **v1, inactive** · Agent CLI/app with a legacy MDK pin · **2026-03-07**
+- [marmot-cli](https://github.com/kai-familiar/marmot-cli) · **v1, inactive** · Community CLI with an older MDK dependency · **2026-02-16**
+- [dockerized-marmot-cli](https://github.com/rphilbrdigits/dockerized-marmot-cli) · **v1, inactive** · Container wrapper for the older community CLI · **2026-03-02**
+- [marmot-server](https://github.com/nmadd57/marmot-server) · **v1, inactive** · REST service using MIP-era marmot-ts 0.4.0 · **2026-04-05**
 
 ### Libraries and old examples
 
-- [marmot-cs (legacy)](https://github.com/DavidGershony/marmot-cs) — **v1, inactive** — Former standalone MIP-era C# backend; Scramble now uses its in-repository `Scramble.Marmot` engine · **2026-06-04**
-- [Standalone Quartz](https://github.com/vitorpamplona/quartz) — **adjacent, inactive** — Historical empty repository snapshot; see marmot-kmp above for the extracted Marmot library · **2025-09-23**
-- [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) — **adjacent, inactive** — Sled storage for OpenMLS · **2025-05-30**
-- [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) — **adjacent, inactive** — Redb storage for OpenMLS · **2025-01-21**
-- [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) — **adjacent, inactive** — LMDB storage for OpenMLS · **2025-01-12**
-- [mdk-python-example](https://github.com/marmot-protocol/mdk-python-example) — **v1, inactive** — Example for the obsolete Python bindings · **2025-12-01**
-- [mdk-kotlin-example](https://github.com/marmot-protocol/mdk-kotlin-example) — **v1, inactive** — Example for the obsolete Kotlin bindings · **2025-12-01**
+- [Facet](https://github.com/marmot-protocol/facet) · **adjacent, inactive** · Nostr-native feature comparison boards. · **2026-07-24**
+
+- [RelayRider](https://github.com/davidjj999/relayrider) · **adjacent, inactive** · Browser relay evaluator with NIP-11 and synthetic KeyPackage publication/query probes; relay acceptance does not establish MLS validity · **2026-07-11**
+
+- [marmot-cs (legacy)](https://github.com/DavidGershony/marmot-cs) · **v1, inactive** · Former standalone MIP-era C# backend; Scramble now uses its in-repository `Scramble.Marmot` engine · **2026-06-04**
+- [openmls-sled-storage](https://github.com/marmot-protocol/openmls-sled-storage) · **adjacent, inactive** · Sled storage for OpenMLS · **2025-05-30**
+- [openmls-redb-storage](https://github.com/marmot-protocol/openmls-redb-storage) · **adjacent, inactive** · Redb storage for OpenMLS · **2025-01-21**
+- [openmls-lmdb-storage](https://github.com/marmot-protocol/openmls-lmdb-storage) · **adjacent, inactive** · LMDB storage for OpenMLS · **2025-01-12**
 
 
 </details>
@@ -144,18 +151,22 @@ Apps, agents, and tools for private group messaging with [Marmot](https://github
 ## Archived and superseded
 
 <details>
-<summary>10 historical projects</summary>
+<summary>12 historical projects</summary>
 
-- [wn-tui](https://github.com/marmot-protocol/wn-tui) — **v1, archived** — Deprecated; replaced by MDK's TUI.
-- [Flutter White Noise](https://github.com/marmot-protocol/whitenoise) — **v1, archived** — Former Flutter app, preserved at [flutter-final](https://github.com/marmot-protocol/whitenoise/tree/flutter-final).
-- [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) — **v1, archived** — Former Rust core and CLI; replaced by MDK.
-- [mdk-kotlin](https://github.com/marmot-protocol/mdk-kotlin) — **v1, archived** — Obsolete standalone Kotlin bindings.
-- [mdk-python](https://github.com/marmot-protocol/mdk-python) — **v1, archived** — Obsolete standalone Python bindings.
-- [mdk-ruby](https://github.com/marmot-protocol/mdk-ruby) — **v1, archived** — Obsolete standalone Ruby bindings.
-- [mdk-swift](https://github.com/marmot-protocol/mdk-swift) — **v1, archived** — Obsolete standalone Swift bindings.
-- [nostr-openmls](https://github.com/marmot-protocol/nostr-openmls) — **v1, archived** — Pre-MDK OpenMLS/Nostr implementation.
-- [mls-ts](https://github.com/marmot-protocol/mls-ts) — **adjacent, archived** — Historical TypeScript MLS exploration.
-- [dr.marmot](https://github.com/marmot-protocol/dr.marmot) — **adjacent, archived** — Superseded diagnostics tool.
+- [mdk-kotlin-example](https://github.com/marmot-protocol/mdk-kotlin-example) · **v1, archived** · Example for the obsolete Kotlin bindings
+
+- [mdk-python-example](https://github.com/marmot-protocol/mdk-python-example) · **v1, archived** · Example for the obsolete Python bindings
+
+- [wn-tui](https://github.com/marmot-protocol/wn-tui) · **v1, archived** · Deprecated; replaced by MDK's TUI.
+- [Flutter White Noise](https://github.com/marmot-protocol/whitenoise) · **v1, archived** · Former Flutter app, preserved at [flutter-final](https://github.com/marmot-protocol/whitenoise/tree/flutter-final).
+- [whitenoise-rs](https://github.com/marmot-protocol/whitenoise-rs) · **v1, archived** · Former Rust core and CLI; replaced by MDK.
+- [mdk-kotlin](https://github.com/marmot-protocol/mdk-kotlin) · **v1, archived** · Obsolete standalone Kotlin bindings.
+- [mdk-python](https://github.com/marmot-protocol/mdk-python) · **v1, archived** · Obsolete standalone Python bindings.
+- [mdk-ruby](https://github.com/marmot-protocol/mdk-ruby) · **v1, archived** · Obsolete standalone Ruby bindings.
+- [mdk-swift](https://github.com/marmot-protocol/mdk-swift) · **v1, archived** · Obsolete standalone Swift bindings.
+- [nostr-openmls](https://github.com/marmot-protocol/nostr-openmls) · **v1, archived** · Pre-MDK OpenMLS/Nostr implementation.
+- [mls-ts](https://github.com/marmot-protocol/mls-ts) · **adjacent, archived** · Historical TypeScript MLS exploration.
+- [dr.marmot](https://github.com/marmot-protocol/dr.marmot) · **adjacent, archived** · Superseded diagnostics tool.
 
 </details>
 
@@ -182,9 +193,9 @@ python3 -m unittest discover -s tests -v
 
 ## Notes
 
-Counts reflect the recently updated v2 listings as of **2026-10-23**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
+Counts reflect the recently updated v2 listings as of **2026-10-26**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
 
-**Checked 2026-10-01.** mdk-odin, MDK's Goose connector, and Scramble's C# library were checked on 2026-10-08; their audit records use that date. Groundhog was checked on 2026-10-09 and links its published alpha5 release. Nostream was checked on 2026-10-10 and its record uses that date. FMDtr, Lightning Piggy Mobile and the projects added from the [2026-10-23 discovery sweep](docs/catalog-verification.md) were checked on 2026-10-23; their audit records use that date. Activity is measured at each record's check date, not a maintenance guarantee. The marmot-kmp and mls-kmp entries were checked separately on 2026-10-24 and have independent repositories and release lifecycles. Shared repositories use repository-level activity; Mafrend's public activity is store metadata only.
+**Checked 2026-10-26.** All 75 repository records were refreshed against public default-branch metadata and pinned source evidence. Activity uses a 90-day window, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend activity covers public store metadata only. Protocol labels describe inspected source, not every released build or verified cross-client interoperability. See the [refresh report](docs/catalog-refresh-20261026.md) for platform differences and source checks.
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 

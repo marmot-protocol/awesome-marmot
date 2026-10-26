@@ -154,17 +154,17 @@ def check_catalog(text: str, audit: dict) -> list[str]:
     entry_urls = set()
     section = ""
     section_for = {
-        ("active", "v2"): "Marmot v2 — recently updated",
-        ("active", "v1"): "Marmot v1 — recently updated",
+        ("active", "v2"): "Marmot v2 · recently updated",
+        ("active", "v1"): "Marmot v1 · recently updated",
         ("active", "unknown"): "Closed-source apps",
-        ("active", "adjacent"): "Supporting tools — recently updated",
+        ("active", "adjacent"): "Supporting tools · recently updated",
     }
     for number, line in enumerate(text.splitlines(), 1):
         if line.startswith("## "):
-            section = line[3:]
+            section = line[3:].replace(" — ", " · ")
         if not (line.startswith("- [") and "](https://" in line):
             continue
-        match = re.match(r"- \[[^\]]+\]\((https://[^)]+)\) — \*\*([^*]+)\*\* — ", line)
+        match = re.match(r"- \[[^\]]+\]\((https://[^)]+)\) [—·] \*\*([^*]+)\*\* [—·] ", line)
         if not match:
             errors.append(f"entry needs a link, explicit labels and description at line {number}")
             continue
