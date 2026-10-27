@@ -63,7 +63,7 @@
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/zapstore.yaml",
         "https://mafrend.com/"
       ],
-      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only; no source-backed protocol generation can be assigned.",
+      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. \u201cActive\u201d describes that public metadata only; no source-backed protocol generation can be assigned.",
       "source_kind": "store-metadata",
       "generation_evidence": [
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md"
@@ -1280,6 +1280,26 @@
         "https://github.com/davidjj999/relayrider/blob/5651cf0a76b3e15dc3cdba9bbb3f84aa05f833af/app.js"
       ],
       "note": "Browser relay evaluator with NIP-11 checks and kind-30443 publication/query probes. The probe creates an empty synthetic KeyPackage-shaped event: relay acceptance does not establish cryptographically valid MLS KeyPackage support. No relay mutation or interoperability test performed. Last commit: 2026-07-11."
+    },
+    {
+      "repository": "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents",
+      "default_branch": "master",
+      "commit": "9871135f8487cd14db862c9b3ddb7981cf45acaf",
+      "last_commit_at": "2026-10-27T14:50:24-03:00",
+      "checked_at": "2026-10-27T18:15:13.988275+00:00",
+      "generation": "v2",
+      "activity": "active",
+      "archived": null,
+      "source": "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf",
+      "note": "Android Labradorite and Linux agentd pin MDK/MarmotKit0.14.0. Custom inner events7770/7771 carry agent controls; kind9 prompts and final answers permit plain-chat participation from White Noise. Source inspection only; runtime interoperability not tested.",
+      "generation_evidence": [
+        "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf/android/MARMOT_VERSION",
+        "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf/protocol/PROTOCOL.md"
+      ],
+      "feature_evidence": [
+        "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf/README.md",
+        "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf/agentd/src/router.rs"
+      ]
     }
   ],
   "removed_repositories": [
