@@ -6,7 +6,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **23** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **13** [integrations](#agents-and-automation) |
+| **23** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **14** [integrations](#agents-and-automation) |
 
 ## Start here
 
@@ -53,6 +53,8 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group maps and chat with low-battery alerts; iOS pre-release uses Marmot v2, while Android production remains on v1.
 
 ### Agents and automation
+
+- [Labradorite / agentd](https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents) · **v2, active** · Android remote control for coding agents, with a Linux host daemon and plain-chat compatibility with White Noise. [Zapstore](https://zapstore.dev/apps/naddr1qq8kxmmd9enhyet9deshyaphvveszxrhwden5te0wfjkccte9eaxzurnw3hhyefwv3jhvq3qw4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvsxpqqqplqksxhc2g).
 
 - [wn-notify](https://github.com/jooray/wn-notify) · **v2, active** · Unofficial CLI for notifications and file delivery through a local `wn-agent`; one Python file using standard-library dependencies.
 
