@@ -191,3 +191,9 @@ Supporting tools (adjacent):
 - Unconfirmed or inactive projects, archived repositories, and leads that only mention Marmot are listed in the [seen ledger](../data/discovery-seen.json), so the weekly job does not re-propose them. Two former Marmot users dropped the protocol: Vector moved to Concord, and codedeck-plus removed Marmot on 2026-09-26.
 
 No installation, live-relay or cross-client interoperability test was performed for these records. The snapshot now holds 70 repository records. Counts in earlier dated sections remain historical.
+
+## Third Ear (30 October 2026)
+
+[Third Ear](https://github.com/jooray/third-ear) uses checksum-pinned [MarmotKit 0.14.0](https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/tools/marmotkit/fetch.sh). Its [Marmot host](https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/app/src/main/kotlin/app/thirdear/whitenoise/MarmotHost.kt) creates an identity, accepts group invitations, sends text and audio attachments, and subscribes to incoming messages. This establishes the v2 source classification.
+
+The [README](https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/README.md) documents Android 12+, ARM64 for messaging, optional transcription through a separate OSTT app, spoken replies and Android Auto. [Release v0.1.1](https://github.com/jooray/third-ear/releases/tag/v0.1.1) includes an APK. These are source and release checks; device interoperability and security have not been tested. Other catalog entries retain their existing check dates.

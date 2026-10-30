@@ -6,7 +6,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **23** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **14** [integrations](#agents-and-automation) |
+| **24** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **14** [integrations](#agents-and-automation) |
 
 ## Start here
 
@@ -51,6 +51,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [FMDtr](https://gitlab.com/Kalle/fmdtr-android) · **v2, active** · Find, ring, or remotely wipe an Android device via Marmot, SMS, or a web interface; its Marmot bridge now runs on MDK 0.10.4.
 
 - [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group maps and chat with low-battery alerts; iOS pre-release uses Marmot v2, while Android production remains on v1.
+- [Third Ear](https://github.com/jooray/third-ear) · **v2, active, early release** · Android voice recorder and hands-free Marmot client with voice notes, optional offline transcription, spoken replies and Android Auto support. [Website](https://jooray.github.io/third-ear/).
 
 ### Agents and automation
 

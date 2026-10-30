@@ -63,7 +63,7 @@
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/zapstore.yaml",
         "https://mafrend.com/"
       ],
-      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. \u201cActive\u201d describes that public metadata only; no source-backed protocol generation can be assigned.",
+      "note": "Map-first social app. The public repository contains store metadata and releases, not its private implementation. “Active” describes that public metadata only; no source-backed protocol generation can be assigned.",
       "source_kind": "store-metadata",
       "generation_evidence": [
         "https://github.com/DestBro/mafrend-zapstore/blob/0d99cf5e2d6737ffd8aeb6f63f39e8c194b1f8ef/README.md"
@@ -1300,6 +1300,26 @@
         "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf/README.md",
         "https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents/tree/9871135f8487cd14db862c9b3ddb7981cf45acaf/agentd/src/router.rs"
       ]
+    },
+    {
+      "repository": "https://github.com/jooray/third-ear",
+      "default_branch": "main",
+      "commit": "2909d2a5d29892191410949560c0ee8e9e518d34",
+      "last_commit_at": "2026-10-29T22:23:16Z",
+      "generation": "v2",
+      "activity": "active",
+      "source": "https://github.com/jooray/third-ear/tree/2909d2a5d29892191410949560c0ee8e9e518d34",
+      "generation_evidence": [
+        "https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/tools/marmotkit/fetch.sh",
+        "https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/app/src/main/kotlin/app/thirdear/whitenoise/MarmotHost.kt"
+      ],
+      "feature_evidence": [
+        "https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/README.md",
+        "https://github.com/jooray/third-ear/blob/2909d2a5d29892191410949560c0ee8e9e518d34/app/src/main/kotlin/app/thirdear/whitenoise/WhiteNoise.kt"
+      ],
+      "note": "MarmotKit 0.14.0 client with its own identity, group invitations, encrypted audio/text sends and received-message handling. Early release v0.1.1 has an APK. Android 12 or newer; Marmot messaging requires ARM64. Transcription uses a separate OSTT app. Source inspected; runtime interoperability and security were not tested.",
+      "archived": false,
+      "checked_at": "2026-10-30T07:47:48.785632+00:00"
     }
   ],
   "removed_repositories": [
