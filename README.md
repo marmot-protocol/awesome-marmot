@@ -60,7 +60,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [wn-notify](https://github.com/jooray/wn-notify) · **v2, active** · Unofficial CLI for notifications and file delivery through a local `wn-agent`; one Python file using standard-library dependencies.
 
 - [frigate-marmot](https://github.com/marmot-protocol/frigate-marmot) · **v2, active** · Sends private Frigate camera person alerts, a snapshot followed by buffered video, to a White Noise group through MDK's `wn`/`wnd`; so far tested with synthetic events only.
-- [marmish](https://github.com/Epiphytic/marmish) · **v2, active, prototype** · Remote commands over Marmot that keep running after you disconnect, through a hash-pinned `wnd`; its production live adapter is still disabled pending review.
+- [marmish](https://github.com/Epiphytic/marmish) · **v2, active, prototype** · Experimental remote commands over Marmot that keep running after you disconnect, through a hash-pinned `wnd`; Linux and macOS prereleases are available, with platform-specific execution limits.
 - [heterodyne-metaharness](https://github.com/Epiphytic/heterodyne-metaharness) · **v2, active, experimental** · Coding-agent control plane in early development; its `admind` service gives operators a Marmot recovery channel to a privileged admin agent through `wn-agent`.
 - [codr](https://github.com/tidley/codr) · **v2, active** · Connects existing HERDR sessions for OpenCode, Codex and Claude Code to White Noise on Linux/macOS, with images, local voice transcription and editable progress.
 

@@ -1103,19 +1103,19 @@
     {
       "repository": "https://github.com/Epiphytic/marmish",
       "default_branch": "master",
-      "commit": "487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0",
-      "last_commit_at": "2026-10-23T16:05:43Z",
-      "checked_at": "2026-10-26T06:40:38.494979+00:00",
+      "commit": "409fc776e45ce675155141562422858d18db06ad",
+      "last_commit_at": "2026-10-31T00:34:25Z",
+      "checked_at": "2026-10-31T07:24:15.377874+00:00",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/Epiphytic/marmish/tree/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0",
-      "note": "Linux prototype for asynchronous remote commands and resumable shells over Marmot, through an adapter to a hash-pinned wnd daemon. The build tool pins MDK revision 37c248a (2026-09-24) via the liamhelmer-bel/mdk fork. Its compatibility notes say the production live adapter remains disabled pending review; only a bounded live exchange has run. Interactive PTY sessions are planned. No license file. No installation test performed.",
+      "source": "https://github.com/Epiphytic/marmish/tree/409fc776e45ce675155141562422858d18db06ad",
+      "note": "Experimental noninteractive remote commands through a hash-pinned wnd, with commands surviving client disconnection. Linux AMD64, Linux ARM64 and macOS ARM64 prereleases are available. The project reports installed-command validation on Linux AMD64; ARM64 Linux and macOS confined execution remain unvalidated in this distribution. Interactive PTY sessions remain planned. No installation or interoperability testing performed for this catalog refresh.",
       "generation_evidence": [
-        "https://github.com/Epiphytic/marmish/blob/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0/tools/marmish_mdk_build.py",
-        "https://github.com/Epiphytic/marmish/blob/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0/docs/mdk-compatibility.md"
+        "https://github.com/Epiphytic/marmish/blob/409fc776e45ce675155141562422858d18db06ad/tools/build_mdk.py",
+        "https://github.com/Epiphytic/marmish/blob/409fc776e45ce675155141562422858d18db06ad/docs/mdk-compatibility.md"
       ],
       "feature_evidence": [
-        "https://github.com/Epiphytic/marmish/blob/487e8f5d6c6f5247fc69c42b47fa4ed5524b92f0/README.md"
+        "https://github.com/Epiphytic/marmish/blob/409fc776e45ce675155141562422858d18db06ad/README.md"
       ],
       "archived": false
     },
