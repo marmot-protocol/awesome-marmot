@@ -132,6 +132,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_maintainer_deprecation_requires_pinned_evidence(self):
         record = next(r for r in self.audit["repositories"] if r["repository"].endswith("/wn-tui"))
+        # Keep this deprecation test independent of the repository's real age.
+        record["last_commit_at"] = record.get("checked_at", self.audit["checked_at"])
         del record["deprecation_evidence"]
         self.assertTrue(any("activity should be active" in e for e in self.check()))
 
