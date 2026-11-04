@@ -1,5 +1,7 @@
 # Marmot v2 discovery and dependencies
 
+Current source and metadata: [4 November refresh](catalog-refresh-20261104.md) and [audit snapshot](../data/catalog-audit.json). Dated sections below retain their original evidence; later classifications supersede them.
+
 Checked 2026-10-17. This pass follows application manifests, lockfiles and implementation code through the messaging engines. Protocol generation describes inspected source. Runtime interoperability, delivered binaries and security require separate qualification. Search coverage is bounded by public indexing.
 
 ## Additions

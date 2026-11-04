@@ -3,7 +3,8 @@
   "activity_days": 365,
   "excluded_repositories": [
     "https://github.com/marmot-protocol/awesome-marmot",
-    "https://github.com/marmot-protocol/marmot-web"
+    "https://github.com/marmot-protocol/marmot-web",
+    "https://github.com/marmot-protocol/whitenoise-web"
   ],
   "relays": [
     "wss://nostr.mom",
