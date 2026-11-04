@@ -713,6 +713,7 @@ def build_report(config, org_repos, nostr_events, zapstore_events, failures=None
                  code_search_hits=(), gitlab_projects=()):
     failures = failures if failures is not None else []
     known = catalog_repos()
+    known.update(filter(None, (normalize_repo(url) for url in config.get("excluded_repositories", []))))
     known_links, known_nostr = catalog_forge_entries()
     seen = load_json(SEEN, {"event_ids": [], "repository_urls": []})
     seen_events = set(seen.get("event_ids", []))

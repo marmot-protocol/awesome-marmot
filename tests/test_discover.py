@@ -115,6 +115,25 @@ class DiscoveryTests(unittest.TestCase):
 
     @patch.object(discover, "verify_repo")
     @patch.object(discover, "catalog_repos", return_value=set())
+    def test_configured_exclusion_applies_across_sources(self, _catalog, verify):
+        config = {
+            "nostr_sources": [NOSTR_SOURCE],
+            "excluded_repositories": ["https://github.com/Example/Marmot-App.git"],
+        }
+        org = [{"html_url": VERIFIED["url"], "full_name": "example/marmot-app"}]
+        event = make_event()
+        zap = make_event("c" * 64, "Zapstore signed app metadata")
+        code = [{"url": VERIFIED["url"], "query": "Marmot", "evidence": "Cargo.toml"}]
+        retained, _rejected, candidates, leads = discover.build_report(
+            config, org, [event], [zap], [], code_search_hits=code
+        )
+        self.assertFalse(candidates)
+        self.assertFalse(leads)
+        self.assertEqual({item["id"] for item in retained}, {event["id"], zap["id"]})
+        verify.assert_not_called()
+
+    @patch.object(discover, "verify_repo")
+    @patch.object(discover, "catalog_repos", return_value=set())
     def test_seen_event_is_not_processed_again(self, _catalog, verify):
         discover.SEEN.write_text(
             '{"event_ids":["' + "a" * 64 + '"],"repository_urls":[]}',
