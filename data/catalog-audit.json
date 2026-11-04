@@ -597,23 +597,40 @@
     {
       "repository": "https://github.com/sjmcnamara/whistle",
       "default_branch": "master",
-      "commit": "9e9c0e12f26b300701b4e46f33d21645f914b7ba",
-      "last_commit_at": "2026-11-04T10:26:23Z",
+      "commit": "7daf1f9c2d94d76cacf43fd538298de8c5c01e47",
+      "last_commit_at": "2026-11-04T13:04:45Z",
       "generation": "v2",
       "activity": "active",
-      "source": "https://github.com/sjmcnamara/whistle/tree/9e9c0e12f26b300701b4e46f33d21645f914b7ba",
+      "source": "https://github.com/sjmcnamara/whistle/tree/7daf1f9c2d94d76cacf43fd538298de8c5c01e47",
       "feature_evidence": [
-        "https://github.com/sjmcnamara/whistle/blob/9e9c0e12f26b300701b4e46f33d21645f914b7ba/README.md"
+        "https://github.com/sjmcnamara/whistle/blob/7daf1f9c2d94d76cacf43fd538298de8c5c01e47/README.md"
       ],
-      "note": "Both platform vendoring scripts pin MarmotKit 0.14.0. README identifies app v2.0.1 as pre-release; latest public GitHub release remains v1.11.2, using the older protocol. Existing v1 groups do not carry over. Source and release metadata inspected; installed binaries and cross-client interoperability not tested.",
+      "note": "Whistle v2.0.1 is now a public GitHub release and Android Zapstore main-channel release, using MarmotKit 0.14.0. Signed listing/release/asset metadata was verified; its APK URL, size and SHA-256 match GitHub asset metadata. The README still says pre-release, superseded by the published release. v1 groups cannot carry over or be recovered; identity is retained and all group members must update. Publisher documents delayed or missing offline chat delivery. No APK installation or independent runtime/cross-client interoperability test performed.",
       "generation_evidence": [
-        "https://github.com/sjmcnamara/whistle/blob/9e9c0e12f26b300701b4e46f33d21645f914b7ba/README.md",
-        "https://github.com/sjmcnamara/whistle/blob/9e9c0e12f26b300701b4e46f33d21645f914b7ba/scripts/vendor_marmotkit.py",
-        "https://github.com/sjmcnamara/whistle/blob/9e9c0e12f26b300701b4e46f33d21645f914b7ba/scripts/vendor_marmotkit_android.py",
-        "https://github.com/sjmcnamara/whistle/blob/9e9c0e12f26b300701b4e46f33d21645f914b7ba/CHANGELOG.md"
+        "https://github.com/sjmcnamara/whistle/blob/7daf1f9c2d94d76cacf43fd538298de8c5c01e47/README.md",
+        "https://github.com/sjmcnamara/whistle/blob/7daf1f9c2d94d76cacf43fd538298de8c5c01e47/scripts/vendor_marmotkit.py",
+        "https://github.com/sjmcnamara/whistle/blob/7daf1f9c2d94d76cacf43fd538298de8c5c01e47/scripts/vendor_marmotkit_android.py",
+        "https://github.com/sjmcnamara/whistle/blob/7daf1f9c2d94d76cacf43fd538298de8c5c01e47/CHANGELOG.md"
       ],
       "archived": false,
-      "checked_at": "2026-11-04T11:13:40.431672+00:00"
+      "checked_at": "2026-11-04T13:32:50.010959+00:00",
+      "release": "v2.0.1",
+      "release_evidence": "https://github.com/sjmcnamara/whistle/releases/tag/v2.0.1",
+      "distribution_evidence": {
+        "store": "https://zapstore.dev/apps/naddr1qqtx7un89enk2arhdp5hxarvv5h8w6rfwd6xcegprpmhxue69uhhyetvv9uju7npwpehgmmjv5hxgetkqgszedrn6ruhul9wpzjqsy9zs24w03jugz6q7zcse9cuwhl5qw6fx3srqsqqqlstgdfcxc",
+        "publisher": "2cb473d0f97e7cae08a40810a282aae7c65c40b40f0b10c971c75ff403b49346",
+        "listing_event": "acb5bc97b7ee6b1c1271a99237866ac33f30ce4f04351538b3b5d398fe0b5491",
+        "release_event": "fee2bda757ab68c8fc80e82e63dfc1f447e91d93913fbeac3e610c8dc4701d99",
+        "asset_event": "7322bf90103e36c240dfb7ffffd7e378b15699e3b8f05475f4901794ffbab6e0",
+        "version": "2.0.1",
+        "version_code": 73,
+        "channel": "main",
+        "platform": "android-arm64-v8a",
+        "apk_url": "https://github.com/sjmcnamara/whistle/releases/download/v2.0.1/whistle-v2.0.1.apk",
+        "apk_sha256": "dcfae8f11aca4e613aed8dfccf1c439741a9a47f5390999a7b0093d8838bd041",
+        "apk_size": 86035896,
+        "metadata_signatures_verified": true
+      }
     },
     {
       "repository": "https://github.com/tkhumush/openclaw-marmot",

@@ -52,7 +52,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [Groundhog](https://github.com/chebizarro/nostrc/tree/master/gnome/groundhog) · **v2, active, alpha** · GNOME messenger with Marmot encrypted groups, NIP-17 private messages, and local Grotto or remote NIP-46 signing. [Download alpha5](https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.0-alpha5).
 - [FMDtr](https://gitlab.com/Kalle/fmdtr-android) · **v2, active** · Find, ring, or remotely wipe an Android device via Marmot, SMS, or a web interface; its Marmot bridge pins the post-MIP MDK crate family.
 
-- [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group location sharing, chat and low-battery alerts; iOS and Android source pin MarmotKit 0.14.0 for the v2.0.1 prerelease. The latest public GitHub release remains v1.11.2 (v1).
+- [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group location sharing, chat and low-battery alerts; Android v2.0.1 is [released on Zapstore](https://zapstore.dev/apps/naddr1qqtx7un89enk2arhdp5hxarvv5h8w6rfwd6xcegprpmhxue69uhhyetvv9uju7npwpehgmmjv5hxgetkqgszedrn6ruhul9wpzjqsy9zs24w03jugz6q7zcse9cuwhl5qw6fx3srqsqqqlstgdfcxc), using MarmotKit 0.14.0. Upgrading from v1 requires new groups; offline chat delivery has a known issue.
 - [Third Ear](https://github.com/jooray/third-ear) · **v2, active, early release** · Android voice recorder and hands-free Marmot client with voice notes, optional offline transcription, spoken replies and Android Auto support. [Website](https://jooray.github.io/third-ear/).
 
 ### Agents and automation

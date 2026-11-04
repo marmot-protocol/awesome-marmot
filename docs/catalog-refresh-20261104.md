@@ -1,5 +1,13 @@
 # Catalog refresh, 4 November 2026
 
+## Whistle release follow-up, 4 November
+
+Whistle **v2.0.1 is released**, superseding this morning's prerelease status below. The [public GitHub release](https://github.com/sjmcnamara/whistle/releases/tag/v2.0.1) includes Android and iOS artifacts and identifies this as the first public Marmot v2 build, using MarmotKit 0.14.0. Android v2.0.1 is also published on [Zapstore](https://zapstore.dev/apps/naddr1qqtx7un89enk2arhdp5hxarvv5h8w6rfwd6xcegprpmhxue69uhhyetvv9uju7npwpehgmmjv5hxgetkqgszedrn6ruhul9wpzjqsy9zs24w03jugz6q7zcse9cuwhl5qw6fx3srqsqqqlstgdfcxc) under `org.getwhistle.whistle`, version code 73, on the main channel for arm64-v8a.
+
+The signed Zapstore app listing, release and linked asset metadata were verified. The declared APK URL, size and SHA-256 match GitHub's published asset metadata. Their event identities are retained in Whistle's `distribution_evidence` in the [audit snapshot](../data/catalog-audit.json). The [release source](https://github.com/sjmcnamara/whistle/tree/7daf1f9c2d94d76cacf43fd538298de8c5c01e47) pins MarmotKit 0.14.0 in both platform vendoring scripts. Its README still contains a prerelease label; published release records establish the later distribution status.
+
+The publisher warns that **v1 groups cannot carry over or be recovered**. The identity is retained, and every group member must update. Offline chat delivery can be delayed or absent; the release notes report location sharing as unaffected. These are publisher statements, not independent runtime results. No APK installation, iOS App Store availability or cross-client interoperability was verified in this follow-up.
+
 ## Scope and inclusion
 
 All 79 existing repository records were rechecked against their public default branches: 73 on GitHub and six on GitLab, Forgejo or canonical Git servers. Nineteen heads changed. Changed source was read against the previous pinned evidence; unchanged implementations retain their existing immutable evidence. Protocol generation, recent activity, maturity, source availability and released-build status remain separate.
