@@ -6,7 +6,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **25** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **14** [integrations](#agents-and-automation) |
+| **32** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **15** [integrations](#agents-and-automation) |
 
 ## Start here
 
@@ -55,6 +55,14 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group location sharing, chat and low-battery alerts; Android v2.0.1 is [released on Zapstore](https://zapstore.dev/apps/naddr1qqtx7un89enk2arhdp5hxarvv5h8w6rfwd6xcegprpmhxue69uhhyetvv9uju7npwpehgmmjv5hxgetkqgszedrn6ruhul9wpzjqsy9zs24w03jugz6q7zcse9cuwhl5qw6fx3srqsqqqlstgdfcxc), using MarmotKit 0.14.0. Upgrading from v1 requires new groups; offline chat delivery has a known issue.
 - [Third Ear](https://github.com/jooray/third-ear) · **v2, active, early release** · Android voice recorder and hands-free Marmot client with voice notes, optional offline transcription, spoken replies and Android Auto support. [Website](https://jooray.github.io/third-ear/).
 
+- [BlackIce](https://github.com/rademenezbtc/blackice) · **v2, active, prototype** · Frostsnap hardware signers pay silent-payment addresses with FROST, coordinating every ceremony step in a Marmot group via marmot-ts; signet only, unaudited, needs unreviewed Frostsnap firmware.
+- [Colony](https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet) · **v2, active, prototype** · Linux desktop Ark wallet with shared FROST "pockets"; payment requests, approvals and signing rounds run in MDK Marmot groups. Signet only, keys in plain files.
+- [Quiet Ledger](https://github.com/murdawkmedia/quiet-ledger) · **v2, active, experimental** · Self-hosted invoicing and Bitcoin checkout with Marmot conversations between merchants, clients and accountants via marmot-ts; the server operator can decrypt stored records. [Demo](https://quiet-ledger-dyp.pages.dev).
+- [Kimchi](https://github.com/ye0man/kimchi) · **v2, active, prototype** · Browser/PWA group tab: friends split a bill in a Marmot group chat and settle each share in P2PK-locked Cashu ecash. [Web app](https://www.jakedat.com/kimchi/).
+- [iLCHON](https://github.com/dongguri-jun/ilchon) · **v2, active, prototype** · Bitcoin trading with people you met in person: a QR scan opens a two-member Marmot room, and buy/sell offers are matched privately inside it; not for real funds. [Web app](https://ilchon.org).
+- [SatsRoadMarket](https://github.com/shroominic/satsroadmarket) · **v2, active, prototype** · Browser marketplace for Nostr listings with Marmot buyer–seller chats and Cashu payments; keys and wallet are unencrypted in browser storage. [Web app](https://satsroadmarket.com/).
+- [Shroud](https://github.com/CypherCommons/shroud) · **v2, active, prototype, unmerged** · Silent-payments wallet for iOS/Android; [open PR 233](https://github.com/CypherCommons/shroud/pull/233) adds one-to-one Marmot chat via marmot-ts, keyed to your silent-payment address, with in-chat payment requests.
+
 ### Agents and automation
 
 - [Labradorite / agentd](https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents) · **v2, active** · Android remote control for coding agents with a Linux daemon, now using marmot-kmp; kind-9 prompts and replies stay readable in White Noise. [Zapstore](https://zapstore.dev/apps/naddr1qq8kxmmd9enhyet9deshyaphvveszxrhwden5te0wfjkccte9eaxzurnw3hhyefwv3jhvq3qw4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvsxpqqqplqksxhc2g).
@@ -65,6 +73,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [marmish](https://github.com/Epiphytic/marmish) · **v2, active, prototype** · Native Rust remote commands over Marmot; v0.2.2 is a corrective prerelease with documented keychain and lifecycle qualification gaps.
 - [heterodyne-metaharness](https://github.com/Epiphytic/heterodyne-metaharness) · **v2, active, experimental** · Coding-agent control plane in early development; its `admind` service gives operators a Marmot recovery channel to a privileged admin agent through `wn-agent`.
 - [codr](https://github.com/tidley/codr) · **v2, active** · Connects existing HERDR sessions for OpenCode, Codex and Claude Code to White Noise on Linux/macOS, with images, local voice transcription and editable progress.
+- [mdk squared](https://github.com/samthomson/mdk-squared) · **v2, active, prototype** · Dashboard and weather-driven autopilot for home air-filter miners, controlled with slash commands in a Marmot group via marmot-ts; White Noise currently rejects its KeyPackages.
 
 - [Emissary](https://github.com/modus-lisp/emissary) · **v2, active, experimental** · Research execution agent with optional cl-marmot transport; unpinned dependency and shell-equivalent authority.
 
@@ -110,6 +119,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [Mantra](https://code.sigidli.com/mantra/mantra-kmp) · **v1, active, alpha** · Kotlin Multiplatform collaboration app for translation workgroups and threshold-signing approvals; its custom in-group private messages require changes in other clients. [Website](https://mantra.press/).
 
 - [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) · **v1, active** · Phone messaging over offline Bluetooth mesh or online Nostr, plus a Lightning wallet and nearby payments; desktop features differ.
+- [kiss-bdk](https://github.com/kkdao/kiss-bdk) · **v1, active, experimental** · BDK command-line wallet whose optional `marmot` feature passes shared silent-payment transactions between signers over MDK 0.8; test networks only.
 
 ## Closed-source apps
 
@@ -212,7 +222,7 @@ python3 -m unittest discover -s tests -v
 
 ## Notes
 
-Counts reflect the recently updated v2 listings as of **2026-11-04**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
+Counts reflect the recently updated v2 listings as of **2026-11-06**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
 
 **Checked 2026-11-04.** All 89 repository records were refreshed against public default-branch metadata and pinned source evidence. Activity uses a 90-day window, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend activity covers public store metadata only. Protocol labels describe inspected source, not every released build or verified cross-client interoperability. See the [refresh report](docs/catalog-refresh-20261104.md) for changes and discovery limits.
 

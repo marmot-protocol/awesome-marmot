@@ -1580,6 +1580,195 @@
         "https://github.com/DavidGershony/dotnet-mls/blob/126e571024eda3c1250ebf6822bae1ba52e1531e/src/DotnetMls/Group/MlsGroup.cs"
       ],
       "note": "Standalone C# MLS engine and crypto library. Scramble references DotnetMls and DotnetMls.Crypto from its Marmot engine; this repository supplies MLS rather than a complete Nostr/Marmot client. Source inspected, no independent security or runtime interoperability test."
+    },
+    {
+      "repository": "https://github.com/rademenezbtc/blackice",
+      "default_branch": "main",
+      "commit": "9e753ea644f4cca7aa2432cc0ef6bb906580bca4",
+      "last_commit_at": "2026-11-06T03:35:51Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/rademenezbtc/blackice/tree/9e753ea644f4cca7aa2432cc0ef6bb906580bca4",
+      "generation_evidence": [
+        "https://github.com/rademenezbtc/blackice/blob/9e753ea644f4cca7aa2432cc0ef6bb906580bca4/bun.lock",
+        "https://github.com/rademenezbtc/blackice/blob/9e753ea644f4cca7aa2432cc0ef6bb906580bca4/src/node.ts"
+      ],
+      "feature_evidence": [
+        "https://github.com/rademenezbtc/blackice/blob/9e753ea644f4cca7aa2432cc0ef6bb906580bca4/README.md",
+        "https://github.com/rademenezbtc/blackice/blob/9e753ea644f4cca7aa2432cc0ef6bb906580bca4/src/node.ts"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project. The lock pins marmot-ts 0.9.0; the node wraps MarmotClient, publishes kind-30443 KeyPackages and carries FROST silent-payment ceremony messages in a Marmot group. README: signet only, unaudited, relies on unreviewed Frostsnap PR #640 firmware. No license file. Source inspection only; no runtime or interoperability test."
+    },
+    {
+      "repository": "https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet",
+      "default_branch": "master",
+      "commit": "81ba45740c4792c144d6048c73683db8f12f457f",
+      "last_commit_at": "2026-11-06T12:38:33+09:00",
+      "generation": "v2",
+      "activity": "active",
+      "archived": null,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet/tree/81ba45740c4792c144d6048c73683db8f12f457f",
+      "generation_evidence": [
+        "https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet/tree/81ba45740c4792c144d6048c73683db8f12f457f/scripts/mdk.sh",
+        "https://github.com/marmot-protocol/mdk/blob/c8210585cab611c3242ad64dec42ca8161f2ad1c/Cargo.toml"
+      ],
+      "feature_evidence": [
+        "https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet/tree/81ba45740c4792c144d6048c73683db8f12f457f/README.md",
+        "https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet/tree/81ba45740c4792c144d6048c73683db8f12f457f/app/marmot.odin"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project. NIP-34 announcement d-tag Colony-Wallet; relay.ngit.dev, gitnostr.com and relay.cyberguy.fyi advertise the same master head. scripts/mdk.sh builds MDK marmot-c at c8210585 (workspace 0.14.0-dev). README: signet only, trusted-dealer FROST keys, recovery phrase and key shares in plain files, no outside security review. No license file. Source inspection only; no build or runtime test."
+    },
+    {
+      "repository": "https://github.com/murdawkmedia/quiet-ledger",
+      "default_branch": "main",
+      "commit": "388ca1c62692c7af9a6b53542930b71d56a5c2aa",
+      "last_commit_at": "2026-11-06T13:08:09Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/murdawkmedia/quiet-ledger/tree/388ca1c62692c7af9a6b53542930b71d56a5c2aa",
+      "generation_evidence": [
+        "https://github.com/murdawkmedia/quiet-ledger/blob/388ca1c62692c7af9a6b53542930b71d56a5c2aa/package-lock.json",
+        "https://github.com/murdawkmedia/quiet-ledger/blob/388ca1c62692c7af9a6b53542930b71d56a5c2aa/client/marmot-engine.ts"
+      ],
+      "feature_evidence": [
+        "https://github.com/murdawkmedia/quiet-ledger/blob/388ca1c62692c7af9a6b53542930b71d56a5c2aa/README.md",
+        "https://github.com/murdawkmedia/quiet-ledger/blob/388ca1c62692c7af9a6b53542930b71d56a5c2aa/integrations/marmot-client.ts"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project; GitHub copy described as an exact mirror of its ngit primary, which was not compared. The lock pins marmot-ts 0.9.0 for kind-30443 KeyPackages, gift-wrapped Welcomes and kind-445 group messages. README: experimental private pilot without cryptographic audit; the server operator can decrypt stored financial records; White Noise interoperability not qualified. AGPL-3.0-or-later. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/ye0man/kimchi",
+      "default_branch": "main",
+      "commit": "e8dfefae4b588e218bffe5b805e722e3370927d1",
+      "last_commit_at": "2026-11-06T02:16:57Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/ye0man/kimchi/tree/e8dfefae4b588e218bffe5b805e722e3370927d1",
+      "generation_evidence": [
+        "https://github.com/ye0man/kimchi/blob/e8dfefae4b588e218bffe5b805e722e3370927d1/pnpm-lock.yaml",
+        "https://github.com/ye0man/kimchi/blob/e8dfefae4b588e218bffe5b805e722e3370927d1/src/lib/marmot/setup.ts"
+      ],
+      "feature_evidence": [
+        "https://github.com/ye0man/kimchi/blob/e8dfefae4b588e218bffe5b805e722e3370927d1/README.md",
+        "https://github.com/ye0man/kimchi/blob/e8dfefae4b588e218bffe5b805e722e3370927d1/docs/ARCHITECTURE.md"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project. The lock pins marmot-ts 0.9.0; setup constructs MarmotClient with group media support. Bill tabs travel as application rumors inside the MLS group and settle in NUT-11 P2PK-locked Cashu ecash; tab secrets sit in localStorage. No license file. Source inspection only; the live demo was not exercised."
+    },
+    {
+      "repository": "https://github.com/dongguri-jun/ilchon",
+      "default_branch": "main",
+      "commit": "d801c59b7b995652ae17f0163ad9208fa6120ab9",
+      "last_commit_at": "2026-11-06T02:49:30Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/dongguri-jun/ilchon/tree/d801c59b7b995652ae17f0163ad9208fa6120ab9",
+      "generation_evidence": [
+        "https://github.com/dongguri-jun/ilchon/blob/d801c59b7b995652ae17f0163ad9208fa6120ab9/pnpm-lock.yaml",
+        "https://github.com/dongguri-jun/ilchon/blob/d801c59b7b995652ae17f0163ad9208fa6120ab9/docs/marmot-evidence.md"
+      ],
+      "feature_evidence": [
+        "https://github.com/dongguri-jun/ilchon/blob/d801c59b7b995652ae17f0163ad9208fa6120ab9/README.md",
+        "https://github.com/dongguri-jun/ilchon/blob/d801c59b7b995652ae17f0163ad9208fa6120ab9/src/lib/marmot/transport.ts"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project. The lock pins marmot-ts 0.9.0; the project's relay capture shows kind-30443 KeyPackages advertising the 0x8009 identity-proof component. One two-member Marmot group per in-person contact carries private offer matching. README: demo build, not for real funds; group state and contacts unencrypted at rest; no escrow. MIT. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/shroominic/satsroadmarket",
+      "default_branch": "main",
+      "commit": "e28c75c01cf3aa72b142435ea6fc1cf4d1bcc5aa",
+      "last_commit_at": "2026-11-06T08:07:13Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/shroominic/satsroadmarket/tree/e28c75c01cf3aa72b142435ea6fc1cf4d1bcc5aa",
+      "generation_evidence": [
+        "https://github.com/shroominic/satsroadmarket/blob/e28c75c01cf3aa72b142435ea6fc1cf4d1bcc5aa/package-lock.json",
+        "https://github.com/shroominic/satsroadmarket/blob/e28c75c01cf3aa72b142435ea6fc1cf4d1bcc5aa/src/lib/marmot.js"
+      ],
+      "feature_evidence": [
+        "https://github.com/shroominic/satsroadmarket/blob/e28c75c01cf3aa72b142435ea6fc1cf4d1bcc5aa/README.md",
+        "https://github.com/shroominic/satsroadmarket/blob/e28c75c01cf3aa72b142435ea6fc1cf4d1bcc5aa/src/lib/marmot.js"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project. The lock pins npm marmot-ts 0.9.0 directly, not the author's Nostrbase SDK; buyer-seller negotiation runs in Marmot groups using kind-30443 KeyPackages. README: tested only against a public test mint; keys, group state and wallet unencrypted in browser storage; no escrow. No license file. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/CypherCommons/shroud",
+      "default_branch": "master",
+      "commit": "bc5ac6f9066c159a445542cd5a839c339a4ccfe2",
+      "last_commit_at": "2026-10-28T03:51:30Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/CypherCommons/shroud/tree/bc5ac6f9066c159a445542cd5a839c339a4ccfe2",
+      "generation_evidence": [
+        "https://github.com/CypherCommons/shroud/blob/bc5ac6f9066c159a445542cd5a839c339a4ccfe2/package.json",
+        "https://github.com/CypherCommons/shroud/blob/d92ec3ba8cdd8dc57a0623f5da7f83494af6795e/package-lock.json",
+        "https://github.com/CypherCommons/shroud/blob/d92ec3ba8cdd8dc57a0623f5da7f83494af6795e/helpers/chat/ChatService.ts"
+      ],
+      "feature_evidence": [
+        "https://github.com/CypherCommons/shroud/blob/bc5ac6f9066c159a445542cd5a839c339a4ccfe2/README.md",
+        "https://github.com/CypherCommons/shroud/blob/d92ec3ba8cdd8dc57a0623f5da7f83494af6795e/helpers/chat/identity.ts"
+      ],
+      "marmot_integration": {
+        "status": "unmerged-prototype",
+        "pull_request": "https://github.com/CypherCommons/shroud/pull/233",
+        "head": "d92ec3ba8cdd8dc57a0623f5da7f83494af6795e",
+        "head_committed_at": "2026-11-05T12:28:21Z",
+        "dependency": "@internet-privacy/marmot-ts",
+        "dependency_version": "0.9.0"
+      },
+      "note": "bitcoin++ Seoul 2026 hackathon project. Activity is measured from the default branch, which has no Marmot dependency. The v2 classification applies only to open PR 233, whose lock pins marmot-ts 0.9.0 and whose chat service uses MarmotClient; chat keys derive from the silent-payment scan key. PR body reports signet-only testing on simulators and emulators. MIT. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/samthomson/mdk-squared",
+      "default_branch": "master",
+      "commit": "40e621f95c61afec82984297a7e05dd7469556bb",
+      "last_commit_at": "2026-11-06T05:22:41Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/samthomson/mdk-squared/tree/40e621f95c61afec82984297a7e05dd7469556bb",
+      "generation_evidence": [
+        "https://github.com/samthomson/mdk-squared/blob/40e621f95c61afec82984297a7e05dd7469556bb/app/package-lock.json",
+        "https://github.com/samthomson/mdk-squared/blob/40e621f95c61afec82984297a7e05dd7469556bb/app/src/marmot-rust.ts"
+      ],
+      "feature_evidence": [
+        "https://github.com/samthomson/mdk-squared/blob/40e621f95c61afec82984297a7e05dd7469556bb/README.md",
+        "https://github.com/samthomson/mdk-squared/blob/40e621f95c61afec82984297a7e05dd7469556bb/app/src/marmot.ts"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project; its MDK name also refers to Tether's Mining Development Kit for the device side. The lock pins marmot-ts 0.9.0; an alternative engine drives MDK's wn CLI when present, but the Docker image omits it. README: White Noise rejects its marmot-ts KeyPackages, so chat commands work between marmot-ts members only; identity and MLS state unencrypted on disk; devices mocked. No repository license file. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/kkdao/kiss-bdk",
+      "default_branch": "main",
+      "commit": "55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a",
+      "last_commit_at": "2026-11-06T04:09:12Z",
+      "generation": "v1",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-06T13:35:47Z",
+      "source": "https://github.com/kkdao/kiss-bdk/tree/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a",
+      "generation_evidence": [
+        "https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/Cargo.lock",
+        "https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/src/marmot.rs"
+      ],
+      "feature_evidence": [
+        "https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/docs/marmot.md",
+        "https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/src/marmot.rs"
+      ],
+      "note": "bitcoin++ Seoul 2026 hackathon project (One Silent Payment, Two Signers). The optional marmot feature locks registry mdk-core 0.8.0 and also publishes legacy kind-443 KeyPackages and 10051 relay lists. README: experimental, test networks only; docs: MLS state file unencrypted, identity key plain hex. MIT. Source inspection only."
     }
   ],
   "removed_repositories": [
