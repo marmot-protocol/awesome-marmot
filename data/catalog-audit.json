@@ -1769,6 +1769,68 @@
         "https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/src/marmot.rs"
       ],
       "note": "bitcoin++ Seoul 2026 hackathon project (One Silent Payment, Two Signers). The optional marmot feature locks registry mdk-core 0.8.0 and also publishes legacy kind-443 KeyPackages and 10051 relay lists. README: experimental, test networks only; docs: MLS state file unencrypted, identity key plain hex. MIT. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/rademenezbtc/splitnut",
+      "default_branch": "main",
+      "commit": "2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04",
+      "last_commit_at": "2026-11-08T08:03:37Z",
+      "generation": "v1",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-10T12:34:39Z",
+      "source": "https://github.com/rademenezbtc/splitnut/tree/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04",
+      "generation_evidence": [
+        "https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/Cargo.lock",
+        "https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/crates/splitnut-marmot/Cargo.toml"
+      ],
+      "feature_evidence": [
+        "https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/README.md",
+        "https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/crates/splitnut-marmot/src/lib.rs",
+        "https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/crates/splitnut-coord/src/marmot_link.rs"
+      ],
+      "note": "Cashu mint whose keys are split 2-of-3 across guardians that coordinate in a Marmot group. splitnut-marmot pins registry mdk-core =0.8.0, so the label is v1. MIT. Source inspection only."
+    },
+    {
+      "repository": "https://github.com/vzsoares/moranduba",
+      "default_branch": "dev",
+      "commit": "293469896cf567ae56bc2ee08b447142b4d826dc",
+      "last_commit_at": "2026-11-10T01:35:03Z",
+      "generation": "v1",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-10T12:34:39Z",
+      "source": "https://github.com/vzsoares/moranduba/tree/293469896cf567ae56bc2ee08b447142b4d826dc",
+      "generation_evidence": [
+        "https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/app/rust/Cargo.lock",
+        "https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/app/rust/Cargo.toml",
+        "https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/docs/adr/0001-mls-engine.md"
+      ],
+      "feature_evidence": [
+        "https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/README.md",
+        "https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/docs/architecture.md"
+      ],
+      "note": "Flutter group chat with encrypted calls. Its MLS engine vendors mdk-core 0.8.0 and mdk-memory-storage with three documented local patches (wasm clock, snapshot serde, SelfRemove reporting), so the label is v1. MIT. Source inspection only."
+    },
+    {
+      "repository": "https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway",
+      "default_branch": "master",
+      "commit": "eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407",
+      "last_commit_at": "2026-11-10T12:25:01Z",
+      "generation": "v2",
+      "activity": "active",
+      "archived": false,
+      "checked_at": "2026-11-10T12:34:39Z",
+      "source": "https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407",
+      "generation_evidence": [
+        "https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407/src/hermes_nostr_gateway/planes/marmot.py",
+        "https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407/docs/marmot-ownership.md"
+      ],
+      "feature_evidence": [
+        "https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407/README.md",
+        "https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407/docs/marmot-ownership.md"
+      ],
+      "note": "Python transport hub for Hermes agents published over NIP-34. Its Marmot plane proxies wn-agent's control socket (marmot.agent-control.v2) and holds no MLS state; the v2 label follows the wn-notify precedent. MIT. Source inspection only."
     }
   ],
   "removed_repositories": [

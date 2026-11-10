@@ -6,7 +6,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **32** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **15** [integrations](#agents-and-automation) |
+| **32** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **16** [integrations](#agents-and-automation) |
 
 ## Start here
 
@@ -74,6 +74,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [heterodyne-metaharness](https://github.com/Epiphytic/heterodyne-metaharness) · **v2, active, experimental** · Coding-agent control plane in early development; its `admind` service gives operators a Marmot recovery channel to a privileged admin agent through `wn-agent`.
 - [codr](https://github.com/tidley/codr) · **v2, active** · Connects existing HERDR sessions for OpenCode, Codex and Claude Code to White Noise on Linux/macOS, with images, local voice transcription and editable progress.
 - [mdk squared](https://github.com/samthomson/mdk-squared) · **v2, active, prototype** · Dashboard and weather-driven autopilot for home air-filter miners, controlled with slash commands in a Marmot group via marmot-ts; White Noise currently rejects its KeyPackages.
+- [Hermes Nostr Gateway](https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway) · **v2, active** · Nostr transport hub for Hermes agents: DMs, mentions, Concord communities and Marmot groups arrive on one local socket, with Marmot traffic proxied through `wn-agent`.
 
 - [Emissary](https://github.com/modus-lisp/emissary) · **v2, active, experimental** · Research execution agent with optional cl-marmot transport; unpinned dependency and shell-equivalent authority.
 
@@ -120,6 +121,8 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 - [Sonar](https://github.com/hedwig-corp/bitchat-to-sonar) · **v1, active** · Phone messaging over offline Bluetooth mesh or online Nostr, plus a Lightning wallet and nearby payments; desktop features differ.
 - [kiss-bdk](https://github.com/kkdao/kiss-bdk) · **v1, active, experimental** · BDK command-line wallet whose optional `marmot` feature passes shared silent-payment transactions between signers over MDK 0.8; test networks only.
+- [SplitNut](https://github.com/rademenezbtc/splitnut) · **v1, active, prototype** · Cashu mint whose keys are split 2-of-3 across guardians that coordinate in a Marmot group; wallets see a normal mint. Pins MDK 0.8.0.
+- [Moranduba](https://github.com/vzsoares/moranduba) · **v1, active** · Flutter group chat with encrypted video calls and screen share; its MLS engine vendors a patched MDK 0.8.0.
 
 ## Closed-source apps
 

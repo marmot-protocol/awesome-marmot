@@ -213,3 +213,19 @@ Eight are v2 because they pin `@internet-privacy/marmot-ts` 0.9.0 or build MDK `
 **[kiss-bdk](https://github.com/kkdao/kiss-bdk/tree/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a)** ("One Silent Payment, Two Signers") is v1. Its optional `marmot` feature [locks](https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/Cargo.lock) registry mdk-core 0.8.0 and [publishes](https://github.com/kkdao/kiss-bdk/blob/55e2954c3e33a2e642fb0b450bd91b4ac1dfd79a/src/marmot.rs) legacy kind-443 KeyPackages.
 
 All nine are hackathon prototypes built on 5–6 November. These were source checks only. No build, installation, live demo or interoperability test was run. Other catalog entries keep their existing check dates.
+
+## Discovery sweep (10 November 2026)
+
+A 30-day discovery run plus manual GitHub code searches found three new projects. Two are v1 and one is v2.
+
+- **[SplitNut](https://github.com/rademenezbtc/splitnut/tree/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04)** is v1. The [lock](https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/Cargo.lock) resolves registry mdk-core 0.8.0, pinned in [splitnut-marmot](https://github.com/rademenezbtc/splitnut/blob/2e2f09a39c0eff47ed1a2c5e18b304cbe4455d04/crates/splitnut-marmot/Cargo.toml). Three guardian processes and the coordinator share one Marmot group, according to the README's milestone 3.
+- **[Moranduba](https://github.com/vzsoares/moranduba/tree/293469896cf567ae56bc2ee08b447142b4d826dc)** is v1. Its [MLS engine](https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/app/rust/Cargo.toml) vendors mdk-core 0.8.0 and mdk-memory-storage. The [ADR](https://github.com/vzsoares/moranduba/blob/293469896cf567ae56bc2ee08b447142b4d826dc/docs/adr/0001-mls-engine.md) lists three local patches: a wasm-safe clock, snapshot serialization and SelfRemove reporting.
+- **[Hermes Nostr Gateway](https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407)** is v2 under the wn-notify precedent. Its [Marmot plane](https://gitworkshop.dev/npub1cn670f663n3ks02jnnlsvd5y88zjnefy8343ykaxs7y3nzzketrsrjwt8a/relay.ngit.dev/hermes-nostr-gateway/tree/eaa57a5a64bcbaa3a2f4b5fe50ec22a5160b0407/src/hermes_nostr_gateway/planes/marmot.py) proxies `wn-agent`'s control socket using `marmot.agent-control.v2` and holds no MLS state. Three maintainers announce the repository over NIP-34. The entry links the announcement whose web tag points to gitworkshop.dev.
+
+### Leads not added
+
+- **[nmesh / ACN](https://github.com/ilabra-axo/acn)**: the README says groups "will use Marmot". The only Marmot code is an optional `mls` feature spike in `nmesh-core`, which locks mdk-core 0.8.0. Revisit when groups ship.
+- **[CAHMLS](https://github.com/sandwichfarm/CAHMLS)** coordinates ad-hoc MLS groups over ContextVM for Cordn. It does not use Marmot.
+- `tidley/mdk` and `tidley/whitenoise-android` are personal mirrors of first-party repositories.
+
+mdk squared was already listed from the bitcoin++ Seoul sweep, and its head is unchanged. The Nostr Recap source failed during this run because the relay returned 503. GitLab search was skipped. These were source checks only. No build, installation or interoperability test was run.
