@@ -138,7 +138,6 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 - [mls-kmp](https://github.com/vitorpamplona/mls-kmp) · **adjacent, active** · Standalone Kotlin Multiplatform MLS engine used by marmot-kmp; independent of Nostr.
 
-- [Goggles](https://github.com/marmot-protocol/goggles) · **adjacent, active** · Forensic audit trace explorer.
 - [Nostream](https://github.com/cameri/nostream) · **adjacent, active** · Nostr relay with Marmot event handling, group routing-tag validation and relay capability metadata.
 - [marmot-tunnels](https://github.com/hzrd149/marmots-tunnels) · **adjacent, active** · Group-history debugger: a passive member keeps every fork of the groups it joins and shows each group's history as a branching timeline.
 - [Nostr Doctor](https://github.com/marmot-protocol/nostr-doctor) · **adjacent, active** · Guided Nostr diagnostics and repairs, including checks of public Marmot KeyPackages and cleanup of legacy Marmot events.

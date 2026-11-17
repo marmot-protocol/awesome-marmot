@@ -142,7 +142,7 @@ def check_catalog(text: str, audit: dict) -> list[str]:
             key = canonical_repository(record["repository"])
             if not record["repository"].startswith("https://") or key in repositories or key in removed:
                 raise ValueError("duplicate or still-listed repository")
-            if dt.date.fromisoformat(record["removed_on"]) > checked.date():
+            if dt.date.fromisoformat(record["removed_on"]) > dt.datetime.now(dt.timezone.utc).date():
                 raise ValueError("future removal date")
             if not record["reason"].strip() or not record["source"].startswith("https://"):
                 raise ValueError("missing removal reason or source")

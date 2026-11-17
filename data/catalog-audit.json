@@ -194,18 +194,6 @@
       "checked_at": "2026-11-04T11:13:40.431672+00:00"
     },
     {
-      "repository": "https://github.com/marmot-protocol/goggles",
-      "default_branch": "master",
-      "commit": "767a98ffd64549800ae6b1ced361624f721f8992",
-      "last_commit_at": "2026-09-25T17:50:04Z",
-      "generation": "adjacent",
-      "activity": "active",
-      "source": "https://github.com/marmot-protocol/goggles/tree/767a98ffd64549800ae6b1ced361624f721f8992",
-      "note": "Explorer for forensic audit traces. Its documented v4 audit format is not a Marmot protocol version.",
-      "archived": false,
-      "checked_at": "2026-11-04T11:13:40.431672+00:00"
-    },
-    {
       "repository": "https://github.com/marmot-protocol/marmot",
       "default_branch": "master",
       "commit": "97efcaf8d7072edd010ee1663821a352952d77a7",
@@ -1839,6 +1827,12 @@
       "removed_on": "2026-10-01",
       "reason": "Removed at the owner's explicit request after canonical page and API returned HTTP 404 and no replacement primary source was found.",
       "source": "https://codeberg.org/api/v1/repos/Tuxor/NostrBotKit"
+    },
+    {
+      "repository": "https://github.com/marmot-protocol/goggles",
+      "removed_on": "2026-11-17",
+      "reason": "Removed from the project list at the maintainer's explicit request.",
+      "source": "https://github.com/marmot-protocol/goggles/tree/767a98ffd64549800ae6b1ced361624f721f8992"
     }
   ]
 }

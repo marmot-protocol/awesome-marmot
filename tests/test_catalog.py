@@ -31,7 +31,10 @@ class CatalogTests(unittest.TestCase):
         baseline = json.loads((ROOT / "tests/fixtures/catalog-repositories-20260909.json").read_text())
         current = {catalog.canonical_repository(url) for url in urls}
         removed = {catalog.canonical_repository(r["repository"]) for r in self.audit["removed_repositories"]}
-        self.assertEqual(removed, {"https://codeberg.org/tuxor/nostrbotkit"})
+        self.assertEqual(removed, {
+            "https://codeberg.org/tuxor/nostrbotkit",
+            "https://github.com/marmot-protocol/goggles",
+        })
         self.assertTrue(set(baseline).issubset(current | removed))
         self.assertFalse(current & removed)
 
@@ -50,7 +53,8 @@ class CatalogTests(unittest.TestCase):
                 self.assertTrue(any("removal" in e for e in self.check(audit=audit)))
 
     def test_removal_requires_reason_date_and_absence_from_inventory(self):
-        for field, value in (("reason", ""), ("removed_on", (dt.datetime.fromisoformat(self.audit["checked_at"].replace("Z", "+00:00")) + dt.timedelta(days=1)).date().isoformat()),
+        tomorrow = (dt.datetime.now(dt.timezone.utc).date() + dt.timedelta(days=1)).isoformat()
+        for field, value in (("reason", ""), ("removed_on", tomorrow),
                              ("repository", self.audit["repositories"][0]["repository"])):
             with self.subTest(field=field):
                 audit = copy.deepcopy(self.audit)
