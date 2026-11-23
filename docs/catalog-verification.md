@@ -229,3 +229,9 @@ A 30-day discovery run plus manual GitHub code searches found three new projects
 - `tidley/mdk` and `tidley/whitenoise-android` are personal mirrors of first-party repositories.
 
 mdk squared was already listed from the bitcoin++ Seoul sweep, and its head is unchanged. The Nostr Recap source failed during this run because the relay returned 503. GitLab search was skipped. These were source checks only. No build, installation or interoperability test was run.
+
+## peoples.chat (23 November 2026)
+
+The Rust core pins MDK 0.18.0 and uses its `marmot-app` runtime for chat over Nostr relays, which establishes the v2 label. The separate radio format defines how to send one-to-one text over MeshCore using keys derived from the chat's MLS state. [MDK pin](https://github.com/peoples-chat/client/blob/82daed8d8c2d150096f0269e8497a477f174361f/core/Cargo.toml) · [Radio format](https://github.com/peoples-chat/client/blob/82daed8d8c2d150096f0269e8497a477f174361f/docs/radio-format-v0.md)
+
+Upstream's integration test uses mock radios. Phone pairing and the Aarhus field test are open. The project is a proof of concept and the website offers early-preview signup. [Integration test](https://github.com/peoples-chat/client/blob/82daed8d8c2d150096f0269e8497a477f174361f/core/tests/radio_chat.rs) · [Phone pairing](https://github.com/peoples-chat/client/issues/24) · [Aarhus field test](https://github.com/peoples-chat/client/issues/54) · [Preview signup](https://www.peoples.chat)

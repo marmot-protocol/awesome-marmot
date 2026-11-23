@@ -6,7 +6,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **32** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **16** [integrations](#agents-and-automation) |
+| **33** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **16** [integrations](#agents-and-automation) |
 
 ## Start here
 
@@ -23,6 +23,8 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 ## Marmot v2 · recently updated
 
 ### Apps
+
+- [peoples.chat](https://github.com/peoples-chat/client) · **v2, active, proof of concept** · Messenger using MDK over Nostr relays, with a MeshCore LoRa fallback for one-to-one text in development. [Preview signup](https://www.peoples.chat).
 
 - [Sessions Wallet](https://github.com/btcsessions/Sessions-Wallet) · **v2, active, alpha** · Bitcoin wallet with Marmot-encrypted group-wallet coordination on Android and desktop; early mainnet alpha, unaudited.
 
@@ -224,7 +226,7 @@ python3 -m unittest discover -s tests -v
 
 ## Notes
 
-Counts reflect the recently updated v2 listings as of **2026-11-06**. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
+Counts reflect the recently updated v2 listings above. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
 
 **Checked 2026-11-04.** All 89 repository records were refreshed against public default-branch metadata and pinned source evidence. Activity uses a 90-day window, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend activity covers public store metadata only. Protocol labels describe inspected source, not every released build or verified cross-client interoperability. See the [refresh report](docs/catalog-refresh-20261104.md) for changes and discovery limits.
 
