@@ -6,7 +6,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 | 💬 Client apps | 📚 SDKs and libraries | 🤖 Agent integrations |
 | :---: | :---: | :---: |
-| **33** [clients](#apps) | **8** [library entries](#sdks-and-libraries) | **16** [integrations](#agents-and-automation) |
+| **36** [clients](#apps) | **9** [library entries](#sdks-and-libraries) | **17** [integrations](#agents-and-automation) |
 
 ## Start here
 
@@ -24,7 +24,11 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 ### Apps
 
-- [peoples.chat](https://github.com/peoples-chat/client) · **v2, active, proof of concept** · Messenger using MDK over Nostr relays, with a MeshCore LoRa fallback for one-to-one text in development. [Preview signup](https://www.peoples.chat).
+- [Boop](https://github.com/orielhaim/Boop) · **v2, active, in development** · Android and iOS messenger with one-to-one and group Marmot chats and direct WebRTC calls.
+- [BitPolito Hub](https://github.com/giancpl/bitpolito-app) · **v2, active, prototype** · Android team app for office check-ins and doorbell requests, using MarmotKit for private team operations.
+- [Buzz Marmot plugin](https://github.com/januszgrze/buzz-marmot-plugin) · **v2, active, experimental** · Adds an encrypted chat inbox to Buzz desktop using MDK's `wn` and `wnd`.
+
+- [peoples.chat](https://github.com/peoples-chat/client) · **v2, active, proof of concept** · Messenger using MDK over Nostr relays. Two USB-connected MeshCore radios exchanged one-to-one text on a bench with the relay shut down. [Bench test](https://github.com/peoples-chat/client/pull/148) · [Preview signup](https://www.peoples.chat).
 
 - [Sessions Wallet](https://github.com/btcsessions/Sessions-Wallet) · **v2, active, alpha** · Bitcoin wallet with Marmot-encrypted group-wallet coordination on Android and desktop; early mainnet alpha, unaudited.
 
@@ -50,12 +54,12 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 - [amy](https://github.com/vitorpamplona/amethyst/tree/main/cli) · **v2, active** · Amethyst from the terminal: post public notes, send private DMs, and manage Marmot groups with scriptable JSON output.
 - [Haven](https://github.com/mehmetefeumit/Haven-App) · **v2, active, beta** · Android/iOS location sharing in private circles, with your choice of relays and no phone-number signup.
 - [marmots-web-chat](https://github.com/marmot-protocol/marmots-web-chat) · **v2, active** · React browser-chat example using current marmot-ts identity proofs and browser device slots; older groups have a read-only migration path.
-- [Lightning Piggy Mobile](https://github.com/LightningPiggy/lightning-piggy-mobile) · **v2, active, alpha** · Family Bitcoin wallet with Marmot one-to-one and group chat beside NIP-17, using `marmot-ts`; [the alpha integration](https://github.com/LightningPiggy/lightning-piggy-mobile/pull/1163) was merged on 2026-10-09.
-- [Groundhog](https://github.com/chebizarro/nostrc/tree/master/gnome/groundhog) · **v2, active, alpha** · GNOME messenger with Marmot encrypted groups, NIP-17 private messages, and local Grotto or remote NIP-46 signing. [Download alpha5](https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.0-alpha5).
+- [Lightning Piggy Mobile](https://github.com/LightningPiggy/lightning-piggy-mobile) · **v2, active, alpha** · Family Bitcoin wallet with one-to-one and group Marmot chats beside NIP-17 in the v1.7.7 release source. [Android release](https://github.com/LightningPiggy/lightning-piggy-mobile/releases/tag/v1.7.7).
+- [Groundhog](https://github.com/chebizarro/nostrc/tree/master/gnome/groundhog) · **v2, active, alpha** · GNOME messenger with Marmot encrypted groups, NIP-17 private messages, and local Grotto or remote NIP-46 signing. [Download 0.12.1-alpha8](https://github.com/chebizarro/nostrc/releases/tag/groundhog-v0.12.1-alpha8).
 - [FMDtr](https://gitlab.com/Kalle/fmdtr-android) · **v2, active** · Find, ring, or remotely wipe an Android device via Marmot, SMS, or a web interface; its Marmot bridge pins the post-MIP MDK crate family.
 
 - [Whistle](https://github.com/sjmcnamara/whistle) · **v2, active** · Group location sharing, chat and low-battery alerts; Android v2.0.1 is [released on Zapstore](https://zapstore.dev/apps/naddr1qqtx7un89enk2arhdp5hxarvv5h8w6rfwd6xcegprpmhxue69uhhyetvv9uju7npwpehgmmjv5hxgetkqgszedrn6ruhul9wpzjqsy9zs24w03jugz6q7zcse9cuwhl5qw6fx3srqsqqqlstgdfcxc), using MarmotKit 0.14.0. Upgrading from v1 requires new groups; offline chat delivery has a known issue.
-- [Third Ear](https://github.com/jooray/third-ear) · **v2, active, early release** · Android voice recorder and hands-free Marmot client with voice notes, optional offline transcription, spoken replies and Android Auto support. [Website](https://jooray.github.io/third-ear/).
+- [Third Ear](https://github.com/jooray/third-ear) · **v2, active, early release** · Android voice recorder and hands-free Marmot client with optional offline transcription, spoken replies and Android Auto. Voice notes can automatically mention a chosen group member. [Android v0.1.9](https://github.com/jooray/third-ear/releases/tag/v0.1.9).
 
 - [BlackIce](https://github.com/rademenezbtc/blackice) · **v2, active, prototype** · Frostsnap hardware signers pay silent-payment addresses with FROST, coordinating every ceremony step in a Marmot group via marmot-ts; signet only, unaudited, needs unreviewed Frostsnap firmware.
 - [Colony](https://gitworkshop.dev/npub1ven4zk8xxw873876gx8y9g9l9fazkye9qnwnglcptgvfwxmygscqsxddfh/relay.ngit.dev/Colony-Wallet) · **v2, active, prototype** · Linux desktop Ark wallet with shared FROST "pockets"; payment requests, approvals and signing rounds run in MDK Marmot groups. Signet only, keys in plain files.
@@ -67,7 +71,9 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 ### Agents and automation
 
-- [Labradorite / agentd](https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents) · **v2, active** · Android remote control for coding agents with a Linux daemon, now using marmot-kmp; kind-9 prompts and replies stay readable in White Noise. [Zapstore](https://zapstore.dev/apps/naddr1qq8kxmmd9enhyet9deshyaphvveszxrhwden5te0wfjkccte9eaxzurnw3hhyefwv3jhvq3qw4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvsxpqqqplqksxhc2g).
+- [Marmot Agents](https://github.com/marmot-protocol/marmot-agents) · **v2, active, experimental** · Connects local coding harnesses to Marmot chats through one shared core. Source installation for Linux and Apple Silicon.
+
+- [Labradorite / agentd](https://gitworkshop.dev/npub1w4uswmv6lu9yel005l3qgheysmr7tk9uvwluddznju3nuxalevvs2d0jr5/relay.ngit.dev/nostr-agents) · **v2, active** · Android remote control for coding agents with a Linux daemon, now using marmot-kmp; kind-9 prompts and replies stay readable in White Noise. [Zapstore](https://zapstore.dev/apps/com.greenart7c3.labradorite).
 
 - [wn-notify](https://github.com/jooray/wn-notify) · **v2, active** · Unofficial CLI for notifications and file delivery through a local `wn-agent`; one Python file using standard-library dependencies.
 
@@ -90,6 +96,8 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 ### SDKs and libraries
 
+- [qntx/marmot](https://github.com/qntx/marmot) · **v2, active, pre-alpha** · MDK-based SDK for browsers, Android and iOS with a Rust core and host-controlled storage, signing and transport. [v0.4.0](https://github.com/qntx/marmot/releases/tag/v0.4.0).
+
 - [Nostrbase](https://github.com/shroominic/nostrbase) · **v2, active, experimental** · Experimental Nostr record SDK with encrypted shared collections and a Fieldwork example app.
 
 - [quartz-marmot-kmp](https://github.com/kngako/quartz-marmot-kmp) · **v2, active, experimental** · Experimental independent Kotlin MLS/Marmot library; JVM builds, with Android/native and persistence gaps.
@@ -109,6 +117,7 @@ Projects for private group messaging with [Marmot](https://github.com/marmot-pro
 
 ## Marmot v1 · recently updated
 
+- [Bennu](https://github.com/machankura/bennu-kmp) · **v1, active, experimental** · Group chat with a threshold Bitcoin wallet. New rooms default to the legacy Marmot profile. [Android test build](https://bennu.8333.mobi/).
 - [ZapBook](https://github.com/codeswot/ZapBook) · **v1, active** · Social reading on Android/iOS with private reading circles, shared books and Lightning encouragement; uses marmot_dart 0.0.8.
 - [CodeDeck Next](https://github.com/JeroenOnNostr/codedeck-next-mobile) · **v1, active** · Android control for coding sessions on a paired laptop or VPS, with approvals and transcripts; NIP-17 and MDK 0.8 messaging coexist.
 - [Sovran](https://github.com/SovranBitcoin/Sovran) · **v1, active** · Cashu wallet with private chat through its vendored marmot-ts 0.4.0 integration.
@@ -229,6 +238,8 @@ python3 -m unittest discover -s tests -v
 Counts reflect the recently updated v2 listings above. Platform-specific clients and components in shared repositories count separately. Alpha and experimental projects are included; maturity and interoperability vary by entry.
 
 **Checked 2026-11-04.** All 89 repository records were refreshed against public default-branch metadata and pinned source evidence. Activity uses a 90-day window, not a maintenance guarantee. Shared repositories use repository-level activity; Mafrend activity covers public store metadata only. Protocol labels describe inspected source, not every released build or verified cross-client interoperability. See the [refresh report](docs/catalog-refresh-20261104.md) for changes and discovery limits.
+
+[November 27 release and discovery update](docs/catalog-verification.md) covers the entries rechecked since the full refresh.
 
 Versions describe source, not every shipped release or tested compatibility. **Marmot v1 and v2 are not interchangeable.** Package names, app versions, and audit formats are not protocol versions. Alpha and experimental labels describe maturity.
 
